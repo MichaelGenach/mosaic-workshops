@@ -1,0 +1,196 @@
+/* CSS */
+.faq-header {
+    max-width: 720px;
+    margin: 3rem auto 2.5rem;
+    padding: 0 1.5rem;
+    text-align: center;
+    direction: rtl;
+    font-family: "Arial Hebrew", Arial, sans-serif;
+  }
+  
+  .faq-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  
+  .faq-icon {
+    font-size: 2.5rem;
+    color: #0d6efd; /* כחול מקצועי */
+  }
+  
+  .faq-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #003366;
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+  }
+  
+  .faq-subtitle {
+    font-size: 1.05rem;
+    color: #555;
+    margin-top: 0.75rem;
+    line-height: 1.5;
+    max-width: 90%;
+    margin-inline: auto;
+  }
+
+  
+
+
+
+
+/* עטיפת כל הסדנאות */
+.accordion-wrapper {
+    max-width: 700px;
+    margin: 2rem auto;
+
+    direction: rtl;
+    color: #222;
+    padding: 0 1rem;
+    }
+    
+    /* כותרת סדנה */
+    .workshop-section {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1.2rem 0;
+    }
+    
+    /* לחיצה על שם הסדנה */
+    .workshop-title {
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 700;
+    user-select: none;
+    position: relative;
+    padding-right: 30px;
+    transition: color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1a1a1a;
+  
+    }
+
+    @media only screen and (max-width: 768px) { 
+        .workshop-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
+
+        .question-btn {
+            font-size: 0.9rem;
+        }
+    }
+    
+    .workshop-title:hover,
+    .workshop-title:focus {
+    color: #0056c1;
+    outline: none;
+    }
+    
+    /* החץ לצד כותרת הסדנה */
+    .arrow {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-right: 2px solid #666;
+    border-bottom: 2px solid #666;
+    transform: rotate(45deg);
+    margin-left: 10px;
+    margin-right: 5px;
+    transition: transform 0.5s ease, border-color 0.3s ease;
+    }
+    
+    .arrow.open {
+    transform: rotate(-135deg);
+    border-color: #0056c1;
+    }
+    
+    /* עוטף את כל השאלות */
+    .questions-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    }
+    
+    .questions-wrapper.open {
+    max-height: 800px;
+    }
+    
+    /* שאלה בודדת */
+    .question-item {
+    margin-bottom: 0.8rem;
+    }
+    
+    /* כפתור שאלה */
+    .question-btn {
+    background: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    text-align: right;
+    padding: 0.6rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #333;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+    
+
+
+  
+
+    .question-btn:hover,
+    .question-btn:focus {
+    background-color: #eaf2ff;
+    border-color: #0056c1;
+    color: #0056c1;
+    outline: none;
+    }
+    
+    /* חץ קטן בצד של שאלה */
+    .arrow.small {
+    width: 10px;
+    height: 10px;
+    margin-left: 6px;
+    }
+    
+    /* מעטפת תשובה */
+    .answer-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    }
+    
+    .answer-wrapper.open {
+    max-height: 150px;
+    }
+    
+    /* התשובה עצמה */
+    .answer {
+    background-color: #f0f6ff;
+    border-right: 3px solid #0056c1;
+    margin-top: 0.4rem;
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+    border-radius: 0 8px 8px 0;
+    text-align: right;
+   
+    }
+    
+    /* פוקוס נגיש */
+    .question-btn:focus-visible {
+    box-shadow: 0 0 0 3px #a4c8ff;
+    }

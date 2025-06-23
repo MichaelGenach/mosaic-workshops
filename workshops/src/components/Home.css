@@ -1,0 +1,482 @@
+#main {
+    position: absolute;
+    top: 0;
+    background-color: rgb(250, 250, 250);
+    overflow: hidden;
+    width: 100%;
+}
+
+#title {
+    font-size: 10vh;
+    margin-bottom: 2vh;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+
+
+#title2 {
+
+    font-size: 2.4vh;
+    color: white;
+    font-weight: 400;
+    margin-bottom: 6vh;
+
+
+
+}
+
+/* #titleh2 {
+    font-size: 3vh;
+
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} */
+
+
+
+.frontTitleDiv {
+    position: absolute;
+    top: 10vh;
+    width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+    #title {
+        font-size: 5.5vh;
+
+    }
+
+    #title2 {
+        margin-bottom: 4vh;
+    }
+
+    #moveDownHome {
+        position: relative;
+        top: 2vh;
+    }
+
+    #lepirteiVeLasadnaDiv {
+        margin-bottom: 0;
+
+    }
+}
+
+#lepirteiVeLasadnaDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+.child {
+    flex: 1;
+}
+
+.z {
+    z-index: 4;
+}
+
+#intro {
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    position: relative;
+    top: 30vh;
+    right: 2.5vh;
+    font-size: 2.5vh;
+
+}
+
+.buttons {
+    background-color: rgb(255, 132, 0);
+    border-radius: 8px;
+    height: 10vh;
+    /* Responsive height */
+    width: 15vh;
+    /* Responsive width */
+    font-size: 2vh;
+    /* Responsive font size */
+    color: white;
+    border-color: transparent;
+    transition: 0.3s;
+    margin-bottom: 2vh;
+    /* Responsive margin */
+}
+
+
+
+
+
+
+#leyezirat {
+
+    background-color: rgb(209, 108, 0);
+    border-radius: 7px;
+    height: 7vh;
+    /* Responsive height */
+    width: 18vw;
+    /* Responsive width */
+    font-size: 2.2vh;
+    /* Responsive font size */
+    color: white;
+    border-color: transparent;
+    transition: 0.3s;
+
+    z-index: 10;
+    /* Responsive margin */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+
+
+}
+
+#leyezirat:hover {
+    background-color: rgb(225, 135, 0);
+}
+
+
+#lehazmana {
+    background-color: #1b9748;
+    border-radius: 7px;
+    height: 7vh;
+    /* Responsive height */
+    width: 18vw;
+    /* Responsive width */
+    font-size: 2.2vh;
+    /* Responsive font size */
+    color: white;
+    border-color: transparent;
+    transition: 0.3s;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+
+}
+
+#lehazmana:hover {
+    background-color: #21b256;
+}
+
+
+#lepirteiHasiurim {
+    background-color: #2320c6;
+    border-radius: 7px;
+    height: 7vh;
+    /* Responsive height */
+    width: 18vw;
+    /* Responsive width */
+    font-size: 2.2vh;
+    /* Responsive font size */
+    color: white;
+    border-color: transparent;
+    transition: 0.3s;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+#lepirteiHasiurim:hover {
+    background-color: #204cdc;
+}
+
+@media only screen and (max-width: 768px) {
+
+    #leyezirat {
+        font-size: 2.3vh;
+        width: 65vw;
+        margin-bottom: 15px;
+
+    }
+
+
+    #lehazmana {
+        font-size: 2.3vh;
+        width: 65vw;
+        direction: rtl;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.buttons2 {
+    color: darkorange;
+    transition: 0.3s;
+    font-size: larger;
+}
+
+.buttons2:hover {
+    color: orange;
+}
+
+
+
+
+#tableDiv {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 75%;
+    height: 100%;
+    margin: 1vh;
+    /* Responsive margin */
+}
+
+#kind {
+    display: flex;
+    justify-content: space-around;
+}
+
+#images {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: center;
+    padding-left: 2vh;
+    /* Responsive padding */
+    position: relative;
+    left: 2vh;
+    /* Responsive position */
+}
+
+#img1,
+#img2 {
+    width: 25%;
+
+}
+
+#img3,
+#img4 {
+    width: 21%;
+}
+
+
+.s {
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 5%;
+    /* Responsive padding */
+    padding-right: 5%;
+    /* Responsive padding */
+    align-items: center;
+
+}
+
+.sss {
+    position: relative;
+    top: 50px;
+}
+
+
+
+/* #s1 {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+
+
+/* Q{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} */
+
+
+
+.p {
+    font-family: sans-serif;
+    font-size: 2.3vh;
+    width: 20vh;
+    position: relative;
+    top: 50px;
+}
+
+#ma {
+    position: relative;
+    bottom: 10px;
+}
+
+
+
+
+/* #h12{
+        position: relative;
+        right: 500px;
+    } */
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+
+    #img1,
+    #img3,
+    #img4 {
+
+        display: none;
+    }
+
+    .s {
+        display: flex;
+        justify-content: none;
+        padding-left: 0;
+        margin-top: 3vh;
+        padding-right: 0;
+        align-items: center;
+
+    }
+
+
+    #sss {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        ;
+    }
+
+    #img2 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #s62 {
+        width: 25%;
+        position: relative;
+        right: 5vw;
+    }
+
+
+
+
+
+
+    .frontTitleDiv {
+        position: absolute;
+        top: 7vh;
+        width: 100%;
+    }
+
+
+
+
+
+
+
+}
+
+
+
+#ma {
+    position: relative;
+    top: 13vh;
+}
+
+
+
+
+
+
+.white {
+    color: white;
+    font-size: 4vh;
+}
+
+
+#video1Div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#video1 {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 96vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2vh;
+    /* Responsive padding */
+}
+
+.buttons {
+    background-color: rgb(255, 132, 0);
+    border-radius: 8px;
+    height: 5vh;
+    /* Responsive height */
+    width: 15vh;
+    /* Responsive width */
+    font-size: 2vh;
+    /* Responsive font size */
+    color: white;
+    border-color: transparent;
+    transition: 0.3s;
+    margin-bottom: 2vh;
+    /* Responsive margin */
+}
+
+
+
+
+#googleReviews {
+
+    color: white;
+    font-size: 18px;
+    position: relative;
+    bottom: 24px;
+}
+
+#googleStars {
+    width: 30vh;
+    position: relative;
+    bottom: 42px;
+    margin-top: 2px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+#iframe {
+    border: 2px, solid, black;
+}

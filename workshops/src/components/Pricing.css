@@ -1,0 +1,87 @@
+.pricing-section {
+    text-align: center;
+    background-color: #f5faff;
+    padding: 50px 20px;
+    border-radius: 1rem;
+  }
+  
+  .pricing-title {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 30px;
+  }
+  
+  .pricing-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .price-card {
+    background-color: rgb(249, 249, 249);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    border-radius: 1rem;
+    padding: 25px;
+    min-height: 120px;
+   width: 300px;
+    flex: 1 1 250px;
+    direction: rtl;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+  
+  .price-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    z-index: 1;
+  }
+  
+  
+  
+  
+  .price-card h3 {
+    color: #004080;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .price-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .price-card li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .pricing-note {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .cta-button {
+    margin-top: 20px;
+    display: inline-block;
+    background-color: #0077cc;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .cta-button:hover {
+    background-color: #005fa3;
+  }
+  
+.pricingLink{
+    text-decoration: none;
+}

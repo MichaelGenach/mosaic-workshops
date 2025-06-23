@@ -1,0 +1,288 @@
+#mainDivCompany {
+
+    position: absolute;
+    top: 0;
+    background-color: rgb(250, 250, 250);
+    ;
+    overflow: hidden;
+    width: 100%;
+
+
+}
+
+#twoCompanyVideos {
+    display: flex;
+    align-items: center;
+}
+
+#companyIconsDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.companyIconsText {
+    margin: 0;
+}
+
+.companyIconsMiniDiv {
+    margin-bottom: 50px;
+}
+
+.companyIcons {
+    font-size: 5vh;
+    color: darkorange;
+
+}
+
+
+#twoCompanyVideosAndIcons {
+    display: flex;
+    justify-content: space-evenly;
+    direction: rtl;
+    align-items: center;
+ 
+}
+
+/* עיצוב בסיסי */
+#companyText {
+    background-color: #fdfaf6;
+    border: 1px solid #e0dcd1;
+    border-radius: 16px;
+    padding: 24px;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 2rem auto;
+    direction: rtl;
+    text-align: right;
+  
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* ריחוף */
+  #companyText:hover {
+    background-color: #f8f3ea;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* אנימציית הופעה */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* גרסת מובייל */
+  @media (max-width: 600px) {
+    #companyText {
+      padding: 16px;
+      font-size: 1rem;
+      border-radius: 12px;
+      margin: 1rem auto;
+      width: 100%;
+      max-width: 85vw
+    }
+  }
+  
+
+
+
+#CTACompany {
+
+    margin: 50px;
+
+}
+
+@media only screen and (max-width: 768px) {
+
+
+
+
+    #companyIconsDiv {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .companyIconsText {
+        margin: 0;
+        font-size: 2.5vh;
+    }
+
+    #twoCompanyVideosAndIcons {
+        flex-direction: column;
+    }
+
+}
+
+
+#video10 {
+    height: 60vh;
+    margin: 5px;
+}
+
+#video14 {
+    height: 60vh;
+}
+
+
+#textCompany {
+    position: relative;
+    top: 80px;
+}
+
+#ovdimCompany {
+    margin-top: 50px;
+}
+
+#photo58Div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+
+}
+
+#textPhoto58 {
+
+
+    font-family: sans-serif
+}
+
+
+
+
+
+#photo45Div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+
+
+}
+
+#textPhoto45 {
+
+    font-size: 4vw;
+    font-family: sans-serif
+}
+
+
+
+
+#photo50Div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin-bottom: 200px;
+    margin-top: 10vh;
+
+}
+
+/* .textPhotoC {
+
+
+
+} */
+
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+
+    #photo50 {
+        min-width: 90%;
+    }
+
+    #photo58 {
+        min-width: 90%;
+    }
+
+    #photo46 {
+        min-width: 75%;
+    }
+
+}
+
+
+
+#photo50 {
+    max-width: 60%;
+}
+
+#photo58 {
+    max-width: 60%;
+}
+
+
+
+
+
+
+
+#infoDivCompany {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    bottom: 5vh
+}
+
+#infoCompany {
+    max-width: 65%;
+    font-size: 3vh;
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    #infoCompany {
+        min-width: 95%;
+        font-size: 3vh;
+    }
+}
+
+
+
+.space {
+    height: 80px;
+}
+
+
+
+#prices {
+    font-size: 5vh;
+    width: 20%;
+    color: black
+}
+
+
+#photo45 {
+    width: 50%;
+}
+
+#photo46 {
+    max-width: 60%;
+}
+
+@media only screen and (max-width: 768px) {
+    #photo46 {
+        min-width: 90%;
+    }
+}
+
+#photo46Div{
+    position: relative;
+    top: 30px;
+}
+

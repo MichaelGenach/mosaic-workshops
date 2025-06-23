@@ -1,0 +1,282 @@
+#mainDivPrivate {
+    position: absolute;
+    top: 0;
+    background-color: rgb(250, 250, 250);
+    overflow: hidden;
+    width: 100%;
+}
+
+#titlePrivate {
+    margin-bottom: 5vh;
+}
+
+
+#subTitlePrivate {
+    background-color: #fdfaf6;
+    border: 1px solid #e0dcd1;
+    border-radius: 16px;
+    padding: 24px;
+    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+    margin: 2rem auto;
+    direction: rtl;
+    text-align: right;
+
+    /* אנימציה חלקה */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#subTitlePrivate:hover {
+    background-color: #f8f3ea;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* אנימציית הופעה */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    #subTitlePrivate {
+        padding: 16px;
+        font-size: 1rem;
+        border-radius: 12px;
+        margin: 2rem auto;
+        width: 85%;
+       
+    }
+}
+
+#bottomTextDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#bottomText {
+    padding: 5px;
+    width: 60%;
+    font-size: 2.5vh;
+
+}
+
+
+
+
+
+
+
+
+#photo37 {
+    max-width: 60%;
+
+}
+
+#photo38 {
+    max-width: 60%;
+
+
+}
+
+
+#photo39 {
+    width: 55%;
+
+
+
+}
+
+#textPhoto37 {
+
+    font-family: sans-serif;
+
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    #textPhoto37 {
+
+
+        font-size: 3vh;
+        font-family: sans-serif
+    }
+
+    #bottomText {
+        min-width: 80%;
+    }
+}
+
+
+
+#photo38Div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10vh;
+}
+
+
+
+
+
+#textPhoto38 {
+
+    font-family: sans-serif;
+    font-size: x-large;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    #textPhoto38 {
+
+
+        font-size: 3vh;
+        font-family: sans-serif
+    }
+}
+
+
+
+
+
+
+#photo39 {
+    width: 30%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    #photo39 {
+        width: 60%;
+
+    }
+
+    #prices {
+        display: none;
+    }
+}
+
+
+img {
+    border-radius: 20px;
+    margin: 3px
+}
+
+
+.space {
+    height: 80px;
+}
+
+#pricesDiv {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#prices {
+
+    background-color: orange;
+    width: 50%;
+    border-radius: 10px;
+
+
+}
+
+
+
+
+#infoDivPrivate {
+
+
+    width: 100%;
+    height: 70%;
+    align-items: center;
+    margin-top: 10vh;
+    justify-content: center;
+
+
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    #infoDivPrivate {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 70%;
+        align-items: center;
+        margin-top: 10vh;
+
+
+    }
+
+    #photo37,
+    #photo38 {
+        min-width: 90%;
+    }
+}
+
+
+
+
+
+.h2 {
+
+    font-size: 5vh;
+
+
+    ;
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .h2 {
+        font-size: 3vh;
+
+
+    }
+}
+
+
+.h3 {
+
+    font-size: 2.5vw;
+
+
+
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    .h3 {
+
+        font-size: 2.5vh;
+
+    }
+
+}
+
+
+#CTAPrivate {
+    margin: 45px;
+}
