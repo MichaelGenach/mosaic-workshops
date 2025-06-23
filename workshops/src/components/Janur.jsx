@@ -22,7 +22,7 @@ export default function Janur(props) {
 <br /><br /><br />
 <FadeIn>
 
-   <h1> ג'נור - תנור הקדרות המהפכני </h1>
+   <h1> ג'נור - תנור הקדרות המהפכני</h1>
 
 <div className="janur1">
 <p id="p1">
