@@ -3,6 +3,7 @@ import { Link, useNavigate, } from 'react-router-dom'
 import './Private.css'
 import PhotoCarousel from './PhotoCarousel';
 import Contact from './Contact';
+import Footer from './Footer';
 import BookingWidget from './BookingWidget';
 import FadeIn from 'react-fade-in';
 import { FaWaze, FaInstagram } from "react-icons/fa";
@@ -78,38 +79,16 @@ import photo116 from './images/photo116.jpg'
 import photo117 from './images/photo117.jpg'
 import photo119 from './images/photo119.jpg'
 import photo120 from './images/photo120.jpg'
-import photo125 from './images/photo125.jpg'
-import photo126 from './images/photo126.jpg'
-import photo127 from './images/photo127.jpg'
 import photo128 from './images/photo128.jpg'
-import photo129 from './images/photo129.jpg'
-import photo130 from './images/photo130.jpg'
-import photo131 from './images/photo131.jpg'
 import photo132 from './images/photo132.jpg'
 import photo133 from './images/photo133.jpg'
-import photo134 from './images/photo134.jpg'
-import photo135 from './images/photo135.jpg'
-import photo136 from './images/photo136.jpg'
-import photo137 from './images/photo137.jpg'
 import photo138 from './images/photo138.jpg'
 import photo139 from './images/photo139.jpg'
 import photo140 from './images/photo140.jpg'
-import photo141 from './images/photo141.jpg'
 import photo142 from './images/photo142.jpg'
-import photo143 from './images/photo143.jpg'
-import photo144 from './images/photo144.jpg'
-import photo145 from './images/photo145.jpg'
 import photo149 from './images/photo149.jpg'
-import photo150 from './images/photo150.jpg'
 import photo151 from './images/photo151.jpg'
-import photo152 from './images/photo152.jpg'
 import photo153 from './images/photo153.jpg'
-import photo154 from './images/photo154.jpg'
-import photo156 from './images/photo156.jpg'
-import photo157 from './images/photo157.jpg'
-import photo158 from './images/photo158.jpg'
-import photo159 from './images/photo159.jpg'
-import photo160 from './images/photo160.jpg'
 
 
 
@@ -167,7 +146,7 @@ export default function Private(props) {
 
 
 
-        <img id='photo37' src={photo37} alt="" />
+        <img id='photo37' src={photo37}  loading="lazy" alt="תמונה של לקוחות נהנים מסדנת פסיפס בוטיק בגלריה שלנו" />
 
 
 
@@ -175,7 +154,7 @@ export default function Private(props) {
 
 
         <p id='textPhoto38'>  חוויה מגבשת ויצירתית  </p>
-        <img id='photo38' src={photo103} alt="" />
+        <img id='photo38' src={photo103}  loading="lazy" alt="תמונה של לקוחות נהנים מסדנת פסיפס בוטיק בגלריה שלנו" />
 
 
 
@@ -229,7 +208,7 @@ export default function Private(props) {
 
 
       <Contact instaLink={instaLink} />
-
+      <Footer />
 
     </div>
 

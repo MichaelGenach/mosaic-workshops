@@ -24,11 +24,6 @@ export default function Menu() {
     setSubMenuOpen(false);
   };
 
-  const scrollTo2 = () => {
-    window.scrollTo({ top: 50000, behavior: 'smooth' });
-    setIsOpen(false);
-    setSubMenuOpen(false);
-  };
 
   // פונקציה לסגירת התפריט בעת לחיצה מחוץ לתפריט
   const handleClickOutside = (e) => {
@@ -85,8 +80,9 @@ export default function Menu() {
           <div
             className="links dropdown-toggle"
             onClick={toggleSubMenu}  // הוספת לחיצה על הדיב עצמו למזער את תת התפריט
-          >
+          ><Link className="linksToggle">
             סדנאות פסיפס ▾
+            </Link>
           </div>
           {subMenuOpen && (
             <div

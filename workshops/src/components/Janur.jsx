@@ -4,6 +4,7 @@ import { Link, useNavigate, } from 'react-router-dom'
 import { motion } from "framer-motion"
 import './Janur.css'
 import Contact from './Contact';
+import Footer from './Footer';
 import BookingWidget from './BookingWidget';
 
 import photo168 from './images/photo168.jpg'
@@ -40,7 +41,8 @@ export default function Janur(props) {
   צרו יצירות קרמיקה בקלות ובדיוק כמו שתמיד חלמתם!
 </p>
 
-<video src={video5} autoPlay loop muted id='video5' />
+<video src={video5} autoPlay loop muted id='video5' title="פותחים את תנור הקדרות ג'נור ורואים כלי חרס אדום לוהט"
+ />
 </div>
 
 
@@ -48,8 +50,8 @@ export default function Janur(props) {
 
 
 <div id='JanurPhotosDiv'>
-<img id='photo171' src={photo171} alt="" />
-          <img id='photo168' src={photo168} alt="" />
+<img id='photo171' src={photo171} loading="lazy" alt="תמונה של תנור הקדרות ג'נור כשהוא פתוח עם כלי לוהט בפנים" />
+          <img id='photo168' src={photo168} loading="lazy" alt="תמונה של תנור הקדרות ג'נור כשהוא סגור" />
      
       
 
@@ -76,6 +78,7 @@ export default function Janur(props) {
       
 
         <Contact/>
+        <Footer/>
     </div>
 
 

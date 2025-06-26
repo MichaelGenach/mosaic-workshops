@@ -1,0 +1,44 @@
+.accessibility-statement {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    line-height: 1.7;
+    direction: rtl;
+    text-align: right;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.accessibility-statement h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.accessibility-statement h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    color: #444;
+}
+
+.accessibility-statement ul {
+    list-style-type: disc;
+    padding-right: 20px;
+}
+
+.accessibility-statement li {
+    margin-bottom: 10px;
+}
+
+.accessibility-statement p {
+    margin-top: 15px;
+    color: #555;
+}
+
+#hazara{
+    font-size: larger;
+    color: rgb(59, 59, 255);
+}

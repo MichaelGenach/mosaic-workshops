@@ -2,6 +2,7 @@ import { React, useEffect } from 'react'
 import { Link, useNavigate, } from 'react-router-dom';
 import './Tours.css'
 import Contact from './Contact';
+import Footer from './Footer';
 import BookingWidget from './BookingWidget';
 import PhotoCarousel from './PhotoCarousel';
 import FadeIn from 'react-fade-in';
@@ -80,9 +81,9 @@ const instaLink = "https://www.instagram.com/art_music_explore/"
                     </div>
 
                     <div id='threeToursVideosDiv'>
-                        <video id="madregot" src={madregot} autoPlay loop muted />
-                        <video id="yam" src={yam} autoPlay loop muted />
-                        <video id="porfir" src={porfir} autoPlay loop muted />
+                        <video alt="מקטע מהסיור: וידאו של ירידה במדרגות עתיקות" id="madregot" src={madregot} autoPlay loop muted/>
+                        <video alt="מקטע מהסיור: וידאו של נוף של ים" id="yam" src={yam} autoPlay loop muted />
+                        <video alt="מקטע מהסיור: וידאו של רחוב עתיק ומרשים" id="porfir" src={porfir} autoPlay loop muted />
                     </div>
 
 
@@ -163,7 +164,7 @@ const instaLink = "https://www.instagram.com/art_music_explore/"
 
 
             <Contact instaLink={instaLink} />
-
+            <Footer />
         </div>
 
     )

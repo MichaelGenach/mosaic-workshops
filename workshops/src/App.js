@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import TagManager from 'react-gtm-module'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import Menu from './components/Menu';
 import Home from './components/Home';
 import Private from './components/Private';
@@ -11,8 +10,8 @@ import Company from './components/Company';
 import Tours from './components/Tours';
 import Pottery from './components/Pottery';
 import Janur from './components/Janur';
-import BookingWidget from './components/BookingWidget';
-import Reviews from './components/Reviews';
+import HazharatNegishut from './components/HazharatNegishut';
+
 
 
 function App() {
@@ -38,10 +37,11 @@ function App() {
             <Route path='/tours' element={<Tours width={width} setWidth={setWidth} />} />
             <Route path='/pottery' element={<Pottery width={width} setWidth={setWidth} />} />
             <Route path='/janur' element={<Janur width={width} setWidth={setWidth} />} />
+            <Route path='/hazharatNegishut' element={<HazharatNegishut />} />
       
 
           </Routes>
-    
+
       </BrowserRouter>
     </div>
   );

@@ -4,19 +4,15 @@ import './Company.css'
 import { FaRegClock } from "react-icons/fa";
 import BookingWidget from './BookingWidget';
 import Contact from './Contact';
+import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
 import FadeIn from 'react-fade-in';
 import photo1 from './images/photo1.jpg'
 import photo44 from './images/photo44.jpg'
 import photo45 from './images/photo45.jpg'
 import photo46 from './images/photo46.jpg'
-import photo50 from './images/photo50.jpg'
-import photo57 from './images/photo57.jpg'
 import photo58 from './images/photo58.jpg'
 import photo59 from './images/photo59.jpg'
-import photo60 from './images/photo60.jpg'
-import photo61 from './images/photo61.jpg'
-import photo62 from './images/photo62.jpg'
 import photo63 from './images/photo63.jpg'
 import photo64 from './images/photo64.jpg'
 import photo65 from './images/photo65.jpg'
@@ -33,19 +29,11 @@ import photo98 from './images/photo98.jpg'
 import photo99 from './images/photo99.jpg'
 import photo100 from './images/photo100.jpg'
 import photo101 from './images/photo101.jpg'
-import photo102 from './images/photo102.jpg'
 import photo107 from './images/photo107.jpg'
-import photo108 from './images/photo108.jpg'
 import photo118 from './images/photo118.jpg'
 import photo121 from './images/photo121.jpg'
 import photo122 from './images/photo122.jpg'
-import photo123 from './images/photo123.jpg'
-import photo124 from './images/photo124.jpg'
 import photo126 from './images/photo126.jpg'
-import photo146 from './images/photo146.jpg'
-import photo147 from './images/photo147.jpg'
-import photo148 from './images/photo148.jpg'
-import photo155 from './images/photo155.jpg'
 import photo192 from './images/photo192.jpg'
 import photo193 from './images/photo193.jpg'
 import video10 from './videos/video10.mp4'
@@ -59,20 +47,18 @@ import { GiCalendarHalfYear } from "react-icons/gi";
 
 import { motion } from "framer-motion"
 export default function Company(props) {
-;
+  ;
 
 
-;
+  ;
 
 
 
 
 
   const arrPhotoCarousel = [
-    photo64, photo45, photo192, photo63, photo193, photo118, photo121, , photo122, photo73, photo1, photo74, ,
-
-    photo65,
-    photo66, photo67, photo69, photo70, photo59, photo58, photo72, photo98, photo100, , photo101, photo107,
+    photo64, photo45, photo192, photo63, photo193, photo118, photo121, , photo122, photo73, photo1, photo74,
+    photo65, photo66, photo67, photo69, photo70, photo59, photo58, photo72, photo98, photo100, photo101, photo107,
     photo71, photo126,]
 
 
@@ -110,8 +96,8 @@ export default function Company(props) {
 
 
           <div id='twoCompanyVideos'>
-            <video id="video14" src={video14} autoPlay loop muted />
-            <video id="video10" src={video10} autoPlay loop muted />
+            <video id="video14" src={video14} autoPlay loop muted title='וידאו המדגים את מהלך הסדנא לחברות' />
+            <video id="video10" src={video10} autoPlay loop muted title='וידאו המדגים את מהלך הסדנא לחברות' />
           </div>
         </div>
 
@@ -141,7 +127,7 @@ export default function Company(props) {
 
 
 
-        <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel}  />
+        <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
 
 
 
@@ -150,7 +136,7 @@ export default function Company(props) {
 
         <p className='textPhotoC' id='ovdimCompany'>עובדים בשיתוף פעולה</p>
 
-        <img id='photo58' src={photo58} alt="" />
+        <img id='photo58' src={photo58} loading="lazy" alt="עובדי המרכז הרפואי הלל יפה מציגים את יצירתם המרשימה שהכינו בסדנה שלנו" />
 
 
 
@@ -171,7 +157,7 @@ export default function Company(props) {
 
         <div id='photo46Div'>
           <p> פסיפס אשר נעשה על ידי עובדי חברת סוני במסגרת הסדנא שלנו</p>
-          <img src={photo46} id='photo46' alt=" פסיפס שנעשה על ידי עובדי חברת סוני במסגרת הסדנא שלנו" />
+          <img src={photo46} id='photo46' loading="lazy" alt="פסיפס שנעשה על ידי עובדי חברת סוני במסגרת הסדנא שלנו" />
 
         </div>
 
@@ -220,7 +206,7 @@ export default function Company(props) {
 
 
       <Contact />
-
+      <Footer />
 
     </div>
 

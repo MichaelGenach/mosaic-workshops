@@ -8,11 +8,11 @@ import Maps from './Maps'
 
 
 export default function Contact(props) {
- 
- 
 
-  const instaLink =  "https://www.instagram.com/pottery_caesarea?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
- 
+
+
+
+
 
 
 
@@ -29,25 +29,25 @@ export default function Contact(props) {
         <ContactForm />
 
         <div className="contact-info-box">
-  <p className="whatsapp-line">
-    ניתן ליצור קשר גם דרך{' '}
-    <a
-      id="topWhatsApp"
-      href="https://wa.me/9720523948920"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="whatsapp-link"
-    >
-      <span className="whatsapp-icon">
-        <i className="bi bi-whatsapp"></i>
-      </span>
-      WhatsApp
-    </a>
-  </p>
-  <p className="info-description">
-    זמינים 24/6, מענה מהיר בכל אמצעי ההתקשרות, ללא תשלום מקדמות, כולל הטבות לאנשי מילואים.
-  </p>
-</div>
+          <p className="whatsapp-line">
+            ניתן ליצור קשר גם דרך{' '}
+            <a
+              id="topWhatsApp"
+              href="https://wa.me/9720523948920"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-link"
+            >
+              <span className="whatsapp-icon">
+                <i className="bi bi-whatsapp"></i>
+              </span>
+              WhatsApp
+            </a>
+          </p>
+          <p className="info-description">
+            זמינים 24/6, מענה מהיר בכל אמצעי ההתקשרות, ללא תשלום מקדמות, כולל הטבות לאנשי מילואים.
+          </p>
+        </div>
 
 
 
@@ -64,58 +64,59 @@ export default function Contact(props) {
           איך מגיעים?
         </h3>
         <div className="arrive">
-        <p id='arriveText'>
-          כותבים בוויז: "יקבי קיסריה",
-          חניון עפר חינמי, ונכנסים לנמל קיסריה, עלות כניסה: 18 ש"ח, 
-          הדרך אלינו מונגשת, קיים מרחב מוגן.
-        </p>
-<Maps/>
+          <p id='arriveText'>
+            כותבים בוויז: "יקבי קיסריה",
+            חניון עפר חינמי, ונכנסים לנמל קיסריה, עלות כניסה: 18 ש"ח,
+            הדרך אלינו מונגשת, קיים מרחב מוגן.
+          </p>
+          <Maps />
         </div>
 
 
-<div id='darkDiv'>
-        <h3 id='lifratim'>
-          לפרטים והזמנות מיידיות: אמיר
-        </h3>
+        <div id='darkDiv'>
+          <h3 id='lifratim'>
+            לפרטים והזמנות מיידיות: אמיר
+          </h3>
 
-        <div id='pratim'>
-          <a className='con'  href="tel:0523948920">052-394-8920</a>
-          <a className='con' id='emailInfo' href="mailto:genach2@bezeqint.net">genach2@bezeqint.net</a>
-
-
+          <div id='pratim'>
+            <a className='con' href="tel:0523948920" alt="טלפון ליצירת קשר">052-394-8920</a>
+            <a className='con' id='emailInfo' href="mailto:genach2@bezeqint.net" alt="אימייל ליצירת קשר">genach2@bezeqint.net</a>
 
 
-          <div className="wwi">
-          <a id='waze' href='https://waze.com/ul/hsvbbfh9q8' target="_blank" rel="noopener noreferrer">
-  <FaWaze style={{ fontSize: '45px' }} />
-</a>
 
-<a id='whatsApp' href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer">
-  <span style={{ position: 'relative', right: '5px' }}>
-    <i className="bi bi-whatsapp" style={{ fontSize: '45px' }}></i>
-  </span>
-</a>
 
-<a id='instagram' 
+            <div className="wwi">
+              <a id='waze' href='https://waze.com/ul/hsvbbfh9q8' target="_blank" rel="noopener noreferrer" alt="לינק לוויז שמנווט אל בית העסק שלנו">
+                <FaWaze style={{ fontSize: '45px' }} />
+              </a>
 
-href={props.instaLink || "https://www.instagram.com/pottery_caesarea?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"} // ברירת מחדל לעמוד פנימי
+              <a id='whatsApp' href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer" alt="לינק לוואצאפ של בעל העסק">
+                <span style={{ position: 'relative', right: '5px' }}>
+                  <i className="bi bi-whatsapp" style={{ fontSize: '45px' }}></i>
+                </span>
+              </a>
 
-target="_blank" rel="noopener noreferrer">
-  <FaInstagram style={{ fontSize: '45px' }} />
-</a>
+              <a id='instagram' alt="לינק לאינסטגרם שלנו"
+
+                href={props.instaLink || "https://www.instagram.com/pottery_caesarea?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D"} // ברירת מחדל לעמוד פנימי
+
+                target="_blank" rel="noopener noreferrer">
+                <FaInstagram style={{ fontSize: '45px' }} />
+              </a>
+
+            </div>
+
 
           </div>
 
-
         </div>
-     
+
       </div>
-      </div>
-    
-    
-    
-   
-    
+
+
+
+
+
     </div>
   )
 }

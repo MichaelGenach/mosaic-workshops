@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import './Pottery.css'
 import BookingWidget from './BookingWidget';
 import Contact from './Contact';
+import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
 import photo161 from './images/photo161.jpg'
 import photo162 from './images/photo162.jpg'
@@ -90,11 +91,11 @@ import { FaHome } from "react-icons/fa";
 
 export default function Pottery(props) {
 
-  
+
 
   const arrPhotoCarousel = [,
     //  photo209, photo210,
-     photo203, photo202, photo199, photo198, photo200, photo201, photo162, photo189, photo190, photo180,
+    photo203, photo202, photo199, photo198, photo200, photo201, photo162, photo189, photo190, photo180,
     photo181, photo182, photo183, photo194, photo164, photo165, photo186, photo187, photo191, photo216, photo217, photo218, photo219, photo220,
     photo221, photo222, photo223, photo224, photo225, photo226, photo227, photo228, photo229, photo230,
     photo231, photo232, photo233, photo234, photo235, photo236, photo237, photo238, photo239, photo240,
@@ -109,7 +110,7 @@ export default function Pottery(props) {
       <FadeIn>
         <div id='headLine'>
           <h1> סדנאות קדרות </h1>
-          
+
         </div>
 
 
@@ -121,36 +122,36 @@ export default function Pottery(props) {
 
 
 
-<div id='potteryIconsDiv'>
+          <div id='potteryIconsDiv'>
 
-  <div className='potteryIconsMiniDiv'>
-    <PiFlowerLotusBold   className='potteryIcons' />
-    <p className='potteryIconsText'> מרגיע</p>
-  </div>
-  <div className='potteryIconsMiniDiv'>
-    <FaPaintBrush className='potteryIcons' />
-    <p className='potteryIconsText'>יצירה מיקצועית</p>
-  </div>
-  <div className='potteryIconsMiniDiv'>
-    <FaHeart className='potteryIcons' />
-    <p className='potteryIconsText'>גיבוש והנאה</p>
-  </div>
-  <div className='potteryIconsMiniDiv'>
-    <FaHome className='potteryIcons' />
-    <p className='potteryIconsText'>לוקחים הביתה</p>
-  </div>
-  </div>
+            <div className='potteryIconsMiniDiv'>
+              <PiFlowerLotusBold className='potteryIcons' />
+              <p className='potteryIconsText'> מרגיע</p>
+            </div>
+            <div className='potteryIconsMiniDiv'>
+              <FaPaintBrush className='potteryIcons' />
+              <p className='potteryIconsText'>יצירה מיקצועית</p>
+            </div>
+            <div className='potteryIconsMiniDiv'>
+              <FaHeart className='potteryIcons' />
+              <p className='potteryIconsText'>גיבוש והנאה</p>
+            </div>
+            <div className='potteryIconsMiniDiv'>
+              <FaHome className='potteryIcons' />
+              <p className='potteryIconsText'>לוקחים הביתה</p>
+            </div>
+          </div>
 
-  <div id='twoPotteryVideos'>
-  <video id="video13" src={video13} autoPlay loop muted />
-  <video id="video12" src={video12} autoPlay loop muted />
-</div>
+          <div id='twoPotteryVideos'>
+            <video id="video13" src={video13} autoPlay loop muted title='וידאו המדגים תוצרים של סדנת הקדרות' />
+            <video id="video12" src={video12} autoPlay loop muted title='וידאו המדגים תוצרים של סדנת הקדרות' />
+          </div>
 
 
-</div>
-<br />
-<a href="#contact" id='CTAPottery' className='CTA'>לתיאום מיידי</a>
-<br />
+        </div>
+        <br />
+        <a href="#contact" id='CTAPottery' className='CTA'>לתיאום מיידי</a>
+        <br />
 
 
 
@@ -159,30 +160,28 @@ export default function Pottery(props) {
 
         <div id='explainPotteryDiv'>
           <p id='explainPotteryText'>
-           
-          🌟 הזמינו את המשפחה, החברים או הצוות לעולם של יצירה, השראה וגילוי עצמי – בסדנת קדרות ייחודית שלא תשכחו!<br/><br/>
 
-👐 על גלגל האובניים, תתנסו בעבודה עם חומרים איכותיים, תלמדו טכניקות מסורתיות לצד שיטות מודרניות, ותעצבו כלי קרמיקה בעבודת יד – בדיוק לפי הדמיון והסגנון האישי שלכם.<br/><br/>
+            🌟 הזמינו את המשפחה, החברים או הצוות לעולם של יצירה, השראה וגילוי עצמי – בסדנת קדרות ייחודית שלא תשכחו!<br /><br />
 
-✨ אין צורך בניסיון קודם – רק סקרנות, חיוך ורצון ליצור משהו משלכם!<br/><br/>
+            👐 על גלגל האובניים, תתנסו בעבודה עם חומרים איכותיים, תלמדו טכניקות מסורתיות לצד שיטות מודרניות, ותעצבו כלי קרמיקה בעבודת יד – בדיוק לפי הדמיון והסגנון האישי שלכם.<br /><br />
 
-📍 מושלם לימי גיבוש, אירועים משפחתיים או סתם מתנה מקורית לעצמכם.<br/><br/>
+            ✨ אין צורך בניסיון קודם – רק סקרנות, חיוך ורצון ליצור משהו משלכם!<br /><br />
 
-
+            📍 מושלם לימי גיבוש, אירועים משפחתיים או סתם מתנה מקורית לעצמכם.<br /><br />
 
 
-         
 
-          ✨ הסדנה מספקת: <br />
-          ✅ שימוש בציוד מקצועי ברמה הגבוהה ביותר <br />
-          ✅ הדרכה אישית ומקצועית ממומחים בעלי שם עולמי בתחום שימור העתיקות והמלאכות העתיקות <br />
-          ✅ חוויה יצירתית שמתאימה לכל רמות הניסיון – גם למתחילים! <br /><br />
- ובסיום? יצירות הקרמיקה המרהיבות שלכם ילכו איתכם הביתה!  <br /><br />
-</p>   
+
+
+
+            ✨ הסדנה מספקת: <br />
+            ✅ שימוש בציוד מקצועי ברמה הגבוהה ביותר <br />
+            ✅ הדרכה אישית ומקצועית ממומחים בעלי שם עולמי בתחום שימור העתיקות והמלאכות העתיקות <br />
+            ✅ חוויה יצירתית שמתאימה לכל רמות הניסיון – גם למתחילים! <br /><br />
+            ובסיום? יצירות הקרמיקה המרהיבות שלכם ילכו איתכם הביתה!  <br /><br />
+          </p>
         </div>
 
-      
-   
 
 
 
@@ -190,14 +189,16 @@ export default function Pottery(props) {
 
 
 
-      <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel}/>  
-
-      
 
 
+        <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
 
 
-  
+
+
+
+
+
 
 
 
@@ -205,40 +206,41 @@ export default function Pottery(props) {
 
         <div className="textPhotoContainerPottery"></div>
         <p id='textPhoto161'>פעילויות גיבוש </p>
-         
-          <img id='photo174' src={photo204} alt="" />
-   
 
-     
+        <img id='photo174' src={photo204} loading="lazy" alt="לקוחות מרוצים מציגים את יצירותיהם מול חזית הגלריה שלנו" />
+
+
+
 
       </FadeIn>
 
 
       <section class="pricing-section">
-                <h2 class="pricing-title">🎟️ מחירים ותיאום סדנאות</h2>
+        <h2 class="pricing-title">🎟️ מחירים ותיאום סדנאות</h2>
 
-                <div class="pricing-grid">
+        <div class="pricing-grid">
 
-                <a href="#contact" className='pricingLink'>
-                        <div class="price-card">
-                            <h3>🏺 סדנאות קדרות</h3>
-                            <ul>
+          <a href="#contact" className='pricingLink'>
+            <div class="price-card">
+              <h3>🏺 סדנאות קדרות</h3>
+              <ul>
 
-                                <li>👨‍👩‍👧‍👦 מחיר לסדנה: 250₪ לאדם </li>
-                                {/* <li>🏢 סדנה לחברות: תמחור מותאם אישית</li> */}
-                            </ul>
-                        </div>
-                    </a>
-
-                  
-                </div>
+                <li>👨‍👩‍👧‍👦 מחיר לסדנה: 250₪ לאדם </li>
+                {/* <li>🏢 סדנה לחברות: תמחור מותאם אישית</li> */}
+              </ul>
+            </div>
+          </a>
 
 
-                <p class="pricing-note">המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊</p>
-                <a href="#contact" class="cta-button">📩 הזמינו עכשיו</a>
-            </section>
+        </div>
+
+
+        <p class="pricing-note">המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊</p>
+        <a href="#contact" class="cta-button">📩 הזמינו עכשיו</a>
+      </section>
 
       <Contact />
+      <Footer />
     </div>
   )
 }

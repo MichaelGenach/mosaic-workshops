@@ -4,6 +4,7 @@ import { Link, useNavigate, } from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import './Home.css';
 import Faq from './Faq'
+import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
 import axios from 'axios';
 import logo from './images/logo.jpg'
@@ -44,32 +45,11 @@ import photo33 from './images/photo33.jpg'
 // import photo35 from './images/photo35.jpg'
 import photo36 from './images/photo36.jpg'
 import photo37 from './images/photo37.jpg'
-import photo64 from './images/photo64.jpg'
-import photo73 from './images/photo73.jpg'
 import photo74 from './images/photo74.jpg'
-import photo98 from './images/photo98.jpg'
-import photo99 from './images/photo99.jpg'
-import photo100 from './images/photo100.jpg'
-import photo101 from './images/photo101.jpg'
-import photo102 from './images/photo102.jpg'
-import photo107 from './images/photo107.jpg'
-import photo108 from './images/photo108.jpg'
-import photo118 from './images/photo118.jpg'
 import photo121 from './images/photo121.jpg'
-import photo122 from './images/photo122.jpg'
-import photo123 from './images/photo123.jpg'
 import photo124 from './images/photo124.jpg'
-import photo126 from './images/photo126.jpg'
 import photo146 from './images/photo146.jpg'
-import photo147 from './images/photo147.jpg'
-import photo148 from './images/photo148.jpg'
-import photo155 from './images/photo155.jpg'
-import photo97 from './images/photo97.jpg'
-import photo103 from './images/photo103.jpg'
-import photo104 from './images/photo104.jpg'
 import photo105 from './images/photo105.jpg'
-import photo106 from './images/photo106.jpg'
-import photo109 from './images/photo109.jpg'
 import photo110 from './images/photo110.jpg'
 import photo111 from './images/photo111.jpg'
 import photo112 from './images/photo112.jpg'
@@ -80,50 +60,19 @@ import photo116 from './images/photo116.jpg'
 import photo117 from './images/photo117.jpg'
 import photo119 from './images/photo119.jpg'
 import photo120 from './images/photo120.jpg'
-import photo125 from './images/photo125.jpg'
-import photo127 from './images/photo127.jpg'
-import photo128 from './images/photo128.jpg'
-import photo129 from './images/photo129.jpg'
-import photo130 from './images/photo130.jpg'
-import photo131 from './images/photo131.jpg'
 import photo132 from './images/photo132.jpg'
 import photo133 from './images/photo133.jpg'
-import photo134 from './images/photo134.jpg'
-import photo135 from './images/photo135.jpg'
-import photo136 from './images/photo136.jpg'
-import photo137 from './images/photo137.jpg'
 import photo138 from './images/photo138.jpg'
 import photo139 from './images/photo139.jpg'
 import photo140 from './images/photo140.jpg'
-import photo141 from './images/photo141.jpg'
-import photo142 from './images/photo142.jpg'
-import photo143 from './images/photo143.jpg'
-import photo144 from './images/photo144.jpg'
-import photo145 from './images/photo145.jpg'
-import photo149 from './images/photo149.jpg'
-import photo150 from './images/photo150.jpg'
-import photo151 from './images/photo151.jpg'
-import photo152 from './images/photo152.jpg'
-import photo153 from './images/photo153.jpg'
-import photo154 from './images/photo154.jpg'
-import photo156 from './images/photo156.jpg'
-import photo157 from './images/photo157.jpg'
-import photo158 from './images/photo158.jpg'
-import photo159 from './images/photo159.jpg'
-import photo160 from './images/photo160.jpg'
-import googleStars from './images/googleStars.png'
 import photo196 from './images/photo196.jpg'
-import photo161 from './images/photo161.jpg'
 import photo162 from './images/photo162.jpg'
-import photo163 from './images/photo163.jpg'
 import photo164 from './images/photo164.jpg'
 import photo165 from './images/photo165.jpg'
-import photo174 from './images/photo174.jpg'
 import photo180 from './images/photo180.jpg'
 import photo181 from './images/photo181.jpg'
 import photo182 from './images/photo182.jpg'
 import photo183 from './images/photo183.jpg'
-
 import photo186 from './images/photo186.jpg'
 import photo187 from './images/photo187.jpg'
 import photo189 from './images/photo189.jpg'
@@ -186,8 +135,6 @@ import photo254 from './images/photo254.jpg'
 
 import video1 from './videos/video1.mov'
 import Contact from './Contact';
-import BookingWidget from './BookingWidget';
-import BookingComponent from './BookingComponent';
 import Reviews from './Reviews';
 import Pricing from './Pricing'
 
@@ -198,7 +145,7 @@ export default function Home(props) {
 
 
 
-  const arrPhotoCarousel = [ photo3, photo4, photo5, photo7, photo8, photo11, photo13, photo15, photo16, photo17, photo18, photo19,
+  const arrPhotoCarousel = [photo3, photo4, photo5, photo7, photo8, photo11, photo13, photo15, photo16, photo17, photo18, photo19,
     photo20, photo21, photo23, photo24, photo25, photo26, photo27, photo28, photo29, photo30, photo31,
     photo32, photo33, photo36, photo55, photo56, photo75, photo105, photo110, photo111, photo113, photo114,
     photo115, photo116, photo117, photo119, photo120, photo121, photo124, photo132, photo133, photo138,
@@ -300,10 +247,10 @@ export default function Home(props) {
 
 
       <div id='sss' className='s'>
-        <img id='img1' src={photo74} />
-        <img id='img4' src={photo215} />
-        <img id='img3' src={photo196} />
-        <img id='img2' src={photo37} />
+        <img id='img1' src={photo74}  loading="lazy" alt="קבוצה העוסקת בהכנת פסיפס של חברת סוני"/>
+        <img id='img4' src={photo215}  loading="lazy" alt="תמונת סלפי של קבוצה על רקע הים לאחר סיור מרתק"/>
+        <img id='img3' src={photo196}  loading="lazy" alt="תמונה של זוג מכין יצירת קדרות בסדנא שלנו"/>
+        <img id='img2' src={photo37}  loading="lazy" alt="תמונה של לקוחות נהנים מסדנת פסיפס בוטיק בגלריה שלנו"/>
 
 
       </div>
@@ -324,7 +271,7 @@ export default function Home(props) {
 
       <Faq />
       <Contact />
-
+      <Footer />
 
 
 

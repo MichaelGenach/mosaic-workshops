@@ -429,7 +429,6 @@ export default function Reviews(props) {
                   : "reviewCard"
               }
               key={index}>
-
               <div id='nameStar'>
 
                 <h3 >{item.name}  </h3>

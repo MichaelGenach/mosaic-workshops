@@ -154,7 +154,8 @@ export default function PhotoCarousel(props) {
               >
                 <img
                   src={item}
-                  alt={`carousel-${index}`}
+                  loading="lazy"
+                  alt="תמונה הממחישה את סדנאות היצירה והסיורים המרתקים שלנו, נופים יפים, לקוחות מרוצים ומהלך הסדנאות והסיורים"
                   onLoad={(e) => handleImageLoad(e, index)}
                   onError={() => console.log('Image failed to load:', item)}
                   style={
