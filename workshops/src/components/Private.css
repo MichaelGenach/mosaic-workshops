@@ -16,7 +16,6 @@
     border: 1px solid #e0dcd1;
     border-radius: 16px;
     padding: 24px;
-    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;
@@ -96,12 +95,12 @@
 
 }
 
-#textPhoto37 {
+/* #textPhoto37 {
 
-    font-family: sans-serif;
+     
 
 
-}
+} */
 
 @media only screen and (max-width: 768px) {
 
@@ -110,7 +109,7 @@
 
 
         font-size: 3vh;
-        font-family: sans-serif
+       
     }
 
     #bottomText {
@@ -133,7 +132,7 @@
 
 #textPhoto38 {
 
-    font-family: sans-serif;
+    
     font-size: x-large;
 }
 
@@ -143,9 +142,9 @@
     /* For mobile phones: */
     #textPhoto38 {
 
-
+padding: 5px;
         font-size: 3vh;
-        font-family: sans-serif
+       
     }
 }
 

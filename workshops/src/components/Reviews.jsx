@@ -2,14 +2,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Reviews.css'
 
-export default function Reviews(props) {
+export default function Reviews({ language, }) {
   const [dragConstraintReviews, setDragConstraintReviews] = useState(0);
   const carusel = useRef();
   const container = useRef();
   const scrollInterval = useRef();
 
 
-  const reviews = [
+
+  const reviewsHe = [
     {
       name: "Eden Azulay",
       review: "היתה סדנא מהנה ומאוד מרגיעה! אמיר לימד אותנו את הטכניקה, ואפשר לנו להתנסות באובניים הסביר ותיקן בסבלנות ובשמחה. וכל זאת עם הנוף בנמל קיסריה נהנו מאוד ממליצים בחום על הסדנא",
@@ -309,6 +310,174 @@ export default function Reviews(props) {
 
   ]
 
+  const reviewsEn = [
+    {
+      name: "Eden Azulay",
+      review: "The workshop was enjoyable and very relaxing! Amir taught us the technique and patiently guided us through the pottery wheel with clarity and joy. All this with the beautiful view of Caesarea Harbor. We really enjoyed it and warmly recommend the workshop",
+      rating: 5
+    },
+    {
+      name: "Anat",
+      review: "A fun and experiential workshop. Amir is patient and an excellent instructor. Highly recommended",
+      rating: 5
+    },
+    {
+      name: "Karmit",
+      review: "Michael, we really enjoyed the tour yesterday. We appreciated your knowledge, kindness, and attitude. It was very interesting to hear about the history and the art (mosaics), and we value your expertise in these fields. Thank you for a wonderful evening, and we will recommend you to our friends",
+      rating: 5
+    },
+    {
+      name: "Shirel and Nati",
+      review: "We were at Amir's workshop this evening and are very happy we came. It was a very enjoyable experience",
+      rating: 5
+    },
+    {
+      name: "Studio o2a",
+      review: "We are an architectural firm with 11 people and went for a fun day in Caesarea. Michael tailored the tour content for us, focusing on architectural topics and challenging us with riddles. We really enjoyed it, Michael’s knowledge is very impressive! Highly recommended",
+      rating: 5
+    },
+    {
+      name: "Karen and Erez",
+      review: "A super enjoyable workshop and Amir is simply fascinating! Really pleasant energy and a small, magical place with a pastoral view of Caesarea Harbor. The workshop had a cozy, welcoming atmosphere and was very accommodating. Highly recommended 🩷",
+      rating: 5
+    },
+    {
+      name: "Jillian",
+      review: "I booked the couples workshop as a surprise for my husband and it was perfect! Amir shared about himself and was captivating. The work itself was excellent. We enjoyed every moment and I warmly recommend it",
+      rating: 5
+    },
+    {
+      name: "Liron",
+      review: "We celebrated a birthday and wanted something light and unique with movement, also for the kids. Michael adapted the content and stops according to the group’s needs. It was very interesting 😊",
+      rating: 5
+    },
+    {
+      name: "Einav and Dalit",
+      review: "We planned a mother-daughter fun day and looked for a ceramics workshop. We found Amir’s workshop in Caesarea. Beyond the perfect location, Amir conducted the workshop in a very engaging way, combining historical background with hands-on experience and plenty of patience. Thank you very much, Amir",
+      rating: 5
+    },
+    {
+      name: "A.L.",
+      review: "A fun and pleasant couple’s experience in a beautiful location! Amir was patient, helpful, and created a pleasant atmosphere 🙂",
+      rating: 5
+    },
+    {
+      name: "Noam and Oz",
+      review: "It was a wonderful workshop. We received a lot of interesting information and got to try working on the pottery wheel. Amir is experienced with fascinating stories. We really enjoyed it",
+      rating: 5
+    },
+    {
+      name: "Hila",
+      review: "Lovely Michael took us on an amazing, fun, and delicious tour! A truly great experience. We enjoyed and learned a lot, with a perfect cheese platter and an interesting pottery lesson. Highly recommended",
+      rating: 5
+    },
+    {
+      name: "Adi and Dvir",
+      review: "We were at Amir’s workshop this morning and it was excellent. The introduction was very interesting and connected us to the creation process. Amir explained and demonstrated gently and patiently, making sure we both left with finished pottery. Highly recommended 🙏",
+      rating: 5
+    },
+    {
+      name: "Tami Niv",
+      review: "A beautiful pastoral place. Amir has vast knowledge, calmly explains the activity and its historical connection, and lets you do everything yourself. It’s a chance to disconnect from the noise of life, return to childhood, and work with your hands joyfully. A wonderful experience, thank you Amir",
+      rating: 5
+    },
+    {
+      name: "Eran Bensal",
+      review: "Amir was lovely and pleasant and everything went smoothly",
+      rating: 5
+    },
+    {
+      name: "Almog Nahum",
+      review: "We attended Amir’s family pottery workshop (5 people) and enjoyed every moment! He was patient, kind, clear in explanations, and made us all feel comfortable—even those using the material for the first time. The workshop was fun and creative, and we left with pottery we made ourselves and a special family experience. Highly recommended",
+      rating: 5
+    },
+    {
+      name: "Amir",
+      review: "It was wonderful",
+      rating: 5
+    },
+    {
+      name: "Adva Nof",
+      review: "A very quiet, calm, and intimate experience in Amir’s pleasant studio. We got over two hours of pure escape. We really enjoyed it as a couple, also the conversation with Amir, his professionalism, and the creation we made. Highly recommended",
+      rating: 5
+    },
+    {
+      name: "Carmel and Dana Su",
+      review: "We were at Amir’s couples workshop and it was simply perfect! Amir, thank you very much for your patience, kindness, calmness, detailed explanations, and expanding our knowledge. Highly recommended",
+      rating: 5
+    },
+    {
+      name: "Tali",
+      review: "We went on a fun day out with 6 girls from work. We wanted a quality and not too long experience before a busy day. Choosing Michael was excellent. We had a short, very comprehensive tour of Caesarea Antiquities and eagerly listened to the stories woven into Caesarea’s history. Michael was brilliant with his knowledge, presentation, and ability to captivate us. Highly recommend 🥂",
+      rating: 5
+    },
+    {
+      name: "Gicha and Itai Froilich",
+      review: "It was an enlightening and fun couple’s experience. Amir enriched our knowledge and gave us a very enjoyable workshop. Highly recommended",
+      rating: 5
+    },
+    {
+      name: "Benny and Hila",
+      review: "We visited Amir’s studio to celebrate Hila’s birthday with a couple’s workshop. Very pleasant atmosphere. Amir is a professional with great, very interesting explanations about materials, their types, preservation, restoration, archaeology, and more. It was fun and highly recommended",
+      rating: 5
+    },
+    {
+      name: "Gideon",
+      review: "A wonderful experience! The workshop exceeded our expectations as a couple and much more. Amir invested in every detail with great patience and kindness. Thank you also for sharing your deep knowledge and experience about an ancient and magical world",
+      rating: 5
+    },
+    {
+      name: "Nitzan",
+      review: "A fun and highly recommended experience! Amir is professional and patient with fascinating stories and explanations. The workshop is held in a pleasant and inviting atmosphere. We really enjoyed it",
+      rating: 5
+    },
+    {
+      name: "Adi and Aviva",
+      review: "Pottery workshop with added value! Beyond the pleasant and enjoyable experience of working with clay, Amir brings a lot of knowledge in archaeology. We learned a lot and enjoyed ourselves",
+      rating: 5
+    },
+    {
+      name: "Ya’ala",
+      review: "We attended a family workshop for my dad’s birthday. It was especially fascinating and enjoyable! Amir was very patient and ensured we all left satisfied with beautiful pottery. There were sirens near the end of the workshops and we ran to the protected area nearby. After the sirens, we returned to the studio and finished our creations despite the alerts and rockets. We left very satisfied; it was fascinating and simply a pleasure",
+      rating: 5
+    },
+    {
+      name: "Lin and Idan",
+      review: "We attended a couples workshop that was absolutely perfect! Amir was very patient with us and helped a lot. He has great knowledge and feels truly professional. A special and different experience for couples to break routine—totally fun. Highly recommended",
+      rating: 5
+    },
+    {
+      name: "Matan Halabi",
+      review: "It was an amazing workshop. We learned about all the materials and history, and then tried it ourselves. A fun and bonding couples experience. Amir is a patient instructor who gives tips and help when needed, and most importantly, creates a pleasant and calm atmosphere. We will definitely come back for more workshops",
+      rating: 5
+    },
+    {
+      name: "Yarden and Oren",
+      review: "It was truly an amazing experience. Amir was very patient with all of us, including those who had more difficulty with the tasks requiring fine motor skills. He was so patient and always tried to guide us until we succeeded in creating something really beautiful. On the management side, we were a large group of 11 people and all left with finished pieces in hand. Overall, it was a truly amazing experience—pure escape. I recommend it to everyone and want to say a big thank you to Amir",
+      rating: 5
+    },
+    {
+      name: "Victoria",
+      review: "Amazing workshop! We worked with two types of materials and took the pottery home, which was wow 🥳. Everything was done patiently and with professional and sensitive explanations ☺️",
+      rating: 5
+    },
+    {
+      name: "Gal and Omer",
+      review: "A fun and pleasant couples experience in an amazing location. Amir was patient and fascinating with his vast knowledge, attentive and helpful whenever we needed him. Thank you very much, Amir, we really enjoyed it",
+      rating: 5
+    },
+    {
+      name: "Racheli",
+      review: "We attended a couples workshop with Amir. It was very educational and informative. Amir patiently guided us at every step with explanations and tips to leave with a finished product and a sense of success and a positive experience. Highly recommended",
+      rating: 5
+    }
+  ];
+
+
+
+
+  const reviews = language === 'he' ? reviewsHe : reviewsEn;
+
 
   useEffect(() => {
     const el = container.current;
@@ -417,6 +586,10 @@ export default function Reviews(props) {
           style={{
             display: 'flex',
             flexDirection: 'row',
+
+        
+
+
           }}
 
         >

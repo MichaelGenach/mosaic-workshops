@@ -88,20 +88,82 @@ import { GiCalendarHalfYear } from "react-icons/gi";
 import { PiFlowerLotusBold } from "react-icons/pi";
 import { FaHome } from "react-icons/fa";
 
+const translations = {
+  he: {
+    title: 'סדנאות קדרות',
+    icons: ['מרגיע', 'יצירה מקצועית', 'גיבוש והנאה', 'לוקחים הביתה'],
+    cta: 'לתיאום מיידי',
+    description: `🌟 הזמינו את המשפחה, החברים או הצוות לעולם של יצירה, השראה וגילוי עצמי – בסדנת קדרות ייחודית שלא תשכחו!
 
-export default function Pottery(props) {
+👐 על גלגל האובניים, תתנסו בעבודה עם חומרים איכותיים, תלמדו טכניקות מסורתיות לצד שיטות מודרניות, ותעצבו כלי קרמיקה בעבודת יד – בדיוק לפי הדמיון והסגנון האישי שלכם.
+
+✨ אין צורך בניסיון קודם – רק סקרנות, חיוך ורצון ליצור משהו משלכם!
+
+📍 מושלם לימי גיבוש, אירועים משפחתיים או סתם מתנה מקורית לעצמכם.
+
+✨ הסדנה מספקת: 
+✅ שימוש בציוד מקצועי ברמה הגבוהה ביותר 
+✅ הדרכה אישית ומקצועית ממומחים בעלי שם עולמי בתחום שימור העתיקות והמלאכות העתיקות 
+✅ חוויה יצירתית שמתאימה לכל רמות הניסיון – גם למתחילים! 
+
+ובסיום? יצירות הקרמיקה המרהיבות שלכם ילכו איתכם הביתה!`,
+    galleryText: 'פעילויות גיבוש',
+    pricingTitle: '🎟️ מחירים ותיאום סדנאות',
+    potteryWorkshop: '🏺 סדנאות קדרות',
+    pricePerPerson: '👨‍👩‍👧‍👦 מחיר לסדנה: 250₪ לאדם',
+    pricingNote: 'המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊',
+    orderNow: '📩 הזמינו עכשיו'
+  },
+  en: {
+    title: 'Pottery Workshops',
+    icons: ['Relaxing', 'Pro creation', 'Team bonding', 'Take it home'],
+    cta: 'Book Now',
+    description: `🌟 Invite your family, friends or team to a world of creativity, inspiration, and self-discovery in a unique pottery workshop you won't forget!
+
+👐 Experience the potter's wheel, work with quality materials, learn traditional and modern techniques, and create handmade ceramics – exactly as you imagine.
+
+✨ No prior experience needed – just curiosity, a smile, and a desire to create something of your own!
+
+📍 Perfect for team events, family gatherings, or an original gift for yourself.
+
+✨ The workshop includes: 
+✅ Use of the highest quality professional equipment 
+✅ Personal guidance from world-renowned experts in ancient crafts and restoration 
+✅ A creative experience suitable for all levels – beginners welcome! 
+
+And at the end? Your stunning ceramic creations go home with you!`,
+    galleryText: 'Team Activities',
+    pricingTitle: '🎟️ Prices & Booking',
+    potteryWorkshop: '🏺 Pottery Workshops',
+    pricePerPerson: '👨‍👩‍👧‍👦 Price: 250₪ per person',
+    pricingNote: 'Prices include materials, professional instruction, and a unique seaside atmosphere 🌊',
+    orderNow: '📩 Book Now'
+  }
+}
+
+const altTexts = {
+  photo204: {
+    he: "לקוחות מציגים את יצירותיהם",
+    en: "Customers showcasing their creations",
+    // כאן אפשר להוסיף שפות נוספות בעתיד
+  },
+  // אם תרצה להוסיף alt לתמונות אחרות, תוסיף כאן באופן דומה
+};
 
 
+export default function Pottery({ language , languageSettings }) {
 
-  const arrPhotoCarousel = [,
-    //  photo209, photo210,
+  const t = translations[language];
+  const settings = languageSettings[language]
+
+  const arrPhotoCarousel = [
     photo203, photo202, photo199, photo198, photo200, photo201, photo162, photo189, photo190, photo180,
-    photo181, photo182, photo183, photo194, photo164, photo165, photo186, photo187, photo191, photo216, photo217, photo218, photo219, photo220,
-    photo221, photo222, photo223, photo224, photo225, photo226, photo227, photo228, photo229, photo230,
-    photo231, photo232, photo233, photo234, photo235, photo236, photo237, photo238, photo239, photo240,
-    photo241, photo242, photo243, photo244, photo245, photo246, photo247, photo248, photo249, photo250,
-    photo251, photo252, photo253, photo254]
-
+    photo181, photo182, photo183, photo194, photo164, photo165, photo186, photo187, photo191, photo216,
+    photo217, photo218, photo219, photo220, photo221, photo222, photo223, photo224, photo225, photo226,
+    photo227, photo228, photo229, photo230, photo231, photo232, photo233, photo234, photo235, photo236,
+    photo237, photo238, photo239, photo240, photo241, photo242, photo243, photo244, photo245, photo246,
+    photo247, photo248, photo249, photo250, photo251, photo252, photo253, photo254
+  ]
 
   return (
     <div id='mainDivPottery'>
@@ -109,142 +171,68 @@ export default function Pottery(props) {
 
       <FadeIn>
         <div id='headLine'>
-          <h1> סדנאות קדרות </h1>
-
+          <h1>{t.title}</h1>
         </div>
-
 
         <div id='twoPotteryVideosAndIcons'>
 
-
-
-
-
-
-
           <div id='potteryIconsDiv'>
-
-            <div className='potteryIconsMiniDiv'>
-              <PiFlowerLotusBold className='potteryIcons' />
-              <p className='potteryIconsText'> מרגיע</p>
-            </div>
-            <div className='potteryIconsMiniDiv'>
-              <FaPaintBrush className='potteryIcons' />
-              <p className='potteryIconsText'>יצירה מיקצועית</p>
-            </div>
-            <div className='potteryIconsMiniDiv'>
-              <FaHeart className='potteryIcons' />
-              <p className='potteryIconsText'>גיבוש והנאה</p>
-            </div>
-            <div className='potteryIconsMiniDiv'>
-              <FaHome className='potteryIcons' />
-              <p className='potteryIconsText'>לוקחים הביתה</p>
-            </div>
+            <div className='potteryIconsMiniDiv'><PiFlowerLotusBold className='potteryIcons' /><p className='potteryIconsText'>{t.icons[0]}</p></div>
+            <div className='potteryIconsMiniDiv'><FaPaintBrush className='potteryIcons' /><p className='potteryIconsText'>{t.icons[1]}</p></div>
+            <div className='potteryIconsMiniDiv'><FaHeart className='potteryIcons' /><p className='potteryIconsText'>{t.icons[2]}</p></div>
+            <div className='potteryIconsMiniDiv'><FaHome className='potteryIcons' /><p className='potteryIconsText'>{t.icons[3]}</p></div>
           </div>
 
           <div id='twoPotteryVideos'>
-            <video id="video13" src={video13} autoPlay loop muted title='וידאו המדגים תוצרים של סדנת הקדרות' />
-            <video id="video12" src={video12} autoPlay loop muted title='וידאו המדגים תוצרים של סדנת הקדרות' />
+            <video id="video13" src={video13} autoPlay loop muted title="Pottery workshop video demo" />
+            <video id="video12" src={video12} autoPlay loop muted title="Pottery workshop video demo" />
           </div>
 
-
         </div>
+
         <br />
-        <a href="#contact" id='CTAPottery' className='CTA'>לתיאום מיידי</a>
+        <a href="#contact" id='CTAPottery' className='CTA'>{t.cta}</a>
         <br />
-
-
-
-
-
 
         <div id='explainPotteryDiv'>
-          <p id='explainPotteryText'>
-
-            🌟 הזמינו את המשפחה, החברים או הצוות לעולם של יצירה, השראה וגילוי עצמי – בסדנת קדרות ייחודית שלא תשכחו!<br /><br />
-
-            👐 על גלגל האובניים, תתנסו בעבודה עם חומרים איכותיים, תלמדו טכניקות מסורתיות לצד שיטות מודרניות, ותעצבו כלי קרמיקה בעבודת יד – בדיוק לפי הדמיון והסגנון האישי שלכם.<br /><br />
-
-            ✨ אין צורך בניסיון קודם – רק סקרנות, חיוך ורצון ליצור משהו משלכם!<br /><br />
-
-            📍 מושלם לימי גיבוש, אירועים משפחתיים או סתם מתנה מקורית לעצמכם.<br /><br />
-
-
-
-
-
-
-            ✨ הסדנה מספקת: <br />
-            ✅ שימוש בציוד מקצועי ברמה הגבוהה ביותר <br />
-            ✅ הדרכה אישית ומקצועית ממומחים בעלי שם עולמי בתחום שימור העתיקות והמלאכות העתיקות <br />
-            ✅ חוויה יצירתית שמתאימה לכל רמות הניסיון – גם למתחילים! <br /><br />
-            ובסיום? יצירות הקרמיקה המרהיבות שלכם ילכו איתכם הביתה!  <br /><br />
-          </p>
+          <p id='explainPotteryText' style={{
+    direction: settings.direction,
+    textAlign: settings.textAlign
+  }}>{t.description}</p>
         </div>
-
-
-
-
-
-
-
-
-
 
         <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
 
-
-
-
-
-
-
-
-
-
-
-
         <div className="textPhotoContainerPottery"></div>
-        <p id='textPhoto161'>פעילויות גיבוש </p>
+        <p id='textPhoto161'>{t.galleryText}</p>
 
-        <img id='photo174' src={photo204} loading="lazy" alt="לקוחות מרוצים מציגים את יצירותיהם מול חזית הגלריה שלנו" />
-
-
-
+        <img
+          id='photo204'
+          src={photo204}
+          loading="lazy"
+          alt={altTexts.photo204[language]}
+        />
 
       </FadeIn>
 
-
-      <section class="pricing-section">
-        <h2 class="pricing-title">🎟️ מחירים ותיאום סדנאות</h2>
-
-        <div class="pricing-grid">
-
+      <section className="pricing-section">
+        <h2 className="pricing-title">{t.pricingTitle}</h2>
+        <div className="pricing-grid">
           <a href="#contact" className='pricingLink'>
-            <div class="price-card">
-              <h3>🏺 סדנאות קדרות</h3>
+            <div className="price-card">
+              <h3>{t.potteryWorkshop}</h3>
               <ul>
-
-                <li>👨‍👩‍👧‍👦 מחיר לסדנה: 250₪ לאדם </li>
-                {/* <li>🏢 סדנה לחברות: תמחור מותאם אישית</li> */}
+                <li>{t.pricePerPerson}</li>
               </ul>
             </div>
           </a>
-
-
         </div>
-
-
-        <p class="pricing-note">המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊</p>
-        <a href="#contact" class="cta-button">📩 הזמינו עכשיו</a>
+        <p className="pricing-note">{t.pricingNote}</p>
+        <a href="#contact" className="cta-button">{t.orderNow}</a>
       </section>
 
-      <Contact />
-      <Footer />
+      <Contact language={language} languageSettings={languageSettings} />
+      <Footer language={language}  languageSettings={languageSettings} />
     </div>
   )
 }
-
-
-
-

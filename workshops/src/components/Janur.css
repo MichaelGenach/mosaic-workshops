@@ -16,6 +16,7 @@
     justify-content: space-evenly;
     direction: rtl;
 margin-bottom: 3rem;
+padding: 5px;
 
 }
 
@@ -24,7 +25,6 @@ margin-bottom: 3rem;
     border: 1px solid #e0dcd1;
     border-radius: 16px;
     padding: 24px;
-    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;

@@ -48,6 +48,7 @@
 @media only screen and (max-width: 768px) {
     #eich {
         min-width: 95%;
+        
     }
 
     /* #lifratim {
@@ -60,7 +61,7 @@
     }
 
     #arriveText {
-        width: 95%;
+        width: 85%;
         margin: auto
     }
 
@@ -101,17 +102,12 @@
     font-weight: bold;
 }
 
-
-
-
-
-
-
-
 #yezirat {
     font-family: serif;
     color: darkorange;
-    font-size: 10vh;
+    font-size: 9vh;
+    padding: 5px;
+
 
 }
 
@@ -121,6 +117,7 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
+    margin-bottom: 10px;
 
 
 }
@@ -242,6 +239,7 @@
         padding-left: 4px;
         padding-right: 4px;
         padding-bottom: 10px;
+        margin-bottom: 10px;
     }
 
 
@@ -270,6 +268,10 @@
         margin-left: 7.5vw;
         margin-right: 8vw;
 
+    }
+
+    #emailInfo{
+        margin-top: 5px;
     }
 }
 

@@ -1,26 +1,42 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './Footer.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Footer.css';
 
-export default function Footer() {
+const translations = {
+  he: {
+    rightsText: "© כל הזכויות שמורות ל- Genach Workshops",
+    accessibilityLinkText: "הצהרת נגישות",
+  },
+  en: {
+    rightsText: "© All rights reserved to Genach Workshops",
+    accessibilityLinkText: "Accessibility Statement",
+  },
+  // אפשר להוסיף שפות נוספות כאן בעתיד
+};
 
+export default function Footer({ language, languageSettings }) {
+  const { rightsText, accessibilityLinkText } = translations[language];
 
+  // תיקון: צריך לעטוף קריאת window.scrollTo בפונקציה כדי לא לקרוא מיד
+  const handleClick = () => window.scrollTo(0, 0);
+  const settings = languageSettings[language];
 
   return (
-    <div>
+    <footer className="footer">
+      <p style={{
+        direction: settings.direction,
 
-      <footer className="footer">
-        <p>© כל הזכויות שמורות ל- Genach Workshops</p>
-        <Link
-          to="/hazharatNegishut"
-          id="hazharatNegishutLink"
-          onClick={window.scrollTo(0, 0)}
-        >
-          הצהרת נגישות
-        </Link>
+      }}>{rightsText}</p>
+      <Link style={{
+        direction: settings.direction,
 
-      </footer>
-
-    </div>
-  )
+      }}
+        to="/hazharatNegishut"
+        id="hazharatNegishutLink"
+        onClick={handleClick}
+      >
+        {accessibilityLinkText}
+      </Link>
+    </footer>
+  );
 }

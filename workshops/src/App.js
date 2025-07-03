@@ -11,36 +11,56 @@ import Tours from './components/Tours';
 import Pottery from './components/Pottery';
 import Janur from './components/Janur';
 import HazharatNegishut from './components/HazharatNegishut';
+import Contact from './components/Contact';
 
 
 
 function App() {
 
-  const [width, setWidth] = useState(0);
+  const [language, setLanguage] = useState('he'); // 'he' עברית, 'en' אנגלית
+
+  const languageSettings = {
+    he: {
+      direction: 'rtl',
+      textAlign: 'right'
+    },
+    en: {
+      direction: 'ltr',
+      textAlign: 'left'
+    },
+  }
+
+  const fontsByLanguage = {
+    he: "'Segoe UI', 'Helvetica Neue', sans-serif",
+    en: "'Segoe UI', 'Helvetica Neue', sans-serif"
+  };
+
+
   useEffect(() => {
     TagManager.initialize({ gtmId: 'GTM-ND4DK7X2' }); // הכנס את ה-GTM שלך כאן
- console.log('Google tag works!') }, []);
+    console.log('Google tag works!')
+  }, []);
+
+
+
+
 
   return (
-    <div className="App">
-     
-   
+    <div className="App" style={{fontFamily: fontsByLanguage[language]}}>
+
+
       <BrowserRouter>
-       
-          <Menu />
-     
+        <Menu language={language} setLanguage={setLanguage} languageSettings={languageSettings} />
 
-          <Routes>
-            <Route path='/' element={<Home width={width} setWidth={setWidth} />} />
-            <Route path='/private' element={<Private width={width} setWidth={setWidth} />} />
-            <Route path='/company' element={<Company width={width} setWidth={setWidth} />} />
-            <Route path='/tours' element={<Tours width={width} setWidth={setWidth} />} />
-            <Route path='/pottery' element={<Pottery width={width} setWidth={setWidth} />} />
-            <Route path='/janur' element={<Janur width={width} setWidth={setWidth} />} />
-            <Route path='/hazharatNegishut' element={<HazharatNegishut />} />
-      
-
-          </Routes>
+        <Routes>
+          <Route path='/' element={<Home language={language} languageSettings={languageSettings} />} />
+          <Route path='/private' element={<Private language={language} languageSettings={languageSettings} />} />
+          <Route path='/company' element={<Company language={language} languageSettings={languageSettings} />} />
+          <Route path='/tours' element={<Tours language={language} languageSettings={languageSettings} />} />
+          <Route path='/pottery' element={<Pottery language={language} languageSettings={languageSettings} />} />
+          <Route path='/janur' element={<Janur language={language} languageSettings={languageSettings} />} />
+          <Route path='/hazharatNegishut' element={<HazharatNegishut language={language} languageSettings={languageSettings} />} />
+        </Routes>
 
       </BrowserRouter>
     </div>

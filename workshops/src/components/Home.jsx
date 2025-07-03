@@ -1,27 +1,28 @@
-import { React, useState, useEffect, useRef } from 'react'
+import { React } from 'react'
 import { motion } from "framer-motion"
-import { Link, useNavigate, } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import './Home.css';
 import Faq from './Faq'
 import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
-import axios from 'axios';
-import logo from './images/logo.jpg'
-import photo1 from './images/photo1.jpg'
-import photo2 from './images/photo2.jpg'
+import Reviews from './Reviews';
+import Pricing from './Pricing';
+import Contact from './Contact';
+import video1 from './videos/video1.mov'
+import photo74 from './images/photo74.jpg'
+import photo215 from './images/photo215.jpg'
+import photo196 from './images/photo196.jpg'
+import photo37 from './images/photo37.jpg'
+
+// שאר התמונות לקרוסלה
 import photo3 from './images/photo3.jpg'
 import photo4 from './images/photo4.jpg'
 import photo5 from './images/photo5.jpg'
-import photo6 from './images/photo6.jpg'
 import photo7 from './images/photo7.jpg'
 import photo8 from './images/photo8.jpg'
-// import photo9 from './images/photo9.jpg'
-// import photo10 from './images/photo10.jpg'
 import photo11 from './images/photo11.jpg'
-// import photo12 from './images/photo12.jpg'
 import photo13 from './images/photo13.jpg'
-// import photo14 from './images/photo14.jpg'
 import photo15 from './images/photo15.jpg'
 import photo16 from './images/photo16.jpg'
 import photo17 from './images/photo17.jpg'
@@ -29,7 +30,6 @@ import photo18 from './images/photo18.jpg'
 import photo19 from './images/photo19.jpg'
 import photo20 from './images/photo20.jpg'
 import photo21 from './images/photo21.jpg'
-// import photo22 from './images/photo22.jpg'
 import photo23 from './images/photo23.jpg'
 import photo24 from './images/photo24.jpg'
 import photo25 from './images/photo25.jpg'
@@ -41,18 +41,13 @@ import photo30 from './images/photo30.jpg'
 import photo31 from './images/photo31.jpg'
 import photo32 from './images/photo32.jpg'
 import photo33 from './images/photo33.jpg'
-// import photo34 from './images/photo34.jpg'
-// import photo35 from './images/photo35.jpg'
 import photo36 from './images/photo36.jpg'
-import photo37 from './images/photo37.jpg'
-import photo74 from './images/photo74.jpg'
-import photo121 from './images/photo121.jpg'
-import photo124 from './images/photo124.jpg'
-import photo146 from './images/photo146.jpg'
+import photo55 from './images/photo55.jpg'
+import photo56 from './images/photo56.jpg'
+import photo75 from './images/photo75.jpg'
 import photo105 from './images/photo105.jpg'
 import photo110 from './images/photo110.jpg'
 import photo111 from './images/photo111.jpg'
-import photo112 from './images/photo112.jpg'
 import photo113 from './images/photo113.jpg'
 import photo114 from './images/photo114.jpg'
 import photo115 from './images/photo115.jpg'
@@ -60,12 +55,14 @@ import photo116 from './images/photo116.jpg'
 import photo117 from './images/photo117.jpg'
 import photo119 from './images/photo119.jpg'
 import photo120 from './images/photo120.jpg'
+import photo121 from './images/photo121.jpg'
+import photo124 from './images/photo124.jpg'
 import photo132 from './images/photo132.jpg'
 import photo133 from './images/photo133.jpg'
 import photo138 from './images/photo138.jpg'
 import photo139 from './images/photo139.jpg'
 import photo140 from './images/photo140.jpg'
-import photo196 from './images/photo196.jpg'
+import photo146 from './images/photo146.jpg'
 import photo162 from './images/photo162.jpg'
 import photo164 from './images/photo164.jpg'
 import photo165 from './images/photo165.jpg'
@@ -83,14 +80,11 @@ import photo198 from './images/photo198.jpg'
 import photo199 from './images/photo199.jpg'
 import photo200 from './images/photo200.jpg'
 import photo201 from './images/photo201.jpg'
-import photo215 from './images/photo215.jpg'
-import photo214 from './images/photo214.jpg'
-import photo213 from './images/photo213.jpg'
-import photo212 from './images/photo212.jpg'
 import photo211 from './images/photo211.jpg'
-import photo55 from './images/photo55.jpg'
-import photo75 from './images/photo75.jpg'
-import photo56 from './images/photo56.jpg'
+import photo212 from './images/photo212.jpg'
+import photo213 from './images/photo213.jpg'
+import photo214 from './images/photo214.jpg'
+import photo215b from './images/photo215.jpg' // בשם אחר כדי להימנע מכפל שמות
 import photo216 from './images/photo216.jpg'
 import photo217 from './images/photo217.jpg'
 import photo218 from './images/photo218.jpg'
@@ -132,156 +126,130 @@ import photo253 from './images/photo253.jpg'
 import photo254 from './images/photo254.jpg'
 
 
+export default function Home({ language, languageSettings  }) {
 
-import video1 from './videos/video1.mov'
-import Contact from './Contact';
-import Reviews from './Reviews';
-import Pricing from './Pricing'
-
-
-
-export default function Home(props) {
-
-
-
-
-  const arrPhotoCarousel = [photo3, photo4, photo5, photo7, photo8, photo11, photo13, photo15, photo16, photo17, photo18, photo19,
+  const arrPhotoCarousel = [
+    photo3, photo4, photo5, photo7, photo8, photo11, photo13, photo15, photo16, photo17, photo18, photo19,
     photo20, photo21, photo23, photo24, photo25, photo26, photo27, photo28, photo29, photo30, photo31,
     photo32, photo33, photo36, photo55, photo56, photo75, photo105, photo110, photo111, photo113, photo114,
     photo115, photo116, photo117, photo119, photo120, photo121, photo124, photo132, photo133, photo138,
     photo139, photo140, photo146, photo162, photo164, photo165, photo180, photo181, photo182, photo183,
     photo186, photo187, photo189, photo190, photo191, photo194, photo198, photo199, photo200, photo201,
-    photo211, photo212, photo213, photo214, photo215, photo216, photo217, photo218, photo219, photo220,
+    photo211, photo212, photo213, photo214, photo215b, photo216, photo217, photo218, photo219, photo220,
     photo221, photo222, photo223, photo224, photo225, photo226, photo227, photo228, photo229, photo230,
     photo231, photo232, photo233, photo234, photo235, photo236, photo237, photo238, photo239, photo240,
     photo241, photo242, photo243, photo244, photo245, photo246, photo247, photo248, photo249, photo250,
     photo251, photo252, photo253, photo254
+  ];
 
+  const translate = {
+    he: {
+      title: "Genach Workshops",
+      subtitle: "חוויה בלתי נשכחת:  סדנאות קדרות, סדנאות פסיפסים, סיורים מרתקים והפקת ימי גיבוש בנמל קיסריה",
+      contact: "ליצירת קשר",
+      order: "להזמנה מיידית"
+    },
+    en: {
+      title: "Genach Workshops",
+      subtitle: "An unforgettable experience: Pottery workshops, mosaic workshops, fascinating tours and team-building events in Caesarea Harbor",
+      contact: "Contact Us",
+      order: "Instant Booking"
+    }
+  };
 
-  ]
+  const altTexts = {
+    img1: {
+      he: "קבוצה העוסקת בהכנת פסיפס של חברת סוני",
+      en: "A group working on a mosaic for Sony company",
 
+    },
+    img4: {
+      he: "תמונת סלפי של קבוצה על רקע הים לאחר סיור מרתק",
+      en: "Group selfie with the sea in the background after an exciting tour",
 
+    },
+    img3: {
+      he: "תמונה של זוג מכין יצירת קדרות בסדנא שלנו",
+      en: "A couple creating pottery in our workshop",
 
+    },
+    img2: {
+      he: "תמונה של לקוחות נהנים מסדנת פסיפס בוטיק בגלריה שלנו",
+      en: "Customers enjoying a boutique mosaic workshop in our gallery",
 
+    }
+  };
 
-
+  const t = translate[language];
 
 
   return (
-
-
-
     <div id='main'>
 
-
-
       <div className='container'>
-
-
-
-
         <video src={video1} autoPlay loop muted id='video1' />
+        <div id='overlay'></div>
 
-
-        <div id='overlay'>  </div>
-
-
-
-
-
-
-
-        <div className='frontTitleDiv' >
+        <div className='frontTitleDiv'>
           <div id='moveDownHome'>
-
             <FadeIn>
-
-              <h1 id='title'
-              >Genach Workshops</h1>
-              <p id='title2'>חוויה בלתי נשכחת:  סדנאות קדרות, סדנאות פסיפסים, סיורים מרתקים והפקת ימי גיבוש בנמל קיסריה </p>
-              {/* <p id='titleh2'>
-                            סדנאות מקצועיות להכנת פסיפסים וכלי קרמיקה וסיורים מרתקים מול הים עבור חברות, קבוצות ולקוחות פרטיים
-                            <br />
-                            קחו את היצירה שלכם הביתה
-
-                        </p> */}
-
-              {/* <img id='logo' src={logo} alt="" /> */}
+              <h1 id='title'>{t.title}</h1>
+              <p id='title2'>{t.subtitle}</p>
 
               <div id='lepirteiVeLasadnaDiv'>
-
                 <a href="#contact">
-                  <button
-                    id='leyezirat' > ליצירת קשר </button>
+                  <button id='leyezirat'>{t.contact}</button>
                 </a>
-
 
                 <a href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer">
                   <button id='lehazmana'>
-                    <i className="bi bi-whatsapp" id='W'></i> להזמנה מיידית
+                    <i className="bi bi-whatsapp" id='W'></i> {t.order}
                   </button>
                 </a>
-
-
-
-
               </div>
 
-              {/* <h4><span id='googleReviews'> Google Reviews</span></h4>
-                        <img id='googleStars' src={googleStars} /> */}
-
-
-
-
-              <Reviews />
-
+              <Reviews language={language}/>
             </FadeIn>
           </div>
         </div>
       </div>
 
-
-
-
-
-
-
       <div id='sss' className='s'>
-        <img id='img1' src={photo74}  loading="lazy" alt="קבוצה העוסקת בהכנת פסיפס של חברת סוני"/>
-        <img id='img4' src={photo215}  loading="lazy" alt="תמונת סלפי של קבוצה על רקע הים לאחר סיור מרתק"/>
-        <img id='img3' src={photo196}  loading="lazy" alt="תמונה של זוג מכין יצירת קדרות בסדנא שלנו"/>
-        <img id='img2' src={photo37}  loading="lazy" alt="תמונה של לקוחות נהנים מסדנת פסיפס בוטיק בגלריה שלנו"/>
+        <img
+          id='img1'
+          src={photo74}
+          loading="lazy"
+          alt={altTexts.img1[language]}
+        />
 
+        <img
+          id='img4'
+          src={photo215}
+          loading="lazy"
+          alt={altTexts.img4[language]}
+        />
 
+        <img
+          id='img3'
+          src={photo196}
+          loading="lazy"
+          alt={altTexts.img3[language]}
+        />
+
+        <img
+          id='img2'
+          src={photo37}
+          loading="lazy"
+          alt={altTexts.img2[language]}
+        />
       </div>
 
 
-
-
-
-
-      <Pricing />
-
-
+      <Pricing language={language} />
       <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
-
-      {/* <BookingWidget /> */}
-      {/* <BookingComponent /> */}
-
-
-      <Faq />
-      <Contact />
-      <Footer />
-
-
-
-
-
-
-
-
+      <Faq language={language} languageSettings={languageSettings}  />
+      <Contact language={language} languageSettings={languageSettings} />
+      <Footer language={language} languageSettings={languageSettings} />
     </div>
-
-
-  )
+  );
 }

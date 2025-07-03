@@ -35,137 +35,214 @@ import { FaWaze, FaInstagram } from "react-icons/fa";
 
 import { useRef } from 'react';
 import { motion } from "framer-motion"
+const translations = {
+    he: {
+        title: 'סיורים מרתקים',
+        icons: ['סיור פרטי', 'מטיילים ממליצים', 'מסלול לבחירתכם', 'מורה דרך מוסמך'],
+        videosAlt: [
+            "מקטע מהסיור: וידאו של ירידה במדרגות עתיקות",
+            "מקטע מהסיור: וידאו של נוף של ים",
+            "מקטע מהסיור: וידאו של רחוב עתיק ומרשים"
+        ],
+        cta: 'לתיאום מיידי',
+        experienceTitle1: '🌅 דמיינו את זה...',
+        experienceText1: 'אתם משוטטים בין חורבותיה הקסומות של קיסריה העתיקה. כל אבן לוחשת סיפור מהעבר, כל צעד מחבר אתכם לתרבות רומית מרהיבה.',
+        experienceTitle2: '🍷 ואז, עם שקיעת השמש…',
+        experienceText2: 'נעצור מול נוף עוצר נשימה, שם יחכה לכם מגש טעימות עשיר:',
+        experienceList: [
+            '🧀 גבינות בוטיק בעבודת יד',
+            '🍞 לחמים טריים וריחניים',
+            '🍷 יין משובח שיחמיא לכל ביס'
+        ],
+        experienceMusic: '🎶 כל זה מלוּוה במוזיקה חיה שתעטוף אתכם באווירה מושלמת.',
+        experiencePottery: '🎨 ולסיום – הדגמת קדרות חיה! האובניים מסתובבים, החימר מתעצב, ואתם עדים לרגע הקסם שבו חומר הופך לאמנות.',
+        whatYouGetTitle: '✨ מה תקבלו בסיור?',
+        whatYouGetList: [
+            '✅ חוויית סיור סוחפת שמחברת היסטוריה מרתקת לנופים מרהיבים',
+            '✅ תובנות מקצועיות על עולם הארכיאולוגיה ושימור אתרים',
+            '✅ סיפורים מרגשים שלא תמצאו באף ספר היסטוריה',
+            '✅ טיפים בלעדיים על המקומות הסודיים של קיסריה',
+            '✅ מדריך מוסמך ומומחה לשימור אתרים – מהצלת פסיפס הציפורים ועד הקטקומבות ברומא',
+            '✅ חוויה בלתי נשכחת!'
+        ],
+        pricingTitle: '🎟️ מחירים ותיאום סיורים',
+        pricingWorkshopTitle: '🏛️ סיורים מרתקים',
+        pricingList: [
+            '📍 סיור קבוצתי: החל מ-500₪ לסיור',
+            '🕯️ סיור עששיות ערב: החל מ-500₪ לסיור'
+        ],
+        pricingNote: 'המחירים כוללים הדרכה מקצועית ואווירה מיוחדת מול הים 🌊',
+        orderNow: '📩 הזמינו עכשיו',
+        instaLink: "https://www.instagram.com/art_music_explore/"
+    },
+    en: {
+        title: 'Fascinating Tours',
+        icons: ['Private Tour', 'Picked by Travelers', 'Route of Your Choice', 'Certified Guide'],
+        videosAlt: [
+            "Tour clip: video of descending ancient stairs",
+            "Tour clip: video of sea view",
+            "Tour clip: video of an ancient and impressive street"
+        ],
+        cta: 'Book Now',
+        experienceTitle1: '🌅 Imagine this...',
+        experienceText1: 'You stroll among the magical ruins of ancient Caesarea. Every stone whispers a story from the past, every step connects you to a magnificent Roman culture.',
+        experienceTitle2: '🍷 And then, at sunset…',
+        experienceText2: 'We stop before a breathtaking view, where a rich tasting platter awaits you:',
+        experienceList: [
+            '🧀 Handmade boutique cheeses',
+            '🍞 Fresh and fragrant breads',
+            '🍷 Fine wine that complements every bite'
+        ],
+        experienceMusic: '🎶 All accompanied by live music that wraps you in the perfect atmosphere.',
+        experiencePottery: '🎨 And finally – live pottery demonstration! The wheels spin, the clay takes shape, and you witness the magical moment when material turns into art.',
+        whatYouGetTitle: '✨ What will you get on the tour?',
+        whatYouGetList: [
+            '✅ An immersive tour experience connecting fascinating history to stunning landscapes',
+            '✅ Professional insights into archaeology and site conservation',
+            '✅ Emotional stories you won’t find in any history book',
+            '✅ Exclusive tips about Caesarea’s secret spots',
+            '✅ A certified guide and conservation expert – from saving the Birds Mosaic in Caesarea to the Jewish catacombs in Rome',
+            '✅ An unforgettable experience!'
+        ],
+        pricingTitle: '🎟️ Prices & Tour Booking',
+        pricingWorkshopTitle: '🏛️ Exciting Tours',
+        pricingList: [
+            '📍 Group tour: from 500₪ per tour',
+            '🕯️ Evening lantern tour: from 500₪ per tour'
+        ],
+        pricingNote: 'Prices include professional guidance and a special seaside atmosphere 🌊',
+        orderNow: '📩 Book Now',
+        instaLink: "https://www.instagram.com/art_music_explore/"
+    },
+    
+}
 
-export default function Tours(props) {
+export default function Tours({ language, languageSettings }) {
+    
+    const t = translations[language]
+    const settings = languageSettings[language];
 
-
-
-    const arrPhotoCarousel = [photo215, photo56, , photo214, photo213, photo211, photo55, photo75,]
-
-const instaLink = "https://www.instagram.com/art_music_explore/"
-
-
-
+    const arrPhotoCarousel = [
+        photo215,
+        photo56,
+        photo214,
+        photo213,
+        photo211,
+        photo55,
+        photo75,
+    ]
 
     return (
-
-        <div id='mainDivTours' >
+        <div id='mainDivTours'>
             <FadeIn>
                 <br /><br /><br /><br />
-                <h1 className='toursTitle'> סיורים מרתקים</h1>
+                <h1 className='toursTitle'>{t.title}</h1>
                 <br />
-  
 
                 <div id='twoToursVideosAndIcons'>
 
-
-
                     <div id='toursIconsDiv'>
-
                         <div className='toursIconsMiniDiv'>
                             <TbVip className='toursIcons' />
-                            <p className='toursIconsText'>סיור פרטי</p>
+                            <p className='toursIconsText'>{t.icons[0]}</p>
                         </div>
                         <div className='toursIconsMiniDiv'>
                             <MdOutlineRecommend className='toursIcons' />
-                            <p className='toursIconsText'>מטיילים ממליצים</p>
+                            <p className='toursIconsText'>{t.icons[1]}</p>
                         </div>
                         <div className='toursIconsMiniDiv'>
                             <TbMapStar className='toursIcons' />
-                            <p className='toursIconsText'>מסלול לבחירתכם</p>
+                            <p className='toursIconsText'>{t.icons[2]}</p>
                         </div>
-                        <div className='toursIconsMiniDiv' >
+                        <div className='toursIconsMiniDiv'>
                             <PiCertificate className='toursIcons' />
-                            <p className='toursIconsText' > מורה דרך מוסמך</p>
+                            <p className='toursIconsText'>{t.icons[3]}</p>
                         </div>
                     </div>
 
                     <div id='threeToursVideosDiv'>
-                        <video alt="מקטע מהסיור: וידאו של ירידה במדרגות עתיקות" id="madregot" src={madregot} autoPlay loop muted/>
-                        <video alt="מקטע מהסיור: וידאו של נוף של ים" id="yam" src={yam} autoPlay loop muted />
-                        <video alt="מקטע מהסיור: וידאו של רחוב עתיק ומרשים" id="porfir" src={porfir} autoPlay loop muted />
+                        <video
+                            id="madregot"
+                            src={madregot}
+                            autoPlay
+                            loop
+                            muted
+                            title={t.videosAlt[0]}
+                        />
+                        <video
+                            id="yam"
+                            src={yam}
+                            autoPlay
+                            loop
+                            muted
+                            title={t.videosAlt[1]}
+                        />
+                        <video
+                            id="porfir"
+                            src={porfir}
+                            autoPlay
+                            loop
+                            muted
+                            title={t.videosAlt[2]}
+                        />
                     </div>
-
-
                 </div>
 
+                <a href="#contact" id='CTATours' className='CTA'>{t.cta}</a>
 
-              
-                    <a href="#contact" id='CTATours' className='CTA'>לתיאום מיידי </a>
-                    
-               
+                <div id="tourExperience" style={{
+                    direction: settings.direction,
+                    textAlign: settings.textAlign
+                }}>
+                    <h2>{t.experienceTitle1}</h2>
+                    <p>{t.experienceText1}</p>
 
+                    <h3>{t.experienceTitle2}</h3>
+                    <p>{t.experienceText2}</p>
 
-                    <div id="tourExperience">
-  <h2>🌅 דמיינו את זה...</h2>
-  <p>
-    אתם משוטטים בין חורבותיה הקסומות של קיסריה העתיקה. כל אבן לוחשת סיפור מהעבר,
-    כל צעד מחבר אתכם לתרבות רומית מרהיבה.
-  </p>
+                    <ul>
+                        {t.experienceList.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                        ))}
+                    </ul>
 
-  <h3>🍷 ואז, עם שקיעת השמש…</h3>
-  <p>
-    נעצור מול נוף עוצר נשימה, שם יחכה לכם מגש טעימות עשיר:
-  </p>
+                    <p>{t.experienceMusic}</p>
+                    <p>{t.experiencePottery}</p>
 
-  <ul>
-    <li>🧀 גבינות בוטיק בעבודת יד</li>
-    <li>🍞 לחמים טריים וריחניים</li>
-    <li>🍷 יין משובח שיחמיא לכל ביס</li>
-  </ul>
-
-  <p>🎶 כל זה מלוּוה במוזיקה חיה שתעטוף אתכם באווירה מושלמת.</p>
-  <p>🎨 ולסיום – הדגמת קדרות חיה! האובניים מסתובבים, החימר מתעצב, ואתם עדים לרגע הקסם שבו חומר הופך לאמנות.</p>
-
-  <h3>✨ מה תקבלו בסיור?</h3>
-  <ul>
-    <li>✅ חוויית סיור סוחפת שמחברת היסטוריה מרתקת לנופים מרהיבים</li>
-    <li>✅ תובנות מקצועיות על עולם הארכיאולוגיה ושימור אתרים</li>
-    <li>✅ סיפורים מרגשים שלא תמצאו באף ספר היסטוריה</li>
-    <li>✅ טיפים בלעדיים על המקומות הסודיים של קיסריה</li>
-    <li>✅ מדריך מוסמך ומומחה לשימור אתרים – מהצלת פסיפס הציפורים ועד הקטקומבות ברומא</li>
-    <li>✅ חוויה בלתי נשכחת!</li>
-  </ul>
-</div>
-
-
-
-
-
-<div id='carouselToursPhotos'>
-                <PhotoCarousel  arrPhotoCarousel={arrPhotoCarousel} />
+                    <h3>{t.whatYouGetTitle}</h3>
+                    <ul>
+                        {t.whatYouGetList.map((item, idx) => (
+                            <li key={idx}>{item}</li>
+                        ))}
+                    </ul>
                 </div>
 
-
-
+                <div id='carouselToursPhotos'>
+                    <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
+                </div>
             </FadeIn>
 
-
-            <section class="pricing-section">
-                <h2 class="pricing-title">🎟️ מחירים ותיאום סיורים</h2>
-
-                <div class="pricing-grid">
-
+            <section className="pricing-section">
+                <h2 className="pricing-title">{t.pricingTitle}</h2>
+                <div className="pricing-grid">
                     <a href="#contact" className='pricingLink'>
-                        <div class="price-card">
-                            <h3>🏛️ סיורים מרתקים</h3>
+                        <div className="price-card">
+                            <h3>{t.pricingWorkshopTitle}</h3>
                             <ul>
-                                <li>📍 סיור קבוצתי: החל מ-500₪ לסיור </li>
-                                <li>🕯️ סיור עששיות ערב: החל מ-500₪ לסיור </li>
+                                {t.pricingList.map((item, idx) => (
+                                    <li key={idx}>{item}</li>
+                                ))}
                             </ul>
                         </div>
                     </a>
                 </div>
 
-
-                <p class="pricing-note">המחירים כוללים הדרכה מקצועית ואווירה מיוחדת מול הים 🌊</p>
-                <a href="#contact" class="cta-button">📩 הזמינו עכשיו</a>
+                <p className="pricing-note">{t.pricingNote}</p>
+                <a href="#contact" className="cta-button">{t.orderNow}</a>
             </section>
 
-
-            <Contact instaLink={instaLink} />
-            <Footer />
+            <Contact instaLink={t.instaLink} language={language} languageSettings={languageSettings} />
+            <Footer language={language} languageSettings={languageSettings} />
         </div>
-
     )
 }

@@ -131,7 +131,7 @@ bottom: 20px;
 }
 
 
-#photo174 {
+#photo204 {
     width: 110vh;
     ;
 
@@ -156,7 +156,7 @@ bottom: 20px;
         width: 50vh;
     }
 
-    #photo174 {
+    #photo204 {
         width: 50vh;
         ;
 
@@ -176,7 +176,6 @@ bottom: 20px;
     border: 1px solid #e0dcd1;
     border-radius: 16px;
     padding: 24px;
-    font-family: "Segoe UI", "Helvetica Neue", sans-serif;
     font-size: 1.1rem;
     line-height: 1.8;
     color: #333;

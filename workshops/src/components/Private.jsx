@@ -91,137 +91,133 @@ import photo151 from './images/photo151.jpg'
 import photo153 from './images/photo153.jpg'
 
 
+const translations = {
+  he: {
+    title: 'סדנאות פסיפס בוטיק',
+    description: `🎨 הצטרפו אלינו לסדנת פסיפס ייחודית בגלריית פסיפסים עתיקה מול הים, והפכו את יצירותיכם לאומנות אמיתית!
+👩‍🎨 בסדנה תיהנו מליווי צמוד של מומחי פסיפס ושימור עם ניסיון עשיר בתחום, שיסייעו לכם ליצור פסיפס מרהיב שתוכלו לקחת הביתה בסיום הסדנה.
 
-export default function Private(props) {
+✨ הסדנה מספקת:
+✅ ליווי מקצועי של מומחי פסיפס ושימור עתיקות
+✅ עמדת קפה עם כיבוד קל
+✅ מוזיקה לבחירה ליצירת אווירה נוחה ומרגשת
+✅ זמן יצירה אישי עם תמיכה אישית של אנשי מקצוע
 
-  const instaLink = "https://www.instagram.com/genach_mosaic_workshop/"
+🏛️ בגלריה שלנו אנו מייצרים ומוכרים פסיפסים בשיטה עתיקה ובסטנדרט גבוה, ומעבירים את הידע המקצועי שלנו בצורה חווייתית ומעשירה.
+🚀 הצטרפו אלינו לחוויה אומנותית ומלמדת!`,
+    cta: 'לתיאום מיידי',
+    photoText: 'חוויה מגבשת ויצירתית',
+    pricingTitle: '🎟️ מחירים ותיאום סדנאות',
+    mosaicWorkshop: '🖼️ סדנאות פסיפס',
+    price: '👨‍👩‍👧‍👦 מחיר לסדנה: החל מ-250₪ לאדם',
+    pricingNote: 'המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊',
+    orderNow: '📩 הזמן עכשיו'
+  },
+  en: {
+    title: 'Boutique Mosaic Workshops',
+    description: `🎨 Join us for a unique mosaic workshop at our ancient gallery by the sea and turn your creation into real art!
+👩‍🎨 You’ll enjoy close guidance from mosaic and preservation experts, helping you create a stunning mosaic to take home.
 
+✨ The workshop includes:
+✅ Professional guidance from mosaic and ancient art experts
+✅ Coffee station with light refreshments
+✅ Music of your choice for the perfect atmosphere
+✅ Personal creative time with expert support
+
+🏛️ Our gallery produces and sells mosaics using ancient techniques at the highest standard, passing on our knowledge in an experiential, enriching way.
+🚀 Join us for an artistic and educational experience!`,
+    cta: 'Book Now',
+    photoText: 'Creative & Team-Building Experience',
+    pricingTitle: '🎟️ Prices & Workshop Booking',
+    mosaicWorkshop: '🖼️ Mosaic Workshops',
+    price: '👨‍👩‍👧‍👦 Price: From 250₪ per person',
+    pricingNote: 'Prices include materials, professional guidance, and a unique seaside atmosphere 🌊',
+    orderNow: '📩 Book Now'
+  }
+}
+
+const altTexts = {
+  photo37: {
+    he: "לקוחות נהנים מסדנת פסיפס בגלריה",
+    en: "Customers enjoying a mosaic workshop in the gallery",
+  },
+  photo38: {
+    he: "לקוחות נהנים מסדנת פסיפס בגלריה",
+    en: "Customers enjoying a mosaic workshop in the gallery",
+  },
+  // אפשר להוסיף כאן עוד alt לתמונות נוספות לפי הצורך
+};
+
+
+export default function Private({ language, languageSettings }) {
+
+  const t = translations[language];
+  const settings = languageSettings[language];
+  const instaLink = "https://www.instagram.com/genach_mosaic_workshop/";
 
   const arrPhotoCarousel = [
-    photo149, photo153, photo151,
-    photo39, photo3, photo4, photo5, photo6, photo7, photo8, photo11, photo13,
-    photo15, photo16, photo17, photo18, photo19, photo20, photo21, photo23, photo24, photo25,
-    photo26, photo27, photo28, photo29, photo30, photo31, photo76, photo78, photo79, photo81,
-    photo82, photo84, photo85, photo87, photo89, photo90, photo91, photo93, photo95, photo96,
-    photo97, photo104, photo105, photo106, photo110, photo111, photo112, photo113,
-    photo114, photo115, photo116, photo117, photo119, photo120, photo128, photo132,
-    photo133, photo138, photo139, photo140, photo142,
+    photo149, photo153, photo151, photo39, photo3, photo4, photo5, photo6, photo7,
+    photo8, photo11, photo13, photo15, photo16, photo17, photo18, photo19, photo20,
+    photo21, photo23, photo24, photo25, photo26, photo27, photo28, photo29, photo30,
+    photo31, photo76, photo78, photo79, photo81, photo82, photo84, photo85, photo87,
+    photo89, photo90, photo91, photo93, photo95, photo96, photo97, photo104, photo105,
+    photo106, photo110, photo111, photo112, photo113, photo114, photo115, photo116,
+    photo117, photo119, photo120, photo128, photo132, photo133, photo138, photo139,
+    photo140, photo142
   ]
 
-
-
   return (
-
-    <div id='mainDivPrivate' >
+    <div id='mainDivPrivate'>
       <br /><br /><br />
       <FadeIn>
-
-
-        <h1 id='titlePrivate' > סדנאות פסיפס בוטיק </h1>
-
-
+        <h1 id='titlePrivate'>{t.title}</h1>
         <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
 
-
-
-
-        <p id='subTitlePrivate'>
-          🎨 הצטרפו אלינו לסדנת פסיפס ייחודית בגלריית פסיפסים עתיקה מול הים, והפכו את יצירותיכם לאומנות אמיתית!<br />
-          👩‍🎨 בסדנה תיהנו מליווי צמוד של מומחי פסיפס ושימור עם ניסיון עשיר בתחום, שיסייעו לכם ליצור פסיפס מרהיב שתוכלו לקחת הביתה בסיום הסדנה.<br /><br />
-
-          ✨ הסדנה מספקת:<br />
-          ✅ ליווי מקצועי של מומחי פסיפס ושימור עתיקות<br />
-          ✅ עמדת קפה עם כיבוד קל<br />
-          ✅ מוזיקה לבחירה ליצירת אווירה נוחה ומרגשת<br />
-          ✅ זמן יצירה אישי עם תמיכה אישית של אנשי מקצוע<br /><br />
-
-          🏛️ בגלריה שלנו אנו מייצרים ומוכרים פסיפסים בשיטה עתיקה ובסטנדרט גבוה, ומעבירים את הידע המקצועי שלנו בצורה חווייתית ומעשירה.<br />
-          🚀 הצטרפו אלינו לחוויה אומנותית ומלמדת!
-        </p>
+        <p id='subTitlePrivate' style={{
+          direction: settings.direction,
+          textAlign: settings.textAlign
+        }}>{t.description}</p>
 
         <div id='CTAPrivate'>
-          <a href="#contact" className='CTA'>לתיאום מיידי</a>
+          <a href="#contact" className='CTA'>{t.cta}</a>
         </div>
 
+        <img
+          id='photo37'
+          src={photo37}
+          loading="lazy"
+          alt={altTexts.photo37[language]}
+        />
 
-
-
-        <img id='photo37' src={photo37}  loading="lazy" alt="תמונה של לקוחות נהנים מסדנת פסיפס בוטיק בגלריה שלנו" />
-
-
-
-
-
-
-        <p id='textPhoto38'>  חוויה מגבשת ויצירתית  </p>
-        <img id='photo38' src={photo103}  loading="lazy" alt="תמונה של לקוחות נהנים מסדנת פסיפס בוטיק בגלריה שלנו" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <p id='textPhoto38'>{t.photoText}</p>
+        <img
+          id='photo38'
+          src={photo103}
+          loading="lazy"
+          alt={altTexts.photo38[language]}
+        />
 
       </FadeIn>
 
-
-
-
-
-      <section class="pricing-section">
-        <h2 class="pricing-title">🎟️ מחירים ותיאום סדנאות</h2>
-
-        <div class="pricing-grid">
-
-
+      <section className="pricing-section">
+        <h2 className="pricing-title">{t.pricingTitle}</h2>
+        <div className="pricing-grid">
           <a href="#contact" className='pricingLink'>
-            <div class="price-card">
-              <h3>🖼️ סדנאות פסיפס</h3>
+            <div className="price-card">
+              <h3>{t.mosaicWorkshop}</h3>
               <ul>
-
-                <li>👨‍👩‍👧‍👦 מחיר לסדנה: החל מ-250₪ לאדם </li>
-                {/* <li>🏢 סדנה לחברות: תמחור מותאם אישית</li> */}
+                <li>{t.price}</li>
               </ul>
             </div>
           </a>
-
         </div>
-
-
-        <p class="pricing-note">המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊</p>
-        <a href="#contact" class="cta-button">📩 הזמן עכשיו</a>
+        <p className="pricing-note">{t.pricingNote}</p>
+        <a href="#contact" className="cta-button">{t.orderNow}</a>
       </section>
 
-
-
-
-      <Contact instaLink={instaLink} />
-      <Footer />
-
+      <Contact language={language} instaLink={instaLink} languageSettings={languageSettings} />
+      <Footer language={language} languageSettings={languageSettings} />
     </div>
-
   )
 }
-
-
-
-
-
-
-
-
-
-
 
