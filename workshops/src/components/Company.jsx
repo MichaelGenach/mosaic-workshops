@@ -1,16 +1,18 @@
-import { React, useEffect, useRef, useState } from 'react'
-import { Link, useNavigate, } from 'react-router-dom';
+import { React, useState } from 'react'
+import FadeIn from 'react-fade-in';
+import { Link, useNavigate } from 'react-router-dom'
+import { motion } from "framer-motion"
 import './Company.css'
-import { FaRegClock } from "react-icons/fa";
-import BookingWidget from './BookingWidget';
 import Contact from './Contact';
 import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
-import FadeIn from 'react-fade-in';
+
+// Import images
 import photo1 from './images/photo1.jpg'
 import photo44 from './images/photo44.jpg'
 import photo45 from './images/photo45.jpg'
 import photo46 from './images/photo46.jpg'
+import photo50 from './images/photo50.jpg'
 import photo58 from './images/photo58.jpg'
 import photo59 from './images/photo59.jpg'
 import photo63 from './images/photo63.jpg'
@@ -36,69 +38,75 @@ import photo122 from './images/photo122.jpg'
 import photo126 from './images/photo126.jpg'
 import photo192 from './images/photo192.jpg'
 import photo193 from './images/photo193.jpg'
+
+// Import videos
 import video10 from './videos/video10.mp4'
 import video14 from './videos/video14.mp4'
+
+// Import icons
 import { HiUserGroup } from "react-icons/hi";
 import { FaPaintBrush } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { GiCalendarHalfYear } from "react-icons/gi";
-import { motion } from "framer-motion"
+import { PiFlowerLotusBold } from "react-icons/pi";
+import { FaHome } from "react-icons/fa";
+import { MdWork } from "react-icons/md";
+import { IoSparkles } from "react-icons/io5";
 
 const translations = {
   he: {
-    title: 'סדנאות פסיפסי לוגו עבור חברות',
-    icons: ['חלוקה לקבוצות', 'יצירה מקצועית', 'גיבוש והנאה', 'תוצאה משותפת'],
-    cta: 'לתיאום מיידי',
-    description: `🎨 הצטרפו לסדנת פסיפס ייחודית שבה תיצרו יצירת אומנות מרהיבה למשרד שלכם!  
-👥 בסדנה נחלק את הצוותים לקבוצות, כאשר כל קבוצה תעבוד על חלקים שונים של פסיפס גדול.  
-🧩 לאחר מכן, נארגן את כל החלקים יחד ליצירה אחת שלמה ומרשימה של לוגו החברה שלכם!  
+    title: 'פעילויות גיבוש לחברות',
+    icons: ['חוויה ייחודית', 'פעילות קבוצתית', 'יצירתיות', 'זיכרון לנצח'],
+    cta: 'צרו קשר עכשיו',
+    description: `🎨 הזמינו את הצוות שלכם לחוויה יוצאת דופן של יצירה משותפת!
+    
+בסדנאות הגיבוש המיוחדות שלנו, חבריכם לעבודה יחוו פעילות שמשלבת אומנות עתיקה, עבודת צוות ויצירתיות אישית. כל משתתף יקבל הדרכה אישית ממומחים בעלי שם עולמי בשימור מלאכות עתיקות.
 
-✨ הסדנה מספקת:  
-✅ חוויית יצירה משותפת ומאתגרת  
-✅ ליווי מקצועי של מומחים בשימור עתיקות ופסיפסים  
-✅ עיבוד מקצועי לפסיפס שיהיה יציב, יפה ומרהיב  
-
-🚀 הצטרפו אלינו ליצירת פסיפס מיוחד שיבטא את ערכי החברה שלכם ויהפוך למרכיב אומנותי וייחודי במשרד!`,
-    textPhotoC: 'עובדים בשיתוף פעולה',
-    photo58Alt: "עובדי המרכז הרפואי הלל יפה מציגים את יצירתם המרשימה שהכינו בסדנה שלנו",
-    photo46Caption: "פסיפס אשר נעשה על ידי עובדי חברת סוני במסגרת הסדנא שלנו",
-    photo46Alt: "פסיפס שנעשה על ידי עובדי חברת סוני במסגרת הסדנא שלנו",
-    pricingTitle: '🎟️ מחירים ותיאום סדנאות',
-    workshopTitle: '🏢 סדנאות לוגו פסיפס לחברות',
-    price: '🧑‍💼 סדנה לחברות: תמחור מותאם אישית',
-    pricingNote: 'המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊',
-    orderNow: '📩 הזמינו עכשיו',
+✨ מה כולל יום הגיבוש:
+• סדנת קדרות או פסיפס עם ציוד מקצועי
+• הדרכה מקצועית ואישית
+• חוויה בלתי נשכחת מול הים
+• יצירות אישיות שכל עובד לוקח הביתה`,
+    gallery: 'גלריית פעילויות',
+    section1Title: 'למה לבחור בנו?',
+    section1Text: 'עם ניסיון של שנים בהובלת פעילויות גיבוש לחברות מובילות, אנו מתמחים ביצירת חוויות שמחברות בין אנשים דרך אומנות ויצירה.',
+    section2Title: 'מגוון פעילויות',
+    section2Text: 'קדרות, פסיפס, ציור וחרס - כל פעילות מותאמת אישית לצרכי החברה ולגודל הקבוצה.',
+    section3Title: 'לכל הגילאים והרמות',
+    section3Text: 'הפעילויות מתאימות לכולם - ממתחילים מוחלטים ועד למנוסים, כולם ייהנו וייצרו משהו מיוחד.',
+    infoTitle: '💼 מידע נוסף',
+    infoText: 'הפעילויות שלנו מתאימות לקבוצות בכל גודל - מצוותים קטנים ועד לאירועי חברה גדולים. כל פעילות כוללת את כל הציוד, ההדרכה המקצועית והחומרים הנדרשים. אנחנו דואגים לכל פרט כדי שהחוויה תהיה מושלמת.',
+    priceNote: '🎟️ מחירים מותאמים אישית לפי גודל הקבוצה והפעילות הנבחרת'
   },
   en: {
-    title: 'Mosaic Logo Workshops for Companies',
-    icons: ['Group division', 'Pro creation', 'Team bonding', 'Joint result'],
-    cta: 'Book Now',
-    description: `🎨 Join a unique mosaic workshop where you will create a stunning artwork for your office!  
-👥 Teams will be divided into groups, each working on different parts of a large mosaic.  
-🧩 Afterwards, all parts will be assembled into one impressive complete mosaic logo for your company!  
+    title: 'Team Building Activities',
+    icons: ['Unique Experience', 'Group Activity', 'Creativity', 'Forever Memory'],
+    cta: 'Contact Us Now',
+    description: `🎨 Invite your team to an extraordinary shared creative experience!
+    
+In our special team-building workshops, your Colleagues will experience an activity that combines ancient art, teamwork, and personal creativity. Each participant receives personal guidance from world-renowned experts in ancient crafts preservation.
 
-✨ The workshop provides:  
-✅ A shared and challenging creative experience  
-✅ Professional guidance by experts in mosaic and antiquities consevation  
-✅ Professional processing of the mosaic to ensure it is stable, beautiful, and impressive  
-
-🚀 Join us to create a special mosaic expressing your company values and becoming a unique artistic feature in your office!`,
-    textPhotoC: 'Working in collaboration',
-    photo58Alt: "Employees of Hillel Yaffe Medical Center presenting their impressive creation made in our workshop",
-    photo46Caption: "Mosaic made by Sony company employees during our workshop",
-    photo46Alt: "Mosaic made by Sony company employees during our workshop",
-    pricingTitle: '🎟️ Prices & Workshop Booking',
-    workshopTitle: '🏢 Mosaic Logo Workshops for Companies',
-    price: '🧑‍💼 Corporate workshops: custom pricing',
-    pricingNote: 'Prices include materials, professional guidance, and a unique seaside atmosphere 🌊',
-    orderNow: '📩 Book Now',
-  },
-
+✨ What's included:
+• Pottery or mosaic workshop with professional equipment
+• Professional personal instruction
+• Unforgettable seaside experience
+• Personal creations each employee takes home`,
+    gallery: 'Activity Gallery',
+    section1Title: 'Why Choose Us?',
+    section1Text: 'With years of experience leading team-building activities for top companies, we specialize in creating experiences that connect people through art and creation.',
+    section2Title: 'Variety of Activities',
+    section2Text: 'Pottery, mosaics, painting, and ceramics - each activity is customized to company needs and group size.',
+    section3Title: 'For All Ages & Levels',
+    section3Text: 'Activities suitable for everyone - from complete beginners to experienced, everyone will enjoy and create something special.',
+    infoTitle: '💼 Additional Information',
+    infoText: 'Our activities are suitable for groups of any size - from small teams to large company events. Each activity includes all equipment, professional instruction, and required materials. We take care of every detail to ensure the experience is perfect.',
+    priceNote: '🎟️ Custom pricing based on group size and chosen activity'
+  }
 }
 
 export default function Company({ language, languageSettings }) {
   const t = translations[language];
-  const settings = languageSettings[language]
+  const settings = languageSettings[language];
 
   const arrPhotoCarousel = [
     photo64, photo45, photo192, photo63, photo193, photo118, photo121, photo122, photo73,
@@ -108,99 +116,120 @@ export default function Company({ language, languageSettings }) {
 
   return (
     <div id='mainDivCompany'>
+
       <FadeIn>
-        <br /><br /><br />
-        <h1>{t.title}</h1>
+        {/* Hero Section */}
+        <section className='hero-section-company'>
+          <div className='hero-content-company'>
+            <h1 className='hero-title-company'>{t.title}</h1>
+            <div className='hero-underline-company'></div>
+          </div>
+        </section>
 
-        <div id='twoCompanyVideosAndIcons'>
+        <div className='videos-container'>
+          <video className="company-video" src={video14} autoPlay loop muted playsInline />
+          <video className="company-video" src={video10} autoPlay loop muted playsInline />
+        </div>
 
-          <div id='companyIconsDiv'>
-            <div className='companyIconsMiniDiv'>
-              <HiUserGroup className='companyIcons' />
-              <p className='companyIconsText'>{t.icons[0]}</p>
+        {/* Icons & Videos Section */}
+        <section className='media-section'>
+          <div className='icons-grid'>
+            <div className='icon-card'>
+              <IoSparkles className='icon' />
+              <p className='icon-text'>{t.icons[0]}</p>
             </div>
-            <div className='companyIconsMiniDiv'>
-              <FaPaintBrush className='companyIcons' />
-              <p className='companyIconsText'>{t.icons[1]}</p>
+            <div className='icon-card'>
+              <HiUserGroup className='icon' />
+              <p className='icon-text'>{t.icons[1]}</p>
             </div>
-            <div className='companyIconsMiniDiv'>
-              <FaHeart className='companyIcons' />
-              <p className='companyIconsText'>{t.icons[2]}</p>
+            <div className='icon-card'>
+              <FaPaintBrush className='icon' />
+              <p className='icon-text'>{t.icons[2]}</p>
             </div>
-            <div className='companyIconsMiniDiv'>
-              <GiCalendarHalfYear className='companyIcons' />
-              <p className='companyIconsText'>{t.icons[3]}</p>
+            <div className='icon-card'>
+              <FaHeart className='icon' />
+              <p className='icon-text'>{t.icons[3]}</p>
             </div>
           </div>
 
-          <div id='twoCompanyVideos'>
-            <video
-              id="video14"
-              src={video14}
-              autoPlay
-              loop
-              muted
-              title={t.title + " - video 1"}
-            />
-            <video
-              id="video10"
-              src={video10}
-              autoPlay
-              loop
-              muted
-              title={t.title + " - video 2"}
-            />
-          </div>
-        </div>
 
-        <div id='CTACompany'>
-          <a href="#contact" className='CTA'>{t.cta}</a>
-        </div>
+        </section>
 
-        <p id='companyText' style={{
-          direction: settings.direction,
-          textAlign: settings.textAlign
-        }}>{t.description}</p>
-
-        <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
-
-        <p className='textPhotoC' id='ovdimCompany'>{t.textPhotoC}</p>
-
-        <img
-          id='photo58'
-          src={photo58}
-          loading="lazy"
-          alt={t.photo58Alt}
-        />
-
-        <div id='photo46Div'>
-          <p>{t.photo46Caption}</p>
-          <img
-            src={photo46}
-            id='photo46'
-            loading="lazy"
-            alt={t.photo46Alt}
-          />
-        </div>
-
-        <br />
-      </FadeIn>
-
-      <section className="pricing-section">
-        <h2 className="pricing-title">{t.pricingTitle}</h2>
-        <div className="pricing-grid">
-          <a href="#contact" className='pricingLink'>
-            <div className="price-card">
-              <h3>{t.workshopTitle}</h3>
-              <ul>
-                <li>{t.price}</li>
-              </ul>
-            </div>
+        {/* CTA Button */}
+        <div className='cta-container'>
+          <a href="#contact" className='cta-button'>
+            {t.cta}
           </a>
         </div>
-        <p className="pricing-note">{t.pricingNote}</p>
-        <a href="#contact" className="cta-button">{t.orderNow}</a>
-      </section>
+
+        {/* Description Section */}
+        <section className='description-section'>
+          <div
+            className='description-card'
+            style={{
+              direction: settings.direction,
+              textAlign: settings.textAlign
+            }}
+          >
+            <p>{t.description}</p>
+          </div>
+        </section>
+
+        {/* Photo Carousel */}
+        <section className='carousel-section'>
+          <h2 className='section-title'>{t.gallery}</h2>
+          <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
+        </section>
+
+        {/* Content Sections with Images */}
+        <section className='content-grid' style={{ direction: settings.direction }}>
+          <div className='content-item'>
+            <div className='content-text'>
+              <h3>{t.section1Title}</h3>
+              <p>{t.section1Text}</p>
+            </div>
+            <img src={photo58} alt="Team building activity" className='content-image' />
+          </div>
+
+          <div className='content-item reverse'>
+
+            <div className='content-text'>
+              <h3>{t.section2Title}</h3>
+              <p>{t.section2Text}</p>
+            </div>
+            <img src={photo45} alt="Creative workshop" className='content-image' />
+          </div>
+
+          <div className='content-item'>
+            <div className='content-text'>
+              <h3>{t.section3Title}</h3>
+              <p>{t.section3Text}</p>
+            </div>
+            <img src={photo50} alt="Group activity" className='content-image' />
+          </div>
+        </section>
+
+        {/* Additional Info Section */}
+        <section className='info-section'>
+          <div className='info-container'>
+            <h2>{t.infoTitle}</h2>
+            <p
+              style={{
+                direction: settings.direction,
+              }}
+            >
+              {t.infoText}
+            </p>
+            <a href="#contact" className='price-note'>{t.priceNote}</a>
+          </div>
+        </section>
+
+        {/* Final Image */}
+        <section className='final-image-section'>
+          <img src={photo46} alt="Company event" className='final-image' />
+        </section>
+
+      </FadeIn>
 
       <Contact language={language} languageSettings={languageSettings} />
       <Footer language={language} languageSettings={languageSettings} />

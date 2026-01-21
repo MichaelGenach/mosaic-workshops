@@ -7,8 +7,7 @@ import './Contact.css';
 const translations = {
   he: {
     contactTitle: "יצירת קשר",
-    whatsappText: "ניתן ליצור קשר גם דרך",
-    whatsappLinkText: "WhatsApp",
+    whatsappLinkText: "הזמינו עכשיו דרך וואצאפ",
     infoDescription: "זמינים 24/6, מענה מהיר בכל אמצעי ההתקשרות, ללא תשלום מקדמות, כולל הטבות לאנשי מילואים.",
     howToGetHereTitle: "איך מגיעים?",
     howToGetHereText: `כותבים בוויז: "יקבי קיסריה",
@@ -22,8 +21,8 @@ const translations = {
   },
   en: {
     contactTitle: "Contact Us",
-    whatsappText: "You can also contact us via",
-    whatsappLinkText: "WhatsApp",
+
+    whatsappLinkText: "Order now via WhatsApp",
     infoDescription: "Available 24/6, quick response through all contact means, no advance payments, including benefits for reservists.",
     howToGetHereTitle: "How to get here?",
     howToGetHereText: `Write in Waze: "Caesarea Winery",
@@ -38,10 +37,6 @@ const translations = {
 };
 
 export default function Contact({ language, instaLink, languageSettings }) {
-
-
-
-
   const {
     contactTitle,
     whatsappText,
@@ -56,104 +51,135 @@ export default function Contact({ language, instaLink, languageSettings }) {
     direction,
   } = translations[language];
 
-
-  const settings = languageSettings[language]
+  const settings = languageSettings[language];
 
   return (
-    <div dir={direction}>
-      <div id='contact'>
-        <h1 id='yezirat'>{contactTitle}</h1>
+    <section id='contact' className="contact-section" dir={direction}>
+      {/* Hero Section */}
+      <div className="contact-hero">
+        <div className="hero-content">
+          <h1 className="contact-title">{contactTitle}</h1>
+          <div className="title-decoration"></div>
+        </div>
+      </div>
 
-        <ContactForm language={language} languageSettings={languageSettings} />
+      {/* Main Content Container */}
+      <div className="contact-container">
 
-        <div className="contact-info-box" >
-          <p className="whatsapp-line" style={{
-            direction: settings.direction,
-
-          }}>
-            {whatsappText}{' '}
-            <a
-              id="topWhatsApp"
-              href="https://wa.me/9720523948920"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="whatsapp-link"
-            >
-              <span className="whatsapp-icon" style={{
-                direction: settings.direction,
-
-              }}>
-                <i className="bi bi-whatsapp"></i>
-              </span>
-              {whatsappLinkText}
-            </a>
-          </p>
-          <p className="info-description" style={{
-            direction: settings.direction,
-          }}>{infoDescription}</p>
+        {/* Contact Form Section */}
+        <div className="form-section">
+          <ContactForm language={language} languageSettings={languageSettings} />
         </div>
 
-        <h3 id='eich' className='f4' style={{
-          direction: settings.direction,
-        }}>{howToGetHereTitle}</h3>
-        <div className="arrive">
-          <p id='arriveText' style={{
-            whiteSpace: "pre-line",
-            direction: settings.direction,
+        {/* Info Card */}
+        <div className="info-card" style={{ direction: settings.direction }}>
+          <div className="info-header">
 
-          }} >
-            {howToGetHereText}
-          </p>
-          <Maps />
-        </div>
-
-        <div id='darkDiv'>
-          <h3 id='lifratim'>{contactDetailsTitle}</h3>
-
-          <div id='pratim'>
-            <a className='con' href={`tel:${phoneNumber.replace(/-/g, '')}`} alt="טלפון ליצירת קשר">
-              {phoneNumber}
-            </a>
-            <a className='con' id='emailInfo' href={`mailto:${email}`} alt="אימייל ליצירת קשר">
-              {email}
-            </a>
-
-            <div className="wwi">
-              <a
-                id='waze'
-                href='https://waze.com/ul/hsvbbfh9q8'
-                target="_blank"
-                rel="noopener noreferrer"
-                alt="לינק לוויז שמנווט אל בית העסק שלנו"
-              >
-                <FaWaze style={{ fontSize: '45px' }} />
-              </a>
-
-              <a
-                id='whatsApp'
+            <p className="whatsapp-text">
+              {whatsappText}{' '}
+              <a style={{ marginTop: '10px' }}
                 href="https://wa.me/9720523948920"
                 target="_blank"
                 rel="noopener noreferrer"
-                alt="לינק לוואצאפ של בעל העסק"
+                className="whatsapp-link"
+
               >
-                <span style={{ position: 'relative', right: '5px' }}>
-                  <i className="bi bi-whatsapp" style={{ fontSize: '45px' }}></i>
+
+                {whatsappLinkText}
+                <span className="whatsapp-icon">
+                  <i className="bi bi-whatsapp"></i>
                 </span>
               </a>
+            </p>
+          </div>
+          <p className="info-description">{infoDescription}</p>
+        </div>
 
-              <a
-                id='instagram'
-                alt="לינק לאינסטגרם שלנו"
-                href={instaLink || instaDefaultLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaInstagram style={{ fontSize: '45px' }} />
-              </a>
+        {/* Directions Section */}
+        <div className="directions-section">
+
+          <div className="directions-content">
+            <h3 className="section-title" style={{ direction: settings.direction }}>
+              {howToGetHereTitle}
+            </h3>
+
+            <div className="directions-text-container">
+              <p className="directions-text" style={{ direction: settings.direction }}>
+                {howToGetHereText}
+              </p>
+            </div>
+
+            <div className="map-container">
+              <Maps />
+            </div>
+
+          </div>
+        </div>
+
+        {/* Contact Details Footer */}
+        <div className="contact-footer">
+          <div className="footer-content">
+            <h3 className="contact-details-title">{contactDetailsTitle}</h3>
+
+            <div className="contact-methods">
+              <div className="contact-info">
+                <a
+                  className="contact-link phone-link"
+                  href={`tel:${phoneNumber.replace(/-/g, '')}`}
+                  aria-label="טלפון ליצירת קשר"
+                >
+                  <i className="bi bi-telephone-fill"></i>
+                  {phoneNumber}
+                </a>
+
+                <a
+                  className="contact-link email-link"
+                  href={`mailto:${email}`}
+                  aria-label="אימייל ליצירת קשר"
+                >
+                  <i className="bi bi-envelope-fill"></i>
+                  {email}
+                </a>
+              </div>
+
+              <div className="social-links">
+                <a
+                  className="social-link waze-link"
+                  href="https://waze.com/ul/hsvbbfh9q8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="לינק לוויז שמנווט אל בית העסק שלנו"
+                >
+                  <FaWaze />
+                  <span className="tooltip">ניווט בוויז</span>
+                </a>
+
+                <a
+                  className="social-link whatsapp-link"
+                  href="https://wa.me/9720523948920"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="לינק לוואצאפ של בעל העסק"
+                >
+                  <i className="bi bi-whatsapp"></i>
+                  <span className="tooltip">WhatsApp</span>
+                </a>
+
+                <a
+                  className="social-link instagram-link"
+                  href={instaLink || instaDefaultLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="לינק לאינסטגרם שלנו"
+                >
+                  <FaInstagram />
+                  <span className="tooltip">Instagram</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

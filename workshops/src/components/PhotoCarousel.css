@@ -1,0 +1,198 @@
+/* ===============================================
+   PHOTO CAROUSEL - ENHANCED DESIGN
+   =============================================== */
+
+   #caruselDiv {
+    width: 100%;
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #caruselDiv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, rgba(118, 75, 162, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  #carousel {
+    scroll-behavior: auto;
+    overflow-x: auto;
+    cursor: grab;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #carousel:active {
+    cursor: grabbing;
+  }
+  
+  #carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  #InnerCarousel {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+  
+  /* ===============================================
+     CAROUSEL ITEMS
+     =============================================== */
+  .item {
+    flex-shrink: 0;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    background: white;
+    padding: 8px;
+  }
+  
+  .item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.1) 0%,
+      rgba(118, 75, 162, 0.1) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .item:hover::before {
+    opacity: 1;
+  }
+  
+  .item:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+    z-index: 10;
+  }
+  
+  .item img {
+    display: block;
+    max-height: 400px;
+    width: auto;
+    border-radius: 15px;
+    transition: transform 0.4s ease;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .item:hover img {
+    transform: scale(1.05);
+  }
+  
+  /* ===============================================
+     IMAGE LOADING STATE
+     =============================================== */
+  .item img[src=""] {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+  }
+  
+  @keyframes loading {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* ===============================================
+     MOBILE WIDE IMAGES
+     =============================================== */
+  @media only screen and (max-width: 768px) {
+    #caruselDiv {
+      padding: 3rem 0;
+    }
+  
+    #InnerCarousel {
+      gap: 1rem;
+      padding: 0 1rem;
+    }
+  
+    .item {
+      padding: 6px;
+    }
+  
+    .item img {
+      max-height: 300px;
+    }
+  
+    /* Wide images on mobile */
+    .item img[style*="max-width: 400px"] {
+      max-width: 90vw !important;
+      margin: 0 auto;
+    }
+  
+    .item:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    #caruselDiv {
+      padding: 2rem 0;
+    }
+  
+    .item img {
+      max-height: 250px;
+    }
+  
+    .item:hover {
+      transform: translateY(-3px);
+    }
+  }
+  
+  /* ===============================================
+     ACCESSIBILITY
+     =============================================== */
+  .item:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+    outline-offset: 3px;
+  }
+  
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    .item,
+    .item img {
+      transition: none !important;
+    }
+    
+    .item:hover {
+      transform: none;
+    }
+  }
+  
+  /* ===============================================
+     PERFORMANCE OPTIMIZATIONS
+     =============================================== */
+  .item,
+  .item img {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }

@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
+import './PhotoCarousel.css'
 
 export default function PhotoCarousel(props) {
   const scrollInterval = useRef(null);

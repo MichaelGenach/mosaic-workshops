@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import { Link, useNavigate } from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import './Home.css';
+import ShareButton from './ShareButton';
 import Faq from './Faq'
 import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
@@ -183,6 +184,11 @@ export default function Home({ language, languageSettings  }) {
   const t = translate[language];
 
 
+  
+  
+
+
+
   return (
     <div id='main'>
 
@@ -197,16 +203,19 @@ export default function Home({ language, languageSettings  }) {
               <p id='title2'>{t.subtitle}</p>
 
               <div id='lepirteiVeLasadnaDiv'>
-                <a href="#contact">
-                  <button id='leyezirat'>{t.contact}</button>
-                </a>
+  <a href="#contact">
+    <button id='leyezirat'>{t.contact}</button>
+  </a>
 
-                <a href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer">
-                  <button id='lehazmana'>
-                    <i className="bi bi-whatsapp" id='W'></i> {t.order}
-                  </button>
-                </a>
-              </div>
+  <a href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer">
+    <button id='lehazmana'>
+      <i className="bi bi-whatsapp" id='W'></i> {t.order}
+    </button>
+  </a>
+
+
+</div>
+
 
               <Reviews language={language}/>
             </FadeIn>

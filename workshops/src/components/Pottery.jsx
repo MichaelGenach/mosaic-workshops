@@ -76,7 +76,6 @@ import photo252 from './images/photo252.jpg'
 import photo253 from './images/photo253.jpg'
 import photo254 from './images/photo254.jpg'
 
-
 import video9 from './videos/video9.mp4'
 import video12 from './videos/video12.mp4'
 import video13 from './videos/video13.mp4'
@@ -87,57 +86,93 @@ import { FaHeart } from "react-icons/fa6";
 import { GiCalendarHalfYear } from "react-icons/gi";
 import { PiFlowerLotusBold } from "react-icons/pi";
 import { FaHome } from "react-icons/fa";
+import Pricing from './Pricing';
 
 const translations = {
   he: {
     title: 'סדנאות קדרות',
     icons: ['מרגיע', 'יצירה מקצועית', 'גיבוש והנאה', 'לוקחים הביתה'],
     cta: 'לתיאום מיידי',
-    description: `🌟 הזמינו את המשפחה, החברים או הצוות לעולם של יצירה, השראה וגילוי עצמי – בסדנת קדרות ייחודית שלא תשכחו!
+    description: `הזמינו את המשפחה, החברים או הצוות לעולם של יצירה והשראה בסדנת קדרות ייחודית,
 
-👐 על גלגל האובניים, תתנסו בעבודה עם חומרים איכותיים, תלמדו טכניקות מסורתיות לצד שיטות מודרניות, ותעצבו כלי קרמיקה בעבודת יד – בדיוק לפי הדמיון והסגנון האישי שלכם.
+על גלגל האובניים תתנסו בעבודה עם חומרים איכותיים, תלמדו טכניקות מסורתיות ומודרניות, ותעצבו כלי קרמיקה בעבודת יד.
 
-✨ אין צורך בניסיון קודם – רק סקרנות, חיוך ורצון ליצור משהו משלכם!
+אין צורך בניסיון קודם – מושלם לימי גיבוש, אירועים משפחתיים או מתנה מקורית לעצמכם.`,
 
-📍 מושלם לימי גיבוש, אירועים משפחתיים או סתם מתנה מקורית לעצמכם.
+    whatIncluded: '?מה זה כולל',
+    included: [
+      'ציוד מקצועי ברמה הגבוהה ביותר',
+      'הדרכה אישית ממומחים בעלי שם עולמי',
+      'התאמה לכל רמות הניסיון',
+      'קחו את היצירות שלכם הביתה'
+    ],
 
-✨ הסדנה מספקת: 
-✅ שימוש בציוד מקצועי ברמה הגבוהה ביותר 
-✅ הדרכה אישית ומקצועית ממומחים בעלי שם עולמי בתחום שימור העתיקות והמלאכות העתיקות 
-✅ חוויה יצירתית שמתאימה לכל רמות הניסיון – גם למתחילים! 
+    whyUs: '?למה לבחור בנו',
+    reasons: [
+      { icon: '🏆', title: 'ניסיון עשיר', text: 'מעל 30 שנות ניסיון' },
+      { icon: '🎨', title: 'ציוד מקצועי', text: 'אובניים חשמליים וכלים יעודיים' },
+      { icon: '👥', title: 'קבוצות קטנות', text: 'תשומת לב אישית לכל משתתף' },
+      { icon: '🌊', title: 'מיקום מושלם', text: 'סדנה מול הים במיקום מדהים' }
+    ],
 
-ובסיום? יצירות הקרמיקה המרהיבות שלכם ילכו איתכם הביתה!`,
+    testimonials: 'מה אומרים עלינו',
+    reviews: [
+      { name: 'שרה כהן', text: 'חוויה מדהימה! הצוות סבלני והמקצועיות ברמה גבוהה', rating: 5 },
+      { name: 'דוד לוי', text: 'יום גיבוש מעולה לחברה, כולם נהנו והתלהבו', rating: 5 },
+      { name: 'מיכל אברהם', text: 'סדנה משפחתית נהדרת, הילדים והמבוגרים נהנו', rating: 5 }
+    ],
+
     galleryText: 'פעילויות גיבוש',
-    pricingTitle: '🎟️ מחירים ותיאום סדנאות',
-    potteryWorkshop: '🏺 סדנאות קדרות',
-    pricePerPerson: '👨‍👩‍👧‍👦 מחיר לסדנה: 250₪ לאדם',
-    pricingNote: 'המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊',
-    orderNow: '📩 הזמינו עכשיו'
+    pricingTitle: 'מחירים ותיאום סדנאות',
+    potteryWorkshop: 'סדנאות קדרות',
+    pricePerPerson: 'מחיר לסדנה: 250₪ לאדם',
+    pricingNote: 'המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים',
+    orderNow: 'הזמינו עכשיו בווטסאפ',
+    ctaFinal: '?מוכנים ליצור משהו מיוחד',
+    ctaFinalSub: 'הצטרפו לאלפי לקוחות מרוצים שחוו את קסם הקדרות',
   },
+
   en: {
     title: 'Pottery Workshops',
     icons: ['Relaxing', 'Pro creation', 'Team bonding', 'Take it home'],
     cta: 'Book Now',
-    description: `🌟 Invite your family, friends or team to a world of creativity, inspiration, and self-discovery in a unique pottery workshop you won't forget!
+    description: `Invite your family, friends or team to a world of creativity and inspiration in a unique pottery workshop!
 
-👐 Experience the potter's wheel, work with quality materials, learn traditional and modern techniques, and create handmade ceramics – exactly as you imagine.
+Experience the potter's wheel, work with quality materials, learn traditional and modern techniques, and create handmade ceramics.
 
-✨ No prior experience needed – just curiosity, a smile, and a desire to create something of your own!
+No prior experience needed – perfect for team events, family gatherings, or an original gift.`,
 
-📍 Perfect for team events, family gatherings, or an original gift for yourself.
+    whatIncluded: 'What\'s Included?',
+    included: [
+      'Highest quality professional equipment',
+      'Personal guidance from world experts',
+      'Suitable for all skill levels',
+      'Take your creations home!'
+    ],
 
-✨ The workshop includes: 
-✅ Use of the highest quality professional equipment 
-✅ Personal guidance from world-renowned experts in ancient crafts and restoration 
-✅ A creative experience suitable for all levels – beginners welcome! 
+    whyUs: 'Why Choose Us?',
+    reasons: [
+      { icon: '🏆', title: 'Rich Experience', text: 'Over 30 years of experience' },
+      { icon: '🎨', title: 'Pro Equipment', text: 'Professional-grade pottery wheels' },
+      { icon: '👥', title: 'Small Groups', text: 'Personal attention for each participant' },
+      { icon: '🌊', title: 'Perfect Location', text: 'Seaside workshop with a stunning location' }
+    ],
 
-And at the end? Your stunning ceramic creations go home with you!`,
+    testimonials: 'What People Say',
+    reviews: [
+      { name: 'Sarah Cohen', text: 'Amazing experience! Patient staff and high professionalism', rating: 5 },
+      { name: 'David Levy', text: 'Excellent team building day, everyone enjoyed', rating: 5 },
+      { name: 'Michelle Abraham', text: 'Great family workshop, kids and adults loved it', rating: 5 }
+    ],
+
     galleryText: 'Team Activities',
-    pricingTitle: '🎟️ Prices & Booking',
-    potteryWorkshop: '🏺 Pottery Workshops',
-    pricePerPerson: '👨‍👩‍👧‍👦 Price: 250₪ per person',
-    pricingNote: 'Prices include materials, professional instruction, and a unique seaside atmosphere 🌊',
-    orderNow: '📩 Book Now'
+    pricingTitle: 'Prices & Booking',
+    potteryWorkshop: 'Pottery Workshops',
+    pricePerPerson: 'Price: 250₪ per person',
+    pricingNote: 'Prices include materials, professional instruction, and unique seaside atmosphere',
+    orderNow: 'Book Now on WhatsApp',
+    ctaFinal: 'Ready to Create Something Special?',
+    ctaFinalSub: 'Join thousands of satisfied customers who experienced the magic of pottery',
   }
 }
 
@@ -145,16 +180,14 @@ const altTexts = {
   photo204: {
     he: "לקוחות מציגים את יצירותיהם",
     en: "Customers showcasing their creations",
-    // כאן אפשר להוסיף שפות נוספות בעתיד
   },
-  // אם תרצה להוסיף alt לתמונות אחרות, תוסיף כאן באופן דומה
 };
 
-
-export default function Pottery({ language , languageSettings }) {
+export default function Pottery({ language, languageSettings }) {
 
   const t = translations[language];
-  const settings = languageSettings[language]
+  const settings = languageSettings[language];
+
 
   const arrPhotoCarousel = [
     photo203, photo202, photo199, photo198, photo200, photo201, photo162, photo189, photo190, photo180,
@@ -167,7 +200,7 @@ export default function Pottery({ language , languageSettings }) {
 
   return (
     <div id='mainDivPottery'>
-      <br /><br /><br />
+      <br />
 
       <FadeIn>
         <div id='headLine'>
@@ -175,6 +208,10 @@ export default function Pottery({ language , languageSettings }) {
         </div>
 
         <div id='twoPotteryVideosAndIcons'>
+          <div id='twoPotteryVideos'>
+            <video id="video12" src={video12} autoPlay loop muted title="Pottery workshop video demo" />
+            <video id="video13" src={video13} autoPlay loop muted title="Pottery workshop video demo" />
+          </div>
 
           <div id='potteryIconsDiv'>
             <div className='potteryIconsMiniDiv'><PiFlowerLotusBold className='potteryIcons' /><p className='potteryIconsText'>{t.icons[0]}</p></div>
@@ -182,26 +219,66 @@ export default function Pottery({ language , languageSettings }) {
             <div className='potteryIconsMiniDiv'><FaHeart className='potteryIcons' /><p className='potteryIconsText'>{t.icons[2]}</p></div>
             <div className='potteryIconsMiniDiv'><FaHome className='potteryIcons' /><p className='potteryIconsText'>{t.icons[3]}</p></div>
           </div>
-
-          <div id='twoPotteryVideos'>
-            <video id="video13" src={video13} autoPlay loop muted title="Pottery workshop video demo" />
-            <video id="video12" src={video12} autoPlay loop muted title="Pottery workshop video demo" />
-          </div>
-
         </div>
 
-        <br />
-        <a href="#contact" id='CTAPottery' className='CTA'>{t.cta}</a>
-        <br />
+
+        <a href="#contact" id='CTAPottery'>{t.cta}</a>
+
 
         <div id='explainPotteryDiv'>
           <p id='explainPotteryText' style={{
-    direction: settings.direction,
-    textAlign: settings.textAlign
-  }}>{t.description}</p>
+            direction: settings.direction,
+            textAlign: settings.textAlign
+          }}>{t.description}</p>
+        </div>
+
+        {/* קטע חדש - מה כולל */}
+        <div className='whatIncludedSection'>
+          <h2 className='sectionTitle'>{t.whatIncluded}</h2>
+          <div className='includedGrid' >
+            {t.included.map((item, index) => (
+              <div key={index} className='includedItem' style={settings
+              }>
+                <span className='checkIcon'>✓</span>
+                <p>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* קטע חדש - למה לבחור בנו */}
+        <div className='whyUsSection'>
+          <h2 className='sectionTitle'>{t.whyUs}</h2>
+          <div className='reasonsGrid'>
+            {t.reasons.map((reason, index) => (
+              <div key={index} className='reasonCard'>
+                <div className='reasonIcon'>{reason.icon}</div>
+                <h3>{reason.title}</h3>
+                <p>{reason.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
+
+        {/* קטע חדש - המלצות */}
+        <div className='testimonialsSection'>
+          <h2 className='sectionTitle'>{t.testimonials}</h2>
+          <div className='testimonialsGrid'>
+            {t.reviews.map((review, index) => (
+              <div key={index} className='testimonialCard'>
+                <div className='stars'>{'⭐'.repeat(review.rating)}</div>
+                <p className='reviewText' style={{
+                  direction: settings.direction
+                }}>"{review.text}"</p>
+                <p style={{
+                  direction: settings.direction
+                }} className='reviewName'> - {review.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="textPhotoContainerPottery"></div>
         <p id='textPhoto161'>{t.galleryText}</p>
@@ -213,26 +290,11 @@ export default function Pottery({ language , languageSettings }) {
           alt={altTexts.photo204[language]}
         />
 
+
       </FadeIn>
 
-      <section className="pricing-section">
-        <h2 className="pricing-title">{t.pricingTitle}</h2>
-        <div className="pricing-grid">
-          <a href="#contact" className='pricingLink'>
-            <div className="price-card">
-              <h3>{t.potteryWorkshop}</h3>
-              <ul>
-                <li>{t.pricePerPerson}</li>
-              </ul>
-            </div>
-          </a>
-        </div>
-        <p className="pricing-note">{t.pricingNote}</p>
-        <a href="#contact" className="cta-button">{t.orderNow}</a>
-      </section>
-
       <Contact language={language} languageSettings={languageSettings} />
-      <Footer language={language}  languageSettings={languageSettings} />
+      <Footer language={language} languageSettings={languageSettings} />
     </div>
   )
 }

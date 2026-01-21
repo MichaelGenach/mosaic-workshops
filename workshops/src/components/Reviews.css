@@ -39,9 +39,8 @@
 
   border-radius: 12px;
   padding: 20px;
-  min-width: 10%;
-  max-width: 20%;
-  height: 100%;
+  max-width: 300px;
+  height: fit-content;
   margin: 10px;
   flex-shrink: 0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
@@ -58,7 +57,7 @@
   padding-top: 20px;
   padding-right: 10px;
   padding-left: 10px;
-height: 60%;
+height: 100%;
   min-width: 10%;
   max-width: 20%;
   margin: 10px;
@@ -81,10 +80,11 @@ height: 60%;
 }
 
 .long-review p {
-  font-size: 14px;
+  font-size: 12.5px;
   line-height: 1.5;
   color: #dddddd;
   margin-top: 5px;
+  padding-bottom: 5px;
 
 }
 
@@ -140,7 +140,7 @@ height: 60%;
   font-size: 16px;
   color: orange;
   position: relative;
-  top: 5.5px
+
 }
 
 
@@ -158,7 +158,7 @@ height: 60%;
   }
   
   .reviewCard{
-    max-width:55%;
+    max-width:75%;
     height: 60%;
     
     direction: rtl;
@@ -169,10 +169,11 @@ height: 60%;
   }
 
   .long-review{
-    max-width:55%;
+    max-width:90%;
     height: 60%;
-  
+  font-size: 12px;
     direction: rtl;
+    padding-bottom: 5px;
   }
 
   .long-review:hover {
@@ -180,7 +181,8 @@ height: 60%;
  
   }
   #reviewsContainer{
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }
   
 }

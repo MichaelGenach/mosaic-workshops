@@ -1,281 +1,459 @@
-#mainDivPrivate {
+/* ==================== Base Styles ==================== */
+
+.private-page {
     position: absolute;
     top: 0;
-    background-color: rgb(250, 250, 250);
+    width: 100%;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    overflow-x: hidden;
+  }
+  
+  /* ==================== Hero Section ==================== */
+  
+  .private-hero {
+    padding: 120px 20px 80px;
+    text-align: center;
+    background: linear-gradient(135deg, #f0f9ff 0%, #fef3c7 100%);
+    position: relative;
     overflow: hidden;
-    width: 100%;
-}
-
-#titlePrivate {
-    margin-bottom: 5vh;
-}
-
-
-#subTitlePrivate {
-    background-color: #fdfaf6;
-    border: 1px solid #e0dcd1;
-    border-radius: 16px;
-    padding: 24px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #333;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    max-width: 600px;
-    margin: 2rem auto;
-    direction: rtl;
-    text-align: right;
-
-    /* אנימציה חלקה */
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease-out forwards;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-#subTitlePrivate:hover {
-    background-color: #f8f3ea;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-/* אנימציית הופעה */
-@keyframes fadeInUp {
+  }
+  
+  .private-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1), transparent 50%);
+    pointer-events: none;
+  }
+  
+  .private-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .private-hero-title {
+    font-size: clamp(36px, 6vw, 64px);
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    animation: fadeInUp 0.8s ease-out;
+  }
+  
+  .private-hero-subtitle {
+    font-size: clamp(18px, 3vw, 28px);
+    color: #64748b;
+    font-weight: 400;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
     to {
-        opacity: 1;
-        transform: translateY(0);
+      opacity: 1;
+      transform: translateY(0);
     }
-}
-
-
-@media only screen and (max-width: 768px) {
-    #subTitlePrivate {
-        padding: 16px;
-        font-size: 1rem;
-        border-radius: 12px;
-        margin: 2rem auto;
-        width: 85%;
-       
-    }
-}
-
-#bottomTextDiv {
-    display: flex;
-    justify-content: center;
-}
-
-#bottomText {
-    padding: 5px;
-    width: 60%;
-    font-size: 2.5vh;
-
-}
-
-
-
-
-
-
-
-
-#photo37 {
-    max-width: 60%;
-
-}
-
-#photo38 {
-    max-width: 60%;
-
-
-}
-
-
-#photo39 {
-    width: 55%;
-
-
-
-}
-
-/* #textPhoto37 {
-
-     
-
-
-} */
-
-@media only screen and (max-width: 768px) {
-
-    /* For mobile phones: */
-    #textPhoto37 {
-
-
-        font-size: 3vh;
-       
-    }
-
-    #bottomText {
-        min-width: 80%;
-    }
-}
-
-
-
-#photo38Div {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 10vh;
-}
-
-
-
-
-
-#textPhoto38 {
-
-    
-    font-size: x-large;
-}
-
-
-@media only screen and (max-width: 768px) {
-
-    /* For mobile phones: */
-    #textPhoto38 {
-
-padding: 5px;
-        font-size: 3vh;
-       
-    }
-}
-
-
-
-
-
-
-#photo39 {
-    width: 30%;
-}
-
-@media only screen and (max-width: 768px) {
-
-    /* For mobile phones: */
-    #photo39 {
-        width: 60%;
-
-    }
-
-    #prices {
-        display: none;
-    }
-}
-
-
-img {
+  }
+  
+  /* ==================== Carousel Section ==================== */
+  
+  .private-carousel-section {
+    padding: 30px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* ==================== Description Section ==================== */
+  
+  .private-description-section {
+    padding: 80px 20px;
+    background: white;
+  }
+  
+  .private-description-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .private-description-intro {
+    font-size: clamp(18px, 2.5vw, 24px);
+    line-height: 1.8;
+    color: #334155;
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+  }
+  
+  /* ==================== Features Grid ==================== */
+  
+  .private-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+  
+  .private-feature-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
     border-radius: 20px;
-    margin: 3px
-}
-
-
-.space {
-    height: 80px;
-}
-
-#pricesDiv {
+    padding: 32px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: all 0.3s ease;
+    border: 2px solid #e2e8f0;
+  }
+  
+  .private-feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    border-color: #cbd5e1;
+  }
+  
+  .private-feature-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  
+  .private-description-intro {
+    font-size: clamp(20px, 2.5vw, 26px);
+    line-height: 1.8;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 60px;
+    padding: 0 20px;
+    font-weight: 500;
+  }
+  /* ==================== Gallery Text ==================== */
+  
+  .private-gallery-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #64748b;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+  }
+  
+  /* ==================== CTA Button ==================== */
+  
+  .private-cta-wrapper {
     display: flex;
     justify-content: center;
-    width: 100%;
-}
-
-#prices {
-
-    background-color: orange;
-    width: 50%;
-    border-radius: 10px;
-
-
-}
-
-
-
-
-#infoDivPrivate {
-
-
-    width: 100%;
-    height: 70%;
+  }
+  
+  .private-cta-button {
+    display: inline-flex;
     align-items: center;
-    margin-top: 10vh;
+    gap: 12px;
+    padding: 18px 48px;
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 16px;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .private-cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
+  }
+  
+  /* ==================== Images Section ==================== */
+  
+  .private-images-section {
+    padding: 20px 20px;
+    background: #f8fafc;
+  }
+  
+  .private-images-grid {
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+justify-content: center;
+align-items: center;
+  }
+  
+  .private-image-wrapper {
+    position: relative;
+  }
+  
+  .private-image {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+  }
+  
+  .private-image:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .private-image-caption {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #334155;
+    margin-top: 20px;
+  }
+  
+  /* ==================== Experience Section ==================== */
+  
+  .private-experience-section {
+    padding: 80px 20px;
+    background: white;
+  }
+  
+  .private-experience-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    color: #1e293b;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .private-experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .private-experience-card {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-radius: 20px;
+    padding: 40px 28px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid #bae6fd;
+  }
+  
+  .private-experience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
+    border-color: #7dd3fc;
+  }
+  
+  .private-experience-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-
-
-}
-
-
-
-@media only screen and (max-width: 768px) {
-
-    /* For mobile phones: */
-    #infoDivPrivate {
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        height: 70%;
-        align-items: center;
-        margin-top: 10vh;
-
-
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 auto 20px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+  
+  .private-experience-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+  }
+  
+  /* ==================== Pricing Section ==================== */
+  
+  .private-pricing-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    text-align: center;
+  }
+  
+  .private-pricing-title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 50px;
+  }
+  
+  .private-pricing-card-link {
+    display: inline-block;
+    text-decoration: none;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .private-pricing-card {
+    background: white;
+    border-radius: 24px;
+    padding: 48px 36px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+  }
+  
+  .private-pricing-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+    border-color: #f59e0b;
+  }
+  
+  .private-pricing-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+  
+  .private-pricing-card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 24px;
+  }
+  
+  .private-pricing-price {
+    margin-bottom: 32px;
+  }
+  
+  .private-pricing-amount {
+    font-size: 36px;
+    font-weight: 800;
+    color: #f59e0b;
+  }
+  
+  .private-pricing-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #3b82f6;
+    font-size: 18px;
+    font-weight: 700;
+    transition: gap 0.3s ease;
+  }
+  
+  .private-pricing-card:hover .private-pricing-cta {
+    gap: 16px;
+  }
+  
+  .private-pricing-note {
+    font-size: 16px;
+    color: #64748b;
+    margin-top: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  
+  /* ==================== Responsive Design ==================== */
+  
+  @media only screen and (max-width: 768px) {
+    .private-hero {
+      padding: 100px 20px 60px;
     }
-
-    #photo37,
-    #photo38 {
-        min-width: 90%;
+  
+    .private-description-section,
+    .private-images-section,
+    .private-experience-section,
+    .private-pricing-section {
+      padding: 60px 16px;
     }
-}
-
-
-
-
-
-.h2 {
-
-    font-size: 5vh;
-
-
-    ;
-}
-
-@media only screen and (max-width: 768px) {
-
-    /* For mobile phones: */
-    .h2 {
-        font-size: 3vh;
-
-
+  
+    .private-features-grid,
+    .private-experience-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
     }
-}
-
-
-.h3 {
-
-    font-size: 2.5vw;
-
-
-
-}
-
-@media only screen and (max-width: 768px) {
-
-    /* For mobile phones: */
-    .h3 {
-
-        font-size: 2.5vh;
-
+  
+    .private-images-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
     }
-
-}
-
-
-#CTAPrivate {
-    margin: 45px;
-}
+  
+    .private-feature-card,
+    .private-experience-card {
+      padding: 24px 20px;
+    }
+  
+    .private-cta-button {
+      padding: 16px 40px;
+      font-size: 16px;
+    }
+  
+    .private-pricing-card {
+      padding: 36px 28px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .private-hero {
+      padding: 80px 16px 50px;
+    }
+  
+    .private-hero-title {
+      font-size: 32px;
+    }
+  
+    .private-hero-subtitle {
+      font-size: 18px;
+    }
+  
+    .private-description-intro {
+      font-size: 16px;
+    }
+  
+    .private-feature-card {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .private-pricing-icon {
+      font-size: 48px;
+    }
+  
+    .private-pricing-amount {
+      font-size: 28px;
+    }
+  }
+  
+  /* ==================== Animations ==================== */
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* ==================== Print Styles ==================== */
+  
+  @media print {
+    .private-cta-button,
+    .private-pricing-card-link {
+      display: none;
+    }
+  }

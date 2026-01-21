@@ -11,6 +11,7 @@ import Tours from './components/Tours';
 import Pottery from './components/Pottery';
 import Janur from './components/Janur';
 import HazharatNegishut from './components/HazharatNegishut';
+import ShareButton from './components/ShareButton';
 import Contact from './components/Contact';
 
 
@@ -46,11 +47,12 @@ function App() {
 
 
   return (
-    <div className="App" style={{fontFamily: fontsByLanguage[language]}}>
+    <div className="App" style={{ fontFamily: fontsByLanguage[language] }}>
 
 
       <BrowserRouter>
         <Menu language={language} setLanguage={setLanguage} languageSettings={languageSettings} />
+        <ShareButton />
 
         <Routes>
           <Route path='/' element={<Home language={language} languageSettings={languageSettings} />} />

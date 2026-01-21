@@ -1,112 +1,197 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import FadeIn from 'react-fade-in';
-import { Link, useNavigate, } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { motion } from "framer-motion"
 import './Janur.css'
 import Contact from './Contact';
 import Footer from './Footer';
-import BookingWidget from './BookingWidget';
 
 import photo168 from './images/photo168.jpg'
 import photo171 from './images/photo171.jpg'
 import video5 from './videos/video5.mp4'
 
+// Import icons
+import { FaFire } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import { FaMoneyBillWave } from "react-icons/fa";
+import { IoSparkles } from "react-icons/io5";
+
 const translations = {
   he: {
     title: "ג'נור - תנור הקדרות המהפכני",
-    description: [
-      "תנור הקדרות הקטן שמשנה את חוקי המשחק!",
-      `הכירו את "ג'נור" – תנור קדרות קומפקטי ויעיל, שמאפשר לכם ליצור יצירות קרמיקה איכותיות בנוחות של הבית, בלי הצורך בתנור קדרות מסורתי גדול, מסורבל ויקר.`,
-      "✅ מתאים לשימוש ביתי – לא תופס מקום, קל להפעלה ולשימוש.",
-      "✅ חסכוני ויעיל – מחמם לטמפרטורה אידיאלית לשריפת קרמיקה ומבטיח תוצאה איכותית.",
-      "✅ מחיר משתלם ומהפכני – הופך את עולם הקדרות לנגיש לכל אחד!",
-      "לפני הרכישה יש להיעזר בהדרכה של אמיר – היבואן הרשמי של תנור \"ג'נור\".",
-      "צרו יצירות קרמיקה בקלות ובדיוק כמו שתמיד חלמתם!"
+    subtitle: "תנור הקדרות הקטן שמשנה את חוקי המשחק!",
+    description: `הכירו את "ג'נור" – תנור קדרות קומפקטי ויעיל, שמאפשר לכם ליצור יצירות קרמיקה איכותיות בנוחות של הבית, בלי הצורך בתנור קדרות מסורתי גדול, מסורבל ויקר.`,
+    features: [
+      {
+        icon: <FaHome />,
+        title: "מתאים לשימוש ביתי",
+        text: "לא תופס מקום, קל להפעלה ולשימוש"
+      },
+      {
+        icon: <FaFire />,
+        title: "חסכוני ויעיל",
+        text: "מחמם לטמפרטורה אידיאלית לשריפת קרמיקה"
+      },
+      {
+        icon: <FaMoneyBillWave />,
+        title: "מחיר משתלם",
+        text: "הופך את עולם הקדרות לנגיש לכל אחד"
+      },
+      {
+        icon: <IoSparkles />,
+        title: "תוצאה איכותית",
+        text: "מבטיח יצירות קרמיקה ברמה מקצועית"
+      }
     ],
+    guidance: "לפני הרכישה יש להיעזר בהדרכה של אמיר – היבואן הרשמי של תנור \"ג'נור\".",
+    closing: "צרו יצירות קרמיקה בקלות ובדיוק כמו שתמיד חלמתם!",
+    cta: "צרו קשר לפרטים נוספים",
+    galleryTitle: "ג'נור בפעולה",
     videoTitle: "פותחים את תנור הקדרות ג'נור ורואים כלי חרס אדום לוהט",
     altPhoto171: "תמונה של תנור הקדרות ג'נור כשהוא פתוח עם כלי לוהט בפנים",
     altPhoto168: "תמונה של תנור הקדרות ג'נור כשהוא סגור"
   },
   en: {
     title: "Janur - The Revolutionary Pottery Kiln",
-    description: [
-      "The small pottery kiln that changes the game!",
-      `Meet "Janur" – a compact and efficient pottery kiln that lets you create high-quality ceramic works comfortably at home, without needing a large, bulky, and expensive traditional kiln.`,
-      "✅ Suitable for home use – space-saving, easy to operate and use.",
-      "✅ Economical and efficient – heats to the ideal temperature for ceramic firing and guarantees quality results.",
-      "✅ Affordable and revolutionary price – making the world of pottery accessible to everyone!",
-      "Before purchasing, get guidance from Amir – the official importer of the 'Janur' kiln.",
-      "Create ceramic works easily and just like you've always dreamed!"
+    subtitle: "The small pottery kiln that changes the game!",
+    description: `Meet "Janur" – a compact and efficient pottery kiln that lets you create high-quality ceramic works comfortably at home, without needing a large, bulky, and expensive traditional kiln.`,
+    features: [
+      {
+        icon: <FaHome />,
+        title: "Home Use",
+        text: "Space-saving, easy to operate and use"
+      },
+      {
+        icon: <FaFire />,
+        title: "Efficient",
+        text: "Heats to ideal temperature for ceramic firing"
+      },
+      {
+        icon: <FaMoneyBillWave />,
+        title: "Affordable",
+        text: "Making pottery accessible to everyone"
+      },
+      {
+        icon: <IoSparkles />,
+        title: "Quality Results",
+        text: "Professional-grade ceramic creations"
+      }
     ],
+    guidance: "Before purchasing, get guidance from Amir – the official importer of the 'Janur' kiln.",
+    closing: "Create ceramic works easily and just like you've always dreamed!",
+    cta: "Contact Us for Details",
+    galleryTitle: "Janur in Action",
     videoTitle: "Opening the Janur pottery kiln showing a glowing red ceramic piece inside",
     altPhoto171: "Photo of Janur pottery kiln open with a glowing hot ceramic piece inside",
     altPhoto168: "Photo of Janur pottery kiln closed"
-  },
-  it: {
-    title: "Janur - Il forno per ceramica rivoluzionario",
-    description: [
-      "Il piccolo forno per ceramica che cambia le regole del gioco!",
-      `Scopri "Janur" – un forno per ceramica compatto ed efficiente, che ti permette di creare opere ceramiche di alta qualità comodamente a casa, senza bisogno di un forno tradizionale grande, ingombrante e costoso.`,
-      "✅ Adatto all'uso domestico – occupa poco spazio, facile da usare e maneggiare.",
-      "✅ Economico ed efficiente – riscalda alla temperatura ideale per la cottura della ceramica garantendo un risultato di qualità.",
-      "✅ Prezzo conveniente e rivoluzionario – rende il mondo della ceramica accessibile a tutti!",
-      "Prima dell'acquisto, affidati alla guida di Amir – l'importatore ufficiale del forno \"Janur\".",
-      "Crea opere di ceramica facilmente e proprio come hai sempre sognato!"
-    ],
-    videoTitle: "Apertura del forno per ceramica Janur con un pezzo di ceramica rosso incandescente all'interno",
-    altPhoto171: "Foto del forno per ceramica Janur aperto con un pezzo di ceramica incandescente all'interno",
-    altPhoto168: "Foto del forno per ceramica Janur chiuso"
   }
 }
 
 export default function Janur({ language, languageSettings }) {
-
   const t = translations[language];
   const settings = languageSettings[language];
 
   return (
-    <div id='mainDivJanur'>
+    <div id='mainDivJanur' style={{direction: settings.direction}}>
       <br /><br /><br />
+      
       <FadeIn>
-        <h1>{t.title}</h1>
+        {/* Hero Section */}
+        <section className='janur-hero'>
+          <div className='hero-content-janur'>
+            <h1 className='hero-title-janur'>{t.title}</h1>
+            <div className='hero-underline-janur'></div>
+            <p className='hero-subtitle-janur'>{t.subtitle}</p>
+          </div>
+        </section>
 
-        <div className="janur1">
-          <p id="p1" style={{
-            direction: settings.direction,
-            textAlign: settings.textAlign
-          }}>
-            {t.description.map((line, idx) => (
-              <React.Fragment key={idx}>
-                {line}
-                <br /><br />
-              </React.Fragment>
+        {/* Main Content Section */}
+        <section className='janur-main-content'>
+          <div className='content-wrapper'>
+            <div 
+              className='description-card'
+              style={{
+                direction: settings.direction,
+                textAlign: settings.textAlign
+              }}
+            >
+              <p className='main-description'>{t.description}</p>
+            </div>
+
+            <div className='video-container'>
+              <video
+                src={video5}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className='janur-video'
+                title={t.videoTitle}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Features Grid */}
+        <section className='features-section'>
+          <div className='features-grid'>
+            {t.features.map((feature, index) => (
+              <div key={index} className='feature-card'>
+                <div className='feature-icon'>{feature.icon}</div>
+                <h3 className='feature-title'>{feature.title}</h3>
+                <p className='feature-text'>{feature.text}</p>
+              </div>
             ))}
-          </p>
+          </div>
+        </section>
 
-          <video
-            src={video5}
-            autoPlay
-            loop
-            muted
-            id='video5'
-            title={t.videoTitle}
-          />
+        {/* Important Note */}
+        <section className='guidance-section'>
+          <div 
+            className='guidance-card'
+            style={{
+              direction: settings.direction,
+              textAlign: 'center'
+            }}
+          >
+            <p className='guidance-text'>{t.guidance}</p>
+            <p className='closing-text'>{t.closing}</p>
+          </div>
+        </section>
+
+        {/* CTA Button */}
+        <div className='cta-container'>
+          <a href="#contact" className='cta-button'>
+            {t.cta}
+          </a>
         </div>
 
-        <div id='JanurPhotosDiv'>
-          <img
-            id='photo171'
-            src={photo171}
-            loading="lazy"
-            alt={t.altPhoto171}
-          />
-          <img
-            id='photo168'
-            src={photo168}
-            loading="lazy"
-            alt={t.altPhoto168}
-          />
-        </div>
+        {/* Gallery Section */}
+        <section className='gallery-section-janur'>
+          <h2 className='gallery-title-janur'>{t.galleryTitle}</h2>
+          <div className='gallery-grid-janur'>
+            <div className='gallery-item-janur'>
+              <img
+                src={photo171}
+                alt={t.altPhoto171}
+                className='gallery-image-janur'
+                id='photo171'
+                loading="lazy"
+              />
+   
+            </div>
+            <div className='gallery-item-janur'>
+              <img
+                src={photo168}
+                alt={t.altPhoto168}
+                className='gallery-image-janur'
+                loading="lazy"
+              />
+     
+            </div>
+          </div>
+        </section>
+
       </FadeIn>
 
       <Contact language={language} languageSettings={languageSettings} />

@@ -1,196 +1,466 @@
-/* CSS */
-.faq-header {
-    max-width: 720px;
-    margin: 3rem auto 2.5rem;
+/* ===============================================
+   FAQ SECTION - ENHANCED DESIGN
+   =============================================== */
+
+   .faq-header {
+    max-width: 800px;
+    margin: 5rem auto 3rem;
     padding: 0 1.5rem;
     text-align: center;
     direction: rtl;
-
   }
   
   .faq-title-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
+    gap: 1rem;
     flex-wrap: wrap;
+    margin-bottom: 1rem;
   }
   
   .faq-icon {
-    font-size: 2.5rem;
-    color: #0d6efd; /* כחול מקצועי */
+    font-size: 3rem;
+    filter: drop-shadow(0 4px 10px rgba(102, 126, 234, 0.3));
   }
   
   .faq-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #003366;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin: 0;
     line-height: 1.3;
     letter-spacing: -0.02em;
   }
   
+  .faq-divider {
+    width: 100px;
+    height: 5px;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 3px;
+    margin: 2rem auto;
+  }
+  
   .faq-subtitle {
-    font-size: 1.05rem;
-    color: #555;
-    margin-top: 0.75rem;
-    line-height: 1.5;
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin-top: 1rem;
+    line-height: 1.6;
     max-width: 90%;
     margin-inline: auto;
   }
-
   
-
-
-
-
-/* עטיפת כל הסדנאות */
-.accordion-wrapper {
-    max-width: 700px;
-    margin: 2rem auto;
-
+  /* ===============================================
+     ACCORDION WRAPPER
+     =============================================== */
+  .accordion-wrapper {
+    max-width: 800px;
+    margin: 3rem auto 5rem;
+    padding: 0 1.5rem;
     direction: rtl;
-    color: #222;
-    padding: 0 1rem;
-    }
-    
-    /* כותרת סדנה */
-    .workshop-section {
-    border-bottom: 1px solid #e0e0e0;
-    padding: 1.2rem 0;
-    }
-    
-    /* לחיצה על שם הסדנה */
-    .workshop-title {
+  }
+  
+  /* ===============================================
+     WORKSHOP SECTIONS
+     =============================================== */
+  .workshop-section {
+    background: white;
+    border-radius: 20px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(102, 126, 234, 0.1);
+  }
+  
+  .workshop-section:hover {
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.2);
+  }
+  
+  /* ===============================================
+     WORKSHOP TITLE
+     =============================================== */
+  .workshop-title {
     cursor: pointer;
     font-size: 1.5rem;
     font-weight: 700;
+    color: #2d3748;
     user-select: none;
-    position: relative;
-    padding-right: 30px;
-    transition: color 0.3s ease;
+    padding: 1.5rem 2rem;
+    margin: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #1a1a1a;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    position: relative;
+  }
   
-    }
-
-    @media only screen and (max-width: 768px) { 
-        .workshop-title {
-            font-weight: 600;
-            font-size: 1.3rem;
-        }
-
-        .question-btn {
-            font-size: 0.9rem;
-        }
-    }
-    
-    .workshop-title:hover,
-    .workshop-title:focus {
-    color: #0056c1;
+  .workshop-title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+  }
+  
+  .workshop-title:hover::before,
+  .workshop-title:focus::before {
+    transform: scaleY(1);
+  }
+  
+  .workshop-title:hover,
+  .workshop-title:focus {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     outline: none;
-    }
-    
-    /* החץ לצד כותרת הסדנה */
-    .arrow {
+  }
+  
+  /* ===============================================
+     ARROW ICONS
+     =============================================== */
+  .arrow {
     display: inline-block;
     width: 14px;
     height: 14px;
-    border-right: 2px solid #666;
-    border-bottom: 2px solid #666;
+    border-right: 3px solid #667eea;
+    border-bottom: 3px solid #667eea;
     transform: rotate(45deg);
-    margin-left: 10px;
-    margin-right: 5px;
-    transition: transform 0.5s ease, border-color 0.3s ease;
-    }
-    
-    .arrow.open {
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+  }
+  
+  .arrow.open {
     transform: rotate(-135deg);
-    border-color: #0056c1;
-    }
-    
-    /* עוטף את כל השאלות */
-    .questions-wrapper {
+    border-color: #764ba2;
+  }
+  
+  .arrow.small {
+    width: 10px;
+    height: 10px;
+    border-width: 2px;
+  }
+  
+  /* ===============================================
+     QUESTIONS WRAPPER
+     =============================================== */
+  .questions-wrapper {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
-    }
-    
-    .questions-wrapper.open {
-    max-height: 800px;
-    }
-    
-    /* שאלה בודדת */
-    .question-item {
-    margin-bottom: 0.8rem;
-    }
-    
-    /* כפתור שאלה */
-    .question-btn {
-    background: #fafafa;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    background: #fafbfc;
+  }
+  
+  .questions-wrapper.open {
+    max-height: 2000px;
+    padding: 1rem 1.5rem 1.5rem;
+  }
+  
+  /* ===============================================
+     QUESTION ITEMS
+     =============================================== */
+  .question-item {
+    margin-bottom: 1rem;
+  }
+  
+  .question-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* ===============================================
+     QUESTION BUTTON
+     =============================================== */
+  .question-btn {
+    background: white;
+    border: 2px solid rgba(102, 126, 234, 0.15);
+    border-radius: 12px;
     width: 100%;
     text-align: right;
-    padding: 0.6rem 1rem;
+    padding: 1rem 1.5rem;
     font-size: 1.05rem;
     font-weight: 600;
+    color: #2d3748;
     cursor: pointer;
     user-select: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #333;
-    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
-    }
-    
-
-
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
   
-
-    .question-btn:hover,
-    .question-btn:focus {
-    background-color: #eaf2ff;
-    border-color: #0056c1;
-    color: #0056c1;
+  .question-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .question-btn:hover::before,
+  .question-btn:focus::before {
+    opacity: 1;
+  }
+  
+  .question-btn:hover,
+  .question-btn:focus {
+    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.1);
     outline: none;
-    }
-    
-    /* חץ קטן בצד של שאלה */
-    .arrow.small {
-    width: 10px;
-    height: 10px;
-    margin-left: 6px;
-    }
-    
-    /* מעטפת תשובה */
-    .answer-wrapper {
+    transform: translateX(-3px);
+  }
+  
+  /* ===============================================
+     ANSWER WRAPPER
+     =============================================== */
+  .answer-wrapper {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
-    }
-    
-    .answer-wrapper.open {
-    max-height: 150px;
-    }
-    
-    /* התשובה עצמה */
-    .answer {
-    background-color: #f0f6ff;
-    border-right: 3px solid #0056c1;
-    margin-top: 0.4rem;
-    padding: 0.6rem 1rem;
+    transition: max-height 0.5s ease, margin 0.3s ease;
+  }
+  
+  .answer-wrapper.open {
+    max-height: 500px;
+    margin-top: 0.8rem;
+  }
+  
+  /* ===============================================
+     ANSWER CONTENT
+     =============================================== */
+  .answer {
+    background: linear-gradient(135deg, #f0f6ff 0%, #e8f2ff 100%);
+    border-right: 4px solid #667eea;
+    padding: 1rem 1.5rem;
     font-size: 1rem;
-    line-height: 1.5;
-    color: #1a1a1a;
-    border-radius: 0 8px 8px 0;
+    line-height: 1.7;
+    color: #2d3748;
+    border-radius: 0 12px 12px 0;
     text-align: right;
-   
+    box-shadow: inset 0 2px 8px rgba(102, 126, 234, 0.05);
+  }
+  
+  /* ===============================================
+     FOCUS & ACCESSIBILITY
+     =============================================== */
+  .workshop-title:focus-visible,
+  .question-btn:focus-visible {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+    outline: none;
+  }
+  
+  /* ===============================================
+     RESPONSIVE DESIGN - TABLET
+     =============================================== */
+  @media only screen and (max-width: 1024px) {
+    .faq-header {
+      margin: 4rem auto 2.5rem;
     }
-    
-    /* פוקוס נגיש */
-    .question-btn:focus-visible {
-    box-shadow: 0 0 0 3px #a4c8ff;
+  
+    .accordion-wrapper {
+      padding: 0 1rem;
     }
+  
+    .workshop-title {
+      font-size: 1.3rem;
+      padding: 1.3rem 1.5rem;
+    }
+  
+    .question-btn {
+      font-size: 1rem;
+      padding: 0.9rem 1.2rem;
+    }
+  }
+  
+  /* ===============================================
+     RESPONSIVE DESIGN - MOBILE
+     =============================================== */
+  @media only screen and (max-width: 768px) {
+    .faq-header {
+      margin: 3rem auto 2rem;
+      padding: 0 1rem;
+    }
+  
+    .faq-title {
+      font-size: 2rem;
+    }
+  
+    .faq-icon {
+      font-size: 2.5rem;
+    }
+  
+    .faq-divider {
+      width: 80px;
+      height: 4px;
+      margin: 1.5rem auto;
+    }
+  
+    .accordion-wrapper {
+      margin: 2rem auto 4rem;
+      padding: 0 1rem;
+    }
+  
+    .workshop-section {
+      margin-bottom: 1rem;
+      border-radius: 15px;
+    }
+  
+    .workshop-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding: 1.2rem 1rem;
+    }
+  
+    .workshop-title::before {
+      width: 4px;
+    }
+  
+    .questions-wrapper.open {
+      padding: 0.8rem 1rem 1rem;
+    }
+  
+    .question-btn {
+      font-size: 0.95rem;
+      padding: 0.8rem 1rem;
+    }
+  
+    .question-btn:hover {
+      transform: translateX(-2px);
+    }
+  
+    .answer {
+      padding: 0.9rem 1.2rem;
+      font-size: 0.95rem;
+      border-right-width: 3px;
+    }
+  
+    .arrow {
+      width: 12px;
+      height: 12px;
+      border-width: 2px;
+    }
+  
+    .arrow.small {
+      width: 9px;
+      height: 9px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .faq-title {
+      font-size: 1.8rem;
+    }
+  
+    .faq-icon {
+      font-size: 2rem;
+    }
+  
+    .workshop-title {
+      font-size: 1.1rem;
+      padding: 1rem 0.8rem;
+    }
+  
+    .question-btn {
+      font-size: 0.9rem;
+      padding: 0.7rem 0.9rem;
+    }
+  
+    .answer {
+      padding: 0.8rem 1rem;
+      font-size: 0.9rem;
+    }
+  
+    .questions-wrapper.open {
+      padding: 0.6rem 0.8rem 0.8rem;
+    }
+  }
+  
+  /* ===============================================
+     RTL SUPPORT
+     =============================================== */
+  [dir="ltr"] .workshop-title::before {
+    left: auto;
+    right: 0;
+  }
+  
+  [dir="ltr"] .question-btn {
+    text-align: left;
+  }
+  
+  [dir="ltr"] .answer {
+    border-right: none;
+    border-left: 4px solid #667eea;
+    border-radius: 12px 0 0 12px;
+    text-align: left;
+  }
+  
+  [dir="ltr"] .question-btn:hover,
+  [dir="ltr"] .question-btn:focus {
+    transform: translateX(3px);
+  }
+  
+  /* ===============================================
+     REDUCE MOTION
+     =============================================== */
+  @media (prefers-reduced-motion: reduce) {
+    .workshop-title,
+    .workshop-title::before,
+    .arrow,
+    .questions-wrapper,
+    .question-btn,
+    .question-btn::before,
+    .answer-wrapper {
+      transition: none !important;
+    }
+  
+    .workshop-title:hover,
+    .question-btn:hover {
+      transform: none;
+    }
+  }
+  
+  /* ===============================================
+     PRINT STYLES
+     =============================================== */
+  @media print {
+    .faq-header {
+      margin: 2rem auto 1.5rem;
+    }
+  
+    .workshop-section {
+      page-break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #ddd;
+    }
+  
+    .questions-wrapper {
+      max-height: none !important;
+      padding: 1rem !important;
+    }
+  
+    .answer-wrapper {
+      max-height: none !important;
+    }
+  
+    .arrow {
+      display: none;
+    }
+  
+    .workshop-title,
+    .question-btn {
+      cursor: default;
+    }
+  }

@@ -10,7 +10,6 @@ import { FaWaze, FaInstagram } from "react-icons/fa";
 import photo37 from './images/photo37.jpg'
 import photo38 from './images/photo38.jpg'
 import photo39 from './images/photo39.jpg'
-
 import photo3 from './images/photo3.jpg'
 import photo4 from './images/photo4.jpg'
 import photo5 from './images/photo5.jpg'
@@ -90,50 +89,61 @@ import photo149 from './images/photo149.jpg'
 import photo151 from './images/photo151.jpg'
 import photo153 from './images/photo153.jpg'
 
-
 const translations = {
   he: {
     title: 'סדנאות פסיפס בוטיק',
-    description: `🎨 הצטרפו אלינו לסדנת פסיפס ייחודית בגלריית פסיפסים עתיקה מול הים, והפכו את יצירותיכם לאומנות אמיתית!
-👩‍🎨 בסדנה תיהנו מליווי צמוד של מומחי פסיפס ושימור עם ניסיון עשיר בתחום, שיסייעו לכם ליצור פסיפס מרהיב שתוכלו לקחת הביתה בסיום הסדנה.
-
-✨ הסדנה מספקת:
-✅ ליווי מקצועי של מומחי פסיפס ושימור עתיקות
-✅ עמדת קפה עם כיבוד קל
-✅ מוזיקה לבחירה ליצירת אווירה נוחה ומרגשת
-✅ זמן יצירה אישי עם תמיכה אישית של אנשי מקצוע
-
-🏛️ בגלריה שלנו אנו מייצרים ומוכרים פסיפסים בשיטה עתיקה ובסטנדרט גבוה, ומעבירים את הידע המקצועי שלנו בצורה חווייתית ומעשירה.
-🚀 הצטרפו אלינו לחוויה אומנותית ומלמדת!`,
-    cta: 'לתיאום מיידי',
+    subtitle: 'חוויית יצירה אומנותית ייחודית',
+    description: `🎨 הצטרפו אלינו לסדנת פסיפס ייחודית בגלריית פסיפסים עתיקה מול הים, והפכו את יצירותיכם לאומנות אמיתית`,
+    descriptionPoints: [
+      'ליווי מקצועי של מומחי פסיפס ושימור עתיקות',
+      'עמדת קפה עם כיבוד קל',
+      'מוזיקה לבחירה ליצירת אווירה נוחה ומרגשת',
+      'קחו הביתה את היצירה שלכם'
+    ],
+    galleryText: 'בגלריה שלנו אנו מייצרים ומוכרים פסיפסים שנוצרו בשיטה עתיקה ובסטנדרט גבוה, ומעבירים את הידע המקצועי שלנו בצורה חווייתית ומעשירה',
+    cta: 'הזמינו עכשיו',
     photoText: 'חוויה מגבשת ויצירתית',
-    pricingTitle: '🎟️ מחירים ותיאום סדנאות',
-    mosaicWorkshop: '🖼️ סדנאות פסיפס',
-    price: '👨‍👩‍👧‍👦 מחיר לסדנה: החל מ-250₪ לאדם',
-    pricingNote: 'המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים 🌊',
-    orderNow: '📩 הזמן עכשיו'
+    experienceTitle: 'למה לבחור בנו?',
+    experiencePoints: [
+      'מומחיות של מעל 30 שנים בתחום הפסיפס והשימור',
+      'מיקום מדהים מול הים התיכון',
+      'קבוצות קטנות לליווי אישי',
+      'חומרים מקצועיים ואיכותיים'
+    ],
+    pricingTitle: 'מחירים ותיאום סדנאות',
+    mosaicWorkshop: 'סדנאות פסיפס בוטיק',
+    price: 'החל מ-250₪ לאדם',
+    pricingNote: 'המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים',
+    orderNow: 'צרו קשר'
   },
+
   en: {
     title: 'Boutique Mosaic Workshops',
-    description: `🎨 Join us for a unique mosaic workshop at our ancient gallery by the sea and turn your creation into real art!
-👩‍🎨 You’ll enjoy close guidance from mosaic and preservation experts, helping you create a stunning mosaic to take home.
-
-✨ The workshop includes:
-✅ Professional guidance from mosaic and ancient art experts
-✅ Coffee station with light refreshments
-✅ Music of your choice for the perfect atmosphere
-✅ Personal creative time with expert support
-
-🏛️ Our gallery produces and sells mosaics using ancient techniques at the highest standard, passing on our knowledge in an experiential, enriching way.
-🚀 Join us for an artistic and educational experience!`,
+    subtitle: 'A Unique Artistic Creation Experience',
+    description: `🎨 Join us for a unique mosaic workshop at our ancient mosaic gallery by the sea, and turn your creations into real art!`,
+    descriptionPoints: [
+      'Professional guidance from mosaic and restoration experts',
+      'Coffee station with light refreshments',
+      'Music of your choice',
+      'Take your creation home with you'
+    ],
+    galleryText: 'In our gallery, we produce and sell mosaics that were created using traditional techniques at the highest standard, and share our professional knowledge in an experiential and enriching way.',
     cta: 'Book Now',
-    photoText: 'Creative & Team-Building Experience',
-    pricingTitle: '🎟️ Prices & Workshop Booking',
-    mosaicWorkshop: '🖼️ Mosaic Workshops',
-    price: '👨‍👩‍👧‍👦 Price: From 250₪ per person',
-    pricingNote: 'Prices include materials, professional guidance, and a unique seaside atmosphere 🌊',
-    orderNow: '📩 Book Now'
+    photoText: 'A Creative and Team-Building Experience',
+    experienceTitle: 'Why Choose Us?',
+    experiencePoints: [
+      'Over 30 years of expertise in mosaics and restoration',
+      'A stunning location by the Mediterranean Sea',
+      'Small groups for personalized guidance',
+      'Professional and high-quality materials'
+    ],
+    pricingTitle: 'Prices & Workshop Booking',
+    mosaicWorkshop: 'Boutique Mosaic Workshops',
+    price: 'From 250₪ per person',
+    pricingNote: 'Prices include materials, professional instruction, and a unique seaside atmosphere',
+    orderNow: 'Contact Us'
   }
+
 }
 
 const altTexts = {
@@ -141,16 +151,13 @@ const altTexts = {
     he: "לקוחות נהנים מסדנת פסיפס בגלריה",
     en: "Customers enjoying a mosaic workshop in the gallery",
   },
-  photo38: {
-    he: "לקוחות נהנים מסדנת פסיפס בגלריה",
-    en: "Customers enjoying a mosaic workshop in the gallery",
-  },
-  // אפשר להוסיף כאן עוד alt לתמונות נוספות לפי הצורך
+  photo103: {
+    he: "קבוצה יוצרת פסיפס בסדנה",
+    en: "Group creating mosaic in workshop",
+  }
 };
 
-
 export default function Private({ language, languageSettings }) {
-
   const t = translations[language];
   const settings = languageSettings[language];
   const instaLink = "https://www.instagram.com/genach_mosaic_workshop/";
@@ -167,57 +174,116 @@ export default function Private({ language, languageSettings }) {
   ]
 
   return (
-    <div id='mainDivPrivate'>
-      <br /><br /><br />
-      <FadeIn>
-        <h1 id='titlePrivate'>{t.title}</h1>
-        <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
+    <div className="private-page" >
 
-        <p id='subTitlePrivate' style={{
-          direction: settings.direction,
-          textAlign: settings.textAlign
-        }}>{t.description}</p>
-
-        <div id='CTAPrivate'>
-          <a href="#contact" className='CTA'>{t.cta}</a>
+      {/* Hero Section */}
+      <section className="private-hero" >
+        <div className="private-hero-content">
+          <h1 className="private-hero-title">{t.title}</h1>
+          <p className="private-hero-subtitle">{t.subtitle}</p>
         </div>
-
-        <img
-          id='photo37'
-          src={photo37}
-          loading="lazy"
-          alt={altTexts.photo37[language]}
-        />
-
-        <p id='textPhoto38'>{t.photoText}</p>
-        <img
-          id='photo38'
-          src={photo103}
-          loading="lazy"
-          alt={altTexts.photo38[language]}
-        />
-
-      </FadeIn>
-
-      <section className="pricing-section">
-        <h2 className="pricing-title">{t.pricingTitle}</h2>
-        <div className="pricing-grid">
-          <a href="#contact" className='pricingLink'>
-            <div className="price-card">
-              <h3>{t.mosaicWorkshop}</h3>
-              <ul>
-                <li>{t.price}</li>
-              </ul>
-            </div>
-          </a>
-        </div>
-        <p className="pricing-note">{t.pricingNote}</p>
-        <a href="#contact" className="cta-button">{t.orderNow}</a>
       </section>
 
+      {/* Photo Carousel */}
+      <section className="private-carousel-section" style={{ direction: 'ltr' }}>
+        <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
+      </section>
+
+      {/* Description Section */}
+      <section className="private-description-section" style={settings}>
+        <div className="private-description-container">
+          <p className="private-description-intro">{t.description}</p>
+
+          <div className="private-features-grid">
+            {t.descriptionPoints.map((point, index) => (
+              <div key={index} className="private-feature-card">
+                <div className="private-feature-icon">✓</div>
+                <p className="private-feature-text">{point}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="private-gallery-text">{t.galleryText}</p>
+
+          <div className="private-cta-wrapper">
+            <a href="#contact" className="private-cta-button">
+              {t.cta}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Image Grid Section */}
+      <section className="private-images-section">
+        <div className="private-images-grid">
+          <div className="private-image-wrapper">
+            <img
+              src={photo37}
+              alt={altTexts.photo37[language]}
+              className="private-image"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <p className="private-image-caption">{t.photoText}</p>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="private-experience-section" style={settings}>
+        <h2 className="private-experience-title">{t.experienceTitle}</h2>
+        <div className="private-experience-grid">
+          {t.experiencePoints.map((point, index) => (
+            <div key={index} className="private-experience-card">
+              <div className="private-experience-number">{index + 1}</div>
+              <p className="private-experience-text">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing Section */}
+      <section className="private-pricing-section">
+        <h2 className="private-pricing-title">{t.pricingTitle}</h2>
+
+        <a href="#contact" className="private-pricing-card-link">
+          <div className="private-pricing-card">
+            <div className="private-pricing-icon">🖼️</div>
+            <h3 className="private-pricing-card-title">{t.mosaicWorkshop}</h3>
+            <div className="private-pricing-price">
+              <span className="private-pricing-amount">{t.price}</span>
+            </div>
+            <div className="private-pricing-cta">
+              <div className="private-pricing-cta" style={settings}>
+
+                <span>{t.orderNow}</span>
+                <svg
+
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  style={language === 'he' ? { transform: 'scaleX(-1)' } : {}}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <p className="private-pricing-note">{t.pricingNote}</p>
+      </section>
+
+      {/* Contact & Footer */}
       <Contact language={language} instaLink={instaLink} languageSettings={languageSettings} />
       <Footer language={language} languageSettings={languageSettings} />
     </div>
   )
 }
-

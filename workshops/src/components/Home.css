@@ -1,482 +1,424 @@
+/* ==================== Main Container ==================== */
+
 #main {
-    position: absolute;
-    top: 0;
-    background-color: rgb(250, 250, 250);
-    overflow: hidden;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgb(250, 250, 250);
+  overflow: hidden;
+  width: 100%;
 }
 
-#title {
-    font-size: 10vh;
-    margin-bottom: 2vh;
-    color: white;
-   
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-
-
-
-#title2 {
-
-    font-size: 2.4vh;
-    color: white;
-    font-weight: 400;
-    margin-bottom: 6vh;
-
-
-
-}
-
-/* #titleh2 {
-    font-size: 3vh;
-
-    color: white;
-  
-} */
-
-
-
-.frontTitleDiv {
-    position: absolute;
-    top: 10vh;
-    width: 100%;
-}
-
-@media only screen and (max-width: 768px) {
-    #title {
-        font-size: 5.5vh;
-
-    }
-
-    #title2 {
-        margin-bottom: 4vh;
-    }
-
-    #moveDownHome {
-        position: relative;
-        top: 2vh;
-    }
-
-    #lepirteiVeLasadnaDiv {
-        margin-bottom: 0;
-
-    }
-}
-
-#lepirteiVeLasadnaDiv {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-
-#container {
-    width: 100%;
-    height: 100%;
-}
-
-.child {
-    flex: 1;
-}
-
-.z {
-    z-index: 4;
-}
-
-#intro {
-    display: flex;
-    justify-content: flex-end;
-    color: white;
-    position: relative;
-    top: 30vh;
-    right: 2.5vh;
-    font-size: 2.5vh;
-
-}
-
-.buttons {
-    background-color: rgb(255, 132, 0);
-    border-radius: 8px;
-    height: 10vh;
-    /* Responsive height */
-    width: 15vh;
-    /* Responsive width */
-    font-size: 2vh;
-    /* Responsive font size */
-    color: white;
-    border-color: transparent;
-    transition: 0.3s;
-    margin-bottom: 2vh;
-    /* Responsive margin */
-}
-
-
-
-
-
-
-#leyezirat {
-
-    background-color: rgb(209, 108, 0);
-    border-radius: 7px;
-    height: 7vh;
-    /* Responsive height */
-    width: 18vw;
-    /* Responsive width */
-    font-size: 2.2vh;
-    /* Responsive font size */
-    color: white;
-    border-color: transparent;
-    transition: 0.3s;
-
-    z-index: 10;
-    /* Responsive margin */
-   
-
-
-
-
-}
-
-#leyezirat:hover {
-    background-color: rgb(225, 135, 0);
-}
-
-
-#lehazmana {
-    background-color: #1b9748;
-    border-radius: 7px;
-    height: 7vh;
-    /* Responsive height */
-    width: 18vw;
-    /* Responsive width */
-    font-size: 2.2vh;
-    /* Responsive font size */
-    color: white;
-    border-color: transparent;
-    transition: 0.3s;
-    margin-left: 5vw;
-    margin-right: 5vw;
-   
-
-
-
-}
-
-#lehazmana:hover {
-    background-color: #21b256;
-}
-
-
-#lepirteiHasiurim {
-    background-color: #2320c6;
-    border-radius: 7px;
-    height: 7vh;
-    /* Responsive height */
-    width: 18vw;
-    /* Responsive width */
-    font-size: 2.2vh;
-    /* Responsive font size */
-    color: white;
-    border-color: transparent;
-    transition: 0.3s;
-  
-
-
-}
-
-#lepirteiHasiurim:hover {
-    background-color: #204cdc;
-}
-
-@media only screen and (max-width: 768px) {
-
-    #leyezirat {
-        font-size: 2.3vh;
-        width: 65vw;
-        margin-bottom: 15px;
-
-    }
-
-
-    #lehazmana {
-        font-size: 2.3vh;
-        width: 65vw;
-        direction: rtl;
-
-
-    }
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.buttons2 {
-    color: darkorange;
-    transition: 0.3s;
-    font-size: larger;
-}
-
-.buttons2:hover {
-    color: orange;
-}
-
-
-
-
-#tableDiv {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 75%;
-    height: 100%;
-    margin: 1vh;
-    /* Responsive margin */
-}
-
-#kind {
-    display: flex;
-    justify-content: space-around;
-}
-
-#images {
-    display: flex;
-    align-items: center;
-    width: 70%;
-    justify-content: center;
-    padding-left: 2vh;
-    /* Responsive padding */
-    position: relative;
-    left: 2vh;
-    /* Responsive position */
-}
-
-#img1,
-#img2 {
-    width: 25%;
-
-}
-
-#img3,
-#img4 {
-    width: 21%;
-}
-
-
-.s {
-    display: flex;
-    justify-content: space-evenly;
-    padding-left: 5%;
-    /* Responsive padding */
-    padding-right: 5%;
-    /* Responsive padding */
-    align-items: center;
-
-}
-
-.sss {
-    position: relative;
-    top: 50px;
-}
-
-
-
-/* #s1 {
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
-
-
-/* Q{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-} */
-
-
-
-.p {
-   
-    font-size: 2.3vh;
-    width: 20vh;
-    position: relative;
-    top: 50px;
-}
-
-#ma {
-    position: relative;
-    bottom: 10px;
-}
-
-
-
-
-/* #h12{
-        position: relative;
-        right: 500px;
-    } */
-
-@media only screen and (max-width: 768px) {
-
-    /* For mobile phones: */
-
-    #img1,
-    #img3,
-    #img4 {
-
-        display: none;
-    }
-
-    .s {
-        display: flex;
-        justify-content: none;
-        padding-left: 0;
-        margin-top: 3vh;
-        padding-right: 0;
-        align-items: center;
-
-    }
-
-
-    #sss {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-        ;
-    }
-
-    #img2 {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    #s62 {
-        width: 25%;
-        position: relative;
-        right: 5vw;
-    }
-
-
-
-
-
-
-    .frontTitleDiv {
-        position: absolute;
-        top: 7vh;
-        width: 100%;
-    }
-
-
-
-
-
-
-
-}
-
-
-
-#ma {
-    position: relative;
-    top: 13vh;
-}
-
-
-
-
-
-
-.white {
-    color: white;
-    font-size: 4vh;
-}
-
-
-#video1Div {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
+/* ==================== Video Background ==================== */
 
 #video1 {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 #overlay {
-    position: absolute;
-    top: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+/* ==================== Hero Content ==================== */
+
+.frontTitleDiv {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding-top: 0;
+}
+
+#moveDownHome {
+  text-align: center;
+  max-width: 1200px;
+
+  animation: fadeInUp 1s ease-out;
+  width: 100%;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== Typography ==================== */
+
+#title {
+  font-size: clamp(48px, 10vh, 120px);
+  font-weight: 800;
+  color: white;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.2s ease-out;
+}
+
+#title2 {
+  font-size: clamp(16px, 2.2vh, 26px);
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  margin-bottom: 40px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==================== CTA Buttons ==================== */
+
+#lepirteiVeLasadnaDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  animation: fadeIn 1.6s ease-out;
+}
+
+#leyezirat,
+#lehazmana {
+  position: relative;
+  height: 64px;
+  padding: 0 40px;
+  font-size: clamp(16px, 2.2vh, 20px);
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1;
+  min-width: 200px;
+}
+
+#leyezirat::before,
+#lehazmana::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: -1;
+}
+
+#leyezirat:hover::before,
+#lehazmana:hover::before {
+  transform: translateX(100%);
+}
+
+#leyezirat {
+  background: linear-gradient(135deg, #d66800 0%, #ff8c00 100%);
+}
+
+#leyezirat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(255, 107, 0, 0.4);
+}
+
+#leyezirat:active {
+  transform: translateY(-2px);
+}
+
+#lehazmana {
+  background: linear-gradient(135deg, #1b9748 0%, #25d366 100%);
+}
+
+#lehazmana:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(27, 151, 72, 0.4);
+}
+
+#lehazmana:active {
+  transform: translateY(-2px);
+}
+
+
+#W {
+  font-size: 24px;
+  margin-left: 8px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+/* ==================== Feature Images Section ==================== */
+
+.s {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 80px 5%;
+
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+#sss {
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+}
+
+#img1,
+#img2,
+#img3,
+#img4 {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+#img1:hover,
+#img2:hover,
+#img3:hover,
+#img4:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+
+
+/* ==================== Tablet Responsive ==================== */
+
+@media only screen and (max-width: 1024px) {
+  .s {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 60px 4%;
+  }
+
+  #img1,
+  #img2,
+  #img3,
+  #img4 {
+    height: 280px;
+  }
+}
+
+/* ==================== Mobile Responsive ==================== */
+
+@media only screen and (max-width: 768px) {
+  .frontTitleDiv {
+    align-items: flex-start;
+
+  }
+
+  #moveDownHome {
+ 
     width: 100%;
-    height: 96vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 2vh;
-    /* Responsive padding */
+  }
+
+  #title {
+    font-size: 39px !important;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+  }
+
+  #title2 {
+    font-size: 17px !important;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    line-height: 1.5;
+  }
+
+  #lepirteiVeLasadnaDiv {
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 30px;
+  }
+
+  #leyezirat,
+  #lehazmana {
+    width: 100%;
+    max-width: 300px;
+    height: 58px;
+    font-size: 17px;
+    padding: 0 30px;
+  }
+
+  #W {
+    font-size: 22px;
+    margin-left: 6px;
+  }
+
+  /* Mobile Images */
+  .s {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 40px 5%;
+  }
+
+  #img1,
+  #img3,
+  #img4 {
+    display: none;
+  }
+
+  #img2 {
+    height: 400px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 }
 
-.buttons {
-    background-color: rgb(255, 132, 0);
-    border-radius: 8px;
-    height: 5vh;
-    /* Responsive height */
-    width: 15vh;
-    /* Responsive width */
-    font-size: 2vh;
-    /* Responsive font size */
-    color: white;
-    border-color: transparent;
-    transition: 0.3s;
-    margin-bottom: 2vh;
-    /* Responsive margin */
+@media only screen and (max-width: 480px) {
+
+
+  #moveDownHome {
+    padding: 0 16px;
+  }
+
+  #title {
+    font-size: 34px;
+    margin-bottom: 14px;
+  }
+
+  #title2 {
+    font-size: 15px;
+    margin-bottom: 28px;
+    padding: 0 8px;
+  }
+
+  #lepirteiVeLasadnaDiv {
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  #leyezirat,
+  #lehazmana,
+  #leshituaf {
+    height: 54px;
+    font-size: 16px;
+    max-width: 280px;
+    padding: 0 25px;
+  }
+
+  #W {
+    font-size: 20px;
+  }
+
+  #img2 {
+    height: 300px;
+  }
 }
 
+@media only screen and (max-width: 380px) {
 
+  #title {
+    font-size: 30px;
+  }
 
+  #title2 {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
 
-#googleReviews {
-
-    color: white;
-    font-size: 18px;
-    position: relative;
-    bottom: 24px;
+  #leyezirat,
+  #lehazmana {
+    height: 52px;
+    font-size: 15px;
+    max-width: 260px;
+  }
 }
 
-#googleStars {
-    width: 30vh;
-    position: relative;
-    bottom: 42px;
-    margin-top: 2px;
+/* ==================== Accessibility ==================== */
+
+#leyezirat:focus,
+#lehazmana:focus {
+  outline: 3px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 4px;
 }
 
-.center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ==================== Performance Optimizations ==================== */
+
+#img1,
+#img2,
+#img3,
+#img4 {
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
+/* ==================== Smooth Scrolling ==================== */
 
+html {
+  scroll-behavior: smooth;
+}
 
-#iframe {
-    border: 2px, solid, black;
+/* ==================== Print Styles ==================== */
+
+@media print {
+  #video1,
+  #overlay {
+    display: none;
+  }
+
+  #leyezirat,
+  #lehazmana {
+    background: #333 !important;
+    color: white !important;
+  }
 }

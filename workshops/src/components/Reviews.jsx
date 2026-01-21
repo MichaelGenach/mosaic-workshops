@@ -568,6 +568,8 @@ export default function Reviews({ language, }) {
     }, 30);
   };
 
+
+
   return (
     <div id="reviewsContainer">
       <motion.div
@@ -597,7 +599,7 @@ export default function Reviews({ language, }) {
           {reviews.map((item, index) => (
             <motion.div
               className={
-                item.review.length > 250
+                item.review.length > 240
                   ? "long-review"
                   : "reviewCard"
               }
