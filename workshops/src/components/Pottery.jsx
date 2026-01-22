@@ -92,7 +92,7 @@ const translations = {
   he: {
     title: 'סדנאות קדרות',
     icons: ['מרגיע', 'יצירה מקצועית', 'גיבוש והנאה', 'לוקחים הביתה'],
-    cta: 'לתיאום מיידי',
+    cta: 'לתיאום סדנה פרטית',
     description: `הזמינו את המשפחה, החברים או הצוות לעולם של יצירה והשראה בסדנת קדרות ייחודית,
 
 על גלגל האובניים תתנסו בעבודה עם חומרים איכותיים, תלמדו טכניקות מסורתיות ומודרניות, ותעצבו כלי קרמיקה בעבודת יד.
@@ -115,12 +115,6 @@ const translations = {
       { icon: '🌊', title: 'מיקום מושלם', text: 'סדנה מול הים במיקום מדהים' }
     ],
 
-    testimonials: 'מה אומרים עלינו',
-    reviews: [
-      { name: 'שרה כהן', text: 'חוויה מדהימה! הצוות סבלני והמקצועיות ברמה גבוהה', rating: 5 },
-      { name: 'דוד לוי', text: 'יום גיבוש מעולה לחברה, כולם נהנו והתלהבו', rating: 5 },
-      { name: 'מיכל אברהם', text: 'סדנה משפחתית נהדרת, הילדים והמבוגרים נהנו', rating: 5 }
-    ],
 
     galleryText: 'פעילויות גיבוש',
     pricingTitle: 'מחירים ותיאום סדנאות',
@@ -135,7 +129,7 @@ const translations = {
   en: {
     title: 'Pottery Workshops',
     icons: ['Relaxing', 'Pro creation', 'Team bonding', 'Take it home'],
-    cta: 'Book Now',
+    cta: 'Book a private workshop',
     description: `Invite your family, friends or team to a world of creativity and inspiration in a unique pottery workshop!
 
 Experience the potter's wheel, work with quality materials, learn traditional and modern techniques, and create handmade ceramics.
@@ -224,6 +218,87 @@ export default function Pottery({ language, languageSettings }) {
 
         <a href="#contact" id='CTAPottery'>{t.cta}</a>
 
+        {/* Pottery Workshop Testimonials Section */}
+        <section className="testimonials-section pottery-testimonials" style={{
+          direction: settings.direction,
+        }}>
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="section-title-tours"
+          >
+            {language === 'he' ? 'מה אומרים המשתתפים בסדנת הקדרות' : 'What Our Pottery Workshop Participants Say'}
+          </motion.h2>
+
+          <div className="testimonials-grid">
+            {(language === 'he' ? [
+              {
+                name: 'רונית ברק',
+                workshop: 'סדנת קדרות',
+                text: 'חוויה מדהימה! הרגשתי את עצמי יוצרת משהו ייחודי בידיים שלי. אמיר סבלני ומקצועי, והאווירה היתה מרגיעה ומעוררת השראה.',
+                rating: 5
+              },
+              {
+                name: 'אילן פרידמן',
+                workshop: 'סדנה זוגית',
+                text: 'אני ובת הזוג נהנינו מכל רגע! זו היתה חוויה יצירתית במיוחד. יצאנו עם כלים שיצרנו בעצמנו, מומלץ בחום!.',
+                rating: 5
+              },
+              {
+                name: 'ענת גולדשטיין',
+                workshop: 'סדנת משפחות',
+                text: 'הילדים לא רצו לעזוב! הם נהנו מכל שנייה ויצרו דברים מדהימים. חוויה משפחתית מיוחדת שנזכור לתמיד. תודה על הכל!',
+                rating: 5
+              }
+            ] : [
+              {
+                name: 'Ronit Barak',
+                workshop: 'Pottery Workshop',
+                text: 'An amazing experience! I felt myself creating something truly unique with my own hands. Amir was patient and professional, and the atmosphere was calming and inspiring.',
+                rating: 5
+              },
+              {
+                name: 'Ilan Friedman',
+                workshop: 'Couples Workshop',
+                text: 'My partner and I enjoyed every moment! It was an especially creative experience. We left with pottery pieces we made ourselves — highly recommended!',
+                rating: 5
+              },
+              {
+                name: 'Anat Goldstein',
+                workshop: 'Family Workshop',
+                text: 'The kids didn’t want to leave! They enjoyed every second and created incredible pieces. A special family experience we’ll remember forever. Thank you for everything!',
+                rating: 5
+              }
+            ]).map((testimonial, index) => (
+              <motion.div
+                key={index}
+                className="testimonial-card"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
+                <div className="testimonial-stars">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="star">⭐</span>
+                  ))}
+                </div>
+                <p className="testimonial-text">"{testimonial.text}"</p>
+                <div className="testimonial-author">
+                  <div className="author-avatar pottery-avatar">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div className="author-info">
+                    <h4 className="author-name">{testimonial.name}</h4>
+                    <p className="author-tour">{testimonial.workshop}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </section>
 
         <div id='explainPotteryDiv'>
           <p id='explainPotteryText' style={{
@@ -246,6 +321,8 @@ export default function Pottery({ language, languageSettings }) {
           </div>
         </div>
 
+
+
         {/* קטע חדש - למה לבחור בנו */}
         <div className='whyUsSection'>
           <h2 className='sectionTitle'>{t.whyUs}</h2>
@@ -262,23 +339,7 @@ export default function Pottery({ language, languageSettings }) {
 
         <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
 
-        {/* קטע חדש - המלצות */}
-        <div className='testimonialsSection'>
-          <h2 className='sectionTitle'>{t.testimonials}</h2>
-          <div className='testimonialsGrid'>
-            {t.reviews.map((review, index) => (
-              <div key={index} className='testimonialCard'>
-                <div className='stars'>{'⭐'.repeat(review.rating)}</div>
-                <p className='reviewText' style={{
-                  direction: settings.direction
-                }}>"{review.text}"</p>
-                <p style={{
-                  direction: settings.direction
-                }} className='reviewName'> - {review.name}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+
 
         <div className="textPhotoContainerPottery"></div>
         <p id='textPhoto161'>{t.galleryText}</p>

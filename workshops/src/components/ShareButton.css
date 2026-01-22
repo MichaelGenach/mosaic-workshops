@@ -6,13 +6,13 @@
 /* כפתור השיתוף הראשי (FAB) */
 .share-fab {
     position: fixed;
-    bottom: 90px;
-    right: 25px;
+    bottom: 7px;
+    right: 10px;
     width: 60px;
     height: 60px;
     border-radius: 50%;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border: none;
+    border: 2px white solid;
     color: white;
     font-size: 24px;
     cursor: pointer;
@@ -115,16 +115,17 @@
     z-index: 900; /* נמוך מהתפריט ומה-FAB */
 }
 
-
-/* התאמות למובייל */
-@media only screen and (max-width: 768px) {
-    .share-fab {
-        right: 10px;
-        bottom: 85px;
-    }
-
-    .share-menu {
-        right: 9px;
-        bottom: 150px;
-    }
-}
+.share-fab {
+    transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    background 0.45s ease;
+  
+  }
+  
+  .share-fab-hidden {
+    opacity: 0;
+    transform: translateY(6px) scale(0.96);
+    pointer-events: none;
+  }
+  

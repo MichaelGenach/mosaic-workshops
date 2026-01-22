@@ -8,29 +8,29 @@ const translations = {
     title: 'חוויות ייחודיות',
     subtitle: 'סדנאות וסיורים מרתקים על חוף הים התיכון',
     potteryTitle: 'סדנת קדרות',
-    potteryDesc: 'יצירה אותנטית על אובניים ',
+    potteryDesc: 'ללמוד לעבוד עם חימר כמו שעשו אלפי שנים',
     potteryFeature1: 'ליווי מיקצועי',
     potteryFeature2: 'יצירת כלי וצביעה',
     potteryFeature3: 'קחו הביתה את היצירה',
     potteryPrice: '250₪',
     mosaicTitle: 'סדנת פסיפס',
-    mosaicDesc: 'אמנות עתיקה במו ידיכם',
+    mosaicDesc: 'טכניקה עתיקה ותוצאה שנשארת אצלכם',
     mosaicFeature1: 'ליווי מיקצועי',
     mosaicFeature2: 'טכניקות מקוריות',
     mosaicFeature3: 'קחו הביתה את היצירה',
     mosaicPrice: 'מ-250₪',
     companyTitle: 'אירועי חברות',
-    companyDesc: 'פעילות גיבוש ייחודית וקריאטיבית',
+    companyDesc: 'יצירה, שיתוף פעולה וזמן איכות אמיתי',
     companyFeature1: 'ליווי מקצועי',
     companyFeature2: 'יצירת פסיפס קבוצתי משותף',
     companyFeature3: 'משתתפים ללא הגבלה',
     companyPrice: 'מחיר בהתאם לגודל היצירה',
     toursTitle: 'סיורים מרתקים',
-    toursDesc: 'גלו את הסודות הנסתרים של ארץ ישראל',
+    toursDesc: 'סיפורים ומקומות מדהימים שמעטים מכירים',
     toursFeature1: 'מדריך מוסמך',
     toursFeature2: 'מסלול מרתק לבחירתכם',
     toursFeature3: 'נופים מדהימים',
-    toursPrice: 'מ-500₪',
+    toursPrice: 'מ-450₪',
     perPerson: 'לאדם',
     perTour: 'לסיור',
     bookNow: 'הזמינו',
@@ -43,31 +43,31 @@ const translations = {
     title: 'Unique Experiences',
     subtitle: 'Fascinating workshops and tours on the Mediterranean coast',
     potteryTitle: 'Pottery Workshop',
-    potteryDesc: 'Authentic creation on the wheel',
+    potteryDesc: 'Learn to work with clay as people have done for thousands of years',
     potteryFeature1: 'Professional guidance',
     potteryFeature2: 'Crafting and painting your piece',
     potteryFeature3: 'Take your creation home',
     potteryPrice: '250₪',
     mosaicTitle: 'Mosaic Workshop',
-    mosaicDesc: 'Ancient art crafted with your own hands',
+    mosaicDesc: 'An ancient technique and a result you get to keep',
     mosaicFeature1: 'Professional guidance',
     mosaicFeature2: 'Original techniques',
     mosaicFeature3: 'Take your creation home',
     mosaicPrice: 'From 250₪',
     companyTitle: 'Corporate Events',
-    companyDesc: 'Unique and creative team-building activity',
+    companyDesc: 'Creation, collaboration, and genuine quality time',
     companyFeature1: 'Professional guidance',
     companyFeature2: 'Create a collaborative group mosaic',
     companyFeature3: 'Unlimited participants',
     companyPrice: 'Price depends on the size of the artwork',
     toursTitle: 'Fascinating Tours',
-    toursDesc: 'Discover the hidden secrets of ancient Israel',
+    toursDesc: 'Stories, places, and perspectives few people know',
     toursFeature1: 'Certified guide',
     toursFeature2: 'A captivating route of your choice',
     toursFeature3: 'Stunning landscapes',
-    toursPrice: 'From 500₪',
+    toursPrice: 'From 450₪',
     perPerson: 'per person',
-    perTour: 'per tour',
+    perTour: 'per group',
     bookNow: 'Book now',
     whatsIncluded: 'What’s included?',
     mainNote: 'All workshops and tours include professional materials, personal guidance, and a magical atmosphere',
@@ -201,16 +201,15 @@ export default function Pricing({ language = 'he' }) {
                             {t[`${card.key}Price`]}
                           </span>
                         ) : (
-                          <>
-                            <span className="pricing-card-price">
-                              {t[`${card.key}Price`]}
-                            </span>
-                            <span className="pricing-card-price-unit">
+                          <span className="pricing-card-price">
+                            {t[`${card.key}Price`]}{' '}
+                            <span className="pricing-card-price-unit-inline">
                               {t[card.priceType]}
                             </span>
-                          </>
+                          </span>
                         )}
                       </div>
+
 
                       <a href="#contact" className="pricing-card-button" onClick={(e) => e.stopPropagation()}>
                         <div className="pricing-card-button-shine"></div>

@@ -1141,3 +1141,173 @@
         text-align: right;
     }
 }
+
+
+
+
+
+/* ================================
+   POTTERY WORKSHOP TESTIMONIALS
+   ================================ */
+
+   .pottery-testimonials {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #c96c1b 0%, #9b671f 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .pottery-testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    opacity: 0.3;
+  }
+  
+  .pottery-testimonials .section-title-tours {
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .pottery-testimonials .section-title-tours::after {
+    background: white;
+  }
+  
+  .pottery-testimonials .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .pottery-testimonials .testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+  }
+  
+  .pottery-testimonials .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 5rem;
+    color: #c17a4d;
+    opacity: 0.1;
+    font-family: Georgia, serif;
+    line-height: 1;
+  }
+  
+  .pottery-testimonials .testimonial-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+  }
+  
+  .pottery-testimonials .testimonial-stars {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+  }
+  
+  .pottery-testimonials .star {
+    animation: starPulse 2s ease-in-out infinite;
+  }
+  
+  .pottery-testimonials .star:nth-child(1) { animation-delay: 0s; }
+  .pottery-testimonials .star:nth-child(2) { animation-delay: 0.2s; }
+  .pottery-testimonials .star:nth-child(3) { animation-delay: 0.4s; }
+  .pottery-testimonials .star:nth-child(4) { animation-delay: 0.6s; }
+  .pottery-testimonials .star:nth-child(5) { animation-delay: 0.8s; }
+  
+  .pottery-testimonials .testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  
+  .pottery-testimonials .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e2e8f0;
+  }
+  
+  .pottery-testimonials .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c17a4d, #8b5a3c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+  
+  .pottery-testimonials .author-info {
+    flex: 1;
+  }
+  
+  .pottery-testimonials .author-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 0.3rem 0;
+  }
+  
+  .pottery-testimonials .author-tour {
+    font-size: 0.9rem;
+    color: #718096;
+    margin: 0;
+  }
+  
+  /* Mobile Responsive for Pottery Testimonials */
+  @media (max-width: 768px) {
+    .pottery-testimonials {
+      padding: 3rem 1rem;
+    }
+  
+    .pottery-testimonials .testimonials-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    .pottery-testimonials .testimonial-card {
+      padding: 1.5rem;
+    }
+  
+    .pottery-testimonials .testimonial-text {
+      font-size: 1rem;
+    }
+  
+    .pottery-testimonials .author-avatar {
+      width: 45px;
+      height: 45px;
+      font-size: 1.3rem;
+    }
+  
+    .pottery-testimonials .author-name {
+      font-size: 1rem;
+    }
+  
+    .pottery-testimonials .author-tour {
+      font-size: 0.85rem;
+    }
+  }

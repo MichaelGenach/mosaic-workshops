@@ -101,7 +101,7 @@ const translations = {
       'קחו הביתה את היצירה שלכם'
     ],
     galleryText: 'בגלריה שלנו אנו מייצרים ומוכרים פסיפסים שנוצרו בשיטה עתיקה ובסטנדרט גבוה, ומעבירים את הידע המקצועי שלנו בצורה חווייתית ומעשירה',
-    cta: 'הזמינו עכשיו',
+    cta: 'לתיאום סדנה פרטית',
     photoText: 'חוויה מגבשת ויצירתית',
     experienceTitle: 'למה לבחור בנו?',
     experiencePoints: [
@@ -128,7 +128,7 @@ const translations = {
       'Take your creation home with you'
     ],
     galleryText: 'In our gallery, we produce and sell mosaics that were created using traditional techniques at the highest standard, and share our professional knowledge in an experiential and enriching way.',
-    cta: 'Book Now',
+    cta: 'Book a private workshop',
     photoText: 'A Creative and Team-Building Experience',
     experienceTitle: 'Why Choose Us?',
     experiencePoints: [
@@ -194,6 +194,12 @@ export default function Private({ language, languageSettings }) {
         <div className="private-description-container">
           <p className="private-description-intro">{t.description}</p>
 
+          <div className="private-cta-wrapper">
+            <a href="#contact" className="private-cta-button">
+              {t.cta}
+            </a>
+          </div>
+
           <div className="private-features-grid">
             {t.descriptionPoints.map((point, index) => (
               <div key={index} className="private-feature-card">
@@ -205,11 +211,7 @@ export default function Private({ language, languageSettings }) {
 
           <p className="private-gallery-text">{t.galleryText}</p>
 
-          <div className="private-cta-wrapper">
-            <a href="#contact" className="private-cta-button">
-              {t.cta}
-            </a>
-          </div>
+
         </div>
       </section>
 
@@ -226,7 +228,6 @@ export default function Private({ language, languageSettings }) {
           </div>
         </div>
 
-        <p className="private-image-caption">{t.photoText}</p>
       </section>
 
       {/* Why Choose Us Section */}

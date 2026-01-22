@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d49b17de.css",
-    "main.js": "/static/js/main.26a3ccff.js",
+    "main.css": "/static/css/main.eedb53b8.css",
+    "main.js": "/static/js/main.74980a02.js",
     "static/js/787.71619633.chunk.js": "/static/js/787.71619633.chunk.js",
     "static/media/video12.mp4": "/static/media/video12.4f0cf774cb4f992a5a08.mp4",
     "static/media/yam.mp4": "/static/media/yam.dc0f4a06ec558ab15d52.mp4",
@@ -95,6 +95,7 @@
     "static/media/photo227.jpg": "/static/media/photo227.5a41e41e64915772c315.jpg",
     "static/media/photo79.jpg": "/static/media/photo79.1808bbe2b6f165326d31.jpg",
     "static/media/photo94.jpg": "/static/media/photo94.df3fc1130881523a33bc.jpg",
+    "static/media/tandemCaesarea.jpeg": "/static/media/tandemCaesarea.6972bc8d1b068ceb886f.jpeg",
     "static/media/photo5.jpg": "/static/media/photo5.cdaddfb5dc17b577cd37.jpg",
     "static/media/photo69.jpg": "/static/media/photo69.d4575e67446ecdb01950.jpg",
     "static/media/photo7.jpg": "/static/media/photo7.5b33b6a21054f9fd8b1f.jpg",
@@ -113,7 +114,6 @@
     "static/media/photo53.jpg": "/static/media/photo53.59a603ec4b5a1ec87713.jpg",
     "static/media/photo101.jpg": "/static/media/photo101.61f615fb884a52c46fe9.jpg",
     "static/media/photo215.jpg": "/static/media/photo215.3089d6686f8dc6e78a02.jpg",
-    "static/media/tandemCaesarea.png": "/static/media/tandemCaesarea.b1b8f7d2ab9c4b2a1b0f.png",
     "static/media/photo63.jpg": "/static/media/photo63.223b0338511a71e11a8c.jpg",
     "static/media/photo1.jpg": "/static/media/photo1.385152d5d166b90cb839.jpg",
     "static/media/photo149.jpg": "/static/media/photo149.fbe66afec2148d78afb3.jpg",
@@ -215,16 +215,17 @@
     "static/media/photo118.jpg": "/static/media/photo118.3e3c57eb21c0960df948.jpg",
     "static/media/photo107.jpg": "/static/media/photo107.853077092a513d55c139.jpg",
     "static/media/photo98.jpg": "/static/media/photo98.853077092a513d55c139.jpg",
+    "static/media/cheesWine.jpeg": "/static/media/cheesWine.92ace0b23d48aa34d918.jpeg",
     "static/media/photo221.jpg": "/static/media/photo221.aa239c68a10dfff986f9.jpg",
     "static/media/photo168.jpg": "/static/media/photo168.e4b46e843b0cdb8dc16e.jpg",
     "static/media/photo99.jpg": "/static/media/photo99.e3e4a7d8783777dcb68f.jpg",
     "index.html": "/index.html",
-    "main.d49b17de.css.map": "/static/css/main.d49b17de.css.map",
-    "main.26a3ccff.js.map": "/static/js/main.26a3ccff.js.map",
+    "main.eedb53b8.css.map": "/static/css/main.eedb53b8.css.map",
+    "main.74980a02.js.map": "/static/js/main.74980a02.js.map",
     "787.71619633.chunk.js.map": "/static/js/787.71619633.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d49b17de.css",
-    "static/js/main.26a3ccff.js"
+    "static/css/main.eedb53b8.css",
+    "static/js/main.74980a02.js"
   ]
 }

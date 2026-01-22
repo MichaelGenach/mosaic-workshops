@@ -26,13 +26,14 @@ import photo255 from './images/photo255.jpg'
 import madregot from './videos/madregot.mp4'
 import yam from './videos/yam.mp4'
 import porfir from './videos/porfir.mp4'
-import tandemCaesarea from './images/tandemCaesarea.png';
+import tandemCaesarea from './images/tandemCaesarea.jpeg';
 import caesareaTour from './images/caesareaTour.jpg';
 import telAfek from './images/telAfek.jpg';
 import telAfek2 from './images/telAfek2.jpg'
 import telAfek3 from './images/telAfek3.jpg'
 import apolonia from './images/apolonia.jpg'
 import mekorotHayarkon from './images/mekorotHayarkon.jpg'
+import cheesWine from './images/cheesWine.jpeg'
 
 import { MdOutlineRecommend } from "react-icons/md";
 import { TbVip } from "react-icons/tb";
@@ -70,8 +71,8 @@ const images = {
     telAfek2,
     telAfek3,
     apolonia,
-    mekorotHayarkon
-
+    mekorotHayarkon,
+    cheesWine
 };
 const phoneNumber = '0523948920';
 
@@ -89,10 +90,19 @@ const icons = {
 // Multilingual translations
 const pageTranslations = {
     he: {
+
+        addon: {
+            title: 'תוספת חווייתית לסיור (אופציונלי)',
+            text: 'פלטת גבינות איכותית, לחם טרי, מטבלים ויין – מושלם לעצירה רגועה מול הים',
+            item1: 'מתאים לעד 5 משתתפים',
+            item2: 'מוגש במהלך הסיור',
+            priceNote: 'כתוספת לסיור'
+          },
+
         title: 'סיורים פרטיים מרתקים בישראל',
         subtitle: 'גלו את הסודות הנסתרים של ארץ ישראל',
         icons: ['סיורים פרטיים', 'מטיילים ממליצים', 'מסלול לבחירתכם', 'מורה דרך מוסמך'],
-        cta: 'להזמנה מיידית',
+        cta: 'לתיאום סיור פרטי',
         sectionTours: 'הסיורים שלנו',
         sectionGallery: 'גלריית תמונות',
         statsLabels: {
@@ -101,6 +111,8 @@ const pageTranslations = {
             rating: 'דירוג ממוצע',
             experience: 'שנות ניסיון',
             phoneNumber: "052-394-8920",
+
+
         },
         stats: {
             tours: 250,
@@ -125,10 +137,19 @@ const pageTranslations = {
         }
     },
     en: {
+
+        addon: {
+            title: 'Optional Tour Add-on',
+            text: 'A premium cheese platter with fresh bread, dips and wine – perfect for a relaxed seaside break',
+            item1: 'Suitable for up to 5 participants',
+            item2: 'Served during the tour',
+            priceNote: 'Add-on to the tour'
+        },
+
         title: 'Fascinating Private Tours in Israel',
         subtitle: 'Discover the hidden secrets of the Land of Israel',
         icons: ['Private Tours', 'Recommended by travelers', 'Customized route', 'Licensed guide'],
-        cta: 'Book Now',
+        cta: 'Book a private tour',
         sectionTours: 'Our Tours',
         sectionGallery: 'Photo Gallery',
         statsLabels: {
@@ -137,6 +158,7 @@ const pageTranslations = {
             rating: 'Average Rating',
             experience: 'Years of Experience',
             phoneNumber: "052-394-8920",
+
         },
         stats: {
             tours: 250,
@@ -168,12 +190,13 @@ const pageTranslations = {
 
 const toursTranslations = {
     he: {
+
         cesareaTours: {
             id: 'cesareaTours',
             title: "🏛️ סיורים בקיסריה",
-            subtitle: "מסע בזמן לעיר הנמל העתיקה",
+            subtitle: "מסע חי ומוחשי אל קיסריה הקדומה",
             image: caesareaTour,
-            description: "גלו את קסם ההיסטוריה הרומית והביזנטית של קיסריה העתיקה",
+            description: "סיפור של עיר אחת, אימפריות מתחלפות ואתרים עוצרי נשימה",
             fullDescription: "קיסריה מריטימה - עיר הנמל המפוארת מזמינה אתכם למסע מרתק בזמן. במהלך הסיור נכיר את עתיקות קיסריה באופן מרתק, ונכיר גם מקומות פחות מוכרים ומרתקים לא פחות.",
             highlights: [
                 "פסלים עתיקים",
@@ -185,13 +208,14 @@ const toursTranslations = {
 
             ],
             duration: "1-2 שעות",
-            price: "מ-₪500 לסיור",
+            price: "מ-₪450 לסיור",
             phoneNumber: "052-394-8920",
             rating: 5.0,
             reviewsCount: 40,
             includes: [, "כניסה לאתרים סודיים", "חידות וסיפורים מרתקים", "תצפיות מרשימות", "תובנות מרתקות", "מדריך מוסמך ומומחה לשימור אתרים – מהצלת פסיפס הציפורים ועד הקטקומבות ברומא"],
             gallery: [photo197, photo211, photo213],
             color: '#667eea',
+
 
         },
         bikeTours: {
@@ -232,7 +256,7 @@ const toursTranslations = {
                 "מקורות הירקון - טיול טבע מהמם ומרגיע",
             ],
             duration: "1.5-2 שעות",
-            price: "מ-₪500 לסיור",
+            price: "מ-₪450 לסיור",
             rating: 4.7,
             reviewsCount: 24,
             includes: ["מדריך מקצועי", "מפות מיוחדות", "נופים מדהימים", "טבע מרהיב", "מונומנטים מרשימים", "מדריך מוסמך ומומחה לשימור אתרים – מהצלת פסיפס הציפורים ועד הקטקומבות ברומא"],
@@ -241,12 +265,13 @@ const toursTranslations = {
         }
     },
     en: {
+       
         cesareaTours: {
             id: 'cesareaTours',
             title: "🏛️ Caesarea Tours",
-            subtitle: "A journey through time to the ancient port city",
+            subtitle: "A vivid, immersive journey into ancient Caesarea",
             image: caesareaTour,
-            description: "Discover the charm of Roman and Byzantine history of ancient Caesarea",
+            description: "The story of one city, changing empires, and breathtaking sites",
             fullDescription: "Caesarea Maritima - the magnificent port city invites you on a fascinating journey through time. During the tour we'll get to know Caesarea's antiquities in an engaging way, including lesser-known yet equally fascinating spots.",
             highlights: [
                 "Ancient statues",
@@ -301,7 +326,7 @@ const toursTranslations = {
                 "Yarkon Springs (Mekorot HaYarkon) - a stunning, relaxing nature walk"
             ],
             duration: "1.5-2 hours",
-            price: "From ₪500 per tour",
+            price: "From ₪450 per tour",
             rating: 4.7,
             reviewsCount: 24,
             includes: ["Professional guide", "Special maps", "Stunning views", "Spectacular nature", "Impressive monuments", "A certified guide and expert in site preservation – from saving the bird mosaic to the catacombs in Rome"],
@@ -382,16 +407,7 @@ const InteractiveCarousel = ({ images, autoPlay = true }) => {
         setIsPlaying(!isPlaying);
     };
 
-
-
-
-
-
-
     return (
-
-
-
 
 
         <div className="interactive-carousel">
@@ -511,6 +527,17 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
 
     // Set direction based on language
     const direction = language === 'he' ? 'rtl' : 'ltr';
+    const settings = languageSettings[language];
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -658,13 +685,131 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                 </div>
             </section>
 
+ {/* Testimonials Section */}
+ <section className="testimonials-section-tours"  style={{
+          direction: settings.direction,
+        }}>
+  <motion.h2
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true }}
+    className="section-title-tours"
+  >
+    {language === 'he' ? 'מה אומרים המטיילים שלנו' : 'What Our Travelers Say'}
+  </motion.h2>
+
+  <div className="testimonials-grid-tours">
+    {(language === 'he'
+      ? [
+          {
+            name: 'שרה לוי',
+            tour: 'סיור בקיסריה העתיקה',
+            text: 'חוויה בלתי נשכחת! מייקל היה מקצועי ומרתק, הנופים היו עוצרי נשימה והארגון היה מושלם. מומלץ בחום לכל המשפחה!',
+            rating: 5
+          },
+          {
+            name: 'דוד אברהם',
+            tour: 'סיור בקיסריה העתיקה',
+            text: ',גילינו פינות נסתרות ומרתקות שלא ידענו עליהן. הסיפורים ההיסטוריים והידע הארכיאולוגי של מייקל הפכו את הסיור לחוויה מיוחדת במינה. בהחלט נחזור לסיורים נוספים!',
+            rating: 5
+          },
+          {
+            name: 'מיכל ברג',
+            tour: 'סיור בתל אפק',
+            text: 'הטבע המדהים, המקצועיות והאווירה הנעימה יצרו חוויה מושלמת. תודה על היום המיוחד.',
+            rating: 5
+          }
+        ]
+      : [
+          {
+            name: 'Sarah Levy',
+            tour: 'Ancient Caesarea Tour',
+            text: 'An unforgettable experience! Michael was professional and fascinating, the views were breathtaking, and the organization was perfect. Highly recommended for the whole family!',
+            rating: 5
+          },
+          {
+            name: 'David Cohen',
+            tour: 'Ancient Caesarea Tour',
+            text: 'We discovered hidden and fascinating corners we didn\'t know about. Michael\'s historical stories and archaeological knowledge made the tour a unique experience. We\'ll definitely return for more tours!',
+            rating: 5
+          },
+          {
+            name: 'Michelle Abraham',
+            tour: 'Tel Afek Tour',
+            text: 'The stunning nature, professionalism, and pleasant atmosphere created a perfect experience. Thank you for the special day.',
+            rating: 5
+          }
+        ]
+    ).map((testimonial, index) => (
+      <motion.div
+        key={index}
+        className="testimonial-card-tours"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: index * 0.15 }}
+        viewport={{ once: true }}
+        whileHover={{ y: -8, scale: 1.02 }}
+      >
+        <div className="testimonial-stars-tours">
+          {[...Array(testimonial.rating)].map((_, i) => (
+            <span key={i} className="star-tours">⭐</span>
+          ))}
+        </div>
+
+        <p className="testimonial-text-tours">
+          "{testimonial.text}"
+        </p>
+
+        <div className="testimonial-author-tours">
+          <div className="author-avatar-tours">
+            {testimonial.name.charAt(0)}
+          </div>
+          <div className="author-info-tours">
+            <h4 className="author-name-tours">{testimonial.name}</h4>
+            <p className="author-tour-tours">{testimonial.tour}</p>
+          </div>
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+
+
+            <section className="tour-addon-section">
+  <div className="tour-addon-card">
+
+    <div className="tour-addon-image">
+      <img
+        src={cheesWine}
+        alt={language === 'he'
+          ? 'פלטת גבינות, לחם טרי ויין'
+          : 'Cheese platter with bread and wine'}
+      />
+    </div>
+
+    <div className="tour-addon-content">
+      <h3 className='tour-addon-title'>{t.addon.title}</h3>
+      <p className='tour-addon-text'>{t.addon.text}</p>
+    </div>
+
+    <div className="tour-addon-price">
+      <span className="addon-price">300₪</span>
+      <span className="addon-note">{t.addon.priceNote}</span>
+    </div>
+
+  </div>
+</section>
+
+ 
+
             {/* Tours Section */}
             <section id="tours" className="tours-section">
                 <motion.h2
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
-                    className="section-title"
+                    className="section-title-tours"
                 >
                     {t.sectionTours}
                 </motion.h2>
@@ -888,4 +1033,3 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
     );
 }
 
-// eeeeeee
