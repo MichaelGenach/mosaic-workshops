@@ -65,8 +65,7 @@ const translations = {
 ✨ מה כולל יום הגיבוש:
 • סדנת קדרות או פסיפס עם ציוד מקצועי
 • הדרכה מקצועית ואישית
-• חוויה בלתי נשכחת מול הים
-• יצירות אישיות שכל עובד לוקח הביתה`,
+• חוויה בלתי נשכחת מול הים`,
     gallery: 'גלריית פעילויות',
     section1Title: 'למה לבחור בנו?',
     section1Text: 'עם ניסיון של שנים בהובלת פעילויות גיבוש לחברות מובילות, אנו מתמחים ביצירת חוויות שמחברות בין אנשים דרך אומנות ויצירה.',
@@ -89,8 +88,7 @@ In our special team-building workshops, your Colleagues will experience an activ
 ✨ What's included:
 • Pottery or mosaic workshop with professional equipment
 • Professional personal instruction
-• Unforgettable seaside experience
-• Personal creations each employee takes home`,
+• Unforgettable seaside experience`,
     gallery: 'Activity Gallery',
     section1Title: 'Why Choose Us?',
     section1Text: 'With years of experience leading team-building activities for top companies, we specialize in creating experiences that connect people through art and creation.',
@@ -153,6 +151,80 @@ export default function Company({ language, languageSettings }) {
           </div>
 
 
+        </section>
+
+        {/* Testimonials Section */}
+        <section className="company-testimonials-section" style={settings}>
+          <h2 className="company-testimonials-title">
+            {language === 'he' ? 'מה אומרות החברות שעבדו איתנו' : 'What Companies Say About Us'}
+          </h2>
+
+          <div className="company-testimonials-grid">
+            {(language === 'he' ? [
+              {
+                name: 'דנה רוזנברג',
+                position: 'מנהלת משאבי אנוש',
+
+                text: 'ארגנו את יום הגיבוש השנתי שלנו עם 45 עובדים וזו הייתה החוויה הכי מוצלחת שעשינו! הצוות היה מקצועי להפליא, הפעילות שילבה יצירתיות עם עבודת צוות, וכולם יצאו עם חיוך ויצירה אישית. ללא ספק נחזור!',
+                rating: 5
+              },
+              {
+                name: 'יוסי מזרחי',
+                position: 'משאבי אנוש',
+                text: 'חיפשנו משהו שונה ומיוחד לצוות שלנו והגענו למקום המושלם. הפעילות לא רק גיבשה את הצוות אלא גם העניקה לכולם רגע של שקט ויצירה אמיתית. התוצאות היו מעבר לציפיות והאווירה הייתה פשוט מדהימה!',
+                rating: 5
+              },
+              {
+                name: 'מיכל אבני',
+                position: 'סמנכ"לית תפעול',
+                text: 'אחרי שנסינו המון פעילויות גיבוש לאורך השנים, סוף סוף מצאנו משהו שבאמת עשה את ההבדל. הצוות שלנו דיבר על זה שבועות אחרי האירוע. הפעילות הייתה מרגשת, מגבשת ומהנה בצורה יוצאת דופן. תודה רבה!',
+                rating: 5
+              }
+            ] : [
+              {
+                name: 'Dana Rosenberg',
+                position: 'HR Manager',
+
+                text: 'We organized our annual team-building day with 45 employees and it was the most successful experience we\'ve had! The team was incredibly professional, the activity combined creativity with teamwork, and everyone left with a smile and their personal creation. We\'ll definitely return!',
+                rating: 5
+              },
+              {
+                name: 'Yossi Mizrahi',
+                position: 'HR',
+                company: 'Tech Startup',
+                text: 'We were looking for something different and special for our team and found the perfect place. The activity not only brought the team together but also gave everyone a moment of peace and real creation. The results exceeded expectations and the atmosphere was simply amazing!',
+                rating: 5
+              },
+              {
+                name: 'Michal Avni',
+                position: 'VP Operations',
+                text: 'After trying many team-building activities over the years, we finally found something that truly made a difference. Our team talked about it for weeks after the event. The activity was moving, bonding, and exceptionally fun. Thank you so much!',
+                rating: 5
+              }
+            ]).map((testimonial, index) => (
+              <div
+                key={index}
+                className="company-testimonial-card"
+              >
+                <div className="company-testimonial-stars">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <span key={i} className="company-star">⭐</span>
+                  ))}
+                </div>
+                <p className="company-testimonial-text">"{testimonial.text}"</p>
+                <div className="company-testimonial-author">
+                  <div className="company-author-avatar">
+                    {testimonial.name.charAt(0)}
+                  </div>
+                  <div className="company-author-info">
+                    <h4 className="company-author-name">{testimonial.name}</h4>
+                    <p className="company-author-position">{testimonial.position}</p>
+                    <p className="company-author-company">{testimonial.company}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* CTA Button */}

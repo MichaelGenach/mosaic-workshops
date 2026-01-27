@@ -189,6 +189,79 @@ export default function Private({ language, languageSettings }) {
         <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
       </section>
 
+
+
+
+{/* Testimonials Section */}
+<section className="mosaic-testimonials-section" style={settings}>
+        <h2 className="mosaic-testimonials-title">{language === 'he' ? 'מה אומרים המשתתפים שלנו' : 'What Our Participants Say'}</h2>
+        
+        <div className="mosaic-testimonials-grid">
+          {(language === 'he' ? [
+            {
+              name: 'יעל כהן',
+              workshop: 'סדנת פסיפס זוגית',
+              text: 'חוויה מדהימה! הכנו ביחד פסיפס יפה מאוד מול הים, האווירה היתה קסומה והליווי המקצועי של כנרת היה ברמה ממש גבוהה. ממליצה בחום!',
+              rating: 5
+            },
+            {
+              name: 'אבי שלום',
+              workshop: 'סדנה משפחתית',
+              text: 'ארגנו את הסדנה כל המשפחה וזו היתה החלטה מצוינת, הכל היה מקצועי מאוד והאווירה מול הים ממש הוסיפה לחוויה.',
+              rating: 5
+            },
+            {
+              name: 'מירב שפירא',
+              workshop: 'סדנה קבוצתית',
+              text: 'תמיד רציתי ללמוד פסיפס והסדנה הזו הייתה מושלמת! המדריכה כנרת היתה מקצועית מאוד, הסבירה בסבלנות, והיצירות שלנו יצאו מעל ומעבר לציפיות, תודה!',
+              rating: 5
+            }
+          ] : [
+            {
+              name: 'Yael Cohen',
+              workshop: 'Couples Mosaic Workshop',
+              text: 'An amazing experience! We created a beautiful mosaic together by the sea. The atmosphere was magical, and Kinneret’s professional guidance was truly top-level. Highly recommended!',
+              rating: 5
+            },
+            {
+              name: 'Avi Shalom',
+              workshop: 'Family Workshop',
+              text: 'We organized the workshop for the whole family and it was an excellent decision. Everything was very professional, and the seaside atmosphere really added to the experience.',
+              rating: 5
+            },
+            {
+              name: 'Merav Shapira',
+              workshop: 'Group Workshop',
+              text: 'I had always wanted to learn mosaic, and this workshop was perfect! The instructor, Kinneret, was extremely professional, explained everything patiently, and our creations turned out beyond expectations. Thank you!',
+              rating: 5
+            }
+            
+          ]).map((testimonial, index) => (
+            <div
+              key={index}
+              className="mosaic-testimonial-card"
+            >
+              <div className="mosaic-testimonial-stars">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <span key={i} className="mosaic-star">⭐</span>
+                ))}
+              </div>
+              <p className="mosaic-testimonial-text">"{testimonial.text}"</p>
+              <div className="mosaic-testimonial-author">
+                <div className="mosaic-author-avatar">
+                  {testimonial.name.charAt(0)}
+                </div>
+                <div className="mosaic-author-info">
+                  <h4 className="mosaic-author-name">{testimonial.name}</h4>
+                  <p className="mosaic-author-workshop">{testimonial.workshop}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+
       {/* Description Section */}
       <section className="private-description-section" style={settings}>
         <div className="private-description-container">
