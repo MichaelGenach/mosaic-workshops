@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.9b3a2597.css",
-    "main.js": "/static/js/main.bdb2d3d2.js",
+    "main.css": "/static/css/main.8594570d.css",
+    "main.js": "/static/js/main.9e70d6ff.js",
     "static/js/787.71619633.chunk.js": "/static/js/787.71619633.chunk.js",
     "static/media/video12.mp4": "/static/media/video12.4f0cf774cb4f992a5a08.mp4",
     "static/media/yam.mp4": "/static/media/yam.dc0f4a06ec558ab15d52.mp4",
     "static/media/photo212.jpg": "/static/media/photo212.01887b87e1ab1599c6f6.jpg",
     "static/media/porfir.mp4": "/static/media/porfir.cae9d6ab8c55a43cbc28.mp4",
+    "static/media/caesareaTour.mp4": "/static/media/caesareaTour.adee40e57ebafaeadfff.mp4",
     "static/media/telAfek3.jpg": "/static/media/telAfek3.431182f89af4f47ebf67.jpg",
     "static/media/madregot.mp4": "/static/media/madregot.f9dec257007ce28571fe.mp4",
     "static/media/video10.mp4": "/static/media/video10.7fa1fc2acfcf5ef19767.mp4",
@@ -104,7 +105,6 @@
     "static/media/photo27.jpg": "/static/media/photo27.c91e7d847ccc9c860189.jpg",
     "static/media/photo226.jpg": "/static/media/photo226.41b47ee5b0268838996d.jpg",
     "static/media/photo87.jpg": "/static/media/photo87.b16d8b19df2a59a67d19.jpg",
-    "static/media/caesareaTour.jpg": "/static/media/caesareaTour.295960e8e99f8cc8bb33.jpg",
     "static/media/photo233.jpg": "/static/media/photo233.69eb7977f9e77de5f2b9.jpg",
     "static/media/photo251.jpg": "/static/media/photo251.3449f5a344e6418a1ae8.jpg",
     "static/media/photo65.jpg": "/static/media/photo65.be63c0ca45bef6534a54.jpg",
@@ -218,14 +218,15 @@
     "static/media/cheesWine.jpeg": "/static/media/cheesWine.92ace0b23d48aa34d918.jpeg",
     "static/media/photo221.jpg": "/static/media/photo221.aa239c68a10dfff986f9.jpg",
     "static/media/photo168.jpg": "/static/media/photo168.e4b46e843b0cdb8dc16e.jpg",
+    "static/media/caesareaTour2.jpg": "/static/media/caesareaTour2.f0f75c852835e7c54beb.jpg",
     "static/media/photo99.jpg": "/static/media/photo99.e3e4a7d8783777dcb68f.jpg",
     "index.html": "/index.html",
-    "main.9b3a2597.css.map": "/static/css/main.9b3a2597.css.map",
-    "main.bdb2d3d2.js.map": "/static/js/main.bdb2d3d2.js.map",
+    "main.8594570d.css.map": "/static/css/main.8594570d.css.map",
+    "main.9e70d6ff.js.map": "/static/js/main.9e70d6ff.js.map",
     "787.71619633.chunk.js.map": "/static/js/787.71619633.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b3a2597.css",
-    "static/js/main.bdb2d3d2.js"
+    "static/css/main.8594570d.css",
+    "static/js/main.9e70d6ff.js"
   ]
 }

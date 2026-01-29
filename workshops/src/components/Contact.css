@@ -189,6 +189,7 @@
 /* Directions Section */
 .directions-section {
   margin-bottom: 50px;
+
 }
 
 .section-title {
@@ -198,6 +199,7 @@
   text-align: center;
   margin-bottom: 40px;
   position: relative;
+  padding-top: 10px !important;
 }
 
 .section-title::after {
@@ -613,7 +615,7 @@
     font-size: 16px;
   }
 
-  .title-decoration{
+  .title-decoration {
     margin-bottom: 30px;
   }
 }
@@ -633,7 +635,7 @@
     padding: 30px 20px;
   }
 
-  .social-links {
+  section-title .social-links {
     gap: 15px;
   }
 

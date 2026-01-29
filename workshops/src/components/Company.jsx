@@ -93,7 +93,7 @@ In our special team-building workshops, your Colleagues will experience an activ
     section1Title: 'Why Choose Us?',
     section1Text: 'With years of experience leading team-building activities for top companies, we specialize in creating experiences that connect people through art and creation.',
     section2Title: 'Variety of Activities',
-    section2Text: 'Pottery, mosaics, painting, and ceramics - each activity is customized to company needs and group size.',
+    section2Text: 'Pottery, mosaics, painting, and ceramics - each activity is customized to company needs and group size',
     section3Title: 'For All Ages & Levels',
     section3Text: 'Activities suitable for everyone - from complete beginners to experienced, everyone will enjoy and create something special.',
     infoTitle: '💼 Additional Information',
@@ -272,7 +272,7 @@ export default function Company({ language, languageSettings }) {
             <img src={photo45} alt="Creative workshop" className='content-image' />
           </div>
 
-          <div className='content-item'>
+          <div className='content-item' style={{ direction: settings.direction }}>
             <div className='content-text'>
               <h3>{t.section3Title}</h3>
               <p>{t.section3Text}</p>

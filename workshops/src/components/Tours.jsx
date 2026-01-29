@@ -27,7 +27,8 @@ import madregot from './videos/madregot.mp4'
 import yam from './videos/yam.mp4'
 import porfir from './videos/porfir.mp4'
 import tandemCaesarea from './images/tandemCaesarea.jpeg';
-import caesareaTour from './images/caesareaTour.jpg';
+import caesareaTour from './images/caesareaTour.mp4';
+import caesareaTour2 from './images/caesareaTour2.jpg';
 import telAfek from './images/telAfek.jpg';
 import telAfek2 from './images/telAfek2.jpg'
 import telAfek3 from './images/telAfek3.jpg'
@@ -67,6 +68,7 @@ const images = {
     porfir,
     tandemCaesarea,
     caesareaTour,
+    caesareaTour2,
     telAfek,
     telAfek2,
     telAfek3,
@@ -97,7 +99,7 @@ const pageTranslations = {
             item1: 'מתאים לעד 5 משתתפים',
             item2: 'מוגש במהלך הסיור',
             priceNote: 'כתוספת לסיור'
-          },
+        },
 
         title: 'סיורים פרטיים מרתקים בישראל',
         subtitle: 'גלו את הסודות הנסתרים של ארץ ישראל',
@@ -195,7 +197,7 @@ const toursTranslations = {
             id: 'cesareaTours',
             title: "🏛️ סיורים בקיסריה",
             subtitle: "מסע חי ומוחשי אל קיסריה הקדומה",
-            image: caesareaTour,
+            image: caesareaTour2,
             description: "סיפור של עיר אחת, אימפריות מתחלפות ואתרים עוצרי נשימה",
             fullDescription: "קיסריה מריטימה - עיר הנמל המפוארת מזמינה אתכם למסע מרתק בזמן. במהלך הסיור נכיר את עתיקות קיסריה באופן מרתק, ונכיר גם מקומות פחות מוכרים ומרתקים לא פחות.",
             highlights: [
@@ -265,7 +267,7 @@ const toursTranslations = {
         }
     },
     en: {
-       
+
         cesareaTours: {
             id: 'cesareaTours',
             title: "🏛️ Caesarea Tours",
@@ -564,17 +566,25 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
     return (
         <div className="enhanced-tours-page" dir={direction}>
             {/* Hero Section with Parallax */}
+            
             <section className="hero-section-tours">
                 <div
                     className="hero-bg"
-                    style={{
-                        transform: `translateY(${scrollY * 0.5}px)`,
-                        backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url(${images.caesareaTour})`
-                    }}
-                />
+                    style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+                >
+                    <video
+                        className="hero-video"
+                        src={images.caesareaTour}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
+                    <div className="hero-overlay" />
+                </div>
 
                 <div className="hero-content-tours">
-                    <motion.div
+                <motion.div
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.2 }}
@@ -612,6 +622,7 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                     </motion.div>
                 </div>
             </section>
+
 
 
             <div id='threeToursVideosDiv'>
@@ -685,123 +696,123 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                 </div>
             </section>
 
- {/* Testimonials Section */}
- <section className="testimonials-section-tours"  style={{
-          direction: settings.direction,
-        }}>
-  <motion.h2
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ once: true }}
-    className="section-title-tours"
-  >
-    {language === 'he' ? 'מה אומרים המטיילים שלנו' : 'What Our Travelers Say'}
-  </motion.h2>
+            {/* Testimonials Section */}
+            <section className="testimonials-section-tours" style={{
+                direction: settings.direction,
+            }}>
+                <motion.h2
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="section-title-tours"
+                >
+                    {language === 'he' ? 'מה אומרים המטיילים שלנו' : 'What Our Travelers Say'}
+                </motion.h2>
 
-  <div className="testimonials-grid-tours">
-    {(language === 'he'
-      ? [
-          {
-            name: 'שרה לוי',
-            tour: 'סיור בקיסריה העתיקה',
-            text: 'חוויה בלתי נשכחת! מייקל היה מקצועי ומרתק, הנופים היו עוצרי נשימה והארגון היה מושלם. מומלץ בחום לכל המשפחה!',
-            rating: 5
-          },
-          {
-            name: 'דוד אברהם',
-            tour: 'סיור בקיסריה העתיקה',
-            text: 'גילינו פינות נסתרות ומרתקות שלא ידענו עליהן. הסיפורים ההיסטוריים והידע הארכיאולוגי של מייקל הפכו את הסיור לחוויה מיוחדת במינה. בהחלט נחזור לסיורים נוספים!',
-            rating: 5
-          },
-          {
-            name: 'מיכל ברג',
-            tour: 'סיור בתל אפק',
-            text: 'הטבע המדהים, המקצועיות והאווירה הנעימה יצרו חוויה מושלמת. תודה על היום המיוחד.',
-            rating: 5
-          }
-        ]
-      : [
-          {
-            name: 'Sarah Levy',
-            tour: 'Ancient Caesarea Tour',
-            text: 'An unforgettable experience! Michael was professional and fascinating, the views were breathtaking, and the organization was perfect. Highly recommended for the whole family!',
-            rating: 5
-          },
-          {
-            name: 'David Cohen',
-            tour: 'Ancient Caesarea Tour',
-            text: 'We discovered hidden and fascinating corners we didn\'t know about. Michael\'s historical stories and archaeological knowledge made the tour a unique experience. We\'ll definitely return for more tours!',
-            rating: 5
-          },
-          {
-            name: 'Michelle Abraham',
-            tour: 'Tel Afek Tour',
-            text: 'The stunning nature, professionalism, and pleasant atmosphere created a perfect experience. Thank you for the special day.',
-            rating: 5
-          }
-        ]
-    ).map((testimonial, index) => (
-      <motion.div
-        key={index}
-        className="testimonial-card-tours"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: index * 0.15 }}
-        viewport={{ once: true }}
-        whileHover={{ y: -8, scale: 1.02 }}
-      >
-        <div className="testimonial-stars-tours">
-          {[...Array(testimonial.rating)].map((_, i) => (
-            <span key={i} className="star-tours">⭐</span>
-          ))}
-        </div>
+                <div className="testimonials-grid-tours">
+                    {(language === 'he'
+                        ? [
+                            {
+                                name: 'שרה לוי',
+                                tour: 'סיור בקיסריה העתיקה',
+                                text: 'חוויה בלתי נשכחת! מייקל היה מקצועי ומרתק, הנופים היו עוצרי נשימה והארגון היה מושלם. מומלץ בחום לכל המשפחה!',
+                                rating: 5
+                            },
+                            {
+                                name: 'דוד אברהם',
+                                tour: 'סיור בקיסריה העתיקה',
+                                text: 'גילינו פינות נסתרות ומרתקות שלא ידענו עליהן. הסיפורים ההיסטוריים והידע הארכיאולוגי של מייקל הפכו את הסיור לחוויה מיוחדת במינה. בהחלט נחזור לסיורים נוספים!',
+                                rating: 5
+                            },
+                            {
+                                name: 'מיכל ברג',
+                                tour: 'סיור בתל אפק',
+                                text: 'הטבע המדהים, המקצועיות והאווירה הנעימה יצרו חוויה מושלמת. תודה על היום המיוחד.',
+                                rating: 5
+                            }
+                        ]
+                        : [
+                            {
+                                name: 'Sarah Levy',
+                                tour: 'Ancient Caesarea Tour',
+                                text: 'An unforgettable experience! Michael was professional and fascinating, the views were breathtaking, and the organization was perfect. Highly recommended for the whole family!',
+                                rating: 5
+                            },
+                            {
+                                name: 'David Cohen',
+                                tour: 'Ancient Caesarea Tour',
+                                text: 'We discovered hidden and fascinating corners we didn\'t know about. Michael\'s historical stories and archaeological knowledge made the tour a unique experience. We\'ll definitely return for more tours!',
+                                rating: 5
+                            },
+                            {
+                                name: 'Michelle Abraham',
+                                tour: 'Tel Afek Tour',
+                                text: 'The stunning nature, professionalism, and pleasant atmosphere created a perfect experience. Thank you for the special day.',
+                                rating: 5
+                            }
+                        ]
+                    ).map((testimonial, index) => (
+                        <motion.div
+                            key={index}
+                            className="testimonial-card-tours"
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            viewport={{ once: true }}
+                            whileHover={{ y: -8, scale: 1.02 }}
+                        >
+                            <div className="testimonial-stars-tours">
+                                {[...Array(testimonial.rating)].map((_, i) => (
+                                    <span key={i} className="star-tours">⭐</span>
+                                ))}
+                            </div>
 
-        <p className="testimonial-text-tours">
-          "{testimonial.text}"
-        </p>
+                            <p className="testimonial-text-tours">
+                                "{testimonial.text}"
+                            </p>
 
-        <div className="testimonial-author-tours">
-          <div className="author-avatar-tours">
-            {testimonial.name.charAt(0)}
-          </div>
-          <div className="author-info-tours">
-            <h4 className="author-name-tours">{testimonial.name}</h4>
-            <p className="author-tour-tours">{testimonial.tour}</p>
-          </div>
-        </div>
-      </motion.div>
-    ))}
-  </div>
-</section>
+                            <div className="testimonial-author-tours">
+                                <div className="author-avatar-tours">
+                                    {testimonial.name.charAt(0)}
+                                </div>
+                                <div className="author-info-tours">
+                                    <h4 className="author-name-tours">{testimonial.name}</h4>
+                                    <p className="author-tour-tours">{testimonial.tour}</p>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
 
 
 
             <section className="tour-addon-section">
-  <div className="tour-addon-card">
+                <div className="tour-addon-card">
 
-    <div className="tour-addon-image">
-      <img
-        src={cheesWine}
-        alt={language === 'he'
-          ? 'פלטת גבינות, לחם טרי ויין'
-          : 'Cheese platter with bread and wine'}
-      />
-    </div>
+                    <div className="tour-addon-image">
+                        <img
+                            src={cheesWine}
+                            alt={language === 'he'
+                                ? 'פלטת גבינות, לחם טרי ויין'
+                                : 'Cheese platter with bread and wine'}
+                        />
+                    </div>
 
-    <div className="tour-addon-content">
-      <h3 className='tour-addon-title'>{t.addon.title}</h3>
-      <p className='tour-addon-text'>{t.addon.text}</p>
-    </div>
+                    <div className="tour-addon-content">
+                        <h3 className='tour-addon-title'>{t.addon.title}</h3>
+                        <p className='tour-addon-text'>{t.addon.text}</p>
+                    </div>
 
-    <div className="tour-addon-price">
-      <span className="addon-price">300₪</span>
-      <span className="addon-note">{t.addon.priceNote}</span>
-    </div>
+                    <div className="tour-addon-price">
+                        <span className="addon-price">300₪</span>
+                        <span className="addon-note">{t.addon.priceNote}</span>
+                    </div>
 
-  </div>
-</section>
+                </div>
+            </section>
 
- 
+
 
             {/* Tours Section */}
             <section id="tours" className="tours-section">
@@ -871,6 +882,7 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                         photo213,
                         photo214,
                         photo255,
+                        caesareaTour2, 
 
                     ]}
                 />
