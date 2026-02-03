@@ -8,27 +8,8 @@ const translations = {
     faqTitle: "שאלות ותשובות",
     direction: "rtl",
     workshops: [
-      {
-        title: "סדנאות קדרות",
-        questions: [
-          { q: "מה יוצרים?", a: "כל משתתף יוצר כלי אישי באובניים" },
-          { q: "מתי מקבלים את היצירה?", a: "מיד בסוף הסדנה" },
-          { q: "כמה יכולים להשתתף?", a: "ללא הגבלת משתתפים" },
-          { q: "לאילו גילאים זה מתאים?", a: "מתאים לכל הגילאים | מגיל 7 ומעלה" },
-          { q: "האם צריך ניסיון קודם?", a: "ממש לא! הסדנה מתאימה גם למתחילים, ואנו מלווים אתכם שלב אחר שלב" },
-          { q: "האם אפשר לצבוע את הכלי?", a: "בוודאי! ישנה אפשרות לצביעת הכלי במגוון צבעים" },
-        ],
-      },
-      {
-        title: "סדנאות פסיפסים בוטיק",
-        questions: [
-          { q: "מה יוצרים?", a: "כל משתתף יוצר פסיפס אישי" },
-          { q: "מתי מקבלים את היצירה?", a: "מיד בסוף הסדנה" },
-          { q: "כמה יכולים להשתתף?", a: "משתתף יחיד עד 20 משתתפים" },
-          { q: "לאילו גילאים זה מתאים?", a: "מתאים לכל הגילאים | מגיל 7 ומעלה" },
-          { q: "מה עושים עם היצירה בסוף?", a: "כל משתתף יוצא עם יצירה מוגמרת הביתה – מוכנה לתלייה או להנחה על שולחן" },
-        ],
-      },
+
+
       {
         title: "סיורים מרתקים",
         questions: [
@@ -42,26 +23,17 @@ const translations = {
           { q: "האם יש ביטוח לסיור?", a: "כן, אנו מורי דרך מוסמכים הפועלים באישור משרד התיירות, עם ביטוח אחריות מקצועית" },
           { q: "יש סיורים בשפות נוספות?", a: "כן. ניתן להזמין סיורים גם באנגלית ובאיטלקית" },
           { q: "אפשר לשלב סיור עם סדנה?", a: "בוודאי! ישנם מסלולים שכוללים סיור מרתק בהנחה ולאחריו סדנת קדרות או סדנת פסיפס בגלריה בנמל קיסריה" },
-        ],
-      },
-      {
-        title: "סדנאות פסיפסים לחברות",
-        questions: [
-          { q: "מה יוצרים?", a: "פסיפס אחד גדול עבור משרדי החברה" },
-          { q: "מתי מקבלים את היצירה?", a: "מעט לאחר הסדנה כדי שנוכל לאחד את חלקי הפסיפס שלכם" },
-          { q: "כמה יכולים להשתתף?", a: "ללא הגבלת משתתפים" },
-          { q: "למי זה מתאים?", a: "מתאים לכלל עובדי החברה" },
+          { q: "אפשר להזמין סיור כמתנת יום הולדת?", a: ",בוודאי! זו מתנה מקורית ובלתי נשכחת, הסיור חוויתי ומרתק עם נופים מדהימים, ניתן לשלב עם פלטת גבינות משובחות"},
         ],
       },
       {
         title: "שאלות כלליות",
         questions: [
-          { q: "איך מזמינים סדנה או סיור?", a: "אפשר להזמין דרך האתר או בוואצאפ: 0523948920. נשמח לעזור בהתאמה אישית" },
-          { q: "מה קורה במקרה של גשם?", a: "הפעילויות מתבצעות במקום מקורה, או במידת הצורך נדחות בתיאום מראש" },
+          { q: "איך מזמינים סיור?", a: "אפשר להזמין דרך האתר או בוואצאפ: 0523948920. נשמח לעזור בהתאמה אישית" },
+          { q: "מה קורה במקרה של גשם?", a: " במידת הצורך הסיור נדחה, או מתבטל" },
           { q: "האם אפשר לקבל חשבונית?", a: "בהחלט. אנחנו מנפיקים קבלה כחוק לכל תשלום" },
           { q: "האם יש חניה במקום?", a: "כן, יש חניה חינמית בשפע בסמוך לאולם \"יקבי קיסריה\" שנמצא בסמוך לנמל קיסריה" },
-          { q: "האם הדרך אליכם נגישה?", a: "המקום נגיש, אך לא כל פעילות בהכרח מותאמת לכל מגבלה. נשמח לבחון יחד איתכם מראש את האפשרויות ולהתאים את החוויה" },
-          { q: "אפשר להזמין סדנה כמתנת יום הולדת?", a: "בוודאי! זו מתנה מקורית ובלתי נשכחת – נשמח גם לצרף ברכה אישית" },
+   
           { q: "האם יש לכם שובר מתנה דיגיטלי?", a: "כן! ניתן להזמין שובר במייל/וואטסאפ לכל אחת מהסדנאות או הסיורים" },
           { q: "יש לכם הטבות לאנשי מילואים?", a: "כן, הפעילות כלולה בסיוע חד-פעמי של עד 1,500 ש\"ח למימון טיפול עבור משרתי מילואים ובני/בנות זוגם, ששירתו 30 יום ויותר בצו 8 במבצע חרבות ברזל. ניתן לפצל את הסכום למספר פעילויות ובמועדים שונים" },
         ],
@@ -73,27 +45,7 @@ const translations = {
     faqTitle: "FAQ",
     direction: "ltr",
     workshops: [
-      {
-        title: "Pottery Workshops",
-        questions: [
-          { q: "What do we create?", a: "Each participant creates a personal pottery piece on the wheel" },
-          { q: "When do you get the creation?", a: "Immediately at the end of the workshop" },
-          { q: "How many can participate?", a: "Unlimited participants" },
-          { q: "What ages is it suitable for?", a: "Suitable for all ages | Ages 7 and up" },
-          { q: "Is prior experience needed?", a: "Not at all! The workshop is suitable for beginners, and we guide you step by step" },
-          { q: "Can the pottery be painted?", a: "Definitely! There is an option to paint the pottery in a variety of colors" },
-        ],
-      },
-      {
-        title: "Boutique Mosaic Workshops",
-        questions: [
-          { q: "What do we create?", a: "Each participant creates a personal mosaic" },
-          { q: "When do you get the creation?", a: "Immediately at the end of the workshop" },
-          { q: "How many can participate?", a: "From a single participant up to 10 participants" },
-          { q: "What ages is it suitable for?", a: "Suitable for all ages | Ages 7 and up" },
-          { q: "What do you do with the creation at the end?", a: "Each participant leaves with a finished piece – ready to hang or place on a table" },
-        ],
-      },
+
       {
         title: "Exciting Tours",
         questions: [
@@ -107,15 +59,6 @@ const translations = {
           { q: "Is there insurance for the tour?", a: "Yes, as certified guides we operate with approval from the Ministry of Tourism, with professional liability insurance" },
           { q: "Are tours available in other languages?", a: "Yes. Tours can be arranged in Hebrew, English and Italian as well" },
           { q: "Can a tour be combined with a workshop?", a: "Certainly! There are routes that include a fascinating discounted tour followed by a pottery or mosaic workshop at our gallery in Caesarea port" },
-        ],
-      },
-      {
-        title: "Corporate Mosaic Workshops",
-        questions: [
-          { q: "What do we create?", a: "One large mosaic for the company's offices" },
-          { q: "When do you get the creation?", a: "Shortly after the workshop so we can assemble your mosaic pieces" },
-          { q: "How many can participate?", a: "Unlimited participants" },
-          { q: "Who is it suitable for?", a: "Suitable for all company employees" },
         ],
       },
       {

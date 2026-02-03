@@ -32,12 +32,10 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.8) 100%);
   z-index: 1;
 }
 
@@ -69,6 +67,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -125,89 +124,111 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
 }
 
 /* ==================== CTA Buttons ==================== */
-
 #lepirteiVeLasadnaDiv {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 60px;
+  gap: 16px; /* הקטנתי מ-20 ל-16 */
   animation: fadeIn 1.6s ease-out;
+  margin-bottom: 20px; /* מרחק אחיד לפני ה-microcopy */
 }
+
+/* בקובץ Home.css - החלף את הסגנון של הכפתורים */
 
 #leyezirat,
 #lehazmana {
   position: relative;
-  height: 64px;
-  padding: 0 40px;
-  font-size: clamp(16px, 2.2vh, 20px);
-  font-weight: 700;
+  height: 56px;
+  padding: 0 32px;
+  font-size: clamp(16px, 2vh, 19px);
+  font-weight: 600;
   color: white;
-  border: none;
-  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
   overflow: hidden;
   z-index: 1;
-  min-width: 200px;
+  min-width: 240px;
 }
 
-#leyezirat::before,
-#lehazmana::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0)
-  );
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-  z-index: -1;
-}
-
-#leyezirat:hover::before,
-#lehazmana:hover::before {
-  transform: translateX(100%);
-}
-
+/* כפתור ראשון - שקוף עם גבול */
 #leyezirat {
-  background: linear-gradient(135deg, #d66800 0%, #ff8c00 100%);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 #leyezirat:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(255, 107, 0, 0.4);
-}
-
-#leyezirat:active {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* כפתור WhatsApp - ירוק עדין יותר */
 #lehazmana {
-  background: linear-gradient(135deg, #1b9748 0%, #25d366 100%);
+  background: rgba(37, 211, 102, 0.9);
+  border-color: rgba(37, 211, 102, 0.5);
 }
 
 #lehazmana:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(27, 151, 72, 0.4);
+  background: rgba(37, 211, 102, 1);
+  border-color: rgba(37, 211, 102, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
 }
 
+#leyezirat:active,
 #lehazmana:active {
-  transform: translateY(-2px);
+  transform: translateY(0);
 }
+
+/* הסרת האפקט המנצנץ */
+#leyezirat::before,
+#lehazmana::before {
+  display: none;
+}
+
+#hero-microcopy {
+  font-size: clamp(13px, 1.6vh, 16px);
+  color: rgba(255, 255, 255, 0.85); /* העליתי קצת את הניגודיות */
+  text-align: center;
+  margin-top: 0; /* הורדתי - המרחק מגיע מה-margin-bottom של הדיב למעלה */
+  margin-bottom: 0; /* מיותר - אין צורך */
+  letter-spacing: 0.3px;
+  animation: fadeIn 1.8s ease-out;
+  backdrop-filter: blur(2px);
+  margin-bottom: 40px;
+}
+
+/* למובייל - שמור על המרחקים הקיימים */
+@media only screen and (max-width: 768px) {
+  #lepirteiVeLasadnaDiv {
+    gap: 14px;
+    margin-bottom: 16px;
+    margin-top: 10px;
+  }
+
+  #hero-microcopy {
+    margin-top: 2px;
+    margin-bottom: 22px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #hero-microcopy {
+    margin-bottom: 19px;
+    margin-top: 4px;
+}}
 
 
 #W {
@@ -299,7 +320,7 @@
   }
 
   #moveDownHome {
- 
+
     width: 100%;
   }
 
@@ -376,7 +397,8 @@
 
   #lepirteiVeLasadnaDiv {
     gap: 12px;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
+    min-width: 200px;
   }
 
   #leyezirat,
@@ -444,6 +466,7 @@ html {
 /* ==================== Print Styles ==================== */
 
 @media print {
+
   #video1,
   #overlay {
     display: none;

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import './Home.css';
 import ShareButton from './ShareButton';
+import MainButtons from './MainButtons'
 import Faq from './Faq'
 import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
@@ -11,6 +12,7 @@ import Reviews from './Reviews';
 import Pricing from './Pricing';
 import Contact from './Contact';
 import video1 from './videos/video1.mov'
+import thumbNail from './images/thumbNail.png';
 import photo74 from './images/photo74.jpg'
 import photo215 from './images/photo215.jpg'
 import photo196 from './images/photo196.jpg'
@@ -127,7 +129,7 @@ import photo253 from './images/photo253.jpg'
 import photo254 from './images/photo254.jpg'
 
 
-export default function Home({ language, languageSettings  }) {
+export default function Home({ language, languageSettings }) {
 
   const arrPhotoCarousel = [
     photo3, photo4, photo5, photo7, photo8, photo11, photo13, photo15, photo16, photo17, photo18, photo19,
@@ -146,17 +148,20 @@ export default function Home({ language, languageSettings  }) {
   const translate = {
     he: {
       title: "Genach Workshops",
-      subtitle: "חוויה בלתי נשכחת:  סדנאות קדרות, סדנאות פסיפסים, סיורים מרתקים והפקת ימי גיבוש בנמל קיסריה",
+      subtitle: "חוויה בלתי נשכחת: סדנאות קדרות, סדנאות פסיפסים, סיורים מרתקים והפקת ימי גיבוש בנמל קיסריה",
       contact: "ליצירת קשר",
-      order: "להזמנה מיידית"
+      order: "לתיאום סדנאות וסיורים",
+      microcopy: "בלי התחייבות • מענה אישי ומהיר"
     },
     en: {
       title: "Genach Workshops",
       subtitle: "An unforgettable experience: Pottery workshops, mosaic workshops, fascinating tours and team-building events in Caesarea Harbor",
       contact: "Contact Us",
-      order: "Instant Booking"
+      order: "Coordinate Workshops & Tours",
+      microcopy: "No obligation • Personal & fast response"
     }
   };
+
 
   const altTexts = {
     img1: {
@@ -182,10 +187,10 @@ export default function Home({ language, languageSettings  }) {
   };
 
   const t = translate[language];
+  const settings = languageSettings[language];
 
 
-  
-  
+
 
 
 
@@ -193,7 +198,15 @@ export default function Home({ language, languageSettings  }) {
     <div id='main'>
 
       <div className='container'>
-        <video src={video1} autoPlay loop muted id='video1' />
+        <video
+          src={video1}
+          poster={thumbNail}
+          autoPlay
+          loop
+          muted
+          playsInline
+          id='video1'
+        />
         <div id='overlay'></div>
 
         <div className='frontTitleDiv'>
@@ -202,22 +215,9 @@ export default function Home({ language, languageSettings  }) {
               <h1 id='title'>{t.title}</h1>
               <p id='title2'>{t.subtitle}</p>
 
-              <div id='lepirteiVeLasadnaDiv'>
-  <a href="#contact">
-    <button id='leyezirat'>{t.contact}</button>
-  </a>
+              <MainButtons language={language} languageSettings={languageSettings} />
 
-  <a href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer">
-    <button id='lehazmana'>
-      <i className="bi bi-whatsapp" id='W'></i> {t.order}
-    </button>
-  </a>
-
-
-</div>
-
-
-              <Reviews language={language}/>
+              <Reviews language={language} />
             </FadeIn>
           </div>
         </div>
@@ -256,7 +256,7 @@ export default function Home({ language, languageSettings  }) {
 
       <Pricing language={language} />
       <PhotoCarousel arrPhotoCarousel={arrPhotoCarousel} />
-      <Faq language={language} languageSettings={languageSettings}  />
+      <Faq language={language} languageSettings={languageSettings} />
       <Contact language={language} languageSettings={languageSettings} />
       <Footer language={language} languageSettings={languageSettings} />
     </div>

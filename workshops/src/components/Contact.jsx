@@ -7,7 +7,7 @@ import './Contact.css';
 const translations = {
   he: {
     contactTitle: "יצירת קשר",
-    whatsappLinkText: "הזמינו עכשיו דרך וואצאפ",
+    whatsappLinkText: "לפרטים והזמנות",
     infoDescription: "זמינים 24/6, מענה מהיר בכל אמצעי ההתקשרות, ללא תשלום מקדמות, כולל הטבות לאנשי מילואים.",
     howToGetHereTitle: "איך מגיעים?",
     howToGetHereText: `כותבים בוויז: "יקבי קיסריה",

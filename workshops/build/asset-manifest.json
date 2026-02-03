@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.8594570d.css",
-    "main.js": "/static/js/main.9e70d6ff.js",
+    "main.css": "/static/css/main.035988bc.css",
+    "main.js": "/static/js/main.34dc532e.js",
     "static/js/787.71619633.chunk.js": "/static/js/787.71619633.chunk.js",
     "static/media/video12.mp4": "/static/media/video12.4f0cf774cb4f992a5a08.mp4",
     "static/media/yam.mp4": "/static/media/yam.dc0f4a06ec558ab15d52.mp4",
@@ -18,6 +18,8 @@
     "static/media/apolonia.jpg": "/static/media/apolonia.6a5b54e4135e53654696.jpg",
     "static/media/video1.mov": "/static/media/video1.cdabc90fb3ac16626b69.mov",
     "static/media/photo213.jpg": "/static/media/photo213.f94dcc693da51cd36521.jpg",
+    "static/media/thumbNailTours.png": "/static/media/thumbNailTours.0d9762b836ab0d79eaf2.png",
+    "static/media/thumbNail.png": "/static/media/thumbNail.ee4a1ac3aa07403bea03.png",
     "static/media/video13.mp4": "/static/media/video13.6ebf146bc2e5a8da8ecf.mp4",
     "static/media/telAfek2.jpg": "/static/media/telAfek2.ac7aab5a446554ecede7.jpg",
     "static/media/mekorotHayarkon.jpg": "/static/media/mekorotHayarkon.6f0656f85e6ca2e54500.jpg",
@@ -221,12 +223,12 @@
     "static/media/caesareaTour2.jpg": "/static/media/caesareaTour2.f0f75c852835e7c54beb.jpg",
     "static/media/photo99.jpg": "/static/media/photo99.e3e4a7d8783777dcb68f.jpg",
     "index.html": "/index.html",
-    "main.8594570d.css.map": "/static/css/main.8594570d.css.map",
-    "main.9e70d6ff.js.map": "/static/js/main.9e70d6ff.js.map",
+    "main.035988bc.css.map": "/static/css/main.035988bc.css.map",
+    "main.34dc532e.js.map": "/static/js/main.34dc532e.js.map",
     "787.71619633.chunk.js.map": "/static/js/787.71619633.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8594570d.css",
-    "static/js/main.9e70d6ff.js"
+    "static/css/main.035988bc.css",
+    "static/js/main.34dc532e.js"
   ]
 }

@@ -156,9 +156,12 @@
   color: var(--whatsapp-green);
   text-decoration: none;
   font-weight: 700;
+  display: flex;
+  justify-content: center;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
   transition: var(--transition);
   padding: 30px 30px;
   border-radius: 50px;

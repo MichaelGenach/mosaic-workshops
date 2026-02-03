@@ -1,24 +1,32 @@
-#reviewsContainer {
-  width: 100%;
-  border-radius: 16px;
-  margin-top: 65px;
+/* ==================== Reviews Container ==================== */
 
+#reviewsContainer {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  margin-top: 20px;
+  margin-bottom: 0;
+  overflow: hidden;
 }
 
-
+/* ==================== Carousel ==================== */
 
 #reviewsCarousel {
   scroll-behavior: auto;
-  /* למנוע שינוי נקודת האפס */
   overflow-x: auto;
   cursor: grab;
+  position: relative;
+  padding: 0;
 }
-
 
 #reviewsCarousel::-webkit-scrollbar {
   display: none;
 }
 
+#reviewsCarousel:active {
+  cursor: grabbing;
+}
 
 #carouselInner {
   display: inline-flex;
@@ -28,161 +36,256 @@
 
 #carouselInner:active {
   cursor: grabbing;
-
-  /* Firefox */
 }
 
-.reviewCard {
-  background: rgba(0, 0, 0, 0.7);
-  /* backdrop-filter: blur(6px); */
-  color: #ffffff;
+/* ==================== Review Cards ==================== */
 
-  border-radius: 12px;
-  padding: 20px;
+.reviewCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 24px 20px;
   max-width: 300px;
+  min-height: 180px;
   height: fit-content;
   margin: 10px;
   flex-shrink: 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
   direction: rtl;
+
+  /* Glass Effect */
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  /* Shadow */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* Smooth Transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Hover Effect */
+.reviewCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Active/Drag Effect */
+.reviewCard:active {
+  cursor: grabbing;
+  transform: translateY(-2px);
+}
+
+/* ==================== Long Review Cards ==================== */
 
 .long-review {
-  background: rgba(0, 0, 0, 0.7);
-  /* backdrop-filter: blur(6px); */
-  color: #ffffff;
-
-  border-radius: 12px;
-  padding-top: 20px;
-  padding-right: 10px;
-  padding-left: 10px;
-height: 100%;
-  min-width: 10%;
-  max-width: 20%;
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 24px 20px;
+  max-width: 350px;
+  min-height: 200px;
+  height: fit-content;
   margin: 10px;
   flex-shrink: 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-  transition: transform 0.3s ease, background 0.3s ease;
+  cursor: pointer;
   direction: rtl;
-}
 
-.reviewCard h3 {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #f0f0f0;
-}
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 
-.long-review h3 {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #f0f0f0;
-}
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
-.long-review p {
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: #dddddd;
-  margin-top: 5px;
-  padding-bottom: 5px;
-
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .long-review:hover {
   transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
-.long-review div {
-    color: #ffcc00;
-    padding: 0;
-   
-
-}
-
-.reviewCard:hover {
-  transform: translateY(-5px);
-}
-
-
-
-.reviewCard p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #dddddd;
-  margin-top: 5px;
-
-  
-
-}
-
-.reviewCard div {
-  font-size: 0.7rem;
-  color: #ffcc00;
-
-}
-
-.reviewCard:active {
+.long-review:active {
   cursor: grabbing;
-  /* Firefox */
+  transform: translateY(-2px);
 }
 
+/* ==================== Header Section (Name & Stars) ==================== */
 
 #nameStar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   direction: rtl;
- margin-bottom: 2px;
+}
+
+.reviewCard h3,
+.long-review h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0;
+  letter-spacing: -0.2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Stars Styling */
+#stars {
+  font-size: 1rem;
+  margin: 0;
+  margin-right: 10px;
+  color: #fbbf24;
+  filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.5));
+  letter-spacing: 2px;
+}
+
+/* ==================== Review Text ==================== */
+
+.reviewCard p,
+.long-review p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  font-weight: 400;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.reviewCard div,
+.long-review div {
+  color: inherit;
+}
+
+/* ==================== Mobile Responsive ==================== */
+
+@media only screen and (max-width: 768px) {
+
+  #reviewsContainer {
+    margin-top: 0px;
+    margin-bottom: 30px;
   }
 
-#stars {
-  margin-right: 10px;
-  font-size: 16px;
-  color: orange;
-  position: relative;
+  .reviewCard,
+  .long-review {
+    padding: 18px 14px;
+    max-width: 220px !important;
+    min-width: 220px;
+    min-height: 160px;
+    margin: 8px;
+  }
 
+  #nameStar {
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+  }
+
+  .reviewCard h3,
+  .long-review h3 {
+    font-size: 0.9rem;
+  }
+
+  #stars {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  .reviewCard p,
+  .long-review p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* ביטול הובר במובייל */
+  .reviewCard:hover,
+  .long-review:hover {
+    transform: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
 }
+
+@media only screen and (max-width: 480px) {
+  .reviewCard {
+    max-width: 200px !important;
+    min-width: 200px;
+    padding: 16px 12px;
+    min-height: 150px;
+  }
+
+  .long-review {
+    max-width: 320px !important;
+    min-width: 320px;
+    padding: 16px 12px;
+    min-height: 150px;
+  }
+
+  .reviewCard h3,
+  .long-review h3 {
+    font-size: 0.85rem;
+  }
+
+  .reviewCard p,
+  .long-review p {
+    font-size: 0.8rem;
+  }
+
+  #stars {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==================== Print Styles ==================== */
+
+@media print {
+  #reviewsContainer {
+    background: white;
+  }
+
+  .reviewCard,
+  .long-review {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+    background: white;
+    color: black;
+  }
+
+  .reviewCard h3,
+  .long-review h3,
+  .reviewCard p,
+  .long-review p {
+    color: black;
+    text-shadow: none;
+  }
+}
+
+
 
 
 
 @media only screen and (max-width: 768px) {
+  .reviewsContainerTours {
 
-  .reviewCard p {
-    font-size: 0.90rem;
-  
+    position: relative;
+    top: 30px;
   }
-
-  .long-review p{
-    font-size: 12.5px;
-   
-  }
-  
-  .reviewCard{
-    max-width:75%;
-    height: 60%;
-    
-    direction: rtl;
-  }
-
-  .reviewCard:hover {
-  transform: none;
-  }
-
-  .long-review{
-    max-width:90%;
-    height: 60%;
-  font-size: 12px;
-    direction: rtl;
-    padding-bottom: 5px;
-  }
-
-  .long-review:hover {
-    transform: none;
- 
-  }
-  #reviewsContainer{
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
-  
 }

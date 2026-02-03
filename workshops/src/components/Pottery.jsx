@@ -4,6 +4,7 @@ import { Link, useNavigate, } from 'react-router-dom'
 import { motion } from "framer-motion"
 import './Pottery.css'
 import BookingWidget from './BookingWidget';
+import FaqPottery from './FaqPottery'
 import Contact from './Contact';
 import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
@@ -353,6 +354,8 @@ export default function Pottery({ language, languageSettings }) {
 
 
       </FadeIn>
+
+      <FaqPottery language={language} languageSettings={languageSettings}/>
 
       <Contact language={language} languageSettings={languageSettings} />
       <Footer language={language} languageSettings={languageSettings} />

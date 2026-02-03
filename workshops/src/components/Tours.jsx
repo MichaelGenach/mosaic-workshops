@@ -1,6 +1,8 @@
 import { React, useEffect } from 'react'
 import { Link, useNavigate, } from 'react-router-dom';
-import './Tours.css'
+import './Tours.css';
+import FaqTours from './FaqTours';
+import ReviewsTours from './ReviewsTours'
 import Contact from './Contact';
 import Footer from './Footer';
 import BookingWidget from './BookingWidget';
@@ -24,10 +26,11 @@ import photo214 from './images/photo214.jpg'
 import photo215 from './images/photo215.jpg'
 import photo255 from './images/photo255.jpg'
 import madregot from './videos/madregot.mp4'
+import thumbNailTours from './images/thumbNailTours.png'
 import yam from './videos/yam.mp4'
 import porfir from './videos/porfir.mp4'
 import tandemCaesarea from './images/tandemCaesarea.jpeg';
-import caesareaTour from './images/caesareaTour.mp4';
+import caesareaTour from './videos/caesareaTour.mp4';
 import caesareaTour2 from './images/caesareaTour2.jpg';
 import telAfek from './images/telAfek.jpg';
 import telAfek2 from './images/telAfek2.jpg'
@@ -45,6 +48,7 @@ import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useRef } from 'react';
 import { motion } from "framer-motion";
+import MainButtons from './MainButtons';
 
 const images = {
     photo40,
@@ -74,7 +78,8 @@ const images = {
     telAfek3,
     apolonia,
     mekorotHayarkon,
-    cheesWine
+    cheesWine,
+    thumbNailTours,
 };
 const phoneNumber = '0523948920';
 
@@ -101,8 +106,8 @@ const pageTranslations = {
             priceNote: 'כתוספת לסיור'
         },
 
-        title: 'סיורים פרטיים מרתקים בישראל',
-        subtitle: 'גלו את הסודות הנסתרים של ארץ ישראל',
+        title: '🍒 Cherry Travel ',
+        subtitle: 'סיורים פרטיים מרתקים בהדרכת מורה דרך מוסמך',
         icons: ['סיורים פרטיים', 'מטיילים ממליצים', 'מסלול לבחירתכם', 'מורה דרך מוסמך'],
         cta: 'לתיאום סיור פרטי',
         sectionTours: 'הסיורים שלנו',
@@ -110,7 +115,7 @@ const pageTranslations = {
         statsLabels: {
             tours: 'סיורים מוצלחים',
             customers: 'מטיילים מרוצים',
-            rating: 'דירוג ממוצע',
+
             experience: 'שנות ניסיון',
             phoneNumber: "052-394-8920",
 
@@ -148,8 +153,8 @@ const pageTranslations = {
             priceNote: 'Add-on to the tour'
         },
 
-        title: 'Fascinating Private Tours in Israel',
-        subtitle: 'Discover the hidden secrets of the Land of Israel',
+        title: 'Cherry Travel 🍒',
+        subtitle: 'Private Exiting Tours',
         icons: ['Private Tours', 'Recommended by travelers', 'Customized route', 'Licensed guide'],
         cta: 'Book a private tour',
         sectionTours: 'Our Tours',
@@ -157,7 +162,6 @@ const pageTranslations = {
         statsLabels: {
             tours: 'Successful Tours',
             customers: 'Happy Travelers',
-            rating: 'Average Rating',
             experience: 'Years of Experience',
             phoneNumber: "052-394-8920",
 
@@ -184,6 +188,13 @@ const pageTranslations = {
         }
     }
 };
+
+
+
+
+
+
+
 
 
 
@@ -386,6 +397,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = '' }) => {
     );
 };
 
+
 // Interactive Photo Carousel
 const InteractiveCarousel = ({ images, autoPlay = true }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -427,21 +439,9 @@ const InteractiveCarousel = ({ images, autoPlay = true }) => {
                     />
                 </AnimatePresence>
 
-                <div className="carousel-controls">
-                    <button onClick={togglePlay} className="play-pause-btn">
-                        {isPlaying ? '⏸️' : '▶️'}
-                    </button>
-                </div>
-            </div>
 
-            <div className="carousel-dots">
-                {images.map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => goToSlide(index)}
-                        className={`dot ${index === currentIndex ? 'active' : ''}`}
-                    />
-                ))}
+
+
             </div>
         </div>
     );
@@ -563,28 +563,37 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
 
 
 
+
+
+
+
+
+
     return (
         <div className="enhanced-tours-page" dir={direction}>
             {/* Hero Section with Parallax */}
-            
+
             <section className="hero-section-tours">
                 <div
                     className="hero-bg"
                     style={{ transform: `translateY(${scrollY * 0.5}px)` }}
                 >
+
+
                     <video
-                        className="hero-video"
-                        src={images.caesareaTour}
+                        src={caesareaTour}
+                        poster={thumbNailTours}
                         autoPlay
                         loop
                         muted
                         playsInline
+                        className="hero-video"
                     />
                     <div className="hero-overlay" />
                 </div>
 
                 <div className="hero-content-tours">
-                <motion.div
+                    <motion.div
                         initial={{ opacity: 0, y: 18 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.2 }}
@@ -592,7 +601,12 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                         <h1 className="hero-title-tours">{t.title}</h1>
                         <p className="hero-subtitle-tours">{t.subtitle}</p>
 
-                        <div className="hero-stats-tours">
+
+                        <MainButtons language={language} languageSettings={languageSettings} />
+                        <ReviewsTours language={language} languageSettings={languageSettings} />
+
+
+                        {/* <div className="hero-stats-tours">
                             <div className="stat-item-tours">
                                 <AnimatedCounter end={t.stats.tours} suffix="+" />
                                 <span>{t.statsLabels.tours}</span>
@@ -601,24 +615,13 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                                 <AnimatedCounter end={t.stats.customers} suffix="+" />
                                 <span>{t.statsLabels.customers}</span>
                             </div>
-                            <div className="stat-item-tours">
-                                <AnimatedCounter end={t.stats.rating} duration={2500} />
-                                <span>{t.statsLabels.rating}</span>
-                            </div>
+
                             <div className="stat-item-tours">
                                 <AnimatedCounter end={t.stats.experience} />
                                 <span>{t.statsLabels.experience}</span>
                             </div>
-                        </div>
+                        </div> */}
 
-                        <motion.button
-                            className="hero-cta-tours"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                        >
-                            {t.cta} ✨
-                        </motion.button>
                     </motion.div>
                 </div>
             </section>
@@ -882,7 +885,7 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                         photo213,
                         photo214,
                         photo255,
-                        caesareaTour2, 
+                        caesareaTour2,
 
                     ]}
                 />
@@ -1033,6 +1036,9 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            <FaqTours language={language} languageSettings={languageSettings} />
+
 
             <Contact
                 id="contact"

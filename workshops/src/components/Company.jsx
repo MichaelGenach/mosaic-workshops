@@ -3,6 +3,7 @@ import FadeIn from 'react-fade-in';
 import { Link, useNavigate } from 'react-router-dom'
 import { motion } from "framer-motion"
 import './Company.css'
+import FaqCompany from './FaqCompany';
 import Contact from './Contact';
 import Footer from './Footer';
 import PhotoCarousel from './PhotoCarousel';
@@ -302,6 +303,8 @@ export default function Company({ language, languageSettings }) {
         </section>
 
       </FadeIn>
+
+      <FaqCompany language={language} languageSettings={languageSettings} />
 
       <Contact language={language} languageSettings={languageSettings} />
       <Footer language={language} languageSettings={languageSettings} />

@@ -2,6 +2,7 @@ import { React, useState, useRef, useEffect } from 'react'
 import { Link, useNavigate, } from 'react-router-dom'
 import './Private.css'
 import PhotoCarousel from './PhotoCarousel';
+import FaqPrivate from './FaqPrivate';
 import Contact from './Contact';
 import Footer from './Footer';
 import BookingWidget from './BookingWidget';
@@ -354,6 +355,8 @@ export default function Private({ language, languageSettings }) {
 
         <p className="private-pricing-note">{t.pricingNote}</p>
       </section>
+
+<FaqPrivate language={language} languageSettings={languageSettings} />
 
       {/* Contact & Footer */}
       <Contact language={language} instaLink={instaLink} languageSettings={languageSettings} />
