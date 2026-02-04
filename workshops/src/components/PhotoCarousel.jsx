@@ -119,6 +119,12 @@ export default function PhotoCarousel(props) {
     return arr;
   }, [props.arrPhotoCarousel]);
 
+
+
+
+
+
+  
   return (
     <div>
       <div id="caruselDiv">
