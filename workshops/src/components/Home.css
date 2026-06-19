@@ -163,18 +163,16 @@
 
 /* כפתור ראשון - שקוף עם גבול */
 #leyezirat {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none
 }
 
 #leyezirat:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, #7c8ff0 0%, #8b5ab8 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
 }
 
-/* כפתור WhatsApp - ירוק עדין יותר */
 #lehazmana {
   background: rgba(37, 211, 102, 0.9);
   border-color: rgba(37, 211, 102, 0.5);

@@ -8,11 +8,14 @@ import Home from './components/Home';
 import Private from './components/Private';
 import Company from './components/Company';
 import Tours from './components/Tours';
+import BikeTours from './components/BikeTours';
+import FootTours from './components/FootTours';
 import Pottery from './components/Pottery';
 import Janur from './components/Janur';
 import HazharatNegishut from './components/HazharatNegishut';
 import ShareButton from './components/ShareButton';
 import Contact from './components/Contact';
+import StickyWhatsappButton from './components/StickyWhatsappButton';
 
 
 
@@ -38,27 +41,26 @@ function App() {
 
 
   useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-ND4DK7X2' }); // הכנס את ה-GTM שלך כאן
+    TagManager.initialize({ gtmId: 'GTM-ND4DK7X2' });
     console.log('Google tag works!')
   }, []);
-
-
-
 
 
   return (
     <div className="App" style={{ fontFamily: fontsByLanguage[language] }}>
 
-
       <BrowserRouter>
         <Menu language={language} setLanguage={setLanguage} languageSettings={languageSettings} />
-        <ShareButton />
+        {/* <ShareButton /> */}
+        <StickyWhatsappButton/>
 
         <Routes>
           <Route path='/' element={<Home language={language} languageSettings={languageSettings} />} />
           <Route path='/private' element={<Private language={language} languageSettings={languageSettings} />} />
           <Route path='/company' element={<Company language={language} languageSettings={languageSettings} />} />
           <Route path='/tours' element={<Tours language={language} languageSettings={languageSettings} />} />
+          <Route path='/bike-tours' element={<BikeTours language={language} languageSettings={languageSettings} />} />
+          <Route path='/foot-tours' element={<FootTours language={language} languageSettings={languageSettings} />} />
           <Route path='/pottery' element={<Pottery language={language} languageSettings={languageSettings} />} />
           <Route path='/janur' element={<Janur language={language} languageSettings={languageSettings} />} />
           <Route path='/hazharatNegishut' element={<HazharatNegishut language={language} languageSettings={languageSettings} />} />

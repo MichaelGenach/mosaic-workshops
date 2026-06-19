@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import './Contact.css';
 
@@ -23,7 +23,6 @@ const translations = {
     buttonText: 'Send',
     successMessage: 'Thank you for your message! We will get back to you soon.',
   },
-  // אפשר להוסיף שפות נוספות כאן
 };
 
 const ContactForm = ({ language, languageSettings }) => {
@@ -32,12 +31,23 @@ const ContactForm = ({ language, languageSettings }) => {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const t = translations[language];
-  const settings = languageSettings[language]
+  const settings = languageSettings[language];
+
+  // ✅ EmailJS init
+  useEffect(() => {
+    emailjs.init('wL0TWpYxdl84ufXb-');
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (loading) return;
+
+    setLoading(true);
+    setSubmitted(false);
 
     const templateParams = {
       owner_name: 'Amir',
@@ -48,93 +58,118 @@ const ContactForm = ({ language, languageSettings }) => {
     };
 
     emailjs
-      .send('service_hwjajxk', 'template_x5x2utb', templateParams, 'wL0TWpYxdl84ufXb-')
-      .then(
-        (response) => {
-          console.log('Email sent successfully!', response.status, response.text);
-          setSubmitted(true);
-          setName('');
-          setPhone('');
-          setEmail('');
-          setMessage('');
-        },
-        (err) => {
-          console.error('Failed to send email. Error:', err);
-        }
-      );
+      .send('service_8sig1v7', 'template_oarge8e', templateParams)
+      .then(() => {
+        setSubmitted(true);
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+      })
+      .catch((error) => {
+        console.error('EmailJS Error:', error);
+        alert('אירעה שגיאה בשליחת ההודעה. נסה שוב.');
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
-    <div className="formContainer" >
-      <form onSubmit={handleSubmit} className="form" >
-        <div className="formGroup" >
-          <input style={{
-            direction: settings.direction,
-            textAlign: settings.textAlign
-          }}
+    <div className="formContainer">
+      <form onSubmit={handleSubmit} className="form" autoComplete="on">
+        
+        {/* Name */}
+        <div className="formGroup">
+          <input
+            style={{
+              direction: settings.direction,
+              textAlign: settings.textAlign,
+            }}
             placeholder={t.placeholders.name}
             type="text"
-            id="name"
+            name="name"
+            autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
             className="input"
           />
         </div>
+
+        {/* Email */}
         <div className="formGroup">
-          <input style={{
-            direction: settings.direction,
-            textAlign: settings.textAlign
-          }}
+          <input
+            style={{
+              direction: settings.direction,
+              textAlign: settings.textAlign,
+            }}
             placeholder={t.placeholders.email}
             type="email"
-            id="email"
+            name="email"
+            autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
             className="input"
           />
         </div>
+
+        {/* Phone */}
         <div className="formGroup">
-          <input style={{
-            direction: settings.direction,
-            textAlign: settings.textAlign
-          }}
+          <input
+            style={{
+              direction: settings.direction,
+              textAlign: settings.textAlign,
+            }}
             placeholder={t.placeholders.phone}
             type="tel"
-            id="phone"
+            name="phone"
+            autoComplete="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
             className="input"
           />
         </div>
+
+        {/* Message */}
         <div className="formGroup">
-          <textarea style={{
-            direction: settings.direction,
-            textAlign: settings.textAlign
-          }}
+          <textarea
+            style={{
+              direction: settings.direction,
+              textAlign: settings.textAlign,
+            }}
             placeholder={t.placeholders.message}
-            id="message"
+            name="message"
+            autoComplete="off"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             required
             className="textarea"
           />
         </div>
+
+        {/* Submit */}
         <div className="formGroup">
-          <button type="submit" className="button">
-            {t.buttonText}
+          <button
+            type="submit"
+            className="button"
+            disabled={loading}
+          >
+            {loading ? 'שולח...' : t.buttonText}
           </button>
-          <br />
         </div>
 
-        {submitted && <div className="successMessage"
-          style={{
-            direction: settings.direction,
-          }} >
-          {t.successMessage}
-        </div>}
+        {/* Success Message */}
+        {submitted && (
+          <div
+            className="successMessage"
+            style={{ direction: settings.direction }}
+          >
+            {t.successMessage}
+          </div>
+        )}
       </form>
     </div>
   );

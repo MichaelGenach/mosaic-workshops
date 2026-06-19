@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.719b562e.css",
-    "main.js": "/static/js/main.ee8501cc.js",
+    "main.css": "/static/css/main.c5921b0d.css",
+    "main.js": "/static/js/main.9bd79994.js",
     "static/js/787.71619633.chunk.js": "/static/js/787.71619633.chunk.js",
     "static/media/video12.mp4": "/static/media/video12.4f0cf774cb4f992a5a08.mp4",
     "static/media/yam.mp4": "/static/media/yam.dc0f4a06ec558ab15d52.mp4",
+    "static/media/mainVideoPottery.mp4": "/static/media/mainVideoPottery.bfa6cfafdf6c29540fd0.mp4",
     "static/media/photo212.jpg": "/static/media/photo212.01887b87e1ab1599c6f6.jpg",
     "static/media/porfir.mp4": "/static/media/porfir.cae9d6ab8c55a43cbc28.mp4",
     "static/media/caesareaTour.mp4": "/static/media/caesareaTour.adee40e57ebafaeadfff.mp4",
@@ -17,8 +18,10 @@
     "static/media/video14.mp4": "/static/media/video14.237bc5fbe914a157d02e.mp4",
     "static/media/apolonia.jpg": "/static/media/apolonia.6a5b54e4135e53654696.jpg",
     "static/media/video1.mov": "/static/media/video1.cdabc90fb3ac16626b69.mov",
+    "static/media/thumbNailPotteryMainVideo.png": "/static/media/thumbNailPotteryMainVideo.032f0b2608f165d218cc.png",
     "static/media/photo213.jpg": "/static/media/photo213.f94dcc693da51cd36521.jpg",
     "static/media/thumbNailTours.png": "/static/media/thumbNailTours.0d9762b836ab0d79eaf2.png",
+    "static/media/telAfek4.jpg": "/static/media/telAfek4.5a8510cc73e690d0909e.jpg",
     "static/media/thumbNail.png": "/static/media/thumbNail.ee4a1ac3aa07403bea03.png",
     "static/media/video13.mp4": "/static/media/video13.6ebf146bc2e5a8da8ecf.mp4",
     "static/media/telAfek2.jpg": "/static/media/telAfek2.ac7aab5a446554ecede7.jpg",
@@ -52,6 +55,7 @@
     "static/media/photo153.jpg": "/static/media/photo153.660cac34bc254b7edb0f.jpg",
     "static/media/photo192.jpg": "/static/media/photo192.d732bddb099229ea898e.jpg",
     "static/media/photo105.jpg": "/static/media/photo105.df5c99c568545713172f.jpg",
+    "static/media/BeitShearim.jpeg": "/static/media/BeitShearim.cd6f6bbd889ede14060a.jpeg",
     "static/media/photo28.jpg": "/static/media/photo28.2fdde397e37030cd46d7.jpg",
     "static/media/photo91.jpg": "/static/media/photo91.b3ceb47401112bd38c5f.jpg",
     "static/media/photo17.jpg": "/static/media/photo17.87dd2adc4f463891ff97.jpg",
@@ -223,12 +227,12 @@
     "static/media/caesareaTour2.jpg": "/static/media/caesareaTour2.f0f75c852835e7c54beb.jpg",
     "static/media/photo99.jpg": "/static/media/photo99.e3e4a7d8783777dcb68f.jpg",
     "index.html": "/index.html",
-    "main.719b562e.css.map": "/static/css/main.719b562e.css.map",
-    "main.ee8501cc.js.map": "/static/js/main.ee8501cc.js.map",
+    "main.c5921b0d.css.map": "/static/css/main.c5921b0d.css.map",
+    "main.9bd79994.js.map": "/static/js/main.9bd79994.js.map",
     "787.71619633.chunk.js.map": "/static/js/787.71619633.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.719b562e.css",
-    "static/js/main.ee8501cc.js"
+    "static/css/main.c5921b0d.css",
+    "static/js/main.9bd79994.js"
   ]
 }

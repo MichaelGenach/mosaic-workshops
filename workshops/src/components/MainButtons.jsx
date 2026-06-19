@@ -10,7 +10,7 @@ export default function MainButtons({ language, languageSettings }) {
         he: {
             contact: "ליצירת קשר",
             order: "לפרטים והזמנות",
-            microcopy: "ללא התחייבות • מענה אישי ומהיר"
+            microcopy: "ללא מקדמה • מענה אישי ומהיר"
         },
         en: {
             contact: "Contact Us",

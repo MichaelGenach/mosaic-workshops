@@ -7,7 +7,11 @@ import BookingWidget from './BookingWidget';
 import FaqPottery from './FaqPottery'
 import Contact from './Contact';
 import Footer from './Footer';
+import MainButtons from './MainButtons';
 import PhotoCarousel from './PhotoCarousel';
+import thumbNailPotteryMainVideo from './images/thumbNailPotteryMainVideo.png'
+import mainVideoPottery from './videos/mainVideoPottery.mp4'
+import Reviews from './Reviews';
 import photo161 from './images/photo161.jpg'
 import photo162 from './images/photo162.jpg'
 import photo163 from './images/photo163.jpg'
@@ -88,6 +92,10 @@ import { GiCalendarHalfYear } from "react-icons/gi";
 import { PiFlowerLotusBold } from "react-icons/pi";
 import { FaHome } from "react-icons/fa";
 import Pricing from './Pricing';
+
+
+
+
 
 const translations = {
   he: {
@@ -195,111 +203,52 @@ export default function Pottery({ language, languageSettings }) {
 
   return (
     <div id='mainDivPottery'>
-      <br />
+     
 
       <FadeIn>
-        <div id='headLine'>
-          <h1>{t.title}</h1>
-        </div>
+  {/* Hero Section - Pottery */}
+  <section className="hero-section-pottery">
+    <div className="hero-bg-pottery">
+      <video
+        src={mainVideoPottery} // תחליף בוידאו שלך
+        poster={thumbNailPotteryMainVideo} // תחליף בתמונת תצוגה מקדימה
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="hero-video-pottery"
+      />
+      <div className="hero-overlay-pottery" />
+    </div>
 
-        <div id='twoPotteryVideosAndIcons'>
-          <div id='twoPotteryVideos'>
-            <video id="video12" src={video12} autoPlay loop muted title="Pottery workshop video demo" />
-            <video id="video13" src={video13} autoPlay loop muted title="Pottery workshop video demo" />
-          </div>
-
-          <div id='potteryIconsDiv'>
-            <div className='potteryIconsMiniDiv'><PiFlowerLotusBold className='potteryIcons' /><p className='potteryIconsText'>{t.icons[0]}</p></div>
-            <div className='potteryIconsMiniDiv'><FaPaintBrush className='potteryIcons' /><p className='potteryIconsText'>{t.icons[1]}</p></div>
-            <div className='potteryIconsMiniDiv'><FaHeart className='potteryIcons' /><p className='potteryIconsText'>{t.icons[2]}</p></div>
-            <div className='potteryIconsMiniDiv'><FaHome className='potteryIcons' /><p className='potteryIconsText'>{t.icons[3]}</p></div>
-          </div>
-        </div>
+    <div className="hero-content-pottery">
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.2 }}
+      >
+        <h1 className="hero-title-pottery">{t.title}</h1>
+        <p className="hero-subtitle-pottery">{t.subtitle}</p>
 
 
-        <a href="#contact" id='CTAPottery'>{t.cta}</a>
+        <MainButtons language={language} languageSettings={languageSettings} />
+        <Reviews language={language} />
+      </motion.div>
+    </div>
+  </section>
 
-        {/* Pottery Workshop Testimonials Section */}
-        <section className="testimonials-section pottery-testimonials" style={{
-          direction: settings.direction,
-        }}>
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="section-title-tours"
-          >
-            {language === 'he' ? 'מה אומרים המשתתפים בסדנת הקדרות' : 'What Our Pottery Workshop Participants Say'}
-          </motion.h2>
+  {/* Videos Section */}
+  <div id='twoPotteryVideosAndIcons'>
+    <div id='twoPotteryVideos'>
+      <video id="video12" src={video12} autoPlay loop muted title="Pottery workshop video demo" />
+      <video id="video13" src={video13} autoPlay loop muted title="Pottery workshop video demo" />
+    </div>
+  </div>
 
-          <div className="testimonials-grid">
-            {(language === 'he' ? [
-              {
-                name: 'רונית ברק',
-                workshop: 'סדנת קדרות',
-                text: 'חוויה מדהימה! הרגשתי את עצמי יוצרת משהו ייחודי בידיים שלי. אמיר סבלני ומקצועי, והאווירה היתה מרגיעה ומעוררת השראה.',
-                rating: 5
-              },
-              {
-                name: 'אילן פרידמן',
-                workshop: 'סדנה זוגית',
-                text: 'אני ובת הזוג נהנינו מכל רגע! זו היתה חוויה יצירתית במיוחד. יצאנו עם כלים שיצרנו בעצמנו, מומלץ בחום!.',
-                rating: 5
-              },
-              {
-                name: 'ענת גולדשטיין',
-                workshop: 'סדנת משפחות',
-                text: 'הילדים לא רצו לעזוב! הם נהנו מכל שנייה ויצרו דברים מדהימים. חוויה משפחתית מיוחדת שנזכור לתמיד. תודה על הכל!',
-                rating: 5
-              }
-            ] : [
-              {
-                name: 'Ronit Barak',
-                workshop: 'Pottery Workshop',
-                text: 'An amazing experience! I felt myself creating something truly unique with my own hands. Amir was patient and professional, and the atmosphere was calming and inspiring.',
-                rating: 5
-              },
-              {
-                name: 'Ilan Friedman',
-                workshop: 'Couples Workshop',
-                text: 'My partner and I enjoyed every moment! It was an especially creative experience. We left with pottery pieces we made ourselves — highly recommended!',
-                rating: 5
-              },
-              {
-                name: 'Anat Goldstein',
-                workshop: 'Family Workshop',
-                text: 'The kids didn’t want to leave! They enjoyed every second and created incredible pieces. A special family experience we’ll remember forever. Thank you for everything!',
-                rating: 5
-              }
-            ]).map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="testimonial-card"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.02 }}
-              >
-                <div className="testimonial-stars">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <span key={i} className="star">⭐</span>
-                  ))}
-                </div>
-                <p className="testimonial-text">"{testimonial.text}"</p>
-                <div className="testimonial-author">
-                  <div className="author-avatar pottery-avatar">
-                    {testimonial.name.charAt(0)}
-                  </div>
-                  <div className="author-info">
-                    <h4 className="author-name">{testimonial.name}</h4>
-                    <p className="author-tour">{testimonial.workshop}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </section>
+
+
+
+     
 
         <div id='explainPotteryDiv'>
           <p id='explainPotteryText' style={{

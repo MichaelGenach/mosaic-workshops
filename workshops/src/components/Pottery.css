@@ -10,132 +10,186 @@
 }
 
 /* ===============================================
-   HERO SECTION - HEADLINE
+   HERO SECTION - POTTERY (NEW)
    =============================================== */
-#headLine {
-    text-align: center;
-    padding: 4rem 2rem 2rem;
+.hero-section-pottery {
     position: relative;
-}
-
-#headLine h1 {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    font-weight: 900;
-    background: linear-gradient(135deg, #8b4513 0%, #d2691e 50%, #daa520 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -1px;
-    margin: 0;
-    position: relative;
-    animation: fadeInDown 1s ease-out;
-}
-
-#headLine h1::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    height: 6px;
-    background: linear-gradient(90deg, #8b4513 0%, #daa520 100%);
-    border-radius: 3px;
-    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
-}
-
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ===============================================
-   VIDEO & ICONS SECTION - IMMERSIVE LAYOUT
-   =============================================== */
-#twoPotteryVideosAndIcons {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    max-width: 1400px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-    align-items: center;
-}
-
-#potteryIconsDiv {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
     width: 100%;
-    max-width: 1100px;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+
+    
 }
 
-.potteryIconsMiniDiv {
+.hero-bg-pottery {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.hero-video-pottery {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-overlay-pottery {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.8));
+    z-index: 1;
+}
+
+.hero-content-pottery {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    padding: 0 2rem;
+    width: 100%;
+    top: 6vh;
+   
+   
+
+}
+
+.hero-title-pottery {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    position: relative;
+    
+    /* צבע עם עומק */
+    color: #fffdf8;
+
+    /* צל רך ומקצועי */
+    text-shadow: 
+        0 4px 12px rgba(0, 0, 0, 0.35),
+        0 1px 2px rgba(0, 0, 0, 0.2);
+
+    /* פונט מודרני-אלגנטי */
+    font-family: 'Playfair Display', 'Georgia', serif;
+
+    /* ריווח אותיות עדין */
+    letter-spacing: 0.03em;
+
+    /* אנימציה קטנה בכניסה */
+    animation: fadeUp 0.9s ease-out forwards;
+}
+
+
+.hero-subtitle-pottery {
+    font-family: sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    margin-bottom: 3rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.pottery-icon-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 2.5rem 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
-    border-radius: 25px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    border: 2px solid rgba(139, 69, 19, 0.1);
-    position: relative;
-    overflow: hidden;
+    gap: 0.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
 }
 
-.potteryIconsMiniDiv::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, #d2691e 0%, #daa520 100%);
-    transform: scaleX(0);
-    transition: transform 0.4s ease;
+.pottery-icon-item:hover {
+    transform: translateY(-5px);
 }
 
-.potteryIconsMiniDiv:hover::before {
-    transform: scaleX(1);
-}
-
-.potteryIconsMiniDiv:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 50px rgba(139, 69, 19, 0.2);
-    border-color: rgba(218, 165, 32, 0.3);
-}
-
-.potteryIcons {
-    font-size: 3.5rem;
-    color: #d2691e;
-    filter: drop-shadow(0 4px 12px rgba(210, 105, 30, 0.3));
+.pottery-icon {
+    font-size: 3rem;
+    color: #20dada;
+ 
     transition: all 0.4s ease;
 }
 
-.potteryIconsMiniDiv:hover .potteryIcons {
-    transform: scale(1.2) rotate(-5deg);
-    color: #daa520;
-    filter: drop-shadow(0 8px 20px rgba(218, 165, 32, 0.5));
+.pottery-icon-item:hover .pottery-icon {
+    transform: scale(1.2);
+    color: #00a2ff;
 }
 
-.potteryIconsText {
+.pottery-icon-text {
+    font-family: 'Segoe UI';
+    font-size: 0.9rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     margin: 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #2d3748;
-    text-align: center;
-    letter-spacing: 0.3px;
+    font-weight: 600;
 }
+
+/* CTA Button in Hero */
+.hero-cta-pottery {
+    font-family: 'Heebo', 'Rubik', 'Assistant', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #d2691e, #daa520);
+    border: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hero-cta-pottery::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.hero-cta-pottery:hover::before {
+    left: 100%;
+}
+
+.hero-cta-pottery:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(210, 105, 30, 0.4);
+    background: linear-gradient(135deg, #c17a4d, #c9a236);
+}
+
+.hero-cta-pottery:active {
+    transform: translateY(0) scale(1.02);
+    box-shadow: 0 2px 10px rgba(210, 105, 30, 0.3);
+}
+
+.hero-cta-pottery:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(210, 105, 30, 0.3);
+}
+
+
 
 /* ===============================================
    VIDEO CONTAINERS - CINEMATIC DISPLAY
@@ -145,6 +199,7 @@
     gap: 1.5rem;
     position: relative;
     justify-content: center;
+    margin-top: 1rem;
 }
 
 #video12, #video13 {
@@ -171,7 +226,7 @@
 }
 
 /* ===============================================
-   CTA BUTTON - PREMIUM DESIGN
+   CTA BUTTON - PREMIUM DESIGN (OLD STYLE - KEPT FOR COMPATIBILITY)
    =============================================== */
 #CTAPottery {
     display: inline-block;
@@ -511,276 +566,9 @@
 }
 
 /* ===============================================
-   RESPONSIVE - TABLET (768px - 1024px)
-   =============================================== */
-@media only screen and (max-width: 1024px) {
-    #twoPotteryVideosAndIcons {
-        gap: 2rem;
-    }
-
-    #potteryIconsDiv {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-    }
-
-    .potteryIconsMiniDiv {
-        padding: 2rem 1.5rem;
-    }
-
-    #video12, #video13 {
-        height: 90vh;
-        width: auto;
-    }
-
-    .pricing-section {
-        padding: 6rem 1.5rem;
-    }
-
-    .price-card {
-        padding: 3rem 2.5rem;
-    }
-}
-
-/* ===============================================
-   RESPONSIVE - MOBILE (max 768px)
-   =============================================== */
-@media only screen and (max-width: 768px) {
-    #headLine {
-        padding: 3rem 1.5rem 1.5rem;
-    }
-
-    #headLine h1 {
-        font-size: 2.5rem;
-    }
-
-    #twoPotteryVideosAndIcons {
-        padding: 0 1rem;
-        gap: 2rem;
-        margin: 2rem auto;
-    }
-
-    #potteryIconsDiv {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
-    }
-
-    .potteryIconsMiniDiv {
-        padding: 1.5rem 1rem;
-    }
-
-    .potteryIcons {
-        font-size: 2.8rem;
-    }
-
-    .potteryIconsText {
-        font-size: 0.95rem;
-    }
-
-    #twoPotteryVideos {
-        display: flex;
-      justify-content: center;
-        gap: 0.3rem;
-        width: 100%;
-        align-items: center;
-    }
-
-    #video12, #video13 {
-        height: 50vh;
-        width: auto;
-        max-width: 90%;
-        margin: 0;
-    }
-
-    #CTAPottery {
-        padding: 1.1rem 3rem;
-        font-size: 1.1rem;
-        margin: 2rem 0;
-    }
-
-    #explainPotteryDiv {
-        padding: 0 1rem;
-        margin: 3rem auto;
-    }
-
-    #explainPotteryText {
-        padding: 2rem 1.5rem;
-        font-size: 1rem;
-        line-height: 1.8;
-        border-radius: 20px;
-    }
-
-    .textPhotoContainerPottery {
-        margin-top: 4rem;
-    }
-
-    #textPhoto161 {
-        font-size: 2rem;
-        margin: 2rem 0 1.5rem;
-    }
-
-    #photo204 {
-        max-width: 95%;
-        border-radius: 20px;
-        border-width: 3px;
-    }
-
-    .pricing-section {
-        padding: 4rem 1rem;
-        margin-top: 3rem;
-    }
-
-    .pricing-title {
-        font-size: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .price-card {
-        padding: 2.5rem 1.5rem;
-        border-radius: 25px;
-    }
-
-    .price-card h3 {
-        font-size: 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .price-card li {
-        font-size: 1.1rem;
-        padding: 1rem 1.5rem;
-        margin: 1rem 0;
-    }
-
-    .price-card:hover li {
-        transform: translateX(-5px);
-    }
-
-    .pricing-note {
-        font-size: 1rem;
-        padding: 0 1rem;
-    }
-
-    .cta-button {
-        padding: 1.2rem 3rem;
-        font-size: 1.1rem;
-    }
-}
-
-/* ===============================================
-   RESPONSIVE - SMALL MOBILE (max 480px)
-   =============================================== */
-@media only screen and (max-width: 480px) {
-    #headLine h1 {
-        font-size: 2rem;
-    }
-
-    #potteryIconsDiv {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-    }
-
-    .potteryIconsMiniDiv {
-        padding: 1.2rem 0.8rem;
-    }
-
-    .potteryIcons {
-        font-size: 2.3rem;
-    }
-
-    .potteryIconsText {
-        font-size: 0.85rem;
-    }
-
-    #video12, #video13 {
-        height: 60vh;
-        width: auto;
-        max-width: 85%;
-    }
-
-    #CTAPottery {
-        padding: 1rem 2.5rem;
-        font-size: 1rem;
-    }
-
-    #explainPotteryText {
-        padding: 1.5rem 1rem;
-        font-size: 0.95rem;
-    }
-
-    #textPhoto161 {
-        font-size: 1.8rem;
-    }
-
-    .pricing-title {
-        font-size: 1.8rem;
-    }
-
-    .price-card {
-        padding: 2rem 1rem;
-    }
-
-    .price-card h3 {
-        font-size: 1.3rem;
-    }
-
-    .price-card li {
-        font-size: 1rem;
-        padding: 0.9rem 1rem;
-    }
-
-    .cta-button {
-        padding: 1rem 2.5rem;
-        font-size: 1rem;
-    }
-}
-
-/* ===============================================
-   ACCESSIBILITY & PERFORMANCE
-   =============================================== */
-.price-card:focus-within,
-.potteryIconsMiniDiv:focus-within,
-#CTAPottery:focus,
-.cta-button:focus {
-    outline: 3px solid rgba(210, 105, 30, 0.5);
-    outline-offset: 4px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-.price-card,
-.potteryIconsMiniDiv,
-#video12,
-#video13 {
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ===============================================
    WHAT'S INCLUDED SECTION
    =============================================== */
-   .whatIncludedSection {
+.whatIncludedSection {
     max-width: 1200px;
     margin: 6rem auto;
     padding: 0 2rem;
@@ -1094,10 +882,331 @@
     50% { transform: translateY(-8px); }
 }
 
+/* ================================
+   POTTERY WORKSHOP TESTIMONIALS
+   ================================ */
+.pottery-testimonials {
+    padding: 5rem 2rem;
+    background: linear-gradient(135deg, #c96c1b 0%, #9b671f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.pottery-testimonials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+    opacity: 0.3;
+}
+
+.pottery-testimonials .section-title-tours {
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.pottery-testimonials .section-title-tours::after {
+    background: white;
+}
+
+.pottery-testimonials .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.pottery-testimonials .testimonial-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.pottery-testimonials .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    font-size: 5rem;
+    color: #c17a4d;
+    opacity: 0.1;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.pottery-testimonials .testimonial-card:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+.pottery-testimonials .testimonial-stars {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.pottery-testimonials .star {
+    animation: starPulse 2s ease-in-out infinite;
+}
+
+.pottery-testimonials .star:nth-child(1) { animation-delay: 0s; }
+.pottery-testimonials .star:nth-child(2) { animation-delay: 0.2s; }
+.pottery-testimonials .star:nth-child(3) { animation-delay: 0.4s; }
+.pottery-testimonials .star:nth-child(4) { animation-delay: 0.6s; }
+.pottery-testimonials .star:nth-child(5) { animation-delay: 0.8s; }
+
+@keyframes starPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.pottery-testimonials .testimonial-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.pottery-testimonials .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #e2e8f0;
+}
+
+.pottery-testimonials .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c17a4d, #8b5a3c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+}
+
+.pottery-testimonials .author-info {
+    flex: 1;
+}
+
+.pottery-testimonials .author-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0 0 0.3rem 0;
+}
+
+.pottery-testimonials .author-tour {
+    font-size: 0.9rem;
+    color: #718096;
+    margin: 0;
+}
+
 /* ===============================================
-   RESPONSIVE - MOBILE
+   RESPONSIVE - TABLET (768px - 1024px)
+   =============================================== */
+@media only screen and (max-width: 1024px) {
+    #twoPotteryVideosAndIcons {
+        gap: 2rem;
+    }
+
+    #potteryIconsDiv {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .potteryIconsMiniDiv {
+        padding: 2rem 1.5rem;
+    }
+
+    #video12, #video13 {
+        height: 90vh;
+        width: auto;
+    }
+
+    .pricing-section {
+        padding: 6rem 1.5rem;
+    }
+
+    .price-card {
+        padding: 3rem 2.5rem;
+    }
+}
+
+/* ===============================================
+   RESPONSIVE - MOBILE (max 768px)
    =============================================== */
 @media only screen and (max-width: 768px) {
+    /* Hero Section Mobile */
+    .hero-content-pottery {
+        top: 0;
+        bottom: 15px;
+        padding: 2rem 1rem;
+    }
+
+    .hero-title-pottery {
+        font-size: 2.6rem !important; 
+        margin-bottom: 1rem;
+        bottom: 1vh;
+    }
+
+    .hero-subtitle-pottery {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-icons-pottery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 1rem 0.8rem;
+        margin-bottom: 2rem;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(0px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .pottery-icon {
+        font-size: 2.5rem;
+    }
+
+    .pottery-icon-text {
+        font-size: 0.75rem;
+    }
+
+    .hero-cta-pottery {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Rest of Mobile Styles */
+    #twoPotteryVideosAndIcons {
+        padding: 0 1rem;
+        gap: 2rem;
+        margin: 2rem auto;
+    }
+
+    #potteryIconsDiv {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .potteryIconsMiniDiv {
+        padding: 1.5rem 1rem;
+    }
+
+    .potteryIcons {
+        font-size: 2.8rem;
+    }
+
+    .potteryIconsText {
+        font-size: 0.95rem;
+    }
+
+    #twoPotteryVideos {
+        display: flex;
+        justify-content: center;
+        gap: 0.3rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    #video12, #video13 {
+        height: 50vh;
+        width: auto;
+        max-width: 90%;
+        margin: 0;
+    }
+
+    #CTAPottery {
+        padding: 1.1rem 3rem;
+        font-size: 1.1rem;
+        margin: 2rem 0;
+    }
+
+    #explainPotteryDiv {
+        padding: 0 1rem;
+        margin: 3rem auto;
+    }
+
+    #explainPotteryText {
+        padding: 2rem 1.5rem;
+        font-size: 1rem;
+        line-height: 1.8;
+        border-radius: 20px;
+    }
+
+    .textPhotoContainerPottery {
+        margin-top: 4rem;
+    }
+
+    #textPhoto161 {
+        font-size: 2rem;
+        margin: 2rem 0 1.5rem;
+    }
+
+    #photo204 {
+        max-width: 95%;
+        border-radius: 20px;
+        border-width: 3px;
+    }
+
+    .pricing-section {
+        padding: 4rem 1rem;
+        margin-top: 3rem;
+    }
+
+    .pricing-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .price-card {
+        padding: 2.5rem 1.5rem;
+        border-radius: 25px;
+    }
+
+    .price-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .price-card li {
+        font-size: 1.1rem;
+        padding: 1rem 1.5rem;
+        margin: 1rem 0;
+    }
+
+    .price-card:hover li {
+        transform: translateX(-5px);
+    }
+
+    .pricing-note {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .cta-button {
+        padding: 1.2rem 3rem;
+        font-size: 1.1rem;
+    }
+
     .whatIncludedSection,
     .whyUsSection,
     .testimonialsSection {
@@ -1140,174 +1249,168 @@
         flex-direction: row;
         text-align: right;
     }
+
+    .pottery-testimonials {
+        padding: 3rem 1rem;
+    }
+
+    .pottery-testimonials .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .pottery-testimonials .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .pottery-testimonials .testimonial-text {
+        font-size: 1rem;
+    }
+
+    .pottery-testimonials .author-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+
+    .pottery-testimonials .author-name {
+        font-size: 1rem;
+    }
+
+    .pottery-testimonials .author-tour {
+        font-size: 0.85rem;
+    }
 }
 
+/* ===============================================
+   RESPONSIVE - SMALL MOBILE (max 480px)
+   =============================================== */
+@media only screen and (max-width: 480px) {
+    /* Hero Section Small Mobile */
+    .hero-section-pottery {
+        min-height: 100vh;
+    }
 
+    .hero-content-pottery {
+        padding: 1rem;
+        top: 0;
+    }
 
+    .hero-title-pottery {
+        font-size: 1.8rem;
+    }
 
+    .hero-subtitle-pottery {
+        font-size: 1rem;
+    }
 
-/* ================================
-   POTTERY WORKSHOP TESTIMONIALS
-   ================================ */
+    .hero-icons-pottery {
+        grid-template-columns: 1fr;
+        padding: 0.8rem 0.6rem;
+        margin-bottom: 1.5rem;
+        background: rgba(255, 255, 255, 0.06);
+        backdrop-filter: blur(0px);
+    }
 
-   .pottery-testimonials {
-    padding: 5rem 2rem;
-    background: linear-gradient(135deg, #c96c1b 0%, #9b671f 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .pottery-testimonials::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-    opacity: 0.3;
-  }
-  
-  .pottery-testimonials .section-title-tours {
-    color: white;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .pottery-testimonials .section-title-tours::after {
-    background: white;
-  }
-  
-  .pottery-testimonials .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .pottery-testimonials .testimonial-card {
-    background: white;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease;
-    position: relative;
-  }
-  
-  .pottery-testimonials .testimonial-card::before {
-    content: '"';
-    position: absolute;
-    top: -10px;
-    right: 20px;
-    font-size: 5rem;
-    color: #c17a4d;
-    opacity: 0.1;
-    font-family: Georgia, serif;
-    line-height: 1;
-  }
-  
-  .pottery-testimonials .testimonial-card:hover {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-    transform: translateY(-5px);
-  }
-  
-  .pottery-testimonials .testimonial-stars {
-    display: flex;
-    gap: 0.3rem;
-    margin-bottom: 1.5rem;
-    font-size: 1.3rem;
-  }
-  
-  .pottery-testimonials .star {
-    animation: starPulse 2s ease-in-out infinite;
-  }
-  
-  .pottery-testimonials .star:nth-child(1) { animation-delay: 0s; }
-  .pottery-testimonials .star:nth-child(2) { animation-delay: 0.2s; }
-  .pottery-testimonials .star:nth-child(3) { animation-delay: 0.4s; }
-  .pottery-testimonials .star:nth-child(4) { animation-delay: 0.6s; }
-  .pottery-testimonials .star:nth-child(5) { animation-delay: 0.8s; }
-  
-  .pottery-testimonials .testimonial-text {
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #4a5568;
-    margin-bottom: 1.5rem;
-    font-style: italic;
-  }
-  
-  .pottery-testimonials .testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding-top: 1rem;
-    border-top: 2px solid #e2e8f0;
-  }
-  
-  .pottery-testimonials .author-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #c17a4d, #8b5a3c);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: white;
-    flex-shrink: 0;
-  }
-  
-  .pottery-testimonials .author-info {
-    flex: 1;
-  }
-  
-  .pottery-testimonials .author-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #2d3748;
-    margin: 0 0 0.3rem 0;
-  }
-  
-  .pottery-testimonials .author-tour {
-    font-size: 0.9rem;
-    color: #718096;
-    margin: 0;
-  }
-  
-  /* Mobile Responsive for Pottery Testimonials */
-  @media (max-width: 768px) {
-    .pottery-testimonials {
-      padding: 3rem 1rem;
+    .pottery-icon {
+        font-size: 2.2rem;
     }
-  
-    .pottery-testimonials .testimonials-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
+
+    .hero-cta-pottery {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
     }
-  
-    .pottery-testimonials .testimonial-card {
-      padding: 1.5rem;
+
+    /* Rest of Small Mobile Styles */
+    #potteryIconsDiv {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
     }
-  
-    .pottery-testimonials .testimonial-text {
-      font-size: 1rem;
+
+    .potteryIconsMiniDiv {
+        padding: 1.2rem 0.8rem;
     }
-  
-    .pottery-testimonials .author-avatar {
-      width: 45px;
-      height: 45px;
-      font-size: 1.3rem;
+
+    .potteryIcons {
+        font-size: 2.3rem;
     }
-  
-    .pottery-testimonials .author-name {
-      font-size: 1rem;
+
+    .potteryIconsText {
+        font-size: 0.85rem;
     }
-  
-    .pottery-testimonials .author-tour {
-      font-size: 0.85rem;
+
+    #video12, #video13 {
+        height: 60vh;
+        width: auto;
+        max-width: 85%;
     }
-  }
+
+    #CTAPottery {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+
+    #explainPotteryText {
+        padding: 1.5rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    #textPhoto161 {
+        font-size: 1.8rem;
+    }
+
+    .pricing-title {
+        font-size: 1.8rem;
+    }
+
+    .price-card {
+        padding: 2rem 1rem;
+    }
+
+    .price-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .price-card li {
+        font-size: 1rem;
+        padding: 0.9rem 1rem;
+    }
+
+    .cta-button {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* ===============================================
+   ACCESSIBILITY & PERFORMANCE
+   =============================================== */
+.price-card:focus-within,
+.potteryIconsMiniDiv:focus-within,
+.pottery-icon-item:focus-within,
+#CTAPottery:focus,
+.hero-cta-pottery:focus,
+.cta-button:focus {
+    outline: 3px solid rgba(210, 105, 30, 0.5);
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.price-card,
+.potteryIconsMiniDiv,
+.pottery-icon-item,
+#video12,
+#video13 {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
