@@ -66,49 +66,7 @@ const T = {
         includes: {
             tag: 'מה כלול',
             title: 'הכל כלול',
-            items: ['מדריך מוסמך ומומחה', 'כניסה לאתרים נסתרים', 'סיפורים וחידות מרתקים', 'תצפיות ייחודיות', 'מפות מיוחדות', 'חוויות בלתי נשכחות', 'ביטוח לכל המשתתפים'],
-        },
-        pricing: {
-            tag: 'מחירון',
-            title: 'מחירי הסיורים',
-            subtitle: 'מחירים שקופים — ללא הפתעות',
-            ctaText: 'הזמן בוואטסאפ',
-            note: 'כל הסיורים פרטיים • ניתן לשלב מספר יעדים',
-            plans: [
-                {
-                    name: 'קיסריה / תל אפק / ירקון',
-                    icon: '🏛️',
-                    amount: '450',
-                    isNumeric: true,
-                    from: true,
-                    perLabel: 'לסיור',
-                    minNote: 'סיורים מרתקים',
-                    featured: true,
-                    features: ['סיורים מרתקים', 'מדריך מוסמך', 'כניסה לאתרים', 'מפות מיוחדות'],
-                },
-                {
-                    name: 'בית שערים וציפורי',
-                    icon: '🏺',
-                    amount: '600',
-                    isNumeric: true,
-                    from: true,
-                    perLabel: 'לסיור',
-                    minNote: 'שני אתרי מורשת עולמיים',
-                    featured: false,
-                    features: ['שני אתרי יונסקו', 'מדריך מומחה', 'כניסה לאתרים', 'חוויה מיוחדת'],
-                },
-                {
-                    name: 'סיור מותאם אישית',
-                    icon: '🗺️',
-                    amount: 'לפי תיאום',
-                    isNumeric: false,
-                    from: false,
-                    perLabel: '',
-                    minNote: 'תכנית לפי בחירתכם',
-                    featured: false,
-                    features: ['יעד לבחירתכם', 'לוח זמנים גמיש', 'תכנית מותאמת', 'כל הגדלים'],
-                },
-            ],
+            items: ['מדריך מוסמך ומומחה', 'כניסה לאתרים נסתרים', 'סיפורים וחידות מרתקים', 'תצפיות ייחודיות', 'מפות מיוחדות', 'חוויות בלתי נשכחות', 'ביטוח לכל המשתתפים',],
         },
         addons: {
             tag: 'העשירו את החוויה',
@@ -117,7 +75,7 @@ const T = {
             cta: 'הוסף בוואטסאפ',
             items: [
                 { icon: '🧀', title: 'פלטת גבינות ויין', desc: 'גבינות בוטיק, לחם טרי, מטבלים ויין נבחר — עצירה מפנקת בסיום הסיור', price: '300₪', note: 'לכ-5 משתתפים', tag: 'פופולרי' },
-                { icon: '🎸', title: 'חוויית מוזיקה חיה', desc: 'מוסיקאי מקצועי מלווה את הסיור — ניגון חי שמוסיף אווירה בלתי נשכחת', price: 'לפי תיאום', note: 'לכל גודל קבוצה', tag: 'חווייתי' },
+                { icon: '🎸', title: 'נגינה בגיטרה', desc: 'מוסיקאי מקצועי מלווה את הסיור — ניגון חי שמוסיף אווירה בלתי נשכחת', price: 'לפי תיאום', note: 'לכל גודל קבוצה', tag: 'חווייתי' },
                 { icon: '🍽️', title: 'ארוחה במסעדה מומלצת', desc: 'תיאום שולחן במסעדות הטובות ביותר בקיסריה — אנחנו מסדרים, אתם נהנים', price: 'לפי תיאום', note: 'דורש הזמנה מראש', tag: 'מומלץ' },
             ],
         },
@@ -125,7 +83,7 @@ const T = {
         offer: { title: '25% הנחה על סיור נוסף', desc: 'בתוקף עד שנתיים מהסיור הקודם • חסכו כסף וחזרו לחוות עוד!', badge: 'הנחה' },
         book: { tag: 'הזמנה', title: 'מוכנים לצאת לדרך?', subtitle: 'צרו קשר ונתאים לכם את הסיור המושלם', whatsapp: 'הזמינו בוואטסאפ', call: 'התקשרו עכשיו' },
         guide: {
-            tag: 'המדריך המרתק',
+            tag: 'המדריך',
             title: 'מייקל — מורשת שמתעוררת לחיים',
             body: 'סיורים מרתקים וחווייתיים מלאי סיפורים יוצאי דופן ואווירה בלתי נשכחת, בהדרכת מדריך מוסמך עם ניסיון בשימור אתרי מורשת בארץ וברומא.',
             badge: 'מוסמך ובעל ניסיון'
@@ -177,49 +135,7 @@ const T = {
         includes: {
             tag: "What's Included",
             title: 'Everything Included',
-            items: ['Expert, certified guide', 'Access to hidden sites', 'Fascinating stories & riddles', 'Unique viewpoints', 'Special maps', 'Unforgettable experiences', 'Insurance for all'],
-        },
-        pricing: {
-            tag: 'Pricing',
-            title: 'Tour Prices',
-            subtitle: 'Transparent pricing — no surprises',
-            ctaText: 'Book via WhatsApp',
-            note: 'All tours are private • Multiple destinations can be combined',
-            plans: [
-                {
-                    name: 'Caesarea / Tel Afek / Yarkon',
-                    icon: '🏛️',
-                    amount: '450',
-                    isNumeric: true,
-                    from: true,
-                    perLabel: 'per tour',
-                    minNote: 'Fascinating Tours',
-                    featured: true,
-                    features: ['Fascinating Tours', 'Licensed guide', 'Site access', 'Special maps'],
-                },
-                {
-                    name: "Beit She'arim & Tzippori",
-                    icon: '🏺',
-                    amount: '600',
-                    isNumeric: true,
-                    from: true,
-                    perLabel: 'per tour',
-                    minNote: 'Two UNESCO World Heritage sites',
-                    featured: false,
-                    features: ['Two UNESCO sites', 'Expert guide', 'Site entry included', 'Special experience'],
-                },
-                {
-                    name: 'Custom Tour',
-                    icon: '🗺️',
-                    amount: 'By quote',
-                    isNumeric: false,
-                    from: false,
-                    perLabel: '',
-                    minNote: 'Program of your choice',
-                    featured: false,
-                    features: ['Your chosen destination', 'Flexible schedule', 'Custom program', 'All group sizes'],
-                },
-            ],
+            items: ['Expert, certified guide', 'Access to hidden sites', 'Fascinating stories & riddles', 'Unique viewpoints', 'Special maps', 'Unforgettable experiences', 'Insurance for all',],
         },
         addons: {
             tag: 'Enhance Your Experience',
@@ -228,7 +144,7 @@ const T = {
             cta: 'Add via WhatsApp',
             items: [
                 { icon: '🧀', title: 'Cheese & Wine Platter', desc: 'Artisan cheeses, fresh bread, dips & wine — an indulgent stop at the end of the tour', price: '₪300', note: 'For ~5 participants', tag: 'Popular' },
-                { icon: '🎸', title: 'Live Music Experience', desc: 'A professional musician joins the tour — live music adding a unique, unforgettable atmosphere', price: 'By arrangement', note: 'Any group size', tag: 'Experience' },
+                { icon: '🎸', title: 'Live Guitar Music', desc: 'A professional musician joins the tour — live music adding a unique, unforgettable atmosphere', price: 'By arrangement', note: 'Any group size', tag: 'Experience' },
                 { icon: '🍽️', title: 'Restaurant Reservation', desc: "Table at Caesarea's best restaurants — we arrange everything, you enjoy", price: 'By arrangement', note: 'Advance booking required', tag: 'Recommended' },
             ],
         },
@@ -394,77 +310,8 @@ export default function FootTours({ language = 'he', languageSettings }) {
                 )}
             </AnimatePresence>
 
-        
-            {/* PRICING */}
-            <section className="ft-pricing-section">
-                <div className="ft-section-header">
-                    <span className="ft-tag ft-tag--amber">{t.pricing.tag}</span>
-                    <h2 className="ft-section-title">{t.pricing.title}</h2>
-                    <p className="ft-pricing-subtitle">{t.pricing.subtitle}</p>
-                </div>
-                <div className="ft-pricing-grid">
-                    {t.pricing.plans.map((plan, i) => (
-                        <motion.div
-                            key={i}
-                            className={`ft-pricing-card${plan.featured ? ' ft-pricing-card--featured' : ''}`}
-                            initial={{ opacity: 0, y: 28 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -6 }}
-                        >
-                            {plan.featured && (
-                                <span className="ft-pricing-badge">
-                                    {language === 'he' ? '✦ מומלץ' : '✦ Recommended'}
-                                </span>
-                            )}
-                            <div className="ft-pricing-card__icon">{plan.icon}</div>
-                            <h4 className="ft-pricing-card__name">{plan.name}</h4>
-                            <p className="ft-pricing-card__minnote">{plan.minNote}</p>
-                            <div className="ft-pricing-card__divider" />
-                            <div className="ft-pricing-card__price-wrap">
-                                {plan.from && (
-                                    <span className="ft-pricing-card__from">
-                                        {language === 'he' ? 'החל מ-' : 'From'}
-                                    </span>
-                                )}
-                                {plan.isNumeric ? (
-                                    <>
-                                        <span className="ft-pricing-card__amount">
-                                            <sup>₪</sup>{plan.amount}
-                                        </span>
-                                        <span className="ft-pricing-card__per">{plan.perLabel}</span>
-                                    </>
-                                ) : (
-                                    <span className="ft-pricing-card__amount ft-pricing-card__amount--text">
-                                        {plan.amount}
-                                    </span>
-                                )}
-                            </div>
-                            <ul className="ft-pricing-card__features">
-                                {plan.features.map((feat, j) => (
-                                    <li key={j}>
-                                        <span className="ft-pricing-card__check">✓</span>
-                                        {feat}
-                                    </li>
-                                ))}
-                            </ul>
-                            <a
-                                href="https://wa.me/9720523948920"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ft-pricing-card__cta"
-                            >
-                                {t.pricing.ctaText}
-                            </a>
-                        </motion.div>
-                    ))}
-                </div>
-                <p className="ft-pricing-note">{t.pricing.note}</p>
-            </section>
-
-                {/* ADD-ONS */}
-                <section className="ft-addons-section">
+            {/* ADD-ONS */}
+            <section className="ft-addons-section">
                 <div className="ft-section-header">
                     <span className="ft-tag">{t.addons.tag}</span>
                     <h2 className="ft-section-title">{t.addons.title}</h2>
@@ -494,7 +341,6 @@ export default function FootTours({ language = 'he', languageSettings }) {
                     ))}
                 </div>
             </section>
-
 
             {/* OFFER */}
             <section className="ft-offer-section">
@@ -560,6 +406,7 @@ export default function FootTours({ language = 'he', languageSettings }) {
                 .ft-hero__content {
                     position: relative; z-index: 2; text-align: center;
                     max-width: 760px; padding: 80px 1.5rem 1rem;
+                    top:65px
                 }
                 .ft-eyebrow {
                     display: inline-block; margin-bottom: 1rem;
@@ -577,17 +424,8 @@ export default function FootTours({ language = 'he', languageSettings }) {
                 }
                 .ft-hero__subtitle {
                     font-size: clamp(.95rem, 2.5vw, 1.2rem);
-                    opacity: .75;
-                    line-height: 1.8;
-                    width: 100%;
-                    max-width: 340px;
-                    margin: 0 auto 2rem;
-                    padding: 0 16px;
-                    white-space: normal !important;
-                    overflow-wrap: break-word;
-                    word-wrap: break-word;
-                    text-align: center;
-                    box-sizing: border-box;
+                    opacity: .75; line-height: 1.7;
+                    max-width: 540px; margin: 0 auto 2rem;
                 }
                 .ft-hero__stats {
                     position: relative; z-index: 2;
@@ -818,126 +656,6 @@ export default function FootTours({ language = 'he', languageSettings }) {
                 }
                 .ft-addon-card__btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,211,102,.3); }
 
-                /* PRICING */
-                .ft-pricing-section {
-                    background: #1e1810;
-                    padding: 2rem 2rem 5.5rem;
-                  
-                }
-                .ft-pricing-subtitle {
-                    font-size: .95rem; color: #5a4a38; margin-top: .4rem;
-                }
-                .ft-pricing-grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 1.4rem;
-                    max-width: 900px;
-                    margin: 0 auto;
-                }
-                .ft-pricing-card {
-                    background: #261e14;
-                    border: 1px solid rgba(212,132,42,.14);
-                    border-radius: 22px;
-                    padding: 1.8rem 1.5rem 1.6rem;
-                    display: flex; flex-direction: column;
-                    position: relative; overflow: hidden;
-                    transition: border-color .3s, box-shadow .3s;
-                }
-                .ft-pricing-card::before {
-                    content: '';
-                    position: absolute; top: 0; left: 0; right: 0; height: 3px;
-                    background: linear-gradient(90deg, #8B6914, #D4842A);
-                    border-radius: 22px 22px 0 0;
-                }
-                .ft-pricing-card--featured {
-                    border-color: rgba(212,132,42,.45);
-                    box-shadow: 0 0 0 1px rgba(212,132,42,.2), 0 20px 50px rgba(0,0,0,.35);
-                }
-                .ft-pricing-card--featured::before {
-                    background: linear-gradient(90deg, #D4842A, #f0a84a);
-                    height: 4px;
-                }
-                .ft-pricing-card:hover {
-                    border-color: rgba(212,132,42,.35);
-                    box-shadow: 0 20px 50px rgba(0,0,0,.4);
-                }
-                .ft-pricing-badge {
-                    position: absolute; top: 1rem; inset-inline-end: 1rem;
-                    background: rgba(212,132,42,.15); border: 1px solid rgba(212,132,42,.32);
-                    color: #D4842A; font-size: .68rem; font-weight: 700;
-                    letter-spacing: 1px; text-transform: uppercase;
-                    padding: .2rem .65rem; border-radius: 100px;
-                }
-                .ft-pricing-card__icon {
-                    font-size: 2.2rem; margin-bottom: .8rem; line-height: 1;
-                }
-                .ft-pricing-card__name {
-                    font-family: 'Cormorant Garamond', serif;
-                    font-size: 1.3rem; font-weight: 700;
-                    color: #f0e6d3; margin-bottom: .3rem;
-                }
-                .ft-pricing-card__minnote {
-                    font-size: .78rem; color: #5a4a38; margin-bottom: 1rem;
-                }
-                .ft-pricing-card__divider {
-                    height: 1px; background: rgba(255,255,255,.06); margin-bottom: 1rem;
-                }
-                .ft-pricing-card__price-wrap {
-                    margin-bottom: .3rem;
-                    display: flex; align-items: baseline; gap: .3rem; flex-wrap: wrap;
-                }
-                .ft-pricing-card__from {
-                    font-size: .8rem; color: #5a4a38; font-weight: 500;
-                    width: 100%; margin-bottom: .1rem;
-                }
-                .ft-pricing-card__amount {
-                    font-family: 'Cormorant Garamond', serif;
-                    font-size: 2.8rem; font-weight: 700;
-                    color: #D4842A; line-height: 1; letter-spacing: -1px;
-                }
-                .ft-pricing-card__amount sup {
-                    font-size: 1.1rem; vertical-align: super; font-weight: 700;
-                }
-                .ft-pricing-card__amount--text {
-                    font-size: 1.5rem; letter-spacing: 0;
-                }
-                .ft-pricing-card__per {
-                    font-size: .8rem; color: #5a4a38; font-weight: 500;
-                }
-                .ft-pricing-card__features {
-                    list-style: none; padding: 0; margin: .8rem 0 1.4rem; flex: 1;
-                }
-                .ft-pricing-card__features li {
-                    display: flex; align-items: flex-start; gap: .6rem;
-                    font-size: .85rem; color: #8a7660;
-                    padding: .4rem 0;
-                    border-bottom: 1px solid rgba(255,255,255,.04);
-                    line-height: 1.4;
-                }
-                .ft-pricing-card__features li:last-child { border-bottom: none; }
-                .ft-pricing-card__check {
-                    flex-shrink: 0; width: 16px; height: 16px; border-radius: 50%;
-                    background: rgba(212,132,42,.14); color: #D4842A;
-                    font-size: .7rem; font-weight: 800;
-                    display: flex; align-items: center; justify-content: center;
-                    margin-top: 1px;
-                }
-                .ft-pricing-card__cta {
-                    display: block; text-align: center;
-                    padding: .75rem 1rem; border-radius: 100px;
-                    background: linear-gradient(135deg, #8B6914, #D4842A);
-                    color: #fff; font-size: .85rem; font-weight: 700;
-                    text-decoration: none; transition: all .25s; letter-spacing: .3px;
-                }
-                .ft-pricing-card__cta:hover {
-                    opacity: .88; transform: translateY(-2px);
-                    box-shadow: 0 6px 20px rgba(212,132,42,.28);
-                }
-                .ft-pricing-note {
-                    text-align: center; margin-top: 1.8rem;
-                    font-size: .82rem; color: #D4842A;
-                }
-
                 /* OFFER */
                 .ft-offer-section { background: #14100a; padding: 2rem 2rem 4rem; }
                 .ft-offer-card {
@@ -995,476 +713,10 @@ export default function FootTours({ language = 'he', languageSettings }) {
                     .ft-dest-panel__img img { height: 210px; }
                     .ft-guide-card { flex-direction: column; text-align: center; }
                     .ft-guide-card__badge { margin: 0 auto; }
-                    .ft-gallery-masonry { columns: 2;
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    }
+                    .ft-gallery-masonry { columns: 2; }
                     .ft-offer-card { flex-direction: column; text-align: center; }
                     .ft-offer-card__badge { margin: 0 auto; }
                     .ft-addons-grid { grid-template-columns: 1fr; }
-                }
-                @media (max-width: 700px) {
-                    .ft-pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-                    .ft-pricing-card__amount { font-size: 2.3rem; }
                 }
                 @media (max-width: 600px) {
                     .ft-hero__stats { flex-direction: row; padding: 0 .5rem; }
@@ -1475,8 +727,20 @@ export default function FootTours({ language = 'he', languageSettings }) {
                     .ft-addon-card__btn { width: 100%; text-align: center; }
                     .ft-dest-tabs { gap: .5rem; }
                     .ft-dest-tab { font-size: .82rem; padding: .55rem 1rem; }
+                    .ft-hero__subtitle {
+                        font-size: clamp(.95rem, 2.5vw, 1.2rem);
+                        opacity: .75; line-height: 1.7;
+                        max-width: 340px; margin: 0 auto 2rem;
+                    }
+                    .ft-hero__content {
+                        position: relative; z-index: 2; text-align: center;
+                        max-width: 760px; padding: 80px 1.5rem 1rem;
+                        top:0px
+                    }
                 }
 
+                /* ── FIX: LTR hero content pushed behind navbar ── */
+                /* Navbar height = 55px; add safe clearance only for LTR */
                 [dir="ltr"] .ft-hero__content {
                     padding-top: 165px;
                 }

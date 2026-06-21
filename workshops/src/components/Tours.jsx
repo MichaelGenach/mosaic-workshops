@@ -92,6 +92,7 @@ const pageTranslations = {
             text: 'בתוקף עד שנתיים מהסיור הקודם • חסכו כסף ובואו לחוות עוד!',
             badge: 'הנחה'
         },
+        heroEyebrow: 'סיורים מרתקים',
         title: `Michael's Tours`,
         subtitle: "סיורים מרתקים בהתאמה אישית, ניתן לשלב קולינריה משובחת, סדנאות אמן ומוזיקה חיה.",
         icons: ['סיורים פרטיים', 'מטיילים ממליצים', 'מסלול לבחירתכם', 'מורה דרך מוסמך'],
@@ -228,6 +229,7 @@ const pageTranslations = {
             text: 'Valid up to 2 years from your previous tour • Save money and experience more!',
             badge: 'OFF'
         },
+        heroEyebrow: 'Fascinating tours',
         title: `Michael's Tours`,
         subtitle: "Fascinating tours for small and large groups you absolutely don't want to miss",
         icons: ['Private Tours', 'Recommended by travelers', 'Customized route', 'Licensed guide'],
@@ -577,6 +579,22 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return (
         <div className="enhanced-tours-page" dir={direction}>
 
@@ -588,6 +606,7 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                 </div>
                 <div className="hero-content-tours">
                     <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }}>
+                        <span className="hero-eyebrow">{t.heroEyebrow}</span>
                         <h1 className="hero-title-tours">{t.title}</h1>
                         <p className="hero-subtitle-tours">{t.subtitle}</p>
                         <MainButtons language={language} languageSettings={languageSettings} />

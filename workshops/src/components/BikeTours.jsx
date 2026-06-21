@@ -57,46 +57,7 @@ const T = {
             tag: 'מה כלול',
             title: 'הכל כלול במחיר',
             items: ['אופניים איכותיים ומתוחזקים', 'קסדת בטיחות מותאמת', 'מדריך מוסמך ומנוסה',
-                , 'כניסה לאתרים סודיים', 'סיפורים וחידות מרתקים', 'הפסקת קפה מול הים', 'תמונות זכרון ייחודיות'],
-        },
-        pricing: {
-            tag: 'מחירון',
-            title: 'מחירי הסיורים',
-            subtitle: 'מחירים שקופים — ללא הפתעות',
-            ctaText: 'הזמן בוואטסאפ',
-            note: 'כל הסיורים פרטיים • ניתן להתאים לכל קבוצה',
-            plans: [
-                {
-                    name: 'זוג / משפחה קטנה',
-                    icon: '👫',
-                    amount: '250',
-                    isNumeric: true,
-                    perLabel: 'למשתתף',
-                    minNote: 'מינימום 2 משתתפים',
-                    featured: false,
-                    features: ['עד 3 משתתפים', 'אופניים + קסדה', 'מדריך מוסמך', ],
-                },
-                {
-                    name: 'קבוצה קטנה',
-                    icon: '👨‍👩‍👧‍👦',
-                    amount: '150',
-                    isNumeric: true,
-                    perLabel: 'למשתתף',
-                    minNote: '4–10 משתתפים',
-                    featured: true,
-                    features: ['4–10 משתתפים', 'אופניים + קסדה', 'מדריך מוסמך', 'הפסקת קפה', ],
-                },
-                {
-                    name: 'קבוצה גדולה',
-                    icon: '🏢',
-                    amount: 'לפי תיאום',
-                    isNumeric: false,
-                    perLabel: '',
-                    minNote: '10+ משתתפים',
-                    featured: false,
-                    features: ['10+ משתתפים', 'מדריכים מרובים', 'תכנית מותאמת', 'ביטוח כלול'],
-                },
-            ],
+            , 'כניסה לאתרים סודיים', 'סיפורים וחידות מרתקים', 'הפסקת קפה מול הים', 'תמונות זכרון ייחודיות'],
         },
         addons: {
             tag: 'העשירו את החוויה',
@@ -105,7 +66,7 @@ const T = {
             cta: 'הוסף בוואטסאפ',
             items: [
                 { icon: '🧀', title: 'פלטת גבינות ויין', desc: 'גבינות בוטיק, לחם טרי, מטבלים ויין נבחר — עצירה מפנקת מול הים', price: '300₪', note: 'לכ-5 משתתפים', tag: 'פופולרי' },
-                { icon: '🎸', title:'חוויית מוזיקה חיה', desc: 'מוסיקאי מקצועי מלווה את הסיור — ניגון חי שמוסיף אווירה בלתי נשכחת', price: 'לפי תיאום', note: 'לכל גודל קבוצה', tag: 'חווייתי' },
+                { icon: '🎸', title: 'נגינה בגיטרה', desc: 'מוסיקאי מקצועי מלווה את הסיור — ניגון חי שמוסיף אווירה בלתי נשכחת', price: 'לפי תיאום', note: 'לכל גודל קבוצה', tag: 'חווייתי' },
                 { icon: '🍽️', title: 'ארוחה במסעדה מומלצת', desc: 'תיאום שולחן במסעדות הטובות ביותר בקיסריה — אנחנו מסדרים, אתם נהנים', price: 'לפי תיאום', note: 'דורש הזמנה מראש', tag: 'מומלץ' },
             ],
         },
@@ -153,46 +114,7 @@ const T = {
             tag: "What's Included",
             title: 'Everything in the Price',
             items: ['Quality, maintained bicycles', 'Fitted safety helmet', 'Licensed guide',
-                , 'Access to secret sites', 'Fascinating stories & riddles', 'Coffee break by the sea', 'Memory photos'],
-        },
-        pricing: {
-            tag: 'Pricing',
-            title: 'Tour Prices',
-            subtitle: 'Transparent pricing — no surprises',
-            ctaText: 'Book via WhatsApp',
-            note: 'All tours are private • Can be tailored to any group',
-            plans: [
-                {
-                    name: 'Couple / Small Family',
-                    icon: '👫',
-                    amount: '250',
-                    isNumeric: true,
-                    perLabel: 'per person',
-                    minNote: 'Minimum 2 participants',
-                    featured: false,
-                    features: ['Up to 3 participants', 'Bike + helmet', 'Licensed guide', 'Insurance included'],
-                },
-                {
-                    name: 'Small Group',
-                    icon: '👨‍👩‍👧‍👦',
-                    amount: '250',
-                    isNumeric: true,
-                    perLabel: 'per person',
-                    minNote: '4–10 participants',
-                    featured: true,
-                    features: ['4–10 participants', 'Bike + helmet', 'Licensed guide', 'Coffee break', 'Insurance included'],
-                },
-                {
-                    name: 'Large Group',
-                    icon: '🏢',
-                    amount: 'By quote',
-                    isNumeric: false,
-                    perLabel: '',
-                    minNote: '10+ participants',
-                    featured: false,
-                    features: ['10+ participants', 'Multiple guides', 'Custom program', 'Insurance included'],
-                },
-            ],
+            , 'Access to secret sites', 'Fascinating stories & riddles', 'Coffee break by the sea', 'Memory photos'],
         },
         addons: {
             tag: 'Enhance Your Experience',
@@ -201,7 +123,7 @@ const T = {
             cta: 'Add via WhatsApp',
             items: [
                 { icon: '🧀', title: 'Cheese & Wine Platter', desc: 'Artisan cheeses, fresh bread, dips & wine — an indulgent seaside stop', price: '₪300', note: 'For ~5 participants', tag: 'Popular' },
-                { icon: '🎸', title: 'Live Music Experience', desc: 'A professional musician joins the tour — live music adding an unforgettable atmosphere', price: 'By arrangement', note: 'Any group size', tag: 'Experience' },
+                { icon: '🎸', title: 'Live Guitar Music', desc: 'A professional musician joins the tour — live music adding an unforgettable atmosphere', price: 'By arrangement', note: 'Any group size', tag: 'Experience' },
                 { icon: '🍽️', title: 'Restaurant Reservation', desc: "Table at Caesarea's best restaurants — we arrange everything, you enjoy", price: 'By arrangement', note: 'Advance booking required', tag: 'Recommended' },
             ],
         },
@@ -298,7 +220,7 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 </div>
             </section>
 
-            {/* INCLUDES
+            {/* INCLUDES */}
             <section className="bt-section bt-includes-section">
                 <span className="bt-tag">{t.includes.tag}</span>
                 <h2 className="bt-section-title">{t.includes.title}</h2>
@@ -314,7 +236,7 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                         </motion.div>
                     ))}
                 </div>
-            </section> */}
+            </section>
 
             {/* GALLERY */}
             <section className="bt-section bt-gallery-section">
@@ -343,70 +265,6 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                     </motion.div>
                 )}
             </AnimatePresence>
-
- {/* PRICING */}
- <section className="bt-pricing-section">
-                <div className="bt-section-header">
-                    <span className="bt-tag bt-tag--teal">{t.pricing.tag}</span>
-                    <h2 className="bt-section-title bt-section-title--light">{t.pricing.title}</h2>
-                    <p className="bt-pricing-subtitle">{t.pricing.subtitle}</p>
-                </div>
-                <div className="bt-pricing-grid">
-                    {t.pricing.plans.map((plan, i) => (
-                        <motion.div
-                            key={i}
-                            className={`bt-pricing-card${plan.featured ? ' bt-pricing-card--featured' : ''}`}
-                            initial={{ opacity: 0, y: 28 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.1 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -6 }}
-                        >
-                            {plan.featured && (
-                                <span className="bt-pricing-badge">
-                                    {language === 'he' ? '⚡ הכי פופולרי' : '⚡ Most Popular'}
-                                </span>
-                            )}
-                            <div className="bt-pricing-card__icon">{plan.icon}</div>
-                            <h4 className="bt-pricing-card__name">{plan.name}</h4>
-                            <p className="bt-pricing-card__minnote">{plan.minNote}</p>
-                            <div className="bt-pricing-card__divider" />
-                            <div className="bt-pricing-card__price-wrap">
-                                {plan.isNumeric ? (
-                                    <>
-                                        <span className="bt-pricing-card__amount">
-                                            <sup>₪</sup>{plan.amount}
-                                        </span>
-                                        <span className="bt-pricing-card__per">{plan.perLabel}</span>
-                                    </>
-                                ) : (
-                                    <span className="bt-pricing-card__amount bt-pricing-card__amount--text">
-                                        {plan.amount}
-                                    </span>
-                                )}
-                            </div>
-                            <ul className="bt-pricing-card__features">
-                                {plan.features.map((feat, j) => (
-                                    <li key={j}>
-                                        <span className="bt-pricing-card__check">✓</span>
-                                        {feat}
-                                    </li>
-                                ))}
-                            </ul>
-                            <a
-                                href="https://wa.me/9720523948920"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bt-pricing-card__cta"
-                            >
-                                {t.pricing.ctaText}
-                            </a>
-                        </motion.div>
-                    ))}
-                </div>
-                <p className="bt-pricing-note">{t.pricing.note}</p>
-            </section>
-
 
             {/* ADD-ONS */}
             <section className="bt-section bt-addons-section">
@@ -440,7 +298,6 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 </div>
             </section>
 
-           
             {/* OFFER */}
             <section className="bt-offer-section">
                 <motion.div className="bt-offer-card"
@@ -501,6 +358,7 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 .bt-hero__content {
                     position: relative; z-index: 2; text-align: center;
                     max-width: 760px; padding: 80px 1.5rem 1rem;
+                    top:65px
                 }
                 .bt-eyebrow {
                     display: inline-block; margin-bottom: 1rem;
@@ -518,17 +376,8 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 }
                 .bt-hero__subtitle {
                     font-size: clamp(.95rem, 2.5vw, 1.2rem);
-                    opacity: .78;
-                    line-height: 1.8;
-                    width: 100%;
-                    max-width: 340px;
-                    margin: 0 auto 2rem;
-                    padding: 0 16px;
-                    white-space: normal !important;
-                    overflow-wrap: break-word;
-                    word-wrap: break-word;
-                    text-align: center;
-                    box-sizing: border-box;
+                    opacity: .78; line-height: 1.7;
+                    max-width: 540px; margin: 0 auto 2rem;
                 }
                 .bt-hero__stats {
                     position: relative; z-index: 2;
@@ -726,123 +575,6 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 }
                 .bt-addon-card__btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,211,102,.3); }
 
-                /* PRICING */
-                .bt-pricing-section {
-                    background: #0c1618;
-                    padding: 0 2rem 5.5rem;
-                    margin-top: 20px;
-                }
-                .bt-pricing-subtitle {
-                    font-size: .95rem; color: #3a6570; margin-top: .4rem;
-                }
-                .bt-pricing-grid {
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
-                    gap: 1.4rem;
-                    max-width: 900px;
-                    margin: 0 auto;
-                }
-                .bt-pricing-card {
-                    background: #17252a;
-                    border: 1px solid rgba(42,160,180,.14);
-                    border-radius: 22px;
-                    padding: 1.8rem 1.5rem 1.6rem;
-                    display: flex; flex-direction: column;
-                    position: relative; overflow: hidden;
-                    transition: border-color .3s, box-shadow .3s;
-                }
-                .bt-pricing-card::before {
-                    content: '';
-                    position: absolute; top: 0; left: 0; right: 0; height: 3px;
-                    background: linear-gradient(90deg, #1A7A8A, #2AA0B4);
-                    border-radius: 22px 22px 0 0;
-                }
-                .bt-pricing-card--featured {
-                    border-color: rgba(42,160,180,.45);
-                    box-shadow: 0 0 0 1px rgba(42,160,180,.2), 0 20px 50px rgba(0,0,0,.35);
-                }
-                .bt-pricing-card--featured::before {
-                    background: linear-gradient(90deg, #2AA0B4, #5ccfe0);
-                    height: 4px;
-                }
-                .bt-pricing-card:hover {
-                    border-color: rgba(42,160,180,.35);
-                    box-shadow: 0 20px 50px rgba(0,0,0,.4);
-                }
-                .bt-pricing-badge {
-                    position: absolute; top: 1rem; inset-inline-end: 1rem;
-                    background: rgba(42,160,180,.18); border: 1px solid rgba(42,160,180,.35);
-                    color: #2AA0B4; font-size: .68rem; font-weight: 700;
-                    letter-spacing: 1px; text-transform: uppercase;
-                    padding: .2rem .65rem; border-radius: 100px;
-                }
-                .bt-pricing-card__icon {
-                    font-size: 2.2rem; margin-bottom: .8rem; line-height: 1;
-                }
-                .bt-pricing-card__name {
-                    font-family: 'Cormorant Garamond', serif;
-                    font-size: 1.3rem; font-weight: 700;
-                    color: #cce8ee; margin-bottom: .3rem;
-                }
-                .bt-pricing-card__minnote {
-                    font-size: .78rem; color: #3a6570; margin-bottom: 1rem;
-                }
-                .bt-pricing-card__divider {
-                    height: 1px; background: rgba(255,255,255,.06); margin-bottom: 1rem;
-                }
-                .bt-pricing-card__price-wrap {
-                    margin-bottom: .3rem;
-                    display: flex; align-items: baseline; gap: .3rem; flex-wrap: wrap;
-                }
-                .bt-pricing-card__amount {
-                    font-family: 'Cormorant Garamond', serif;
-                    font-size: 2.8rem; font-weight: 700;
-                    color: #2AA0B4; line-height: 1; letter-spacing: -1px;
-                }
-                .bt-pricing-card__amount sup {
-                    font-size: 1.1rem; vertical-align: super; font-weight: 700;
-                }
-                .bt-pricing-card__amount--text {
-                    font-size: 1.5rem; letter-spacing: 0;
-                }
-                .bt-pricing-card__per {
-                    font-size: .8rem; color: #3a6570; font-weight: 500;
-                }
-                .bt-pricing-card__features {
-                    list-style: none; padding: 0; margin: .8rem 0 1.4rem; flex: 1;
-                }
-                .bt-pricing-card__features li {
-                    display: flex; align-items: flex-start; gap: .6rem;
-                    font-size: .85rem; color: #5a8890;
-                    padding: .4rem 0;
-                    border-bottom: 1px solid rgba(255,255,255,.04);
-                    line-height: 1.4;
-                }
-                .bt-pricing-card__features li:last-child { border-bottom: none; }
-                .bt-pricing-card__check {
-                    flex-shrink: 0; width: 16px; height: 16px; border-radius: 50%;
-                    background: rgba(42,160,180,.14); color: #2AA0B4;
-                    font-size: .7rem; font-weight: 800;
-                    display: flex; align-items: center; justify-content: center;
-                    margin-top: 1px;
-                }
-                .bt-pricing-card__cta {
-                    display: block; text-align: center;
-                    padding: .75rem 1rem; border-radius: 100px;
-                    background: linear-gradient(135deg, #1A7A8A, #2AA0B4);
-                    color: #fff; font-size: .85rem; font-weight: 700;
-                    text-decoration: none; transition: all .25s; letter-spacing: .3px;
-                    margin-top: 15px;
-                }
-                .bt-pricing-card__cta:hover {
-                    opacity: .88; transform: translateY(-2px);
-                    box-shadow: 0 6px 20px rgba(42,160,180,.28);
-                }
-                .bt-pricing-note {
-                    text-align: center; margin-top: 1.8rem;
-                    font-size: .82rem; color: #2a4a52;
-                }
-
                 /* OFFER */
                 .bt-offer-section { background: #0c1618; padding: 2rem 2rem 4rem; }
                 .bt-offer-card {
@@ -903,11 +635,17 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                     .bt-offer-card { flex-direction: column; text-align: center; }
                     .bt-offer-card__badge { margin: 0 auto; }
                 }
-                @media (max-width: 700px) {
-                    .bt-pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
-                    .bt-pricing-card__amount { font-size: 2.3rem; }
-                }
                 @media (max-width: 600px) {
+                    .bt-hero__subtitle {
+                        font-size: clamp(.95rem, 2.5vw, 1.2rem);
+                        opacity: .78; line-height: 1.7;
+                        max-width: 340px; margin: 0 auto 2rem;
+                    }
+                    .bt-hero__content {
+                        position: relative; z-index: 2; text-align: center;
+                        max-width: 760px; padding: 80px 1.5rem 1rem;
+                        top:0px
+                    }
                     .bt-hero__stats { flex-direction: row; }
                     .bt-stat { padding: .8rem .7rem; }
                     .bt-features-grid { grid-template-columns: 1fr; }
@@ -919,6 +657,8 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                     .bt-addon-card__btn { width: 100%; text-align: center; }
                 }
 
+                /* ── FIX: LTR hero content pushed behind navbar ── */
+                /* Navbar height = 55px; add safe clearance only for LTR */
                 [dir="ltr"] .bt-hero__content {
                     padding-top: 165px;
                 }

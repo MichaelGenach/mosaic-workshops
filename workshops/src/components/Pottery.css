@@ -84,8 +84,7 @@
     /* פונט מודרני-אלגנטי */
     font-family: 'Playfair Display', 'Georgia', serif;
 
-    /* ריווח אותיות עדין */
-    letter-spacing: 0.03em;
+
 
     /* אנימציה קטנה בכניסה */
     animation: fadeUp 0.9s ease-out forwards;

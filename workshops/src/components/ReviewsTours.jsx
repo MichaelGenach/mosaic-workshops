@@ -1,12 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 import './Reviews.css'
 
 export default function Reviews({ language, languageSettings }) {
     const [dragConstraintReviews, setDragConstraintReviews] = useState(0);
     const carusel = useRef();
     const container = useRef();
-    const scrollInterval = useRef();
+    const x = useMotionValue(0);
+    const animationFrameRef = useRef(null);
+    const isPausedRef = useRef(false);
 
 
 
@@ -206,49 +208,39 @@ export default function Reviews({ language, languageSettings }) {
             rating: 5
         }
     ];
-    
+
 
 
     const settings = languageSettings[language];
     const reviews = language === 'he' ? reviewsHe : reviewsEn;
 
-
+    /* ============================================================
+       AUTO-SCROLL — מבוסס על x motion value של framer-motion,
+       בדיוק כמו ה-drag="x", ולא scrollLeft. עובד באופן עקבי
+       בדסקטופ ובמובייל כי לא תלוי בהתנהגות overflow/scrollLeft.
+       ============================================================ */
     useEffect(() => {
-        const el = container.current;
+        const speed = 0.6; // פיקסלים לכל פריים (~60fps)
 
-        const stopAutoScroll = () => {
-            clearInterval(scrollInterval.current);
-        };
-
-        const startAutoScroll = () => {
-            if (scrollInterval.current) return; // למנוע כפילויות
-            scrollInterval.current = setInterval(() => {
-                if (carusel.current) {
-                    carusel.current.scrollLeft += 1;
-                    if (
-                        carusel.current.scrollLeft + carusel.current.offsetWidth >=
-                        carusel.current.scrollWidth
-                    ) {
-                        carusel.current.scrollLeft = 0;
-                    }
+        const tick = () => {
+            if (!isPausedRef.current && dragConstraintReviews > 0) {
+                let next = x.get() - speed;
+                if (next <= -dragConstraintReviews) {
+                    next = 0; // חוזר לתחילת הרשימה
                 }
-            }, 30); // מהירות גלילה
+                x.set(next);
+            }
+            animationFrameRef.current = requestAnimationFrame(tick);
         };
 
-        startAutoScroll();
-
-        el.addEventListener("touchstart", stopAutoScroll);
-        el.addEventListener("touchend", startAutoScroll);
-        el.addEventListener("touchcancel", startAutoScroll);
+        animationFrameRef.current = requestAnimationFrame(tick);
 
         return () => {
-            clearInterval(scrollInterval.current);
-            el.removeEventListener("touchstart", stopAutoScroll);
-            el.removeEventListener("touchend", startAutoScroll);
-            el.removeEventListener("touchcancel", startAutoScroll);
+            if (animationFrameRef.current) {
+                cancelAnimationFrame(animationFrameRef.current);
+            }
         };
-    }, []);
-
+    }, [dragConstraintReviews, x]);
 
     useEffect(() => {
         const updateWidth = () => {
@@ -264,72 +256,38 @@ export default function Reviews({ language, languageSettings }) {
         return () => window.removeEventListener('resize', updateWidth);
     }, []);
 
-    useEffect(() => {
-        const scroll = () => {
-            if (container.current) {
-                container.current.scrollLeft += 1;
-                if (
-                    container.current.scrollLeft >=
-                    container.current.scrollWidth - container.current.clientWidth
-                ) {
-                    container.current.scrollLeft = 0;
-                }
-            }
-        };
-
-        scrollInterval.current = setInterval(scroll, 30);
-
-        return () => {
-            clearInterval(scrollInterval.current);
-        };
-    }, []);
-
-    const handleMouseEnter = () => {
-        clearInterval(scrollInterval.current);
+    const handlePauseStart = () => {
+        isPausedRef.current = true;
     };
 
-    const handleMouseLeave = () => {
-        scrollInterval.current = setInterval(() => {
-            if (container.current) {
-                container.current.scrollLeft += 1;
-                if (
-                    container.current.scrollLeft >=
-                    container.current.scrollWidth - container.current.clientWidth
-                ) {
-                    container.current.scrollLeft = 0;
-                }
-            }
-        }, 30);
+    const handlePauseEnd = () => {
+        isPausedRef.current = false;
     };
-
-
 
     return (
         <div id="reviewsContainer" className='reviewsContainerTours' style={{
             direction: "ltr",
-          }}>
+        }}>
             <motion.div
                 id="reviewsCarousel"
                 ref={container}
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
+                onMouseEnter={handlePauseStart}
+                onMouseLeave={handlePauseEnd}
+                onTouchStart={handlePauseStart}
+                onTouchEnd={handlePauseEnd}
+                onTouchCancel={handlePauseEnd}
                 style={{ overflow: 'hidden', cursor: 'grab' }}
             >
                 <motion.div
                     id="carouselInner"
                     ref={carusel}
                     drag="x"
+                    style={{ x }}
                     dragConstraints={{ right: 0, left: -dragConstraintReviews }}
-
-                    style={{
-                        display: 'flex',
-                        flexDirection: 'row',
-
-
-
-
-                    }}
-
+                    onDragStart={handlePauseStart}
+                    onDragEnd={handlePauseEnd}
+                    dragElastic={0.05}
+                    dragMomentum={false}
                 >
 
                     {reviews.map((item, index) => (
@@ -356,5 +314,3 @@ export default function Reviews({ language, languageSettings }) {
         </div>
     );
 }
-
-
