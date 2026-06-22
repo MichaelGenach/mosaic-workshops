@@ -220,23 +220,6 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 </div>
             </section>
 
-            {/* INCLUDES */}
-            <section className="bt-section bt-includes-section">
-                <span className="bt-tag">{t.includes.tag}</span>
-                <h2 className="bt-section-title">{t.includes.title}</h2>
-                <div className="bt-includes-grid">
-                    {t.includes.items.map((item, i) => (
-                        <motion.div key={i} className="bt-include"
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ delay: i * 0.06 }}
-                            viewport={{ once: true }}>
-                            <span className="bt-include__check">✓</span>
-                            <span>{item}</span>
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
 
             {/* GALLERY */}
             <section className="bt-section bt-gallery-section">

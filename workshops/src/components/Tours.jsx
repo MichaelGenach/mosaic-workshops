@@ -595,6 +595,10 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
 
 
 
+    
+
+
+
     return (
         <div className="enhanced-tours-page" dir={direction}>
 

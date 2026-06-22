@@ -83,7 +83,7 @@ const T = {
         offer: { title: '25% הנחה על סיור נוסף', desc: 'בתוקף עד שנתיים מהסיור הקודם • חסכו כסף וחזרו לחוות עוד!', badge: 'הנחה' },
         book: { tag: 'הזמנה', title: 'מוכנים לצאת לדרך?', subtitle: 'צרו קשר ונתאים לכם את הסיור המושלם', whatsapp: 'הזמינו בוואטסאפ', call: 'התקשרו עכשיו' },
         guide: {
-            tag: 'המדריך',
+            tag: 'המדריך המרתק',
             title: 'מייקל — מורשת שמתעוררת לחיים',
             body: 'סיורים מרתקים וחווייתיים מלאי סיפורים יוצאי דופן ואווירה בלתי נשכחת, בהדרכת מדריך מוסמך עם ניסיון בשימור אתרי מורשת בארץ וברומא.',
             badge: 'מוסמך ובעל ניסיון'
@@ -152,7 +152,7 @@ const T = {
         offer: { title: '25% Off Your another Tour', desc: 'Valid up to 2 years from your previous tour • Save and experience more!', badge: 'OFF' },
         book: { tag: 'Booking', title: 'Ready to Explore?', subtitle: "Contact us and we'll tailor the perfect tour for you", whatsapp: 'Book via WhatsApp', call: 'Call Now' },
         guide: {
-            tag: 'Your Guide',
+            tag: 'Fascinating Guide',
             title: 'Michael — Bringing Heritage to Life',
             body: 'Fascinating and immersive tours filled with remarkable stories and an unforgettable atmosphere, led by a certified guide with experience in heritage preservation in Israel and Rome.',
             badge: 'Certified & Experienced'
