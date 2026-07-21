@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './Menu.css';
 import logoTrans from './images/logoTrans.png'
-import { IoMdShare } from "react-icons/io";
+import { Share2 } from 'lucide-react';
 
 export default function Menu({ language, setLanguage, languageSettings }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -146,7 +146,7 @@ export default function Menu({ language, setLanguage, languageSettings }) {
       pottery: 'סדנאות קדרות',
       home: 'בית',
       english: 'English',
-      share: <IoMdShare style={{ fontSize: '27px', position: 'relative', top: '5px' }} />,
+      share: <Share2 size={22} style={{ position: 'relative', top: '5px' }} />,
       whatsapp: 'WhatsApp',
       facebook: 'Facebook',
       twitter: 'Twitter',
@@ -171,7 +171,7 @@ export default function Menu({ language, setLanguage, languageSettings }) {
       pottery: 'Pottery Workshops',
       home: 'Home',
       english: 'עברית',
-      share: <IoMdShare style={{ fontSize: '27px', position: 'relative', top: '5px' }} />,
+      share: <Share2 size={22} style={{ position: 'relative', top: '5px' }} />,
       whatsapp: 'WhatsApp',
       facebook: 'Facebook',
       twitter: 'Twitter',

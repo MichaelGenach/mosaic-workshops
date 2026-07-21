@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Pricing.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const translations = {
   he: {
@@ -34,6 +34,7 @@ const translations = {
     perPerson: 'לאדם',
     perTour: 'לסיור',
     bookNow: 'הזמינו',
+    viewPage: 'למעבר לעמוד',
     whatsIncluded: 'מה כלול?',
     mainNote: 'כל הסדנאות והסיורים כוללים חומרים מקצועיים, הדרכה אישית ואווירה קסומה',
     cta: 'צרו קשר עכשיו',
@@ -69,6 +70,7 @@ const translations = {
     perPerson: 'per person',
     perTour: 'per group',
     bookNow: 'Book now',
+    viewPage: 'View Page',
     whatsIncluded: 'What’s included?',
     mainNote: 'All workshops and tours include professional materials, personal guidance, and a magical atmosphere',
     cta: 'Contact us now',
@@ -78,6 +80,7 @@ const translations = {
 
 export default function Pricing({ language = 'he' }) {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const navigate = useNavigate();
   const t = translations[language];
   const isRtl = t.direction === 'rtl';
 
@@ -108,6 +111,18 @@ export default function Pricing({ language = 'he' }) {
     },
 
   ];
+
+  // Lets keyboard users (Tab + Enter/Space) trigger the "view page" action
+  // directly, instead of relying entirely on the click bubbling up to the
+  // parent <Link> that wraps the whole card.
+  const handleViewButtonKeyDown = (e, link) => {
+    if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+      e.preventDefault();
+      e.stopPropagation();
+      window.scrollTo(0, 0);
+      navigate(link);
+    }
+  };
 
   return (
     <div className={`pricing-container ${isRtl ? 'rtl' : 'ltr'}`}>
@@ -193,7 +208,7 @@ export default function Pricing({ language = 'he' }) {
                       </div>
                     </div>
 
-                    {/* Price & Button */}
+                    {/* Price & Buttons */}
                     <div className="pricing-card-footer">
                       <div className="pricing-card-price-section">
                         {card.priceType === 'custom' ? (
@@ -210,15 +225,35 @@ export default function Pricing({ language = 'he' }) {
                         )}
                       </div>
 
+                      <div className="pricing-card-actions">
 
-                      <a href="#contact" className="pricing-card-button" onClick={(e) => e.stopPropagation()}>
-                        <div className="pricing-card-button-shine"></div>
-                        <span className="pricing-card-button-text">{t.bookNow}</span>
-                        <svg className={`pricing-card-button-arrow ${isRtl ? 'rtl' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                        </svg>
-                      </a>
+                        {/* Secondary action: keyboard-focusable and reachable
+                            independently of the parent Link (Tab + Enter/Space
+                            works), while a plain click still just bubbles up
+                            to the parent Link like before. */}
+                        <span
+                          className="pricing-card-view-button"
+                          role="button"
+                          tabIndex={0}
+                          aria-label={t.viewPage}
+                          onKeyDown={(e) => handleViewButtonKeyDown(e, card.link)}
+                        >
+                          <svg className="pricing-card-view-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M7 17L17 7M17 7H8M17 7V16" />
+                          </svg>
+                          <span className="pricing-card-view-text">{t.viewPage}</span>
+                        </span>
 
+                        {/* Primary action: opens the contact form, does not navigate */}
+                        <a href="#contact" className="pricing-card-button" onClick={(e) => e.stopPropagation()}>
+                          <div className="pricing-card-button-shine"></div>
+                          <span className="pricing-card-button-text">{t.bookNow}</span>
+                          <svg className={`pricing-card-button-arrow ${isRtl ? 'rtl' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </a>
+
+                      </div>
                     </div>
                   </div>
                 </div>

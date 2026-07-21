@@ -135,6 +135,7 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   overflow: hidden;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .pricing-card:hover {
@@ -409,7 +410,7 @@
 .pricing-card-footer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   gap: 16px;
   padding-top: 24px;
   border-top: 2px solid #f1f5f9;
@@ -419,6 +420,7 @@
 @media (max-width: 768px) {
   .pricing-card-footer {
     flex-direction: column;
+    align-items: stretch;
   }
 }
 
@@ -457,7 +459,128 @@
   font-weight: 500;
 }
 
-/* ==================== Card Button ==================== */
+/* ==================== Card Actions (view + book buttons) ==================== */
+
+.pricing-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .pricing-card-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+}
+
+/* ==================== Secondary "View Page" Button ==================== */
+
+.pricing-card-view-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 22px;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 700;
+  background: transparent;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Now keyboard-focusable (tabIndex=0) — give it a visible focus ring */
+.pricing-card-view-button:focus-visible {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .pricing-card-view-button {
+    padding: 14px 22px;
+    width: 100%;
+    order: 2; /* appears below the primary button on mobile */
+  }
+
+  .pricing-card-button {
+    order: 1;
+  }
+}
+
+.pricing-card-view-icon {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.pricing-card-view-icon[dir="rtl"],
+.rtl .pricing-card-view-icon {
+  transform: scaleX(-1);
+}
+
+.pricing-card-view-text {
+  position: relative;
+}
+
+/* Color variants - border/text matches the card's theme color */
+.pricing-card.pottery .pricing-card-view-button {
+  color: #ef4444;
+  border-color: #fecaca;
+}
+
+.pricing-card.mosaic .pricing-card-view-button {
+  color: #8b5cf6;
+  border-color: #ddd6fe;
+}
+
+.pricing-card.company .pricing-card-view-button {
+  color: #0ea5e9;
+  border-color: #bae6fd;
+}
+
+.pricing-card.tours .pricing-card-view-button {
+  color: #10b981;
+  border-color: #bbf7d0;
+}
+
+/* Fills in with the theme color when the whole card is hovered/focused,
+   so the button visually reinforces "this card navigates on click" */
+.pricing-card.pottery.hovered .pricing-card-view-button {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+.pricing-card.mosaic.hovered .pricing-card-view-button {
+  background: #faf5ff;
+  border-color: #8b5cf6;
+}
+
+.pricing-card.company.hovered .pricing-card-view-button {
+  background: #eff6ff;
+  border-color: #0ea5e9;
+}
+
+.pricing-card.tours.hovered .pricing-card-view-button {
+  background: #f0fdf4;
+  border-color: #10b981;
+}
+
+.pricing-card.hovered .pricing-card-view-icon {
+  transform: translate(2px, -2px);
+}
+
+.rtl .pricing-card.hovered .pricing-card-view-icon {
+  transform: scaleX(-1) translate(2px, -2px);
+}
+
+/* ==================== Card Button (primary - Book Now) ==================== */
 
 .pricing-card-button {
   position: relative;
@@ -470,6 +593,7 @@
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 5px;
   overflow: hidden;
   border: none;
@@ -479,7 +603,8 @@
 
 @media (max-width: 768px) {
   .pricing-card-button {
-    padding: 16px 57px;
+    padding: 16px 32px;
+    width: 100%;
   }
 }
 
@@ -609,15 +734,6 @@
   .pricing-info-card-text {
     font-size: 20px;
   }
-
-  .pricing-card-button:hover {
-    transform: none;
-  }
-
-  .pricing-card-button:active {
-    transform: none;
-  }
-
 }
 
 /* ==================== CTA Button ==================== */
@@ -705,4 +821,3 @@
   color: #475569;
 
 }
-

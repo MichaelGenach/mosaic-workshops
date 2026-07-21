@@ -493,6 +493,45 @@
   line-height: 1.6;
 }
 
+/* ===========================================
+     PRIVACY CONSENT CHECKBOX
+     =========================================== */
+
+.consentGroup {
+  margin-bottom: 25px;
+}
+
+.consentLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.consentCheckbox {
+  margin-top: 4px;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-orange);
+  cursor: pointer;
+}
+
+.consentLink {
+  color: var(--primary-orange);
+  font-weight: 700;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.consentLink:hover {
+  color: var(--dark-orange);
+}
+
 .button {
   padding: 18px 30px;
   background: var(--gradient-primary);
@@ -533,6 +572,17 @@
 
 .button:active {
   transform: translateY(-1px);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: var(--shadow-light) !important;
+}
+
+.button:disabled::before {
+  display: none;
 }
 
 .successMessage {

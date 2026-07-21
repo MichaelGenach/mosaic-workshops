@@ -10,11 +10,8 @@ import photo168 from './images/photo168.jpg'
 import photo171 from './images/photo171.jpg'
 import video5 from './videos/video5.mp4'
 
-// Import icons
-import { FaFire } from "react-icons/fa";
-import { FaHome } from "react-icons/fa";
-import { FaMoneyBillWave } from "react-icons/fa";
-import { IoSparkles } from "react-icons/io5";
+// Icons migrated from react-icons to lucide-react (smaller bundle, better tree-shaking)
+import { Home as HomeIcon, Flame, Banknote, Sparkles } from 'lucide-react';
 
 const translations = {
   he: {
@@ -23,22 +20,22 @@ const translations = {
     description: `הכירו את "ג'נור" – תנור קדרות קומפקטי ויעיל, שמאפשר לכם ליצור יצירות קרמיקה איכותיות בנוחות של הבית, בלי הצורך בתנור קדרות מסורתי גדול, מסורבל ויקר.`,
     features: [
       {
-        icon: <FaHome />,
+        icon: <HomeIcon />,
         title: "מתאים לשימוש ביתי",
         text: "לא תופס מקום, קל להפעלה ולשימוש"
       },
       {
-        icon: <FaFire />,
+        icon: <Flame />,
         title: "חסכוני ויעיל",
         text: "מחמם לטמפרטורה אידיאלית לשריפת קרמיקה"
       },
       {
-        icon: <FaMoneyBillWave />,
+        icon: <Banknote />,
         title: "מחיר משתלם",
         text: "הופך את עולם הקדרות לנגיש לכל אחד"
       },
       {
-        icon: <IoSparkles />,
+        icon: <Sparkles />,
         title: "תוצאה איכותית",
         text: "מבטיח יצירות קרמיקה ברמה מקצועית"
       }
@@ -57,22 +54,22 @@ const translations = {
     description: `Meet "Janur" – a compact and efficient pottery kiln that lets you create high-quality ceramic works comfortably at home, without needing a large, bulky, and expensive traditional kiln.`,
     features: [
       {
-        icon: <FaHome />,
+        icon: <HomeIcon />,
         title: "Home Use",
         text: "Space-saving, easy to operate and use"
       },
       {
-        icon: <FaFire />,
+        icon: <Flame />,
         title: "Efficient",
         text: "Heats to ideal temperature for ceramic firing"
       },
       {
-        icon: <FaMoneyBillWave />,
+        icon: <Banknote />,
         title: "Affordable",
         text: "Making pottery accessible to everyone"
       },
       {
-        icon: <IoSparkles />,
+        icon: <Sparkles />,
         title: "Quality Results",
         text: "Professional-grade ceramic creations"
       }

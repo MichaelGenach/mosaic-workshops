@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.40049013.css",
-    "main.js": "/static/js/main.cfa80531.js",
+    "main.css": "/static/css/main.f9ce59c3.css",
+    "main.js": "/static/js/main.191d5b4d.js",
     "static/js/787.71619633.chunk.js": "/static/js/787.71619633.chunk.js",
     "static/media/video12.mp4": "/static/media/video12.4f0cf774cb4f992a5a08.mp4",
     "static/media/yam.mp4": "/static/media/yam.dc0f4a06ec558ab15d52.mp4",
@@ -227,12 +227,12 @@
     "static/media/caesareaTour2.jpg": "/static/media/caesareaTour2.f0f75c852835e7c54beb.jpg",
     "static/media/photo99.jpg": "/static/media/photo99.e3e4a7d8783777dcb68f.jpg",
     "index.html": "/index.html",
-    "main.40049013.css.map": "/static/css/main.40049013.css.map",
-    "main.cfa80531.js.map": "/static/js/main.cfa80531.js.map",
+    "main.f9ce59c3.css.map": "/static/css/main.f9ce59c3.css.map",
+    "main.191d5b4d.js.map": "/static/js/main.191d5b4d.js.map",
     "787.71619633.chunk.js.map": "/static/js/787.71619633.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.40049013.css",
-    "static/js/main.cfa80531.js"
+    "static/css/main.f9ce59c3.css",
+    "static/js/main.191d5b4d.js"
   ]
 }

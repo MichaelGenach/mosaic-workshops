@@ -16,6 +16,9 @@ import HazharatNegishut from './components/HazharatNegishut';
 import ShareButton from './components/ShareButton';
 import Contact from './components/Contact';
 import StickyWhatsappButton from './components/StickyWhatsappButton';
+import Privacy from './components/Privacy';
+import Terms from './components/Terms';
+
 
 
 
@@ -52,7 +55,7 @@ function App() {
       <BrowserRouter>
         <Menu language={language} setLanguage={setLanguage} languageSettings={languageSettings} />
         {/* <ShareButton /> */}
-        <StickyWhatsappButton/>
+        <StickyWhatsappButton />
 
         <Routes>
           <Route path='/' element={<Home language={language} languageSettings={languageSettings} />} />
@@ -64,6 +67,8 @@ function App() {
           <Route path='/pottery' element={<Pottery language={language} languageSettings={languageSettings} />} />
           <Route path='/janur' element={<Janur language={language} languageSettings={languageSettings} />} />
           <Route path='/hazharatNegishut' element={<HazharatNegishut language={language} languageSettings={languageSettings} />} />
+          <Route path="/privacy" element={<Privacy language={language} languageSettings={languageSettings} />} />
+          <Route path="/terms" element={<Terms language={language} languageSettings={languageSettings} />} />
         </Routes>
 
       </BrowserRouter>

@@ -40,11 +40,6 @@ import apolonia from './images/apolonia.jpg'
 import mekorotHayarkon from './images/mekorotHayarkon.jpg'
 import cheesWine from './images/cheesWine.jpeg'
 import BeitShearim from './images/BeitShearim.jpeg'
-import { MdOutlineRecommend } from "react-icons/md";
-import { TbVip } from "react-icons/tb";
-import { TbMapStar } from "react-icons/tb";
-import { PiCertificate } from "react-icons/pi";
-import { FaWaze, FaInstagram } from "react-icons/fa";
 import { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useRef } from 'react';
@@ -65,6 +60,8 @@ const arrPhotoCarousel = [
 
 const phoneNumber = '0523948920';
 
+// Kept as emoji, not icon components — these were never actually rendered
+// as react-icons (see EnhancedToursPage below, which reads Object.values(icons)).
 const icons = {
     TbVip: '👑',
     MdOutlineRecommend: '⭐',
@@ -133,9 +130,9 @@ const pageTranslations = {
                     title: 'סיורי אופניים בקיסריה',
                     subtitle: 'קיסריה מריטימה',
                     desc: 'רכיבה פנורמית לאורך חוף הים, בין אתרים ארכיאולוגיים עוצרי נשימה',
-                    fullDescription: 'סיור אופניים מרתק המשלב רכיבה נעימה עם גילוי האתרים הארכיאולוגיים המרתקים של קיסריה. נרכב לאורך חוף הים, נבקר באקוודוקט הרומי ונעצור לקפה מול הגלים.',
-                    stats: [{ v: '4.8★', l: 'דירוג' }, { v: '250₪', l: 'למשתתף' }, { v: '1.5–2h', l: 'משך' }],
-                    price: '₪מ-150 למשתתף',
+                    fullDescription: 'סיור אופניים מרתק המשלב רכיבה נעימה עם גילוי האתרים הארכיאולוגיים המרתקים של קיסריה. נרכב לאורך חוף הים, נבקר באקוודוקט הרומי ונעצור לקפה מול הגלים. המחיר הבסיסי הוא לסיור זוגי, וגדל בהתאם לגודל הקבוצה.',
+                    stats: [{ v: '4.8★', l: 'דירוג' }, { v: 'מ-500₪', l: 'לסיור' }, { v: '1.5–2h', l: 'משך' }],
+                    price: 'מ-₪500 לסיור',
                     rating: 4.8,
                     reviewsCount: 20,
                     highlights: ['רכיבה לאורך חוף קיסריה', 'תצפית על נמל קיסריה העתיק', 'ביקור באקוודוקט הרומי', 'הפסקת קפה מול הים', 'נופים מרשימים', 'פסיפסים מרהיבים'],
@@ -270,9 +267,9 @@ const pageTranslations = {
                     title: 'Bike Tours in Caesarea',
                     subtitle: 'Caesarea Maritima',
                     desc: 'Panoramic cycling along the blue coastline, between breathtaking archaeological sites',
-                    fullDescription: 'A fascinating bike tour combining pleasant cycling with discovering Caesarea\'s remarkable archaeological sites. We ride along the coast, visit the Roman aqueduct, and stop for coffee by the waves.',
-                    stats: [{ v: '4.8★', l: 'Rating' }, { v: '₪250', l: 'Per Person' }, { v: '1.5–2h', l: 'Duration' }],
-                    price: 'From ₪150 per participant',
+                    fullDescription: 'A fascinating bike tour combining pleasant cycling with discovering Caesarea\'s remarkable archaeological sites. We ride along the coast, visit the Roman aqueduct, and stop for coffee by the waves. The base price is for a couple\'s tour, and increases with group size.',
+                    stats: [{ v: '4.8★', l: 'Rating' }, { v: 'From ₪500', l: 'Per Tour' }, { v: '1.5–2h', l: 'Duration' }],
+                    price: 'From ₪500 per tour',
                     rating: 4.8,
                     reviewsCount: 20,
                     highlights: ['Riding along the Caesarea coast', 'View of the ancient port', 'Visit to the Roman aqueduct', 'Coffee break by the sea', 'Impressive views', 'Spectacular mosaics'],
@@ -560,6 +557,28 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
     const [isHeaderVisible, setIsHeaderVisible] = useState(true);
     const lastScrollY = useRef(0);
 
+    // Real lazy-loading for the three videos section: the <video> tags are
+    // only rendered (and therefore only start downloading) once this div
+    // actually scrolls into view, instead of on page load.
+    const [videosVisible, setVideosVisible] = useState(false);
+    const videosSectionRef = useRef(null);
+
+    useEffect(() => {
+        const el = videosSectionRef.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setVideosVisible(true);
+                    observer.disconnect();
+                }
+            },
+            { rootMargin: '200px' } // start a little before it's fully in view
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
     const t = pageTranslations[language] || pageTranslations.he;
     const tt = t.tourTypes;
     const direction = language === 'he' ? 'rtl' : 'ltr';
@@ -578,26 +597,6 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
 
     return (
         <div className="enhanced-tours-page" dir={direction}>
@@ -679,20 +678,24 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                 </div>
             </section>
 
-            {/* THREE VIDEOS */}
-            <div id='threeToursVideosDiv'>
-                <video id="madregot" src={madregot} autoPlay loop muted preload="none" playsInline
-                    controls={false} disablePictureInPicture
-                    controlsList="nodownload nofullscreen noremoteplayback"
-                    style={{ pointerEvents: 'none' }} />
-                <video id="yam" src={yam} autoPlay loop muted preload="none" playsInline
-                    controls={false} disablePictureInPicture
-                    controlsList="nodownload nofullscreen noremoteplayback"
-                    style={{ pointerEvents: 'none' }} />
-                <video id="porfir" src={porfir} autoPlay loop muted preload="none" playsInline
-                    controls={false} disablePictureInPicture
-                    controlsList="nodownload nofullscreen noremoteplayback"
-                    style={{ pointerEvents: 'none' }} />
+            {/* THREE VIDEOS — lazily mounted, see videosVisible above */}
+            <div id='threeToursVideosDiv' ref={videosSectionRef}>
+                {videosVisible && (
+                    <>
+                        <video id="madregot" src={madregot} autoPlay loop muted preload="none" playsInline
+                            controls={false} disablePictureInPicture
+                            controlsList="nodownload nofullscreen noremoteplayback"
+                            style={{ pointerEvents: 'none' }} />
+                        <video id="yam" src={yam} autoPlay loop muted preload="none" playsInline
+                            controls={false} disablePictureInPicture
+                            controlsList="nodownload nofullscreen noremoteplayback"
+                            style={{ pointerEvents: 'none' }} />
+                        <video id="porfir" src={porfir} autoPlay loop muted preload="none" playsInline
+                            controls={false} disablePictureInPicture
+                            controlsList="nodownload nofullscreen noremoteplayback"
+                            style={{ pointerEvents: 'none' }} />
+                    </>
+                )}
             </div>
 
             {/* PHOTO CAROUSEL */}

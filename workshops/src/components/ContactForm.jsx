@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import { Link } from 'react-router-dom';
 import './Contact.css';
 
 const translations = {
@@ -12,6 +13,9 @@ const translations = {
     },
     buttonText: 'שלח',
     successMessage: 'תודה על פנייתך! נחזור אליך בהקדם.',
+    consentPrefix: 'קראתי ואני מסכים/ה ל',
+    consentLinkText: 'מדיניות הפרטיות',
+    consentError: 'יש לאשר את מדיניות הפרטיות לפני שליחת הטופס',
   },
   en: {
     placeholders: {
@@ -22,6 +26,9 @@ const translations = {
     },
     buttonText: 'Send',
     successMessage: 'Thank you for your message! We will get back to you soon.',
+    consentPrefix: 'I have read and agree to the',
+    consentLinkText: 'Privacy Policy',
+    consentError: 'Please confirm the Privacy Policy before submitting',
   },
 };
 
@@ -30,6 +37,7 @@ const ContactForm = ({ language, languageSettings }) => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
+  const [consentChecked, setConsentChecked] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -45,6 +53,13 @@ const ContactForm = ({ language, languageSettings }) => {
     e.preventDefault();
 
     if (loading) return;
+
+    // Belt-and-suspenders: the checkbox is already `required`, but we also
+    // guard here in case that gets removed/changed later.
+    if (!consentChecked) {
+      alert(t.consentError);
+      return;
+    }
 
     setLoading(true);
     setSubmitted(false);
@@ -65,6 +80,7 @@ const ContactForm = ({ language, languageSettings }) => {
         setEmail('');
         setPhone('');
         setMessage('');
+        setConsentChecked(false);
       })
       .catch((error) => {
         console.error('EmailJS Error:', error);
@@ -150,12 +166,32 @@ const ContactForm = ({ language, languageSettings }) => {
           />
         </div>
 
+        {/* Privacy consent checkbox — required per Amendment 13 */}
+        <div className="formGroup consentGroup" style={{ direction: settings.direction }}>
+          <label className="consentLabel">
+            <input
+              type="checkbox"
+              name="consent"
+              checked={consentChecked}
+              onChange={(e) => setConsentChecked(e.target.checked)}
+              required
+              className="consentCheckbox"
+            />
+            <span>
+              {t.consentPrefix}{' '}
+              <Link to="/privacy" target="_blank" rel="noopener noreferrer" className="consentLink">
+                {t.consentLinkText}
+              </Link>
+            </span>
+          </label>
+        </div>
+
         {/* Submit */}
         <div className="formGroup">
           <button
             type="submit"
             className="button"
-            disabled={loading}
+            disabled={loading || !consentChecked}
           >
             {loading ? 'שולח...' : t.buttonText}
           </button>

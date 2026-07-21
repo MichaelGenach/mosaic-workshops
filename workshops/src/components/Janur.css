@@ -1,7 +1,7 @@
 /* ===============================================
    MAIN CONTAINER
    =============================================== */
-#mainDivJanur {
+   #mainDivJanur {
     position: absolute;
     top: 0;
     width: 100%;
@@ -192,6 +192,20 @@
     margin-bottom: 1.5rem;
     filter: drop-shadow(0 4px 12px rgba(249, 115, 22, 0.3));
     transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* lucide-react icons are SVGs sized via width/height, not font-size like
+   react-icons was. Using 1em ties the icon size to .feature-icon's own
+   font-size, so it still scales automatically with all the existing
+   responsive breakpoints below. stroke="currentColor" is the lucide
+   default, so the color/hover-color rules below still work unchanged. */
+.feature-icon svg {
+    width: 1em;
+    height: 1em;
+    stroke-width: 1.75;
 }
 
 .feature-card:hover .feature-icon {
