@@ -44,8 +44,17 @@ function App() {
 
 
   useEffect(() => {
-    TagManager.initialize({ gtmId: 'GTM-ND4DK7X2' });
-    console.log('Google tag works!')
+    // Defer GTM so it doesn't compete with the initial render / LCP.
+    // Loads once the browser is idle, or after 'load' fires (fallback for older browsers).
+    const initGtm = () => TagManager.initialize({ gtmId: 'GTM-ND4DK7X2' });
+
+    if ('requestIdleCallback' in window) {
+      const id = window.requestIdleCallback(initGtm, { timeout: 3000 });
+      return () => window.cancelIdleCallback(id);
+    } else {
+      window.addEventListener('load', initGtm, { once: true });
+      return () => window.removeEventListener('load', initGtm);
+    }
   }, []);
 
 
