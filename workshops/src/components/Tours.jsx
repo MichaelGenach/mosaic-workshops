@@ -64,7 +64,7 @@ const phoneNumber = '0523948920';
 // as react-icons (see EnhancedToursPage below, which reads Object.values(icons)).
 const icons = {
     TbVip: '👑',
-    MdOutlineRecommend: '⭐',
+    // MdOutlineRecommend: '⭐',
     TbMapStar: '🗺️',
     PiCertificate: '🏆',
     FaWaze: '🧭',
@@ -92,7 +92,7 @@ const pageTranslations = {
         heroEyebrow: 'סיורים מרתקים',
         title: `Michael's Tours`,
         subtitle: "סיורים מרתקים בהתאמה אישית, ניתן לשלב קולינריה משובחת, סדנאות אמן ומוזיקה חיה.",
-        icons: ['סיורים פרטיים', 'מטיילים ממליצים', 'מסלול לבחירתכם', 'מורה דרך מוסמך'],
+        icons: ['סיורים פרטיים', 'מסלול לבחירתכם', 'מורה דרך מוסמך', 'מסלולים בכל הארץ'],
         cta: 'לתיאום סיור פרטי',
         sectionTours: 'הסיורים שלנו',
         sectionGallery: 'גלריית תמונות',
@@ -229,7 +229,7 @@ const pageTranslations = {
         heroEyebrow: 'Fascinating tours',
         title: `Michael's Tours`,
         subtitle: "Fascinating tours for small and large groups you absolutely don't want to miss",
-        icons: ['Private Tours', 'Recommended by travelers', 'Customized route', 'Licensed guide'],
+        icons: ['Private Tours', 'Customized route', 'Licensed guide', 'Routes across Israel'],
         cta: 'Book a private tour',
         sectionTours: 'Our Tours',
         sectionGallery: 'Photo Gallery',

@@ -30,6 +30,7 @@ const translations = {
         title: "שאלות כלליות",
         questions: [
           { q: "איך מזמינים סיור?", a: "אפשר להזמין דרך האתר או בוואצאפ: 0523948920. נשמח לעזור בהתאמה אישית" },
+          { q: "האם הסיורים מתקיימים רק בקיסריה?", a: "ממש לא! יש לנו מסלולי סיורים במגוון אתרים ברחבי הארץ, בנוסף לסיורים בנמל קיסריה" },
           { q: "מה קורה במקרה של גשם?", a: " במידת הצורך הסיור נדחה, או מתבטל" },
           { q: "האם אפשר לקבל חשבונית?", a: "בהחלט. אנחנו מנפיקים קבלה כחוק לכל תשלום" },
           { q: "האם יש חניה במקום?", a: "כן, יש חניה חינמית בשפע בסמוך לאולם \"יקבי קיסריה\" שנמצא בסמוך לנמל קיסריה" },
@@ -65,6 +66,7 @@ const translations = {
         title: "General Questions",
         questions: [
           { q: "How do I book a workshop or tour?", a: "You can book via the website or WhatsApp: 0523948920. We are happy to help with personalized arrangements" },
+          { q: "Are the tours only held in Caesarea?", a: "Not at all! We offer tour routes at a variety of sites across the country, in addition to tours at Caesarea port" },
           { q: "What happens in case of rain?", a: "Activities take place indoors, or if needed, are postponed by prior arrangement" },
           { q: "Can I get an invoice?", a: "Absolutely. We issue a legal receipt for every payment" },
           { q: "Is there parking available?", a: "Yes, there is plenty of free parking near the 'Caesarea Winery' hall, close to the Caesarea port" },

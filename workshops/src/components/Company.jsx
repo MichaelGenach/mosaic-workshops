@@ -57,7 +57,13 @@ import { IoSparkles } from "react-icons/io5";
 const translations = {
   he: {
     title: 'פעילויות גיבוש לחברות',
-    icons: ['חוויה ייחודית', 'פעילות קבוצתית', 'יצירתיות', 'זיכרון לנצח'],
+    icons: [
+      'חוויה ייחודית',
+      'פעילות קבוצתית',
+      'יצירתיות',
+      'זיכרון לנצח',
+      'מגיעים גם אליכם'
+    ],
     cta: 'צרו קשר עכשיו',
     description: `🎨 הזמינו את הצוות שלכם לחוויה יוצאת דופן של יצירה משותפת!
     
@@ -80,7 +86,13 @@ const translations = {
   },
   en: {
     title: 'Team Building Activities',
-    icons: ['Unique Experience', 'Group Activity', 'Creativity', 'Forever Memory'],
+    icons: [
+      'Unique Experience',
+      'Group Activity',
+      'Creativity',
+      'Forever Memory',
+      'We Also Come to You'
+    ],
     cta: 'Contact Us Now',
     description: `🎨 Invite your team to an extraordinary shared creative experience!
     
@@ -132,25 +144,28 @@ export default function Company({ language, languageSettings }) {
 
         {/* Icons & Videos Section */}
         <section className='media-section'>
-          <div className='icons-grid'>
-            <div className='icon-card'>
-              <IoSparkles className='icon' />
-              <p className='icon-text'>{t.icons[0]}</p>
-            </div>
-            <div className='icon-card'>
-              <HiUserGroup className='icon' />
-              <p className='icon-text'>{t.icons[1]}</p>
-            </div>
-            <div className='icon-card'>
-              <FaPaintBrush className='icon' />
-              <p className='icon-text'>{t.icons[2]}</p>
-            </div>
-            <div className='icon-card'>
-              <FaHeart className='icon' />
-              <p className='icon-text'>{t.icons[3]}</p>
-            </div>
-          </div>
+        <div className='icons-grid'>
+  <div className='icon-card'>
+    <IoSparkles className='icon' />
+    <p className='icon-text'>{t.icons[0]}</p>
+  </div>
 
+  <div className='icon-card'>
+    <HiUserGroup className='icon' />
+    <p className='icon-text'>{t.icons[1]}</p>
+  </div>
+
+  <div className='icon-card'>
+    <FaPaintBrush className='icon' />
+    <p className='icon-text'>{t.icons[2]}</p>
+  </div>
+
+
+  <div className='icon-card'>
+    <FaHome className='icon' />
+    <p className='icon-text'>{t.icons[4]}</p>
+  </div>
+</div>
 
         </section>
 

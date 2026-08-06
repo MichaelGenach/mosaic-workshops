@@ -109,7 +109,8 @@ const translations = {
       'מומחיות של מעל 30 שנים בתחום הפסיפס והשימור',
       'מיקום מדהים מול הים התיכון',
       'קבוצות קטנות לליווי אישי',
-      'חומרים מקצועיים ואיכותיים'
+      'חומרים מקצועיים ואיכותיים',
+      'מגיעים גם אליכם'
     ],
     pricingTitle: 'מחירים ותיאום סדנאות',
     mosaicWorkshop: 'סדנאות פסיפס בוטיק',
@@ -136,7 +137,8 @@ const translations = {
       'Over 30 years of expertise in mosaics and restoration',
       'A stunning location by the Mediterranean Sea',
       'Small groups for personalized guidance',
-      'Professional and high-quality materials'
+      'Professional and high-quality materials',
+      'We Also Come to You'
     ],
     pricingTitle: 'Prices & Workshop Booking',
     mosaicWorkshop: 'Boutique Mosaic Workshops',

@@ -120,8 +120,9 @@ const translations = {
     reasons: [
       { icon: '🏆', title: 'ניסיון עשיר', text: 'מעל 30 שנות ניסיון' },
       { icon: '🎨', title: 'ציוד מקצועי', text: 'אובניים חשמליים וכלים יעודיים' },
-      { icon: '👥', title: 'קבוצות קטנות', text: 'תשומת לב אישית לכל משתתף' },
-      { icon: '🌊', title: 'מיקום מושלם', text: 'סדנה מול הים במיקום מדהים' }
+      // { icon: '👥', title: 'קבוצות קטנות', text: 'תשומת לב אישית לכל משתתף' },
+      { icon: '🌊', title: 'מיקום מושלם', text: 'סדנה מול הים במיקום מדהים' },
+      { icon: '🏠', title: 'מגיעים גם אליכם', text: 'בבית פרטי או בעסק שלכם, בכל רחבי הארץ' }
     ],
 
 
@@ -157,8 +158,9 @@ No prior experience needed – perfect for team events, family gatherings, or an
     reasons: [
       { icon: '🏆', title: 'Rich Experience', text: 'Over 30 years of experience' },
       { icon: '🎨', title: 'Pro Equipment', text: 'Professional-grade pottery wheels' },
-      { icon: '👥', title: 'Small Groups', text: 'Personal attention for each participant' },
-      { icon: '🌊', title: 'Perfect Location', text: 'Seaside workshop with a stunning location' }
+      // { icon: '👥', title: 'Small Groups', text: 'Personal attention for each participant' },
+      { icon: '🌊', title: 'Perfect Location', text: 'Seaside workshop with a stunning location' },
+      { icon: '🏠', title: 'We Come to You', text: 'To your home or business, anywhere in Israel' }
     ],
 
     testimonials: 'What People Say',
