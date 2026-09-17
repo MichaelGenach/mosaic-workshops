@@ -41,14 +41,15 @@ export default function Home({ language, languageSettings }) {
   const translate = {
     he: {
       title: "Genach Workshops",
-      subtitle: "חוויה בלתי נשכחת: סדנאות קדרות, סדנאות פסיפסים, סיורים מרתקים והפקת ימי גיבוש בנמל קיסריה",
+      subtitle:"חוויה בלתי נשכחת: סדנאות קדרות, סדנאות פסיפסים, סיורים מרתקים והפקת ימי גיבוש — בנמל קיסריה או אצלכם"
+      ,
       contact: "ליצירת קשר",
       order: "לתיאום סדנאות וסיורים",
       microcopy: "בלי התחייבות • מענה אישי ומהיר"
     },
     en: {
       title: "Genach Workshops",
-      subtitle: "An unforgettable experience: Pottery workshops, mosaic workshops, fascinating tours and team-building events in Caesarea Harbor",
+      subtitle: "An Unforgettable experience: pottery workshops, mosaic workshops, fascinating tours, and team-building events — at Caesarea Port or at your location",
       contact: "Contact Us",
       order: "Coordinate Workshops & Tours",
       microcopy: "No obligation • Personal & fast response"

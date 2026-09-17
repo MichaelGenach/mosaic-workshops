@@ -175,48 +175,47 @@ export default function Company({ language, languageSettings }) {
             {language === 'he' ? 'מה אומרות החברות שעבדו איתנו' : 'What Companies Say About Us'}
           </h2>
 
-          <div className="company-testimonials-grid">
-            {(language === 'he' ? [
-              {
-                name: 'דנה רוזנברג',
-                position: 'מנהלת משאבי אנוש',
-
-                text: 'ארגנו את יום הגיבוש השנתי שלנו עם 45 עובדים וזו הייתה החוויה הכי מוצלחת שעשינו! הצוות היה מקצועי להפליא, הפעילות שילבה יצירתיות עם עבודת צוות, וכולם יצאו עם חיוך ויצירה אישית. ללא ספק נחזור!',
-                rating: 5
-              },
-              {
-                name: 'יוסי מזרחי',
-                position: 'משאבי אנוש',
-                text: 'חיפשנו משהו שונה ומיוחד לצוות שלנו והגענו למקום המושלם. הפעילות לא רק גיבשה את הצוות אלא גם העניקה לכולם רגע של שקט ויצירה אמיתית. התוצאות היו מעבר לציפיות והאווירה הייתה פשוט מדהימה!',
-                rating: 5
-              },
-              {
-                name: 'מיכל אבני',
-                position: 'סמנכ"לית תפעול',
-                text: 'אחרי שנסינו המון פעילויות גיבוש לאורך השנים, סוף סוף מצאנו משהו שבאמת עשה את ההבדל. הצוות שלנו דיבר על זה שבועות אחרי האירוע. הפעילות הייתה מרגשת, מגבשת ומהנה בצורה יוצאת דופן. תודה רבה!',
-                rating: 5
-              }
-            ] : [
-              {
-                name: 'Dana Rosenberg',
-                position: 'HR Manager',
-
-                text: 'We organized our annual team-building day with 45 employees and it was the most successful experience we\'ve had! The team was incredibly professional, the activity combined creativity with teamwork, and everyone left with a smile and their personal creation. We\'ll definitely return!',
-                rating: 5
-              },
-              {
-                name: 'Yossi Mizrahi',
-                position: 'HR',
-                company: 'Tech Startup',
-                text: 'We were looking for something different and special for our team and found the perfect place. The activity not only brought the team together but also gave everyone a moment of peace and real creation. The results exceeded expectations and the atmosphere was simply amazing!',
-                rating: 5
-              },
-              {
-                name: 'Michal Avni',
-                position: 'VP Operations',
-                text: 'After trying many team-building activities over the years, we finally found something that truly made a difference. Our team talked about it for weeks after the event. The activity was moving, bonding, and exceptionally fun. Thank you so much!',
-                rating: 5
-              }
+<div className="company-testimonials-grid">
+  {(language === 'he' ? [
+    {
+      name: 'דנה רוזנברג',
+      position: 'מנהלת משאבי אנוש',
+      text: 'הגענו עם 45 עובדים ליום הגיבוש השנתי שלנו והיה ממש מוצלח. הפעילות הייתה נעימה, כולם היו מעורבים וכל אחד יצא עם פסיפס שהכין בעצמו. גם האווירה הייתה מעולה, והרגשנו שזה משהו קצת שונה מיום גיבוש רגיל.',
+      rating: 5
+    },
+    {
+      name: 'יוסי מזרחי',
+      position: 'משאבי אנוש',
+      company: 'Tech Startup',
+      text: 'חיפשנו פעילות קצת אחרת לצוות, והפסיפס התאים לנו מאוד. היה שילוב טוב בין עבודה משותפת לבין זמן שכל אחד יכול לעבוד בקצב שלו. כולם השתתפו ונהנו, והיה נחמד לראות את התוצרים בסוף.',
+      rating: 5
+    },
+    {
+      name: 'מיכל אבני',
+      position: 'סמנכ"לית תפעול',
+      text: 'עשינו כבר לא מעט פעילויות גיבוש, והפעם רצינו משהו רגוע ויצירתי יותר. היה כיף לראות איך כולם נכנסו לזה, גם מי שבהתחלה היה קצת סקפטי. יצאנו עם חוויה טובה ועם פסיפסים שכל אחד לקח איתו.',
+      rating: 5
+    }
+  ] : [
+    {
+      name: 'Dana Rosenberg',
+      position: 'HR Manager',
+      text: 'We came with 45 employees for our annual team-building day and it worked really well. The activity was relaxed and engaging, and everyone made their own mosaic to take home. The atmosphere was great too, and it felt like a nice change from the usual team-building activities.',
+      rating: 5
+    },
+    {
+      name: 'Yossi Mizrahi',
+      position: 'HR',
+      company: 'Tech Startup',
+      text: 'We were looking for something a little different for our team, and the mosaic workshop was a great fit. There was a nice balance between working together and having time to work at your own pace. Everyone took part and enjoyed it, and it was great seeing all the different creations at the end.',
+      rating: 5
+    },
+    {
+      name: 'Michal Avni',
+      position: 'VP Operations',
+      text: 'We’ve done quite a few team-building activities over the years, and this workshop was one of the more successful ones. It was great to see everyone getting into it, and there was something really enjoyable about sitting together, creating, and taking a break from the usual routine. We had a great time and everyone left with a mosaic they had made themselves.',
+      rating: 5
+    }
             ]).map((testimonial, index) => (
               <div
                 key={index}

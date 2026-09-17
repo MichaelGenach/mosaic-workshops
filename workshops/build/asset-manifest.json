@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9ce59c3.css",
-    "main.js": "/static/js/main.dcf8fdfd.js",
+    "main.css": "/static/css/main.756d746b.css",
+    "main.js": "/static/js/main.6b0a0f7e.js",
     "static/js/787.71619633.chunk.js": "/static/js/787.71619633.chunk.js",
     "static/media/video12.mp4": "/static/media/video12.4f0cf774cb4f992a5a08.mp4",
     "static/media/yam.mp4": "/static/media/yam.dc0f4a06ec558ab15d52.mp4",
@@ -15,13 +15,16 @@
     "static/media/video14.mp4": "/static/media/video14.237bc5fbe914a157d02e.mp4",
     "static/media/video1.mov": "/static/media/video1.cdabc90fb3ac16626b69.mov",
     "static/media/video13.mp4": "/static/media/video13.6ebf146bc2e5a8da8ecf.mp4",
+    "static/media/photo256.png": "/static/media/photo256.b5b538aa161bc5e1b6cf.png",
     "static/media/thumbNailTours.png": "/static/media/thumbNailTours.a1d32a065a660120cea5.png",
     "static/media/thumbNailPotteryMainVideo.png": "/static/media/thumbNailPotteryMainVideo.ed1907ef4a5184d1eb93.png",
+    "static/media/photo257.jpeg": "/static/media/photo257.7864b34da06892a95c4e.jpeg",
     "static/media/thumbNail.png": "/static/media/thumbNail.046c4407d740da00890d.png",
     "static/media/mekorotHayarkon.jpg": "/static/media/mekorotHayarkon.3d9df87489b639dbb189.jpg",
     "static/media/telAfek4.jpg": "/static/media/telAfek4.602a0d44c049f428097f.jpg",
     "static/media/telAfek3.jpg": "/static/media/telAfek3.0b26e5b7a647982f5b89.jpg",
     "static/media/BeitShearim.jpeg": "/static/media/BeitShearim.93db58a3e2efccc67f66.jpeg",
+    "static/media/photo258.jpeg": "/static/media/photo258.45447190b88924cd7383.jpeg",
     "static/media/telAfek2.jpg": "/static/media/telAfek2.8bfeb69a38738864726c.jpg",
     "static/media/tandemCaesarea.jpeg": "/static/media/tandemCaesarea.c568e5393c818cbd9b05.jpeg",
     "static/media/telAfek.jpg": "/static/media/telAfek.4b3ad08a98c4c1fe16c1.jpg",
@@ -227,12 +230,12 @@
     "static/media/photo171.jpg": "/static/media/photo171.79a8e98405b5ca06bfa7.jpg",
     "static/media/photo99.jpg": "/static/media/photo99.208a294cc798e8f56dfa.jpg",
     "index.html": "/index.html",
-    "main.f9ce59c3.css.map": "/static/css/main.f9ce59c3.css.map",
-    "main.dcf8fdfd.js.map": "/static/js/main.dcf8fdfd.js.map",
+    "main.756d746b.css.map": "/static/css/main.756d746b.css.map",
+    "main.6b0a0f7e.js.map": "/static/js/main.6b0a0f7e.js.map",
     "787.71619633.chunk.js.map": "/static/js/787.71619633.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f9ce59c3.css",
-    "static/js/main.dcf8fdfd.js"
+    "static/css/main.756d746b.css",
+    "static/js/main.6b0a0f7e.js"
   ]
 }

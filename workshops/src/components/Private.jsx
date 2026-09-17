@@ -194,50 +194,57 @@ export default function Private({ language, languageSettings }) {
 
 
 
-
 {/* Testimonials Section */}
 <section className="mosaic-testimonials-section" style={settings}>
-        <h2 className="mosaic-testimonials-title">{language === 'he' ? 'מה אומרים המשתתפים שלנו' : 'What Our Participants Say'}</h2>
+  <h2 className="mosaic-testimonials-title">
+    {language === 'he' ? 'מה אומרים המשתתפים שלנו' : 'What Our Participants Say'}
+  </h2>
+
+  <div className="mosaic-testimonials-grid">
+    {(language === 'he'
+      ? [
+          {
+            name: 'יעל כהן',
+            workshop: 'סדנת פסיפס זוגית',
+            text: 'היה פשוט כיף! ישבנו מול הים, עבדנו ביחד על הפסיפס וקיבלנו הסברים לאורך כל הדרך. יצא לנו משהו ממש יפה, וזו הייתה אחלה דרך לבלות כמה שעות ביחד.',
+            rating: 5
+          },
+          {
+            name: 'אבי שלום',
+            workshop: 'סדנה משפחתית',
+            text: 'הגענו כל המשפחה והיה ממש מוצלח. כולם מצאו מה לעשות, גם מי שלא התנסה בפסיפס קודם. האווירה ליד הים הייתה מעולה והילדים נהנו מאוד.',
+            rating: 5
+          },
+          {
+            name: 'מירב שפירא',
+            workshop: 'סדנה קבוצתית',
+            text: 'לא ידעתי בכלל אם אצליח להכין פסיפס, אבל יצא הרבה יותר יפה ממה שחשבתי. כנרת הסבירה הכל בסבלנות ועזרה לנו כשנתקענו. היה כיף מאוד, לא רצינו שזה יגמר.',
+            rating: 5
+          }
+        ]
+      : [
+          {
+            name: 'Yael Cohen',
+            workshop: 'Couples Mosaic Workshop',
+            text: 'We had such a great time! We sat by the sea, worked on our mosaic together, and got help whenever we needed it. It turned out really beautiful, and it was such a nice way to spend a few hours together.',
+            rating: 5
+          },
+          {
+            name: 'Avi Shalom',
+            workshop: 'Family Workshop',
+            text: 'We came with the whole family and everyone really enjoyed it. Even those who had never tried mosaics before got into it. The setting by the sea made it even more enjoyable, and the kids had a great time.',
+            rating: 5
+          },
+          {
+            name: 'Merav Shapira',
+            workshop: 'Group Workshop',
+            text: 'I wasn’t sure I would be able to make a mosaic, but it turned out much better than I expected. Kinneret explained everything patiently and helped us whenever we got stuck. We had a great time and didn’t want it to end.',
+            rating: 5
+          }
         
-        <div className="mosaic-testimonials-grid">
-          {(language === 'he' ? [
-            {
-              name: 'יעל כהן',
-              workshop: 'סדנת פסיפס זוגית',
-              text: 'חוויה מדהימה! הכנו ביחד פסיפס יפה מאוד מול הים, האווירה היתה קסומה והליווי המקצועי של כנרת היה ברמה ממש גבוהה. ממליצה בחום!',
-              rating: 5
-            },
-            {
-              name: 'אבי שלום',
-              workshop: 'סדנה משפחתית',
-              text: 'ארגנו את הסדנה כל המשפחה וזו היתה החלטה מצוינת, הכל היה מקצועי מאוד והאווירה מול הים ממש הוסיפה לחוויה.',
-              rating: 5
-            },
-            {
-              name: 'מירב שפירא',
-              workshop: 'סדנה קבוצתית',
-              text: 'תמיד רציתי ללמוד פסיפס והסדנה הזו הייתה מושלמת! המדריכה כנרת היתה מקצועית מאוד, הסבירה בסבלנות, והיצירות שלנו יצאו מעל ומעבר לציפיות, תודה!',
-              rating: 5
-            }
-          ] : [
-            {
-              name: 'Yael Cohen',
-              workshop: 'Couples Mosaic Workshop',
-              text: 'An amazing experience! We created a beautiful mosaic together by the sea. The atmosphere was magical, and Kinneret’s professional guidance was truly top-level. Highly recommended!',
-              rating: 5
-            },
-            {
-              name: 'Avi Shalom',
-              workshop: 'Family Workshop',
-              text: 'We organized the workshop for the whole family and it was an excellent decision. Everything was very professional, and the seaside atmosphere really added to the experience.',
-              rating: 5
-            },
-            {
-              name: 'Merav Shapira',
-              workshop: 'Group Workshop',
-              text: 'I had always wanted to learn mosaic, and this workshop was perfect! The instructor, Kinneret, was extremely professional, explained everything patiently, and our creations turned out beyond expectations. Thank you!',
-              rating: 5
-            }
+
+
+
             
           ]).map((testimonial, index) => (
             <div

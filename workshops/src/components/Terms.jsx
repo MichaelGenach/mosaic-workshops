@@ -7,154 +7,352 @@ import Footer from './Footer';
 // ⚠️ טיוטה — לא ייעוץ משפטי. יש להעביר לבדיקת עו"ד לפני פרסום.
 
 const translations = {
+
   he: {
+
     direction: 'rtl',
+
     lastUpdated: 'עודכן לאחרונה: 21.07.2026',
+
     title: 'תנאי שימוש',
+
     sections: [
+
       {
+
         heading: '1. הסכמה לתנאים',
+
         body: [
+
           'ברוכים הבאים לאתר Genach Workshops (להלן: "האתר"), המופעל על ידי ג\'נאח חברה לשימור עתיקות ויצירת פסיפסים בע"מ (להלן: "אנחנו" או "בעל האתר").',
-          'הכניסה לאתר והשימוש בו מהווים הסכמה מלאה לתנאי שימוש אלה. אם אינך מסכים לתנאים אלה, כולם או חלקם, אנא הימנע משימוש באתר.',
-          'תנאים אלה חלים בנוסף למדיניות הפרטיות של האתר, ואינם מחליפים אותה.',
+
+          'הכניסה לאתר והשימוש בו מהווים הסכמה לתנאי שימוש אלה. אם אינך מסכים לתנאים אלה, כולם או חלקם, אנא הימנע מהשימוש באתר.',
+
+          'תנאי שימוש אלה חלים בנוסף למדיניות הפרטיות של האתר ואינם מחליפים אותה.',
+
         ],
+
       },
+
       {
+
         heading: '2. מהות השירותים',
+
         body: [
-          'האתר מציג מידע אודות סדנאות קדרות, סדנאות פסיפס, סיורים מודרכים ואירועי חברות המופעלים על ידינו, לרבות תמונות, תיאורים ומחירים משוערים.',
-          'האתר אינו מאפשר רכישה או תשלום מקוון. תיאום והזמנה בפועל של סדנה, סיור או אירוע מתבצעים בתיאום אישי מולנו — בטלפון, בוואטסאפ או בטופס יצירת הקשר — ואינם נכנסים לתוקף אלא לאחר אישור מפורש מצדנו.',
-          'המחירים, הזמינות ופרטי השירותים המוצגים באתר עשויים להשתנות ללא הודעה מוקדמת, ואינם מהווים הצעה מחייבת מצדנו.',
+
+          'האתר מציג מידע אודות סדנאות קדרות, סדנאות פסיפס, סיורים מודרכים, אירועי חברות ושירותים נוספים המוצעים על ידינו, לרבות תמונות, תיאורים ומחירים.',
+
+          'האתר אינו מאפשר רכישה או תשלום מקוון. תיאום והזמנה של סדנה, סיור או אירוע מתבצעים בתיאום אישי מולנו — בטלפון, בוואטסאפ או בטופס יצירת הקשר — והזמנה אינה נחשבת מאושרת או מחייבת מצדנו אלא לאחר קבלת אישור מפורש מאיתנו.',
+
+          'המחירים, הזמינות, מועדי הפעילות ופרטי השירותים המוצגים באתר עשויים להשתנות מעת לעת ללא הודעה מוקדמת, ואינם מהווים הצעה מחייבת להתקשרות.',
+
         ],
+
       },
+
       {
-        heading: '3. ביטולים ושינויים',
+
+        heading: '3. ביטולים, שינויים ואי-הגעה',
+
         body: [
-          'איננו גובים דמי ביטול מלקוחות שמבטלים הזמנה של סדנה, סיור או אירוע.',
-          'עם זאת, נשמח לקבל הודעה מוקדמת ככל הניתן על ביטול או שינוי מועד, כדי לאפשר לנו להיערך בהתאם ולפנות את המקום ללקוחות אחרים.',
-          'במקרים חריגים (כגון מזג אוויר קיצוני, כוח עליון או נסיבות בטיחותיות) אנו שומרים לעצמנו את הזכות לדחות או לבטל פעילות, ונפעל לתאם מועד חלופי בתיאום עם הלקוח.',
+
+          'אנו משתדלים לאפשר ללקוחות גמישות מרבית בנוגע לביטול או שינוי הזמנות.',
+
+          'ביטול הזמנה שנעשה מבעוד מועד לא יחויב בדרך כלל בדמי ביטול, בהתאם למדיניות העסק ובכפוף להוראות כל דין.',
+
+          'עם זאת, ביטול בהתראה קצרה מאוד, ובפרט ביטול בסמוך למועד תחילת הסדנה, הסיור או האירוע, וכן אי-הגעה ללא הודעה מוקדמת, עלולים לגרום לנו נזק והוצאות, לרבות שמירת מקום, הכנת חומרים וציוד, הקצאת כוח אדם ואובדן האפשרות להזמין לקוחות אחרים.',
+
+          'במקרים כאמור, אנו רשאים לגבות דמי ביטול או סכום אחר המותר על פי דין, בהתאם לנסיבות המקרה ולתנאים שנמסרו ללקוח בעת ביצוע ההזמנה.',
+
+          'גובה דמי הביטול, ככל שייגבו, ייקבע בכפוף להוראות הדין החלות על העסקה, ולא יעלה על הסכום המותר על פי דין.',
+
+          'במקרים חריגים ומוצדקים, אנו רשאים לוותר על דמי הביטול, כולם או חלקם, לפי שיקול דעתנו.',
+
+          'במקרה של שינוי מועד, ניתן לפנות אלינו ונעשה מאמץ סביר לאפשר את שינוי המועד בהתאם לזמינות.',
+
+          'במקרים חריגים, לרבות מזג אוויר קיצוני, מצב ביטחוני, נסיבות בטיחותיות, כוח עליון או נסיבות אחרות שאינן בשליטתנו, אנו רשאים לדחות, לשנות או לבטל פעילות. במקרה כזה נעשה מאמץ סביר לתאם עם הלקוח מועד חלופי, בהתאם לנסיבות ולזמינות.',
+
+          'הוראות סעיף זה כפופות תמיד לזכויות המוקנות לצרכן על פי דין, לרבות הוראות חוק הגנת הצרכן והתקנות מכוחו, ככל שהן חלות על העסקה.',
+
         ],
+
       },
+
       {
+
         heading: '4. שימוש נאות באתר',
+
         body: [
-          'הנך מתחייב להשתמש באתר למטרות חוקיות בלבד, ולא לבצע כל פעולה העלולה לפגוע בתפקוד האתר, באבטחתו, או בזכויות צדדים שלישיים.',
-          'חל איסור על: ניסיון לפרוץ לאתר או לשרתים המשרתים אותו; שימוש בכלים אוטומטיים לאיסוף תוכן מהאתר (Scraping) ללא רשות; העלאת תוכן פוגעני, מטעה או בלתי חוקי דרך טופס יצירת הקשר; וכל שימוש אחר שיש בו כדי לפגוע בנו או במשתמשים אחרים.',
+
+          'הנך מתחייב להשתמש באתר למטרות חוקיות בלבד ולא לבצע כל פעולה העלולה לפגוע בתפקוד האתר, באבטחתו או בזכויותינו או בזכויות צדדים שלישיים.',
+
+          'בין היתר, חל איסור על: ניסיון לפרוץ לאתר או לשרתים המשרתים אותו; ניסיון להשיג גישה בלתי מורשית למידע או למערכות; שימוש בכלים אוטומטיים לצורך איסוף, העתקה או כרייה של תכנים מהאתר (Scraping) ללא רשות מראש; העלאת תוכן פוגעני, מטעה, מאיים או בלתי חוקי באמצעות טופס יצירת הקשר; ביצוע פעולה העלולה להכביד באופן בלתי סביר על תשתיות האתר; וכל שימוש אחר העלול לגרום נזק לנו, לאתר או למשתמשים אחרים.',
+
         ],
+
       },
+
       {
+
         heading: '5. קניין רוחני',
+
         body: [
-          'כל הזכויות בתכני האתר — לרבות טקסטים, תמונות, סרטונים, לוגו, עיצוב וקוד — שייכות לנו או לצדדים שלישיים שהעניקו לנו רישיון שימוש, ומוגנות בדיני זכויות יוצרים וקניין רוחני.',
-          'אין להעתיק, לשכפל, להפיץ, לפרסם או לעשות כל שימוש מסחרי בתכני האתר ללא קבלת רשות מפורשת מראש ובכתב.',
+
+          'כל הזכויות בתכני האתר, לרבות טקסטים, תמונות, סרטונים, לוגו, עיצוב, גרפיקה, קוד ותכנים אחרים, שייכות לנו או לצדדים שלישיים שהעניקו לנו רישיון שימוש בהם, ומוגנות על פי דיני זכויות היוצרים והקניין הרוחני.',
+
+          'אין להעתיק, לשכפל, להפיץ, לפרסם, לשנות, להציג בפומבי או לעשות שימוש מסחרי בתכני האתר ללא קבלת אישור מפורש מראש ובכתב מבעל הזכויות.',
+
+          'אין באמור כדי לגרוע מזכויות המותרות על פי דין.',
+
         ],
+
       },
+
       {
+
         heading: '6. הגבלת אחריות',
+
         body: [
-          'האתר והמידע בו מוצגים כפי שהם ("As Is"). אנו עושים מאמץ סביר לשמור על דיוק ועדכניות המידע, אך איננו מתחייבים כי המידע באתר מדויק, שלם או נקי משגיאות בכל עת.',
-          'איננו אחראים לכל נזק, ישיר או עקיף, שייגרם כתוצאה משימוש באתר, מהסתמכות על המידע בו, מתקלות טכניות, או מגישה בלתי מורשית לנתונים.',
-          'האתר עשוי לכלול קישורים לאתרים חיצוניים (כגון וואטסאפ, רשתות חברתיות, Get Your Guide). איננו אחראים לתוכן, למדיניות הפרטיות או לזמינות של אתרים חיצוניים אלה.',
-          'סדנאות וסיורים עשויים להיות כפופים לתנאי מזג אוויר, בטיחות או כוח עליון, ואנו שומרים לעצמנו את הזכות לדחות, לשנות או לבטל פעילות מטעמים אלה, בהתאם לסעיף 3 לעיל.',
+
+          'האתר והתכנים המוצגים בו ניתנים כפי שהם ("As Is").',
+
+          'אנו עושים מאמץ סביר לשמור על כך שהמידע באתר יהיה נכון ועדכני, אולם ייתכנו טעויות, אי-דיוקים, שינויים או השמטות, ואיננו מתחייבים שהמידע באתר יהיה מדויק, מלא או מעודכן בכל עת.',
+
+          'אין לראות במידע המוצג באתר התחייבות לכך ששירות מסוים יהיה זמין במועד מסוים או במחיר מסוים. פרטי ההזמנה הסופיים ייקבעו בתיאום מולנו.',
+
+          'איננו אחראים, בכפוף לכל דין, לנזק שנגרם כתוצאה מתקלה טכנית, הפסקת פעילות האתר, שימוש באתר, הסתמכות על מידע שאינו מעודכן או גישה בלתי מורשית למערכות.',
+
+          'האתר עשוי לכלול קישורים לשירותים ואתרים חיצוניים, לרבות WhatsApp, רשתות חברתיות ואתרי הזמנת שירותים כגון GetYourGuide. איננו אחראים לתוכן, לזמינות, לאבטחה או למדיניות הפרטיות של אתרים ושירותים אלה, והשימוש בהם כפוף לתנאיהם ולמדיניות שלהם.',
+
+          'פעילויות המוצעות על ידינו עשויות להיות מושפעות מתנאי מזג אוויר, מצב ביטחוני, שיקולי בטיחות, כוח עליון או נסיבות אחרות שאינן בשליטתנו. במקרים כאלה אנו רשאים לדחות, לשנות או לבטל פעילות בהתאם לסעיף 3 לעיל.',
+
         ],
+
       },
+
       {
+
         heading: '7. שינויים בתנאי השימוש',
+
         body: [
-          'אנו רשאים לעדכן תנאי שימוש אלה מעת לעת. שינויים מהותיים יפורסמו בעמוד זה עם ציון תאריך העדכון. המשך השימוש באתר לאחר פרסום שינויים מהווה הסכמה לתנאים המעודכנים.',
+
+          'אנו רשאים לעדכן תנאי שימוש אלה מעת לעת. שינויים מהותיים יפורסמו בעמוד זה ויצוין בו מועד העדכון האחרון.',
+
+          'המשך השימוש באתר לאחר פרסום שינוי מהותי יהווה הסכמה לתנאים המעודכנים, ככל שהדבר מותר על פי דין.',
+
         ],
+
       },
+
       {
+
         heading: '8. דין וסמכות שיפוט',
+
         body: [
-          'על תנאי שימוש אלה יחולו דיני מדינת ישראל בלבד. סמכות השיפוט הבלעדית בכל מחלוקת הנוגעת לאתר ו/או לתנאים אלה תהא נתונה לבתי המשפט המוסמכים במחוז חיפה (אזור חוף הכרמל).',
+
+          'על תנאי שימוש אלה יחולו דיני מדינת ישראל בלבד.',
+
+          'כל מחלוקת הנוגעת לאתר או לתנאי שימוש אלה תידון בהתאם לדין הישראלי ובפני בית המשפט המוסמך לפי הדין.',
+
+          'אין באמור בסעיף זה כדי לגרוע מזכויות צרכניות או מסמכות שיפוט המוקנות ללקוח על פי דין.',
+
         ],
+
       },
+
       {
+
         heading: '9. יצירת קשר',
+
         body: [
-          'לשאלות או הבהרות בנוגע לתנאי שימוש אלה, ניתן לפנות אלינו:',
+
+          'לשאלות, בקשות או הבהרות בנוגע לתנאי שימוש אלה, ניתן לפנות אלינו:',
+
           'טלפון: 052-394-8920',
-          'דוא"ל: genach2@bezeqint.net',
+
+          'דוא"ל: [genach2@bezeqint.net](mailto:genach2@bezeqint.net)',
+
         ],
+
       },
+
     ],
+
   },
+
+
   en: {
+
     direction: 'ltr',
+
     lastUpdated: 'Last updated: July 21, 2026',
+
     title: 'Terms of Use',
+
     sections: [
+
       {
+
         heading: '1. Acceptance of Terms',
+
         body: [
-          'Welcome to the Genach Workshops website (the "Site"), operated by Genach Company for Antiquities Preservation and Mosaic Creation Ltd. ("we", "us", or the "Site owner").',
-          'By accessing and using the Site, you fully agree to these Terms of Use. If you do not agree to these terms, in whole or in part, please refrain from using the Site.',
-          'These terms apply in addition to the Site\'s Privacy Policy and do not replace it.',
+
+          'Welcome to the Genach Workshops website (the "Site"), operated by Genach Company for Antiquities Preservation and Mosaic Creation Ltd. ("we", "us", or the "Site Owner").',
+
+          'By accessing or using the Site, you agree to these Terms of Use. If you do not agree to these terms, in whole or in part, please refrain from using the Site.',
+
+          'These Terms of Use apply in addition to the Site\'s Privacy Policy and do not replace it.',
+
         ],
+
       },
+
       {
-        heading: '2. Nature of the Services',
+
+        heading: '2. Services',
+
         body: [
-          'The Site presents information about pottery workshops, mosaic workshops, guided tours, and corporate events that we operate, including photos, descriptions, and estimated prices.',
-          'The Site does not support online purchases or payments. Actual booking of a workshop, tour, or event is coordinated with us personally — by phone, WhatsApp, or the contact form — and is only confirmed following our explicit approval.',
-          'Prices, availability, and service details shown on the Site are subject to change without notice and do not constitute a binding offer on our part.',
+
+          'The Site provides information about pottery workshops, mosaic workshops, guided tours, corporate events, and other services offered by us, including photographs, descriptions, and prices.',
+
+          'The Site does not provide online purchasing or payment. Arrangements and bookings for workshops, tours, or events are made directly with us by telephone, WhatsApp, or through the contact form. A booking is not considered confirmed or binding on us until we have expressly confirmed it.',
+
+          'Prices, availability, schedules, and service details displayed on the Site may change from time to time without prior notice and do not constitute a binding offer.',
+
         ],
+
       },
+
       {
-        heading: '3. Cancellations and Changes',
+
+        heading: '3. Cancellations, Changes, and No-Shows',
+
         body: [
-          'We do not charge a cancellation fee for customers who cancel a booked workshop, tour, or event.',
-          'That said, we\'d appreciate as much advance notice as possible of a cancellation or date change, so we can plan accordingly and offer the slot to other customers.',
-          'In exceptional cases (such as extreme weather, force majeure, or safety-related circumstances) we reserve the right to postpone or cancel an activity, and will work with the customer to arrange an alternative date.',
+
+          'We strive to provide our customers with reasonable flexibility regarding cancellations and changes to bookings.',
+
+          'Cancellations made sufficiently in advance will generally not be subject to a cancellation fee, in accordance with our business policy and subject to applicable law.',
+
+          'However, a cancellation made at very short notice, particularly shortly before the scheduled start of a workshop, tour, or event, as well as a failure to attend without prior notice, may cause us losses and expenses, including reserved capacity, preparation of materials and equipment, allocation of staff, and the loss of the opportunity to accept other customers.',
+
+          'In such cases, we may charge a cancellation fee or other amount permitted by law, taking into account the circumstances of the cancellation and the terms communicated to the customer at the time of booking.',
+
+          'Any cancellation fee charged will be determined in accordance with applicable law and will not exceed the amount permitted by law.',
+
+          'In exceptional or justified circumstances, we may, at our discretion, waive all or part of any cancellation fee.',
+
+          'If you wish to change the date of your booking, you may contact us, and we will make reasonable efforts to accommodate the requested change, subject to availability.',
+
+          'In exceptional circumstances, including extreme weather, security conditions, safety concerns, force majeure, or other circumstances beyond our reasonable control, we may postpone, modify, or cancel an activity. In such cases, we will make reasonable efforts to coordinate an alternative date with the customer, subject to the circumstances and availability.',
+
+          'This section is always subject to any rights granted to consumers under applicable law, including the Israeli Consumer Protection Law and regulations enacted thereunder, to the extent applicable to the transaction.',
+
         ],
+
       },
+
       {
+
         heading: '4. Acceptable Use',
+
         body: [
-          'You agree to use the Site only for lawful purposes, and not to take any action that could harm the Site\'s functionality, security, or the rights of third parties.',
-          'The following are prohibited: attempting to breach the Site or its servers; using automated tools to scrape content from the Site without permission; submitting offensive, misleading, or unlawful content via the contact form; and any other use that could harm us or other users.',
+
+          'You agree to use the Site only for lawful purposes and not to engage in any activity that may harm the Site, its security, our rights, or the rights of third parties.',
+
+          'The following are prohibited: attempting to hack or gain unauthorized access to the Site or its servers; attempting to obtain unauthorized access to information or systems; using automated tools to collect, copy, extract, or scrape content from the Site without prior permission; submitting offensive, misleading, threatening, or unlawful content through the contact form; performing actions that may place an unreasonable burden on the Site\'s infrastructure; and any other use that may cause harm to us, the Site, or other users.',
+
         ],
+
       },
+
       {
+
         heading: '5. Intellectual Property',
+
         body: [
-          'All rights in the Site\'s content — including text, images, videos, logo, design, and code — belong to us or to third parties who have granted us a license to use them, and are protected under copyright and intellectual property law.',
-          'You may not copy, reproduce, distribute, publish, or make any commercial use of the Site\'s content without our prior express written permission.',
+
+          'All rights in the content of the Site, including text, photographs, videos, logos, design, graphics, code, and other materials, are owned by us or by third parties who have granted us permission to use them, and are protected under applicable copyright and intellectual property laws.',
+
+          'You may not copy, reproduce, distribute, publish, modify, publicly display, or commercially use any content from the Site without the prior express written permission of the applicable rights holder.',
+
+          'Nothing in this section shall limit any rights permitted by law.',
+
         ],
+
       },
+
       {
+
         heading: '6. Limitation of Liability',
+
         body: [
-          'The Site and its content are provided "as is". We make reasonable efforts to keep the information accurate and up to date, but we do not guarantee that the Site\'s content is accurate, complete, or error-free at all times.',
-          'We are not liable for any direct or indirect damage resulting from use of the Site, reliance on its content, technical malfunctions, or unauthorized access to data.',
-          'The Site may include links to external websites (such as WhatsApp, social media, Get Your Guide). We are not responsible for the content, privacy practices, or availability of these external sites.',
-          'Workshops and tours may be subject to weather, safety, or force majeure conditions, and we reserve the right to postpone, modify, or cancel an activity on these grounds, in accordance with Section 3 above.',
+
+          'The Site and its content are provided on an "As Is" basis.',
+
+          'We make reasonable efforts to ensure that the information presented on the Site is accurate and up to date. However, errors, inaccuracies, changes, or omissions may occur, and we do not guarantee that the information on the Site will always be accurate, complete, or current.',
+
+          'Information displayed on the Site should not be considered a guarantee that a particular service will be available at a particular time or at a particular price. Final booking details will be determined directly with us.',
+
+          'To the extent permitted by applicable law, we shall not be liable for damages resulting from technical failures, interruption of the Site, use of the Site, reliance on outdated information, or unauthorized access to systems.',
+
+          'The Site may contain links to external websites and services, including WhatsApp, social media platforms, and service-booking websites such as GetYourGuide. We are not responsible for the content, availability, security, or privacy practices of such external websites or services. Your use of such services is subject to their respective terms and privacy policies.',
+
+          'Activities offered by us may be affected by weather conditions, security situations, safety considerations, force majeure, or other circumstances beyond our reasonable control. In such cases, we may postpone, modify, or cancel an activity in accordance with Section 3 above.',
+
         ],
+
       },
+
       {
+
         heading: '7. Changes to These Terms',
+
         body: [
-          'We may update these Terms of Use from time to time. Material changes will be posted on this page along with an updated date. Continued use of the Site after changes are posted constitutes acceptance of the updated terms.',
+
+          'We reserve the right to update these Terms of Use from time to time. Material changes will be published on this page, together with the date of the latest update.',
+
+          'Your continued use of the Site after material changes have been published constitutes acceptance of the updated Terms, to the extent permitted by applicable law.',
+
         ],
+
       },
+
       {
+
         heading: '8. Governing Law and Jurisdiction',
+
         body: [
-          'These Terms of Use are governed solely by the laws of the State of Israel. Exclusive jurisdiction over any dispute relating to the Site and/or these terms shall lie with the competent courts of the Haifa District (Hof HaCarmel area).',
+
+          'These Terms of Use shall be governed exclusively by the laws of the State of Israel.',
+
+          'Any dispute relating to the Site or these Terms of Use shall be governed by Israeli law and brought before the court having jurisdiction under applicable law.',
+
+          'Nothing in this section shall limit any consumer rights or jurisdiction granted to a customer under applicable law.',
+
         ],
+
       },
+
       {
+
         heading: '9. Contact Us',
+
         body: [
-          'For questions or clarifications regarding these Terms of Use, please contact us:',
+
+          'For questions, requests, or clarifications regarding these Terms of Use, you may contact us:',
+
           'Phone: 052-394-8920',
-          'Email: genach2@bezeqint.net',
+
+          'Email: [genach2@bezeqint.net](mailto:genach2@bezeqint.net)',
+
         ],
+
       },
+
     ],
+
   },
+
 };
 
 export default function Terms({ language = 'he', languageSettings }) {

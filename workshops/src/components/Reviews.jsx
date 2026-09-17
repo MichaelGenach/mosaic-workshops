@@ -599,7 +599,7 @@ export default function Reviews({ language, }) {
           {reviews.map((item, index) => (
             <motion.div
               className={
-                item.review.length > 190
+                item.review.length > 200
                   ? "long-review"
                   : "reviewCard"
               }

@@ -15,6 +15,13 @@ export default function Menu({ language, setLanguage, languageSettings }) {
   const toursSubMenuRef = useRef(null);
   const shareMenuRef = useRef(null);
 
+  // Prefixes internal links with /en when the site is currently
+  // in English, so navigating via the menu doesn't drop back to Hebrew.
+  const withLang = (path) =>
+    language === 'en'
+      ? (path === '/' ? '/en' : `/en${path}`)
+      : path;
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const toggleSubMenu = () => {
@@ -135,8 +142,7 @@ export default function Menu({ language, setLanguage, languageSettings }) {
   const translate = {
     he: {
       contact: 'יצירת קשר',
-      kilns: 'תנורי קדרות',
-      tours: 'סיורים ▾',
+      tours: 'סיורים מרתקים▾',
       allTours: 'כל הסיורים',
       bikeTours: 'סיורי אופניים 🚴',
       footTours: 'סיורים רגליים 🚶',
@@ -144,6 +150,7 @@ export default function Menu({ language, setLanguage, languageSettings }) {
       boutique: 'סדנאות פסיפס בוטיק 🎨',
       company: 'סדנאות פסיפס לחברות 👥',
       pottery: 'סדנאות קדרות',
+      giftVouchers: 'שוברי מתנה',
       home: 'בית',
       english: 'English',
       share: <Share2 size={22} style={{ position: 'relative', top: '5px' }} />,
@@ -160,8 +167,7 @@ export default function Menu({ language, setLanguage, languageSettings }) {
     },
     en: {
       contact: 'Contact',
-      kilns: 'Pottery Kilns',
-      tours: 'Tours ▾',
+      tours: 'fascinating Tours ▾',
       allTours: 'All Tours',
       bikeTours: 'Bike Tours 🚴',
       footTours: 'Walking Tours 🚶',
@@ -169,6 +175,7 @@ export default function Menu({ language, setLanguage, languageSettings }) {
       boutique: 'Boutique Mosaic Workshops 🎨',
       company: 'Corporate Mosaic Workshops 👥',
       pottery: 'Pottery Workshops',
+      giftVouchers: 'Gift Vouchers',
       home: 'Home',
       english: 'עברית',
       share: <Share2 size={22} style={{ position: 'relative', top: '5px' }} />,
@@ -206,8 +213,7 @@ export default function Menu({ language, setLanguage, languageSettings }) {
         </div>
 
         <a href="#contact" className="links" onClick={scrollTo1}>{t.contact}</a>
-        <Link className="links" onClick={scrollTo1} to='/janur'>{t.kilns}</Link>
-
+        <Link className="links" onClick={scrollTo1} to={withLang('/gift-vouchers')}>{t.giftVouchers}</Link>
         <div className="dropdown">
           <div className="links dropdown-toggle" onClick={toggleToursSubMenu}>
             <div className="linksToggle">{t.tours}</div>
@@ -215,15 +221,15 @@ export default function Menu({ language, setLanguage, languageSettings }) {
           {toursSubMenuOpen && (
             <div className="dropdown-menu" ref={toursSubMenuRef}>
               <Link style={{ direction: settings.direction, textAlign: settings.textAlign }}
-                className="links" onClick={scrollTo1} to='/tours'>
+                className="links" onClick={scrollTo1} to={withLang('/tours')}>
                 <span id='allToursMenu'>{t.allTours}</span>
               </Link>
               <Link style={{ direction: settings.direction, textAlign: settings.textAlign }}
-                className="links" onClick={scrollTo1} to='/bike-tours'>
+                className="links" onClick={scrollTo1} to={withLang('/bike-tours')}>
                 <span id='bikeToursMenu'>{t.bikeTours}</span>
               </Link>
               <Link style={{ direction: settings.direction, textAlign: settings.textAlign }}
-                className="links" onClick={scrollTo1} to='/foot-tours'>
+                className="links" onClick={scrollTo1} to={withLang('/foot-tours')}>
                 <span id='footToursMenu'>{t.footTours}</span>
               </Link>
             </div>
@@ -237,19 +243,19 @@ export default function Menu({ language, setLanguage, languageSettings }) {
           {subMenuOpen && (
             <div className="dropdown-menu" ref={subMenuRef}>
               <Link style={{ direction: settings.direction, textAlign: settings.textAlign }}
-                className="links" onClick={scrollTo1} to='/private'>
+                className="links" onClick={scrollTo1} to={withLang('/private')}>
                 <span id='privateMenu'>{t.boutique}</span>
               </Link>
               <Link style={{ direction: settings.direction, textAlign: settings.textAlign }}
-                className="links" onClick={scrollTo1} to='/company'>
+                className="links" onClick={scrollTo1} to={withLang('/company')}>
                 <span id='companyMenu'>{t.company}</span>
               </Link>
             </div>
           )}
         </div>
 
-        <Link className="links" onClick={scrollTo1} to='/pottery'>{t.pottery}</Link>
-        <Link className="links" onClick={scrollTo1} to='/'>{t.home}</Link>
+        <Link className="links" onClick={scrollTo1} to={withLang('/pottery')}>{t.pottery}</Link>
+        <Link className="links" onClick={scrollTo1} to={withLang('/')}>{t.home}</Link>
       </div>
 
       {shareMenuOpen && (

@@ -1,7 +1,7 @@
 import { React, useState, useRef, useEffect } from 'react'
 import FadeIn from 'react-fade-in';
 import { Link, useNavigate, } from 'react-router-dom'
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import './Pottery.css'
 import BookingWidget from './BookingWidget';
 import FaqPottery from './FaqPottery'
@@ -80,6 +80,10 @@ import photo251 from './images/photo251.jpg'
 import photo252 from './images/photo252.jpg'
 import photo253 from './images/photo253.jpg'
 import photo254 from './images/photo254.jpg'
+import photo256 from './images/photo256.png'
+import photo257 from './images/photo257.jpeg'
+import photo258 from './images/photo258.jpeg'
+import photo168 from './images/photo168.jpg'
 
 import video9 from './videos/video9.mp4'
 import video12 from './videos/video12.mp4'
@@ -93,9 +97,7 @@ import { PiFlowerLotusBold } from "react-icons/pi";
 import { FaHome } from "react-icons/fa";
 import Pricing from './Pricing';
 
-
-
-
+const whatsappNumber = '9720523948920';
 
 const translations = {
   he: {
@@ -125,6 +127,42 @@ const translations = {
       { icon: '🏠', title: 'מגיעים גם אליכם', text: 'בבית פרטי או בעסק שלכם, בכל רחבי הארץ' }
     ],
 
+    workshopsTag: 'הסדנאות שלנו',
+    workshopsTitle: 'בחרו את סוג הסדנה',
+    workshopsSubtitle: 'משלוש חוויות קרמיקה שונות — מהיצירה הראשונית ועד לגימור המבריק, בחרו את מה שמתאים לכם',
+    workshopsCta: 'תאמו בוואטסאפ',
+    workshops: [
+      {
+        icon: '🏺',
+        title: 'אובניים - יצירה אישית וייחודית',
+        subtitle: 'מפגש אחד',
+        desc: 'סדנה מושלמת למתחילים ולמתקדמים: יוצרים כלי חרס משלכם על גלגל האבניים בעבודת יד, מגוש חומר ועד לצורה מוגמרת. הכלי נשאר ברשותכם לייבוש עצמי בבית – ללא צורך בתנור וללא המתנה.',
+        color: '#d2691e',
+        tags: [' למתקדמים ולמתחילים', 'עד שעתיים', 'לוקחים איתכם'],
+        price: '250₪ לאדם',
+        img: photo256,
+      },
+      {
+        icon: '🔥',
+        title: 'קרמיקה יצירה מלאה עם תנור',
+        subtitle: 'יצירה ושריפה מקצועית',
+        desc: 'החוויה המלאה: יוצרים על האבניים ולאחר מכן שורפים את הכלי בתנור הקרמיקה המקצועי החדש שלנו. השריפה הופכת את החומר לקרמיקה חזקה ועמידה, מוכנה לשימוש יומיומי בבית.',
+        color: '#8b4513',
+        tags: ['תוצר סופי ועמיד', 'תהליך שלם', 'מומלץ למתנות'],
+        price: 'החל מ-350₪ לאדם',
+        img: photo258,
+      },
+      {
+        icon: '🎨',
+        title: 'גלזורה וצביעה',
+        subtitle: 'צביעה וגימור סופי',
+        desc: 'מוסיפים צבע וברק לכלי קרמי שכבר עבר שריפה ראשונה (ביסקוויט). צובעים בגלזורה מקצועית, ולאחר מכן שורפים שוב לקבלת גימור מבריק, צבעוני ועמיד למים.',
+        color: '#daa520',
+        tags: ['גימור מבריק', 'שריפה שנייה', 'התאמה אישית'],
+        price: 'לפי תיאום',
+        img: photo257,
+      },
+    ],
 
     galleryText: 'פעילויות גיבוש',
     pricingTitle: 'מחירים ותיאום סדנאות',
@@ -134,6 +172,10 @@ const translations = {
     orderNow: 'הזמינו עכשיו בווטסאפ',
     ctaFinal: '?מוכנים ליצור משהו מיוחד',
     ctaFinalSub: 'הצטרפו לאלפי לקוחות מרוצים שחוו את קסם הקדרות',
+    janurTag: 'למי שרוצה להמשיך ליצור גם בבית',
+    janurTitle: 'תנור הקדרות ג׳נור',
+    janurText: 'אוהבים קדרות ורוצים לשרוף את היצירות שלכם גם בבית? הכירו את ג׳נור — תנור קדרות קומפקטי ויעיל, כהמשך טבעי לעולם הקדרות.',
+    janurCta: 'לפרטים על תנור ג׳נור',
   },
 
   en: {
@@ -163,6 +205,43 @@ No prior experience needed – perfect for team events, family gatherings, or an
       { icon: '🏠', title: 'We Come to You', text: 'To your home or business, anywhere in Israel' }
     ],
 
+    workshopsTag: 'Our Workshops',
+    workshopsTitle: 'Choose Your Workshop',
+    workshopsSubtitle: 'From the first creation to the final glossy finish — pick the pottery experience that\'s right for you',
+    workshopsCta: 'Book on WhatsApp',
+    workshops: [
+      {
+        icon: '🏺',
+        title: 'Wheel Throwing – A Personal, One-of-a-Kind Creation',
+        subtitle: 'Single session',
+        desc: 'A perfect workshop for beginners and advanced participants alike: shape your own ceramic piece on the potter\'s wheel by hand, from a lump of clay to a finished form. The piece stays with you to air-dry at home – no kiln and no waiting required.',
+        color: '#d2691e',
+        tags: ['Beginners & advanced', 'Up to 2 hours', 'Take it with you'],
+        price: '₪250 per person',
+        img: photo256,
+      },
+      {
+        icon: '🔥',
+        title: 'Full Ceramics with Kiln',
+        subtitle: 'Creation & professional firing',
+        desc: 'The complete experience: create on the wheel, then we fire your piece in our new professional ceramics kiln. Firing transforms the clay into strong, durable ceramic, ready for everyday use at home.',
+        color: '#8b4513',
+        tags: ['Durable final piece', 'Full process', 'Great for gifts'],
+        price: 'From ₪350 per person',
+        img: photo258,
+      },
+      {
+        icon: '🎨',
+        title: 'Glazing & Painting',
+        subtitle: 'Color & final finish',
+        desc: 'Add color and shine to a piece that has already been through its first (bisque) firing. Paint it with a professional glaze, then it\'s fired once more for a glossy, colorful, water-resistant finish.',
+        color: '#daa520',
+        tags: ['Glossy finish', 'Second firing', 'Fully personalized'],
+        price: 'By arrangement',
+        img: photo257,
+      },
+    ],
+
     testimonials: 'What People Say',
     reviews: [
       { name: 'Sarah Cohen', text: 'Amazing experience! Patient staff and high professionalism', rating: 5 },
@@ -178,6 +257,10 @@ No prior experience needed – perfect for team events, family gatherings, or an
     orderNow: 'Book Now on WhatsApp',
     ctaFinal: 'Ready to Create Something Special?',
     ctaFinalSub: 'Join thousands of satisfied customers who experienced the magic of pottery',
+    janurTag: 'For those who want to keep creating at home',
+    janurTitle: 'The Janur Pottery Kiln',
+    janurText: 'Love pottery and want to fire your creations at home? Meet Janur — a compact and efficient pottery kiln, a natural next step for pottery lovers.',
+    janurCta: 'Explore the Janur Kiln',
   }
 }
 
@@ -193,6 +276,13 @@ export default function Pottery({ language, languageSettings }) {
   const t = translations[language];
   const settings = languageSettings[language];
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, []);
+
+  const [activeWorkshop, setActiveWorkshop] = useState(0);
+  const activeW = t.workshops[activeWorkshop];
+
 
   const arrPhotoCarousel = [
     photo203, photo202, photo199, photo198, photo200, photo201, photo162, photo189, photo190, photo180,
@@ -200,57 +290,57 @@ export default function Pottery({ language, languageSettings }) {
     photo217, photo218, photo219, photo220, photo221, photo222, photo223, photo224, photo225, photo226,
     photo227, photo228, photo229, photo230, photo231, photo232, photo233, photo234, photo235, photo236,
     photo237, photo238, photo239, photo240, photo241, photo242, photo243, photo244, photo245, photo246,
-    photo247, photo248, photo249, photo250, photo251, photo252, photo253, photo254
+    photo247, photo248, photo249, photo250, photo251, photo252, photo253, photo254, photo257
   ]
 
   return (
     <div id='mainDivPottery'>
-     
+
 
       <FadeIn>
-  {/* Hero Section - Pottery */}
-  <section className="hero-section-pottery">
-    <div className="hero-bg-pottery">
-      <video
-        src={mainVideoPottery} // תחליף בוידאו שלך
-        poster={thumbNailPotteryMainVideo} // תחליף בתמונת תצוגה מקדימה
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="hero-video-pottery"
-      />
-      <div className="hero-overlay-pottery" />
-    </div>
+        {/* Hero Section - Pottery */}
+        <section className="hero-section-pottery">
+          <div className="hero-bg-pottery">
+            <video
+              src={mainVideoPottery} // תחליף בוידאו שלך
+              poster={thumbNailPotteryMainVideo} // תחליף בתמונת תצוגה מקדימה
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="hero-video-pottery"
+            />
+            <div className="hero-overlay-pottery" />
+          </div>
 
-    <div className="hero-content-pottery">
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-      >
-        <h1 className="hero-title-pottery">{t.title}</h1>
-        <p className="hero-subtitle-pottery">{t.subtitle}</p>
-
-
-        <MainButtons language={language} languageSettings={languageSettings} />
-        <Reviews language={language} />
-      </motion.div>
-    </div>
-  </section>
-
-  {/* Videos Section */}
-  <div id='twoPotteryVideosAndIcons'>
-    <div id='twoPotteryVideos'>
-      <video id="video12" src={video12} autoPlay loop muted title="Pottery workshop video demo" />
-      <video id="video13" src={video13} autoPlay loop muted title="Pottery workshop video demo" />
-    </div>
-  </div>
+          <div className="hero-content-pottery">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+            >
+              <h1 className="hero-title-pottery">{t.title}</h1>
+              <p className="hero-subtitle-pottery">{t.subtitle}</p>
 
 
+              <MainButtons language={language} languageSettings={languageSettings} />
+              <Reviews language={language} />
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Videos Section */}
+        <div id='twoPotteryVideosAndIcons'>
+          <div id='twoPotteryVideos'>
+            <video id="video12" src={video12} autoPlay loop muted title="Pottery workshop video demo" />
+            <video id="video13" src={video13} autoPlay loop muted title="Pottery workshop video demo" />
+          </div>
+        </div>
 
 
-     
+
+
+
 
         <div id='explainPotteryDiv'>
           <p id='explainPotteryText' style={{
@@ -258,6 +348,71 @@ export default function Pottery({ language, languageSettings }) {
             textAlign: settings.textAlign
           }}>{t.description}</p>
         </div>
+
+        {/* קטע חדש - בחירת סוג סדנה (אובניים / קרמיקה עם תנור / גלזורה) */}
+        <section className='workshopTypesSection' dir={settings.direction}>
+          <div className='workshopTypesHeader'>
+            <span className='workshopTypesTag'>{t.workshopsTag}</span>
+            <h2 className='sectionTitle'>{t.workshopsTitle}</h2>
+            <p className='workshopTypesSubtitle'>{t.workshopsSubtitle}</p>
+          </div>
+
+          <div className='workshopTabsNav'>
+            {t.workshops.map((w, i) => (
+              <button
+                key={i}
+                type='button'
+                className={`workshopTab ${activeWorkshop === i ? 'is-active' : ''}`}
+                style={{ '--wc': w.color }}
+                onClick={() => setActiveWorkshop(i)}
+              >
+                <span className='workshopTab__icon'>{w.icon}</span>
+                <span className='workshopTab__title'>{w.title}</span>
+              </button>
+            ))}
+          </div>
+
+          <AnimatePresence mode='wait'>
+            <motion.div
+              key={activeWorkshop}
+              className='workshopPanel'
+              style={{ '--wc': activeW.color }}
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -14 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className='workshopPanel__img'>
+                <img src={activeW.img} alt={activeW.title} loading='lazy' />
+              </div>
+              <div className='workshopPanel__text'>
+                <span className='workshopPanel__sub'>{activeW.subtitle}</span>
+                <h3>{activeW.title}</h3>
+                <p>{activeW.desc}</p>
+                <div className='workshopPanel__tags'>
+                  {activeW.tags.map((tag, j) => (
+                    <span key={j} className='workshopPanel__chip'>{tag}</span>
+                  ))}
+                </div>
+                <div className='workshopPanel__footer'>
+                  <span className='workshopPanel__price'>{activeW.price}</span>
+                  <a
+                    href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                      language === 'he'
+                        ? `שלום! אשמח לפרטים ותיאום על ${activeW.title}`
+                        : `Hi! I'd like details and to book the ${activeW.title}`
+                    )}`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='workshopPanel__cta'
+                  >
+                    {t.workshopsCta}
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+        </section>
 
         {/* קטע חדש - מה כולל */}
         <div className='whatIncludedSection'>
@@ -303,10 +458,51 @@ export default function Pottery({ language, languageSettings }) {
           alt={altTexts.photo204[language]}
         />
 
+        <section className='pottery-janur-teaser' dir={settings.direction}>
+          <div className='pottery-janur-teaser__inner'>
+            <div className='pottery-janur-teaser__image-wrap'>
+              <img
+                src={photo168}
+                alt={language === 'he' ? 'תנור הקדרות ג׳נור' : 'Janur pottery kiln'}
+                loading='lazy'
+                className='pottery-janur-teaser__image'
+              />
+            </div>
+            <div className='pottery-janur-teaser__content'>
+              <span className='pottery-janur-teaser__tag'>{t.janurTag}</span>
+              <h2>{t.janurTitle}</h2>
+              <p>{t.janurText}</p>
+              <Link
+                to={language === 'en' ? '/en/janur' : '/janur'}
+                className='pottery-janur-teaser__cta'
+                onClick={(e) => {
+                  e.preventDefault();
+
+                  const targetPath = language === 'en' ? '/en/janur' : '/janur';
+
+                  // Navigate first, then force the new route to the very top.
+                  window.history.pushState({}, '', targetPath);
+                  window.dispatchEvent(new PopStateEvent('popstate'));
+
+                  requestAnimationFrame(() => {
+                    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                    setTimeout(() => {
+                      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+                    }, 50);
+                  });
+                }}
+              >
+                {t.janurCta}
+                <span aria-hidden='true'>...</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
 
       </FadeIn>
 
-      <FaqPottery language={language} languageSettings={languageSettings}/>
+      <FaqPottery language={language} languageSettings={languageSettings} />
 
       <Contact language={language} languageSettings={languageSettings} />
       <Footer language={language} languageSettings={languageSettings} />

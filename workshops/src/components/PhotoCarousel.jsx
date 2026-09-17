@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import './PhotoCarousel.css'
+import './PhotoCarousel.css';
 
 // All carousel photo imports now live here, inside the component that's
 // lazy-loaded from Home.jsx. This chunk is only fetched once PhotoCarousel
 // actually renders, instead of being part of the main page bundle.
+
 import photo3 from './images/photo3.jpg'
 import photo4 from './images/photo4.jpg'
 import photo5 from './images/photo5.jpg'
@@ -73,7 +74,7 @@ import photo211 from './images/photo211.jpg'
 import photo212 from './images/photo212.jpg'
 import photo213 from './images/photo213.jpg'
 import photo214 from './images/photo214.jpg'
-import photo215b from './images/photo215.jpg' // בשם אחר כדי להימנע מכפל שמות
+import photo215b from './images/photo215.jpg'
 import photo216 from './images/photo216.jpg'
 import photo217 from './images/photo217.jpg'
 import photo218 from './images/photo218.jpg'
@@ -114,164 +115,304 @@ import photo252 from './images/photo252.jpg'
 import photo253 from './images/photo253.jpg'
 import photo254 from './images/photo254.jpg'
 
+/*
+ * ברירת המחדל של הקרוסלה:
+ * כל התמונות הגדולות של האתר.
+ *
+ * אם עמוד אחר מעביר prop בשם arrPhotoCarousel,
+ * הקרוסלה תשתמש בו במקום במערך הזה.
+ */
 const arrPhotoCarousel = [
-  photo3, photo4, photo5, photo7, photo8, photo11, photo13, photo15, photo16, photo17, photo18, photo19,
-  photo20, photo21, photo23, photo24, photo25, photo26, photo27, photo28, photo29, photo30, photo31,
-  photo32, photo33, photo36, photo55, photo56, photo75, photo105, photo110, photo111, photo113, photo114,
-  photo115, photo116, photo117, photo119, photo120, photo121, photo124, photo132, photo133, photo138,
-  photo139, photo140, photo146, photo162, photo164, photo165, photo180, photo181, photo182, photo183,
-  photo186, photo187, photo189, photo190, photo191, photo194, photo198, photo199, photo200, photo201,
-  photo211, photo212, photo213, photo214, photo215b, photo216, photo217, photo218, photo219, photo220,
-  photo221, photo222, photo223, photo224, photo225, photo226, photo227, photo228, photo229, photo230,
-  photo231, photo232, photo233, photo234, photo235, photo236, photo237, photo238, photo239, photo240,
-  photo241, photo242, photo243, photo244, photo245, photo246, photo247, photo248, photo249, photo250,
-  photo251, photo252, photo253, photo254
+  photo3, photo4, photo5, photo7, photo8, photo11, photo13, photo15,
+  photo16, photo17, photo18, photo19, photo20, photo21, photo23, photo24,
+  photo25, photo26, photo27, photo28, photo29, photo30, photo31, photo32,
+  photo33, photo36, photo55, photo56, photo75, photo105, photo110, photo111,
+  photo113, photo114, photo115, photo116, photo117, photo119, photo120,
+  photo121, photo124, photo132, photo133, photo138, photo139, photo140,
+  photo146, photo162, photo164, photo165, photo180, photo181, photo182,
+  photo183, photo186, photo187, photo189, photo190, photo191, photo194,
+  photo198, photo199, photo200, photo201, photo211, photo212, photo213,
+  photo214, photo215b, photo216, photo217, photo218, photo219, photo220,
+  photo221, photo222, photo223, photo224, photo225, photo226, photo227,
+  photo228, photo229, photo230, photo231, photo232, photo233, photo234,
+  photo235, photo236, photo237, photo238, photo239, photo240, photo241,
+  photo242, photo243, photo244, photo245, photo246, photo247, photo248,
+  photo249, photo250, photo251, photo252, photo253, photo254
 ];
 
-export default function PhotoCarousel() {
-  const scrollInterval = useRef(null);
+export default function PhotoCarousel({
+  arrPhotoCarousel: photos = arrPhotoCarousel
+}) {
   const container = useRef(null);
-  const carusel = useRef(null);
-  const [dragConstraint, setDragConstraint] = useState(0);
+
+  // האם המשתמש כרגע גורר?
   const [isDragging, setIsDragging] = useState(false);
+
+  // האם זה מובייל?
   const [isMobile, setIsMobile] = useState(false);
+
+  // תמונות רחבות
   const [wideImages, setWideImages] = useState({});
 
-  // זיהוי מצב פלאפון
+  /*
+   * כל נתוני הגרירה נשמרים ב-ref כדי שהם
+   * לא יגרמו ל-render בכל תזוזת עכבר.
+   */
+  const dragState = useRef({
+    isDragging: false,
+    startX: 0,
+    startScrollLeft: 0,
+  });
+
+  /*
+   * הטיימר היחיד של הגלילה האוטומטית.
+   * בכוונה יש רק מנגנון אחד.
+   */
+  const autoScrollInterval = useRef(null);
+
+  // ---------------------------------------------------------
+  // זיהוי מצב מובייל
+  // ---------------------------------------------------------
+
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     checkMobile();
+
     window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
-  // גלילה אוטומטית התחלתית
-  useEffect(() => {
-    const el = container.current;
-    const stopAuto = () => clearInterval(scrollInterval.current);
-    const startAuto = () => {
-      if (scrollInterval.current) return;
-      scrollInterval.current = setInterval(() => {
-        if (carusel.current) {
-          carusel.current.scrollLeft += 1;
-          if (
-            carusel.current.scrollLeft + carusel.current.offsetWidth >=
-            carusel.current.scrollWidth
-          ) {
-            carusel.current.scrollLeft = 0;
-          }
-        }
-      }, 50);
-    };
-    startAuto();
-    el.addEventListener('touchstart', stopAuto);
-    el.addEventListener('touchend', startAuto);
-    el.addEventListener('touchcancel', startAuto);
     return () => {
-      clearInterval(scrollInterval.current);
-      el.removeEventListener('touchstart', stopAuto);
-      el.removeEventListener('touchend', startAuto);
-      el.removeEventListener('touchcancel', startAuto);
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
-  // חישוב dragConstraint
-  useEffect(() => {
-    const updateWidth = () => {
-      if (carusel.current && container.current) {
-        const newC = carusel.current.scrollWidth - container.current.offsetWidth;
-        setDragConstraint(newC > 0 ? newC : 0);
+  // ---------------------------------------------------------
+  // עצירת גלילה אוטומטית
+  // ---------------------------------------------------------
+
+  const stopAutoScroll = () => {
+    if (autoScrollInterval.current) {
+      clearInterval(autoScrollInterval.current);
+      autoScrollInterval.current = null;
+    }
+  };
+
+  // ---------------------------------------------------------
+  // התחלת גלילה אוטומטית
+  // ---------------------------------------------------------
+
+  const startAutoScroll = () => {
+    if (autoScrollInterval.current) return;
+
+    autoScrollInterval.current = setInterval(() => {
+      const el = container.current;
+
+      if (!el) return;
+
+      // בזמן גרירה לא מזיזים אוטומטית
+      if (dragState.current.isDragging) return;
+
+      const maxScroll = el.scrollWidth - el.clientWidth;
+
+      // אם אין בכלל מקום לגלול
+      if (maxScroll <= 0) return;
+
+      /*
+       * הגענו לסוף:
+       * חוזרים להתחלה.
+       */
+      if (el.scrollLeft >= maxScroll - 1) {
+        el.scrollLeft = 0;
+        return;
       }
-    };
 
-    const waitImages = async () => {
-      const imgs = carusel.current?.querySelectorAll('img');
-      if (!imgs) return updateWidth();
-      await Promise.all(Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(r => { img.onload = img.onerror = r; })));
-      updateWidth();
-    };
-
-    waitImages();
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
-  }, []);
-
-  // גלילה שניה
-  useEffect(() => {
-    const auto = () => {
-      if (container.current) {
-        container.current.scrollLeft += 1;
-        if (
-          container.current.scrollLeft >=
-          container.current.scrollWidth - container.current.clientWidth
-        ) {
-          container.current.scrollLeft = 0;
-        }
-      }
-    };
-    scrollInterval.current = setInterval(auto, 30);
-    return () => clearInterval(scrollInterval.current);
-  }, []);
-
-  const stopDrag = () => clearInterval(scrollInterval.current);
-  const startDrag = () => {
-    scrollInterval.current = setInterval(() => {
-      if (container.current) {
-        container.current.scrollLeft += 1;
-        if (
-          container.current.scrollLeft >=
-          container.current.scrollWidth - container.current.clientWidth
-        ) {
-          container.current.scrollLeft = 0;
-        }
-      }
+      el.scrollLeft += 1;
     }, 30);
   };
 
-  const handleImageLoad = (e, index) => {
-    const w = e.target.naturalWidth;
-    if (w > 400) {
-      setWideImages(prev => ({ ...prev, [index]: true }));
+  // ---------------------------------------------------------
+  // הפעלת auto-scroll פעם אחת כשהקומפוננטה עולה
+  // ---------------------------------------------------------
+
+  useEffect(() => {
+    startAutoScroll();
+
+    return () => {
+      stopAutoScroll();
+    };
+  }, []);
+
+  // ---------------------------------------------------------
+  // גרירה עם עכבר / אצבע
+  // ---------------------------------------------------------
+
+  const handlePointerDown = (e) => {
+    const el = container.current;
+
+    if (!el) return;
+
+    /*
+     * עצירה מוחלטת של auto-scroll
+     * ברגע שמתחילים לגרור.
+     */
+    stopAutoScroll();
+
+    dragState.current.isDragging = true;
+    dragState.current.startX = e.clientX;
+    dragState.current.startScrollLeft = el.scrollLeft;
+
+    setIsDragging(true);
+
+    /*
+     * Pointer Capture חשוב מאוד:
+     * גם אם האצבע/עכבר יוצאים מהאלמנט,
+     * נמשיך לקבל PointerMove ו-PointerUp.
+     */
+    try {
+      el.setPointerCapture(e.pointerId);
+    } catch (error) {
+      // לא כל הדפדפנים מחייבים את זה.
     }
   };
 
+  const handlePointerMove = (e) => {
+    const el = container.current;
+
+    if (!el || !dragState.current.isDragging) return;
+
+    const deltaX = e.clientX - dragState.current.startX;
+
+    /*
+     * גוררים את התוכן בכיוון טבעי:
+     * תזוזה שמאלה של העכבר -> scrollLeft גדל.
+     */
+    el.scrollLeft = dragState.current.startScrollLeft - deltaX;
+
+    /*
+     * מונע מהדפדפן לפרש את התנועה
+     * כפעולת בחירה/גרירה של תמונה.
+     */
+    e.preventDefault();
+  };
+
+  const handlePointerUp = (e) => {
+    const el = container.current;
+
+    dragState.current.isDragging = false;
+    setIsDragging(false);
+
+    if (el) {
+      try {
+        el.releasePointerCapture(e.pointerId);
+      } catch (error) {
+        // לא נורא אם אין capture.
+      }
+    }
+
+    /*
+     * אחרי שסיימנו לגרור,
+     * auto-scroll חוזר.
+     */
+    startAutoScroll();
+  };
+
+  const handlePointerCancel = (e) => {
+    const el = container.current;
+
+    dragState.current.isDragging = false;
+    setIsDragging(false);
+
+    if (el) {
+      try {
+        el.releasePointerCapture(e.pointerId);
+      } catch (error) {
+        // לא נורא אם אין capture.
+      }
+    }
+
+    startAutoScroll();
+  };
+
+  // ---------------------------------------------------------
+  // כשהעכבר מעל הקרוסלה:
+  // עוצרים auto-scroll כדי שאפשר יהיה לדפדף בנוחות.
+  // ---------------------------------------------------------
+
+  const handleMouseEnter = () => {
+    if (!dragState.current.isDragging) {
+      stopAutoScroll();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (!dragState.current.isDragging) {
+      startAutoScroll();
+    }
+  };
+
+  // ---------------------------------------------------------
+  // טיפול בגודל תמונות
+  // ---------------------------------------------------------
+
+  const handleImageLoad = (e, index) => {
+    const w = e.target.naturalWidth;
+
+    if (w > 400) {
+      setWideImages(prev => ({
+        ...prev,
+        [index]: true
+      }));
+    }
+  };
+
+  // ---------------------------------------------------------
+  // ערבוב התמונות
+  // ---------------------------------------------------------
+
   const shuffledPhotos = useMemo(() => {
-    const cleaned = arrPhotoCarousel.filter(Boolean);
+    const cleaned = photos.filter(Boolean);
     const arr = [...cleaned];
+
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
+
       [arr[i], arr[j]] = [arr[j], arr[i]];
     }
+
     return arr;
-  }, []);
+  }, [photos]);
 
+  // ---------------------------------------------------------
+  // Render
+  // ---------------------------------------------------------
 
-
-
-
-
-  
   return (
     <div>
       <div id="caruselDiv">
         <motion.div
           id="carousel"
           ref={container}
-          onMouseEnter={stopDrag}
-          onMouseLeave={startDrag}
-          style={{ overflow: 'hidden', cursor: 'grab' }}
+          onPointerDown={handlePointerDown}
+          onPointerMove={handlePointerMove}
+          onPointerUp={handlePointerUp}
+          onPointerCancel={handlePointerCancel}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            overflow: 'hidden',
+            cursor: isDragging ? 'grabbing' : 'grab',
+            touchAction: 'pan-y',
+            userSelect: 'none'
+          }}
         >
           <motion.div
             id="InnerCarousel"
-            ref={carusel}
-            drag="x"
-            dragConstraints={{ right: 0, left: -dragConstraint }}
-            onDragStart={() => setIsDragging(true)}
-            onDragEnd={() => setIsDragging(false)}
             style={{
               display: 'flex',
               flexDirection: 'row',
-              cursor: isDragging ? 'grabbing' : 'grab',
+              userSelect: 'none'
             }}
           >
             {shuffledPhotos.map((item, index) => (
@@ -283,18 +424,32 @@ export default function PhotoCarousel() {
                   flexShrink: 0,
                   display: 'flex',
                   justifyContent: 'center',
+                  userSelect: 'none'
                 }}
               >
                 <img
                   src={item}
                   loading="lazy"
+                  draggable="false"
                   alt="תמונה הממחישה את סדנאות היצירה והסיורים המרתקים שלנו, נופים יפים, לקוחות מרוצים ומהלך הסדנאות והסיורים"
                   onLoad={(e) => handleImageLoad(e, index)}
-                  onError={() => console.log('Image failed to load:', item)}
+                  onError={() =>
+                    console.log('Image failed to load:', item)
+                  }
                   style={
                     isMobile && wideImages[index]
-                      ? { maxWidth: '400px', display: 'block', margin: '0 auto' }
-                      : { maxHeight: '400px' }
+                      ? {
+                          maxWidth: '400px',
+                          display: 'block',
+                          margin: '0 auto',
+                          userSelect: 'none',
+                          pointerEvents: 'none'
+                        }
+                      : {
+                          maxHeight: '400px',
+                          userSelect: 'none',
+                          pointerEvents: 'none'
+                        }
                   }
                 />
               </motion.div>
