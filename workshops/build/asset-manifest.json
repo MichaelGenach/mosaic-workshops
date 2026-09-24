@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.756d746b.css",
-    "main.js": "/static/js/main.6b0a0f7e.js",
+    "main.js": "/static/js/main.3c354b48.js",
     "static/js/787.71619633.chunk.js": "/static/js/787.71619633.chunk.js",
     "static/media/video12.mp4": "/static/media/video12.4f0cf774cb4f992a5a08.mp4",
     "static/media/yam.mp4": "/static/media/yam.dc0f4a06ec558ab15d52.mp4",
@@ -22,6 +22,7 @@
     "static/media/thumbNail.png": "/static/media/thumbNail.046c4407d740da00890d.png",
     "static/media/mekorotHayarkon.jpg": "/static/media/mekorotHayarkon.3d9df87489b639dbb189.jpg",
     "static/media/telAfek4.jpg": "/static/media/telAfek4.602a0d44c049f428097f.jpg",
+    "static/media/photo260.jpeg": "/static/media/photo260.af4c24ad051a9afa19b9.jpeg",
     "static/media/telAfek3.jpg": "/static/media/telAfek3.0b26e5b7a647982f5b89.jpg",
     "static/media/BeitShearim.jpeg": "/static/media/BeitShearim.93db58a3e2efccc67f66.jpeg",
     "static/media/photo258.jpeg": "/static/media/photo258.45447190b88924cd7383.jpeg",
@@ -231,11 +232,11 @@
     "static/media/photo99.jpg": "/static/media/photo99.208a294cc798e8f56dfa.jpg",
     "index.html": "/index.html",
     "main.756d746b.css.map": "/static/css/main.756d746b.css.map",
-    "main.6b0a0f7e.js.map": "/static/js/main.6b0a0f7e.js.map",
+    "main.3c354b48.js.map": "/static/js/main.3c354b48.js.map",
     "787.71619633.chunk.js.map": "/static/js/787.71619633.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.756d746b.css",
-    "static/js/main.6b0a0f7e.js"
+    "static/js/main.3c354b48.js"
   ]
 }

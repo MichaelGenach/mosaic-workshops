@@ -83,6 +83,7 @@ import photo254 from './images/photo254.jpg'
 import photo256 from './images/photo256.png'
 import photo257 from './images/photo257.jpeg'
 import photo258 from './images/photo258.jpeg'
+import photo260 from './images/photo260.jpeg'
 import photo168 from './images/photo168.jpg'
 
 import video9 from './videos/video9.mp4'
@@ -146,11 +147,11 @@ const translations = {
         icon: '🔥',
         title: 'קרמיקה יצירה מלאה עם תנור',
         subtitle: 'יצירה ושריפה מקצועית',
-        desc: 'החוויה המלאה: יוצרים על האבניים ולאחר מכן שורפים את הכלי בתנור הקרמיקה המקצועי החדש שלנו. השריפה הופכת את החומר לקרמיקה חזקה ועמידה, מוכנה לשימוש יומיומי בבית.',
+        desc: 'החוויה המלאה: יוצרים על האבניים ולאחר מכן שורפים את הכלי בתנור הקרמיקה המקצועי שלנו. השריפה הופכת את החומר לקרמיקה חזקה ועמידה, מוכנה לשימוש יומיומי בבית.',
         color: '#8b4513',
         tags: ['תוצר סופי ועמיד', 'תהליך שלם', 'מומלץ למתנות'],
-        price: 'החל מ-350₪ לאדם',
-        img: photo258,
+        price: 'לפי תיאום',
+        img: photo260,
       },
       {
         icon: '🎨',
@@ -224,10 +225,10 @@ No prior experience needed – perfect for team events, family gatherings, or an
         icon: '🔥',
         title: 'Full Ceramics with Kiln',
         subtitle: 'Creation & professional firing',
-        desc: 'The complete experience: create on the wheel, then we fire your piece in our new professional ceramics kiln. Firing transforms the clay into strong, durable ceramic, ready for everyday use at home.',
+        desc: 'The complete experience: create on the wheel, then we fire your piece in our professional ceramics kiln. Firing transforms the clay into strong, durable ceramic, ready for everyday use at home.',
         color: '#8b4513',
         tags: ['Durable final piece', 'Full process', 'Great for gifts'],
-        price: 'From ₪350 per person',
+        price: 'By arrangement',
         img: photo258,
       },
       {
