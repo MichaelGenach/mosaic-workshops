@@ -229,7 +229,7 @@ No prior experience needed – perfect for team events, family gatherings, or an
         color: '#8b4513',
         tags: ['Durable final piece', 'Full process', 'Great for gifts'],
         price: 'By arrangement',
-        img: photo258,
+        img: photo260,
       },
       {
         icon: '🎨',
