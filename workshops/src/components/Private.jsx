@@ -7,7 +7,7 @@ import Contact from './Contact';
 import Footer from './Footer';
 import BookingWidget from './BookingWidget';
 import FadeIn from 'react-fade-in';
-import { FaWaze, FaInstagram } from "react-icons/fa";
+import { FaWaze, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import photo37 from './images/photo37.jpg'
 import photo38 from './images/photo38.jpg'
 import photo39 from './images/photo39.jpg'
@@ -90,6 +90,11 @@ import photo149 from './images/photo149.jpg'
 import photo151 from './images/photo151.jpg'
 import photo153 from './images/photo153.jpg'
 
+// WhatsApp: one number, one helper. Every WhatsApp button on this page builds
+// its link with waLink(<message matching the button's context>).
+const whatsappNumber = '9720523948920';
+const waLink = (text) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
 const translations = {
   he: {
     title: 'סדנאות פסיפס בוטיק',
@@ -103,6 +108,8 @@ const translations = {
     ],
     galleryText: 'בגלריה שלנו אנו מייצרים ומוכרים פסיפסים שנוצרו בשיטה עתיקה ובסטנדרט גבוה, ומעבירים את הידע המקצועי שלנו בצורה חווייתית ומעשירה',
     cta: 'לתיאום סדנה פרטית',
+    ctaWa: 'לתיאום  בוואצאפ',
+    waMessage: 'שלום, אשמח לפרטים על סדנת פסיפס בוטיק ובתיאום סדנה פרטית',
     photoText: 'חוויה מגבשת ויצירתית',
     experienceTitle: 'למה לבחור בנו?',
     experiencePoints: [
@@ -131,6 +138,8 @@ const translations = {
     ],
     galleryText: 'In our gallery, we produce and sell mosaics that were created using traditional techniques at the highest standard, and share our professional knowledge in an experiential and enriching way.',
     cta: 'Book a private workshop',
+    ctaWa: 'Book a private workshop on WhatsApp',
+    waMessage: "Hi, I'm interested in a boutique mosaic workshop and would like to book a private session",
     photoText: 'A Creative and Team-Building Experience',
     experienceTitle: 'Why Choose Us?',
     experiencePoints: [
@@ -277,9 +286,16 @@ export default function Private({ language, languageSettings }) {
         <div className="private-description-container">
           <p className="private-description-intro">{t.description}</p>
 
+          {/* First CTA — opens WhatsApp with a message matching this page */}
           <div className="private-cta-wrapper">
-            <a href="#contact" className="private-cta-button">
-              {t.cta}
+            <a
+              href={waLink(t.waMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="private-cta-button private-cta-button--wa"
+            >
+              <FaWhatsapp className="private-cta-wa-icon" aria-hidden="true" />
+              <span className="private-cta-wa-text">{t.ctaWa}</span>
             </a>
           </div>
 

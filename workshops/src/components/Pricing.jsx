@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './Pricing.css';
 import { Link, useNavigate } from 'react-router-dom';
 
+const whatsappNumber = '9720523948920';
+
 const translations = {
   he: {
     direction: 'rtl',
@@ -12,7 +14,7 @@ const translations = {
     potteryFeature1: 'ליווי מיקצועי',
     potteryFeature2: 'יצירת כלי וצביעה',
     potteryFeature3: 'קחו הביתה את היצירה',
-    potteryPrice: '250₪',
+    potteryPrice: 'מ-50₪',
     mosaicTitle: 'סדנת פסיפס',
     mosaicDesc: 'טכניקה עתיקה ותוצאה שנשארת אצלכם',
     mosaicFeature1: 'ליווי מיקצועי',
@@ -48,7 +50,7 @@ const translations = {
     potteryFeature1: 'Professional guidance',
     potteryFeature2: 'Crafting and painting your piece',
     potteryFeature3: 'Take your creation home',
-    potteryPrice: '250₪',
+    potteryPrice: 'From 50₪',
     mosaicTitle: 'Mosaic Workshop',
     mosaicDesc: 'An ancient technique and a result you get to keep',
     mosaicFeature1: 'Professional guidance',
@@ -244,8 +246,18 @@ export default function Pricing({ language = 'he' }) {
                           <span className="pricing-card-view-text">{t.viewPage}</span>
                         </span>
 
-                        {/* Primary action: opens the contact form, does not navigate */}
-                        <a href="#contact" className="pricing-card-button" onClick={(e) => e.stopPropagation()}>
+                        {/* Primary action: opens WhatsApp in a new tab, does not navigate */}
+                        <a
+                          href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+                            language === 'he'
+                              ? `שלום! אשמח לפרטים ותיאום על ${t[`${card.key}Title`]}`
+                              : `Hi! I'd like details and to book: ${t[`${card.key}Title`]}`
+                          )}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="pricing-card-button"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <div className="pricing-card-button-shine"></div>
                           <span className="pricing-card-button-text">{t.bookNow}</span>
                           <svg className={`pricing-card-button-arrow ${isRtl ? 'rtl' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">

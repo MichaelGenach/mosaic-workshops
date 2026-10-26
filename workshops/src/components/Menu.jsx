@@ -142,7 +142,7 @@ export default function Menu({ language, setLanguage, languageSettings }) {
   const translate = {
     he: {
       contact: 'יצירת קשר',
-      tours: 'סיורים מרתקים▾',
+      tours: 'סיורים מרתקים ▾',
       allTours: 'כל הסיורים',
       bikeTours: 'סיורי אופניים 🚴',
       footTours: 'סיורים רגליים 🚶',

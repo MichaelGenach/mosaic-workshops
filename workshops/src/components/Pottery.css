@@ -1427,7 +1427,6 @@
 
 /* ===============================================
    WORKSHOP TYPE SELECTOR — TABS
-   (Add this whole block to the END of Pottery.css)
    Design pattern based on the Tours page destination
    tabs, recolored to match Pottery's warm palette.
    =============================================== */
@@ -1860,4 +1859,122 @@
         justify-content: center;
         box-sizing: border-box;
     }
+}
+
+/* ===============================================
+   POTTERY PRICES GRID (NEW)
+   =============================================== */
+.potteryPrices {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.potteryPrices__note {
+    margin: -1rem 0 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #8b4513;
+}
+
+.potteryPrices__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.2rem;
+}
+
+.potteryPriceCard {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    padding: 2.2rem 1rem 1.6rem;
+    background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+    border: 2px solid rgba(139, 69, 19, 0.12);
+    border-top: 6px solid var(--wc, #d2691e);
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.potteryPriceCard:hover,
+.potteryPriceCard.is-active {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 50px rgba(139, 69, 19, 0.2);
+}
+
+.potteryPriceCard__num {
+    position: absolute;
+    top: -16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--wc, #d2691e);
+    color: #fff;
+    font-weight: 800;
+    font-size: .9rem;
+    line-height: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+}
+
+.potteryPriceCard__title {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #2d3748;
+    min-height: 2.6em;
+    display: flex;
+    align-items: center;
+}
+
+.potteryPriceCard__meta {
+    font-size: .85rem;
+    color: #4a5568;
+    line-height: 1.5;
+    min-height: 2.6em;
+}
+
+.potteryPriceCard__price {
+    margin-top: .6rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--wc, #d2691e);
+}
+
+.potteryPriceCard__price b {
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.potteryPriceCard__unit {
+    font-size: .78rem;
+    font-weight: 600;
+    color: #718096;
+}
+
+@media only screen and (max-width: 1100px) {
+    .potteryPrices__grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media only screen and (max-width: 768px) {
+    .potteryPrices { margin: 3.5rem auto; padding: 0 1rem; }
+    .potteryPrices__grid { grid-template-columns: 1fr; gap: 1rem; }
+    .potteryPriceCard {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        text-align: start;
+        align-items: center;
+        gap: .2rem 1rem;
+        padding: 1.2rem 1.2rem 1.2rem 2.4rem;
+    }
+    .potteryPriceCard__num { top: 50%; inset-inline-start: -14px; transform: translateY(-50%); }
+    .potteryPriceCard__title,
+    .potteryPriceCard__meta { min-height: 0; justify-content: flex-start; }
+    .potteryPriceCard__price { grid-column: 2; grid-row: 1 / span 2; margin: 0; text-align: center; }
+    .potteryPriceCard__price b { font-size: 2rem; }
+    .potteryPriceCard__unit { grid-column: 1 / -1; }
 }

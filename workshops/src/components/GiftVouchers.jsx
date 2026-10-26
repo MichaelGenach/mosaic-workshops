@@ -46,7 +46,7 @@ const translations = {
         title: 'שובר לסדנת קדרות',
         subtitle: 'יצירה אישית על גלגל האבניים',
         desc: 'שובר לסדנת קדרות בנמל קיסריה — לבחירה בין יצירה בלבד, קרמיקה מלאה עם שריפה בתנור, או גלזורה וצביעה.',
-        price: 'מ-250₪',
+        price: 'מ-50₪',
         popular: true,
       },
       {
@@ -147,7 +147,7 @@ const translations = {
         title: 'Pottery Workshop Voucher',
         subtitle: 'A Personal Creation on the Pottery Wheel',
         desc: 'A voucher for a pottery workshop at Caesarea Harbor — choose between creation only, a full ceramics experience including kiln firing, or glazing and painting.',
-        price: 'From ₪250',
+        price: 'From ₪50',
         popular: true,
       },
       {

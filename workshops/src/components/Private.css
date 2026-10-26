@@ -1,558 +1,558 @@
 /* ==================== Base Styles ==================== */
 
 .private-page {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-    overflow-x: hidden;
-  }
-  
-  /* ==================== Hero Section ==================== */
-  
-  .private-hero {
-    padding: 120px 20px 80px;
-    text-align: center;
-    background: linear-gradient(135deg, #f0f9ff 0%, #fef3c7 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .private-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1), transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1), transparent 50%);
-    pointer-events: none;
-  }
-  
-  .private-hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .private-hero-title {
-    font-size: clamp(36px, 6vw, 64px);
-    font-weight: 800;
-    color: #1e293b;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
-    line-height: 1.1;
-    animation: fadeInUp 0.8s ease-out;
-  }
-  
-  .private-hero-subtitle {
-    font-size: clamp(18px, 3vw, 28px);
-    color: #64748b;
-    font-weight: 400;
-    animation: fadeInUp 1s ease-out;
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* ==================== Carousel Section ==================== */
-  
-  .private-carousel-section {
-    padding: 30px 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-  }
-  
-  /* ==================== Description Section ==================== */
-  
-  .private-description-section {
-    padding: 80px 20px;
-    background: white;
-  }
-  
-  .private-description-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .private-description-intro {
-    font-size: clamp(18px, 2.5vw, 24px);
-    line-height: 1.8;
-    color: #334155;
-    text-align: center;
-    margin-bottom: 60px;
-    padding: 0 20px;
-  }
-  
-  /* ==================== Features Grid ==================== */
-  
-  .private-features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    margin-bottom: 60px;
-  }
-  
-  .private-feature-card {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-    border-radius: 20px;
-    padding: 32px 24px;
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    transition: all 0.3s ease;
-    border: 2px solid #e2e8f0;
-  }
-  
-  .private-feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    border-color: #cbd5e1;
-  }
-  
-  .private-feature-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    flex-shrink: 0;
-  }
-  
-  .private-description-intro {
-    font-size: clamp(20px, 2.5vw, 26px);
-    line-height: 1.8;
-    color: #1e293b;
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 0 20px;
-    font-weight: 500;
-  }
-  /* ==================== Gallery Text ==================== */
-  
-  .private-gallery-text {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #64748b;
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto ;
-    padding: 0 20px;
-  }
-  
-  /* ==================== CTA Button ==================== */
-  
-  .private-cta-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .private-cta-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 48px;
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    color: white;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 16px;
-    text-decoration: none;
-    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
-    transition: all 0.3s ease;
-    margin-bottom: 3rem;
-  }
-  
-  .private-cta-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
-  }
-  
-  /* ==================== Images Section ==================== */
-  
-  .private-images-section {
-    padding: 20px 20px;
-    background: #f8fafc;
-  }
-  
-  .private-images-grid {
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-justify-content: center;
-align-items: center;
-  }
-  
-  .private-image-wrapper {
-    position: relative;
-  }
-  
-  .private-image {
-    width: 100%;
-    height: auto;
-    border-radius: 24px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-  }
-  
-  .private-image:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-  }
-  
-  .private-image-caption {
-    text-align: center;
-    font-size: 18px;
-    font-weight: 600;
-    color: #334155;
-    margin-top: 20px;
-  }
-  
-  /* ==================== Experience Section ==================== */
-  
-  .private-experience-section {
-    padding: 80px 20px;
-    background: white;
-  }
-  
-  .private-experience-title {
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    color: #1e293b;
-    text-align: center;
-    margin-bottom: 60px;
-  }
-  
-  .private-experience-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .private-experience-card {
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-    border-radius: 20px;
-    padding: 40px 28px;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 2px solid #bae6fd;
-  }
-  
-  .private-experience-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
-    border-color: #7dd3fc;
-  }
-  
-  .private-experience-number {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 28px;
-    font-weight: 800;
-    margin: 0 auto 20px;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-  }
-  
-  .private-experience-text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #475569;
-    margin: 0;
-  }
-  
-  /* ==================== Pricing Section ==================== */
-  
-  .private-pricing-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    text-align: center;
-  }
-  
-  .private-pricing-title {
-    font-size: clamp(32px, 5vw, 48px);
-    font-weight: 800;
-    color: #1e293b;
-    margin-bottom: 50px;
-  }
-  
-  .private-pricing-card-link {
-    display: inline-block;
-    text-decoration: none;
-    max-width: 400px;
-    width: 100%;
-  }
-  
-  .private-pricing-card {
-    background: white;
-    border-radius: 24px;
-    padding: 48px 36px;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border: 3px solid transparent;
-  }
-  
-  .private-pricing-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
-    border-color: #f59e0b;
-  }
-  
-  .private-pricing-icon {
-    font-size: 64px;
-    margin-bottom: 20px;
-  }
-  
-  .private-pricing-card-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 24px;
-  }
-  
-  .private-pricing-price {
-    margin-bottom: 32px;
-  }
-  
-  .private-pricing-amount {
-    font-size: 36px;
-    font-weight: 800;
-    color: #f59e0b;
-  }
-  
-  .private-pricing-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    color: #3b82f6;
-    font-size: 18px;
-    font-weight: 700;
-    transition: gap 0.3s ease;
-  }
-  
-  .private-pricing-card:hover .private-pricing-cta {
-    gap: 16px;
-  }
-  
-  .private-pricing-note {
-    font-size: 16px;
-    color: #64748b;
-    margin-top: 40px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-  }
-  
-  /* ==================== Responsive Design ==================== */
-  
-  @media only screen and (max-width: 768px) {
-    .private-hero {
-      padding: 100px 20px 60px;
-    }
-  
-    .private-description-section,
-    .private-images-section,
-    .private-experience-section,
-    .private-pricing-section {
-      padding: 20px 16px;
-    }
-  
-    .private-features-grid,
-    .private-experience-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-  
-    .private-images-grid {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
-  
-    .private-feature-card,
-    .private-experience-card {
-      padding: 24px 20px;
-    }
-  
-    .private-cta-button {
-      padding: 16px 40px;
-      font-size: 16px;
-    }
-  
-    .private-pricing-card {
-      padding: 36px 28px;
-    }
-  }
-  
-  @media only screen and (max-width: 480px) {
-    .private-hero {
-      padding: 80px 16px 50px;
-    }
-  
-    .private-hero-title {
-      font-size: 32px;
-    }
-  
-    .private-hero-subtitle {
-      font-size: 18px;
-    }
-  
-    .private-description-intro {
-      font-size: 16px;
-    }
-  
-    .private-feature-card {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .private-pricing-icon {
-      font-size: 48px;
-    }
-  
-    .private-pricing-amount {
-      font-size: 28px;
-    }
-  }
-  
-  /* ==================== Animations ==================== */
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  /* ==================== Print Styles ==================== */
-  
-  @media print {
-    .private-cta-button,
-    .private-pricing-card-link {
-      display: none;
-    }
-  }
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  overflow-x: hidden;
+}
 
+/* ==================== Hero Section ==================== */
 
-
-
-
-
-  /* ================================
-   MOSAIC WORKSHOP TESTIMONIALS
-   ================================ */
-
-.mosaic-testimonials-section {
-  padding: 5rem 2rem;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+.private-hero {
+  padding: 120px 20px 80px;
+  text-align: center;
+  background: linear-gradient(135deg, #f0f9ff 0%, #fef3c7 100%);
   position: relative;
   overflow: hidden;
 }
 
-.mosaic-testimonials-section::before {
+.private-hero::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
-  opacity: 0.3;
+  background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1), transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(251, 191, 36, 0.1), transparent 50%);
+  pointer-events: none;
+}
+
+.private-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.private-hero-title {
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.private-hero-subtitle {
+  font-size: clamp(18px, 3vw, 28px);
+  color: #64748b;
+  font-weight: 400;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==================== Carousel Section ==================== */
+
+.private-carousel-section {
+  padding: 30px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ==================== Description Section ==================== */
+
+.private-description-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.private-description-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.private-description-intro {
+  font-size: clamp(18px, 2.5vw, 24px);
+  line-height: 1.8;
+  color: #334155;
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+/* ==================== Features Grid ==================== */
+
+.private-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 60px;
+}
+
+.private-feature-card {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: all 0.3s ease;
+  border: 2px solid #e2e8f0;
+}
+
+.private-feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  border-color: #cbd5e1;
+}
+
+.private-feature-icon {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.private-description-intro {
+  font-size: clamp(20px, 2.5vw, 26px);
+  line-height: 1.8;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 20px;
+  font-weight: 500;
+}
+/* ==================== Gallery Text ==================== */
+
+.private-gallery-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #64748b;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto ;
+  padding: 0 20px;
+}
+
+/* ==================== CTA Button ==================== */
+
+.private-cta-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.private-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 48px;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+  margin-bottom: 3rem;
+}
+
+.private-cta-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.4);
+}
+
+/* ==================== Images Section ==================== */
+
+.private-images-section {
+  padding: 20px 20px;
+  background: #f8fafc;
+}
+
+.private-images-grid {
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.private-image-wrapper {
+  position: relative;
+}
+
+.private-image {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.private-image:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+}
+
+.private-image-caption {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 20px;
+}
+
+/* ==================== Experience Section ==================== */
+
+.private-experience-section {
+  padding: 80px 20px;
+  background: white;
+}
+
+.private-experience-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.private-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.private-experience-card {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 20px;
+  padding: 40px 28px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid #bae6fd;
+}
+
+.private-experience-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2);
+  border-color: #7dd3fc;
+}
+
+.private-experience-number {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  font-weight: 800;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.private-experience-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #475569;
+  margin: 0;
+}
+
+/* ==================== Pricing Section ==================== */
+
+.private-pricing-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  text-align: center;
+}
+
+.private-pricing-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 50px;
+}
+
+.private-pricing-card-link {
+  display: inline-block;
+  text-decoration: none;
+  max-width: 400px;
+  width: 100%;
+}
+
+.private-pricing-card {
+  background: white;
+  border-radius: 24px;
+  padding: 48px 36px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+}
+
+.private-pricing-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.15);
+  border-color: #f59e0b;
+}
+
+.private-pricing-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.private-pricing-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 24px;
+}
+
+.private-pricing-price {
+  margin-bottom: 32px;
+}
+
+.private-pricing-amount {
+  font-size: 36px;
+  font-weight: 800;
+  color: #f59e0b;
+}
+
+.private-pricing-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #3b82f6;
+  font-size: 18px;
+  font-weight: 700;
+  transition: gap 0.3s ease;
+}
+
+.private-pricing-card:hover .private-pricing-cta {
+  gap: 16px;
+}
+
+.private-pricing-note {
+  font-size: 16px;
+  color: #64748b;
+  margin-top: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* ==================== Responsive Design ==================== */
+
+@media only screen and (max-width: 768px) {
+  .private-hero {
+    padding: 100px 20px 60px;
+  }
+
+  .private-description-section,
+  .private-images-section,
+  .private-experience-section,
+  .private-pricing-section {
+    padding: 20px 16px;
+  }
+
+  .private-features-grid,
+  .private-experience-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .private-images-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .private-feature-card,
+  .private-experience-card {
+    padding: 24px 20px;
+  }
+
+  .private-cta-button {
+    padding: 16px 40px;
+    font-size: 16px;
+  }
+
+  .private-pricing-card {
+    padding: 36px 28px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .private-hero {
+    padding: 80px 16px 50px;
+  }
+
+  .private-hero-title {
+    font-size: 32px;
+  }
+
+  .private-hero-subtitle {
+    font-size: 18px;
+  }
+
+  .private-description-intro {
+    font-size: 16px;
+  }
+
+  .private-feature-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .private-pricing-icon {
+    font-size: 48px;
+  }
+
+  .private-pricing-amount {
+    font-size: 28px;
+  }
+}
+
+/* ==================== Animations ==================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ==================== Print Styles ==================== */
+
+@media print {
+  .private-cta-button,
+  .private-pricing-card-link {
+    display: none;
+  }
+}
+
+
+
+
+
+
+/* ================================
+ MOSAIC WORKSHOP TESTIMONIALS
+ ================================ */
+
+.mosaic-testimonials-section {
+padding: 5rem 2rem;
+background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+position: relative;
+overflow: hidden;
+}
+
+.mosaic-testimonials-section::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+opacity: 0.3;
 }
 
 .mosaic-testimonials-title {
-  font-size: clamp(32px, 5vw, 48px);
-  font-weight: 800;
-  color: white;
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
-  z-index: 1;
+font-size: clamp(32px, 5vw, 48px);
+font-weight: 800;
+color: white;
+text-align: center;
+margin-bottom: 3rem;
+position: relative;
+z-index: 1;
 }
 
 .mosaic-testimonials-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  height: 4px;
-  background: white;
-  border-radius: 2px;
+content: '';
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+width: 100px;
+height: 4px;
+background: white;
+border-radius: 2px;
 }
 
 .mosaic-testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+gap: 2rem;
+max-width: 1200px;
+margin: 0 auto;
+position: relative;
+z-index: 1;
 }
 
 .mosaic-testimonial-card {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-  transition: all 0.4s ease;
-  position: relative;
+background: white;
+border-radius: 20px;
+padding: 2rem;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+transition: all 0.4s ease;
+position: relative;
 }
 
 .mosaic-testimonial-card::before {
-  content: '"';
-  position: absolute;
-  top: -10px;
-  right: 20px;
-  font-size: 5rem;
-  color: #3b82f6;
-  opacity: 0.1;
-  font-family: Georgia, serif;
-  line-height: 1;
+content: '"';
+position: absolute;
+top: -10px;
+right: 20px;
+font-size: 5rem;
+color: #3b82f6;
+opacity: 0.1;
+font-family: Georgia, serif;
+line-height: 1;
 }
 
 .mosaic-testimonial-card:hover {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-  transform: translateY(-5px);
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+transform: translateY(-5px);
 }
 
 .mosaic-testimonial-stars {
-  display: flex;
-  gap: 0.3rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
+display: flex;
+gap: 0.3rem;
+margin-bottom: 1.5rem;
+font-size: 1.3rem;
 }
 
 .mosaic-star {
-  animation: starPulse 2s ease-in-out infinite;
+animation: starPulse 2s ease-in-out infinite;
 }
 
 .mosaic-star:nth-child(1) { animation-delay: 0s; }
@@ -562,87 +562,190 @@ align-items: center;
 .mosaic-star:nth-child(5) { animation-delay: 0.8s; }
 
 @keyframes starPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.1); }
 }
 
 .mosaic-testimonial-text {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #4a5568;
-  margin-bottom: 1.5rem;
-  font-style: italic;
+font-size: 1.05rem;
+line-height: 1.7;
+color: #4a5568;
+margin-bottom: 1.5rem;
+font-style: italic;
 }
 
 .mosaic-testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 1rem;
-  border-top: 2px solid #e2e8f0;
+display: flex;
+align-items: center;
+gap: 1rem;
+padding-top: 1rem;
+border-top: 2px solid #e2e8f0;
 }
 
 .mosaic-author-avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-  flex-shrink: 0;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 1.5rem;
+font-weight: 700;
+color: white;
+flex-shrink: 0;
 }
 
 .mosaic-author-info {
-  flex: 1;
+flex: 1;
 }
 
 .mosaic-author-name {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin: 0 0 0.3rem 0;
+font-size: 1.1rem;
+font-weight: 700;
+color: #2d3748;
+margin: 0 0 0.3rem 0;
 }
 
 .mosaic-author-workshop {
-  font-size: 0.9rem;
-  color: #718096;
-  margin: 0;
+font-size: 0.9rem;
+color: #718096;
+margin: 0;
 }
 
 /* Mobile Responsive for Mosaic Testimonials */
 @media (max-width: 768px) {
-  .mosaic-testimonials-section {
-    padding: 3rem 1rem;
-  }
+.mosaic-testimonials-section {
+  padding: 3rem 1rem;
+}
 
-  .mosaic-testimonials-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+.mosaic-testimonials-grid {
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
 
-  .mosaic-testimonial-card {
-    padding: 1.5rem;
-  }
+.mosaic-testimonial-card {
+  padding: 1.5rem;
+}
 
-  .mosaic-testimonial-text {
-    font-size: 1rem;
-  }
+.mosaic-testimonial-text {
+  font-size: 1rem;
+}
 
-  .mosaic-author-avatar {
-    width: 45px;
-    height: 45px;
-    font-size: 1.3rem;
-  }
+.mosaic-author-avatar {
+  width: 45px;
+  height: 45px;
+  font-size: 1.3rem;
+}
 
-  .mosaic-author-name {
-    font-size: 1rem;
-  }
+.mosaic-author-name {
+  font-size: 1rem;
+}
 
-  .mosaic-author-workshop {
-    font-size: 0.85rem;
-  }
+.mosaic-author-workshop {
+  font-size: 0.85rem;
+}
+}
+
+
+/* ================================
+ NEW — WHATSAPP CTA BUTTON (first CTA on the page)
+ Applies only to .private-cta-button--wa
+ ================================ */
+.private-cta-button.private-cta-button--wa {
+position: relative;
+isolation: isolate;
+justify-content: center;
+gap: 12px;
+max-width: 100%;
+padding: 18px 44px;
+border-radius: 18px;
+color: #ffffff;
+font-size: 18px;
+font-weight: 800;
+line-height: 1.25;
+letter-spacing: 0.2px;
+text-align: center;
+background: linear-gradient(135deg, #2fe074 0%, #25d366 45%, #128c7e 100%);
+box-shadow: 0 12px 30px -6px rgba(37, 211, 102, 0.55),
+            inset 0 1px 0 rgba(255, 255, 255, 0.35),
+            inset 0 -3px 0 rgba(0, 0, 0, 0.08);
+-webkit-tap-highlight-color: transparent;
+}
+
+.private-cta-button--wa::after {
+content: '';
+position: absolute;
+inset: 0;
+z-index: -1;
+border-radius: inherit;
+animation: privateWaPulse 2.6s ease-out infinite;
+pointer-events: none;
+}
+
+@keyframes privateWaPulse {
+0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+70%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.private-cta-button--wa .private-cta-wa-icon {
+flex-shrink: 0;
+font-size: 28px;
+filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
+transition: transform 0.3s ease;
+}
+
+.private-cta-button--wa .private-cta-wa-text {
+text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+
+.private-cta-button.private-cta-button--wa:hover {
+transform: translateY(-4px) scale(1.03);
+filter: brightness(1.05) saturate(1.05);
+box-shadow: 0 18px 38px -8px rgba(18, 140, 126, 0.6),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4),
+            inset 0 -3px 0 rgba(0, 0, 0, 0.08);
+}
+
+.private-cta-button--wa:hover .private-cta-wa-icon {
+transform: rotate(-10deg) scale(1.12);
+}
+
+.private-cta-button.private-cta-button--wa:active {
+transform: scale(0.97);
+}
+
+.private-cta-button.private-cta-button--wa:focus-visible {
+outline: 3px solid rgba(37, 211, 102, 0.6);
+outline-offset: 4px;
+}
+
+@media only screen and (max-width: 768px) {
+.private-cta-button.private-cta-button--wa {
+  padding: 16px 32px;
+  font-size: 16px;
+}
+.private-cta-button--wa .private-cta-wa-icon {
+  font-size: 26px;
+}
+}
+
+@media only screen and (max-width: 480px) {
+.private-cta-wrapper {
+  padding: 0 8px;
+}
+.private-cta-button.private-cta-button--wa {
+  display: flex;
+  width: 100%;
+  max-width: 420px;
+  padding: 16px 18px;
+  font-size: 15.5px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.private-cta-button--wa::after {
+  animation: none;
+}
 }

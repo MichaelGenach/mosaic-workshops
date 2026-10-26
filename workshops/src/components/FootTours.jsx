@@ -19,9 +19,20 @@ import thumbNailTours from './images/thumbNailTours.png';
 
 const instaLink = 'https://www.instagram.com/art_music_explore/';
 
+// WhatsApp: one number, one helper. Every WhatsApp button on this page builds
+// its link with waLink(<message matching the button's context>).
+const whatsappNumber = '9720523948920';
+const waLink = (text) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
 const T = {
     he: {
         dir: 'rtl',
+        wa: {
+            tour: 'שלום, אשמח לפרטים ולתיאום סיור רגלי',
+            destination: (title) => `שלום, אשמח לתאם סיור רגלי: ${title}`,
+            addon: (title) => `שלום, אני מעוניין להוסיף "${title}" לסיור הרגלי`,
+        },
+        panelCta: 'תאמו בוואצאפ',
         hero: {
             eyebrow: 'קיסריה ומרכז הארץ',
             title: 'סיורים רגליים',
@@ -91,6 +102,12 @@ const T = {
     },
     en: {
         dir: 'ltr',
+        wa: {
+            tour: "Hi, I'm interested in details and booking for a walking tour",
+            destination: (title) => `Hi, I'd like to book a walking tour: ${title}`,
+            addon: (title) => `Hi, I'd like to add "${title}" to my walking tour`,
+        },
+        panelCta: 'Book this tour on WhatsApp',
         hero: {
             eyebrow: 'Caesarea & Central Israel',
             title: 'Walking Tours',
@@ -235,6 +252,17 @@ export default function FootTours({ language = 'he', languageSettings }) {
                             <div className="ft-dest-panel__tags">
                                 {active.tags.map((tag, j) => <span key={j} className="ft-dest-chip">{tag}</span>)}
                             </div>
+
+                            {/* WhatsApp button — the message names the destination currently shown */}
+                            <a
+                                href={waLink(t.wa.destination(active.title))}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ft-wa-btn"
+                            >
+                                <i className="bi bi-whatsapp" aria-hidden="true" />
+                                <span>{t.panelCta}</span>
+                            </a>
                         </div>
                         <div className="ft-dest-panel__img">
                             <img src={active.img} alt={active.title} />
@@ -334,7 +362,7 @@ export default function FootTours({ language = 'he', languageSettings }) {
                                     <span className="ft-addon-card__price">{item.price}</span>
                                     <span className="ft-addon-card__note">{item.note}</span>
                                 </div>
-                                <a href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer"
+                                <a href={waLink(t.wa.addon(item.title))} target="_blank" rel="noopener noreferrer"
                                     className="ft-addon-card__btn">{t.addons.cta}</a>
                             </div>
                         </motion.div>
@@ -363,7 +391,7 @@ export default function FootTours({ language = 'he', languageSettings }) {
                 <h2 className="ft-section-title ft-section-title--light">{t.book.title}</h2>
                 <p className="ft-book-subtitle">{t.book.subtitle}</p>
                 <div className="ft-book-actions">
-                    <motion.a href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer"
+                    <motion.a href={waLink(t.wa.tour)} target="_blank" rel="noopener noreferrer"
                         className="ft-btn ft-btn--wa" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
                         <i className="bi bi-whatsapp" /> {t.book.whatsapp}
                     </motion.a>
@@ -417,7 +445,7 @@ export default function FootTours({ language = 'he', languageSettings }) {
                 }
                 .ft-hero__title {
                     font-family: 'Cormorant Garamond', serif;
-                    font-size: clamp(3.5rem, 9vw, 7rem);
+                    font-size: clamp(3.5rem, 9vw, 5rem);
                     font-weight: 900; line-height: .92; color: #f5ede0;
                     margin-bottom: 1.1rem;
                     text-shadow: 0 4px 40px rgba(0,0,0,.6);
@@ -513,6 +541,39 @@ export default function FootTours({ language = 'he', languageSettings }) {
                     object-fit: cover; border-radius: 20px;
                     box-shadow: 0 20px 60px rgba(0,0,0,.5);
                 }
+
+                /* WHATSAPP BUTTON inside the destination panel */
+                .ft-wa-btn {
+                    position: relative; isolation: isolate;
+                    display: inline-flex; align-items: center; justify-content: center; gap: .7rem;
+                    margin-top: 1.6rem; padding: .95rem 1.8rem; border-radius: 16px;
+                    color: #fff; font-family: 'Rubik', sans-serif;
+                    font-size: .98rem; font-weight: 700; line-height: 1.2; text-decoration: none;
+                    background: linear-gradient(135deg, #2fe074 0%, #25d366 45%, #128c7e 100%);
+                    box-shadow: 0 10px 24px -6px rgba(37,211,102,.5),
+                                inset 0 1px 0 rgba(255,255,255,.35),
+                                inset 0 -2px 0 rgba(0,0,0,.08);
+                    transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+                    -webkit-tap-highlight-color: transparent;
+                }
+                .ft-wa-btn i { font-size: 1.3rem; line-height: 1; transition: transform .3s ease; }
+                .ft-wa-btn::after {
+                    content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+                    animation: ftWaPulse 2.6s ease-out infinite; pointer-events: none;
+                }
+                @keyframes ftWaPulse {
+                    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.5); }
+                    70%  { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+                    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+                }
+                .ft-wa-btn:hover {
+                    transform: translateY(-2px) scale(1.03); filter: brightness(1.05);
+                    box-shadow: 0 16px 30px -8px rgba(18,140,126,.6),
+                                inset 0 1px 0 rgba(255,255,255,.4);
+                }
+                .ft-wa-btn:hover i { transform: rotate(-8deg) scale(1.12); }
+                .ft-wa-btn:active { transform: scale(.97); }
+                .ft-wa-btn:focus-visible { outline: 3px solid rgba(37,211,102,.6); outline-offset: 3px; }
 
                 /* GUIDE */
                 .ft-guide-section { background: #14100a; padding: 3rem 2rem; }
@@ -707,6 +768,10 @@ export default function FootTours({ language = 'he', languageSettings }) {
                 }
                 .ft-btn--call:hover { border-color: #D4842A; color: #D4842A; }
 
+                @media (prefers-reduced-motion: reduce) {
+                    .ft-wa-btn::after { animation: none; }
+                }
+
                 /* MOBILE */
                 @media (max-width: 900px) {
                     .ft-dest-panel { grid-template-columns: 1fr; }
@@ -727,6 +792,9 @@ export default function FootTours({ language = 'he', languageSettings }) {
                     .ft-addon-card__btn { width: 100%; text-align: center; }
                     .ft-dest-tabs { gap: .5rem; }
                     .ft-dest-tab { font-size: .82rem; padding: .55rem 1rem; }
+                    .ft-destinations-section { padding: 4rem 1rem; }
+                    .ft-dest-panel { padding: 1.5rem 1.2rem; gap: 1.5rem; }
+                    .ft-wa-btn { display: flex; width: 100%; padding: 1.05rem 1.2rem; font-size: 1rem; }
                     .ft-hero__subtitle {
                         font-size: clamp(.95rem, 2.5vw, 1.2rem);
                         opacity: .75; line-height: 1.7;

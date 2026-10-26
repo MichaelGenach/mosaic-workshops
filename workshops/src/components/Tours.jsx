@@ -60,6 +60,11 @@ const arrPhotoCarousel = [
 
 const phoneNumber = '0523948920';
 
+// WhatsApp: one number, one helper. Every WhatsApp button on this page builds
+// its link with waLink(<message matching the button's context>).
+const whatsappNumber = '9720523948920';
+const waLink = (text) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
 // Kept as emoji, not icon components — these were never actually rendered
 // as react-icons (see EnhancedToursPage below, which reads Object.values(icons)).
 const icons = {
@@ -73,11 +78,16 @@ const icons = {
 
 const pageTranslations = {
     he: {
+        wa: {
+            general: 'שלום, אשמח לקבל פרטים על הסיורים ולתאם סיור',
+            tour: (title) => `שלום, אשמח לפרטים ובתיאום של הסיור: ${title}`,
+            addon: (title) => `שלום, אשמח להוסיף "${title}" לסיור`,
+        },
         addons: {
             tag: 'העשירו את החוויה',
             title: 'תוספות לסיור',
             subtitle: 'כל תוספת מוזמנת מראש — ניצור עבורכם חוויה מושלמת',
-            cta: 'הוסף בוואטסאפ',
+            cta: 'הוספה',
             items: [
                 { icon: '🧀', title: 'פלטת גבינות ויין', desc: 'גבינות בוטיק, לחם טרי, מטבלים ויין נבחר — עצירה מפנקת בסיום הסיור', price: '300₪', note: 'לכ-5 משתתפים', tag: 'פופולרי' },
                 { icon: '🎸', title: 'חוויית מוזיקה חיה', desc: 'מוסיקאי מקצועי מלווה את הסיור — ניגון חי שמוסיף אווירה בלתי נשכחת', price: 'לפי תיאום', note: 'לכל גודל קבוצה', tag: 'חווייתי' },
@@ -99,6 +109,10 @@ const pageTranslations = {
         tourTypes: {
             sectionTag: 'בחר את הסיור שלך',
             sectionTitle: 'איזה סיור מתאים לך?',
+            ctaTitle: 'לא בטוחים איזה סיור מתאים לכם?',
+            ctaText: 'ספרו לנו כמה אתם, מה מעניין אתכם ומתי נוח לכם, ונתאים לכם סיור מושלם.',
+            ctaBtn: 'וואטסאפ',
+            contactBtn: 'צרו קשר',
             tours: [
                 {
                     id: 'cesareaTours',
@@ -202,6 +216,8 @@ const pageTranslations = {
             groupType: 'סוג הקבוצה',
             groupTypeValue: 'פרטית/מאורגנת',
             bookNow: 'הזמן עכשיו',
+            callNow: 'התקשרו',
+            quickBook: 'הזמנה מהירה בוואטסאפ',
             whatsappLinkText: "הזמן עכשיו",
             gallery: 'גלריה',
             reviews: 'ביקורות',
@@ -210,11 +226,16 @@ const pageTranslations = {
         }
     },
     en: {
+        wa: {
+            general: "Hi, I'd like details about your tours and to book one",
+            tour: (title) => `Hi, I'm interested in details and booking for: ${title}`,
+            addon: (title) => `Hi, I'd like to add "${title}" to my tour`,
+        },
         addons: {
             tag: 'Enhance Your Experience',
             title: 'Tour Add-ons',
             subtitle: 'Every add-on is arranged in advance — we create a perfect experience for you',
-            cta: 'Add via WhatsApp',
+            cta: 'Add',
             items: [
                 { icon: '🧀', title: 'Cheese & Wine Platter', desc: 'Artisan cheeses, fresh bread, dips & wine — an indulgent stop at the end of the tour', price: '₪300', note: 'For ~5 participants', tag: 'Popular' },
                 { icon: '🎸', title: 'Live Music Experience', desc: 'A professional musician joins the tour — live music adding a unique, unforgettable atmosphere', price: 'By arrangement', note: 'Any group size', tag: 'Experience' },
@@ -236,6 +257,10 @@ const pageTranslations = {
         tourTypes: {
             sectionTag: 'Choose Your Tour',
             sectionTitle: 'Which Tour is Right for You?',
+            ctaTitle: 'Not sure which tour fits you?',
+            ctaText: "Tell us your group size, interests and preferred date, and we'll tailor the perfect tour.",
+            ctaBtn: 'WhatsApp',
+            contactBtn: 'Contact us',
             tours: [
                 {
                     id: 'cesareaTours',
@@ -339,6 +364,8 @@ const pageTranslations = {
             groupType: 'Group Type',
             groupTypeValue: 'Private/Organized',
             bookNow: 'Book Now',
+            callNow: 'Call',
+            quickBook: 'Quick book on WhatsApp',
             whatsappLinkText: "Book Now",
             gallery: 'Gallery',
             reviews: 'reviews',
@@ -383,6 +410,7 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = '' }) => {
 const TourCard = ({ data, t, language, index }) => {
     const [open, setOpen] = useState(false);
     const direction = language === 'he' ? 'rtl' : 'ltr';
+    const tourWaLink = waLink(t.wa.tour(data.title));
 
     const openModal = () => {
         setOpen(true);
@@ -393,6 +421,12 @@ const TourCard = ({ data, t, language, index }) => {
         setOpen(false);
         document.body.style.overflow = 'unset';
     };
+
+    // Safety net: never leave the page scroll-locked if the card unmounts
+    // (e.g. language switch or route change) while the modal is open.
+    useEffect(() => {
+        return () => { document.body.style.overflow = 'unset'; };
+    }, []);
 
     return (
         <>
@@ -434,7 +468,22 @@ const TourCard = ({ data, t, language, index }) => {
                     </div>
                     <div className="uc-footer">
                         <span className="uc-price">{data.price}</span>
-                        <span className="uc-cta-hint"> {t.modal.moreDetails} </span>
+                        <div className="uc-footer-actions">
+                            <span className="uc-cta-hint">{t.modal.moreDetails}</span>
+                            {/* Icon-only quick WhatsApp button. stopPropagation keeps the
+                                click from also opening the modal. */}
+                            <a
+                                href={tourWaLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="uc-card-wa"
+                                aria-label={t.modal.quickBook}
+                                title={t.modal.quickBook}
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                <i className="bi bi-whatsapp" aria-hidden="true" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </motion.div>
@@ -513,7 +562,7 @@ const TourCard = ({ data, t, language, index }) => {
                                 {/* Actions */}
                                 <div className="uc-modal-actions">
                                     <a
-                                        href="https://wa.me/9720523948920"
+                                        href={tourWaLink}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="uc-btn-primary"
@@ -525,11 +574,11 @@ const TourCard = ({ data, t, language, index }) => {
                                         </span>
                                     </a>
                                     <a
-                                        href={`tel:0523948920`}
+                                        href={`tel:${phoneNumber}`}
                                         className="uc-btn-secondary"
                                         style={{ borderColor: data.accent, color: data.accent }}
                                     >
-                                        📞 {t.modal.bookNow}
+                                        📞 {t.modal.callNow}
                                     </a>
                                 </div>
 
@@ -635,10 +684,41 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                         />
                     ))}
                 </div>
+
+                {/* One closing band: text + WhatsApp + contact (replaces the separate buttons) */}
+                <motion.div
+                    className="uc-wa-cta"
+                    initial={{ opacity: 0, y: 28 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                >
+                    <div className="uc-wa-cta__text">
+                        <h3>{tt.ctaTitle}</h3>
+                        <p>{tt.ctaText}</p>
+                    </div>
+                    <div className="uc-wa-cta__actions">
+                        <a
+                            href={waLink(t.wa.general)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="uc-wa-cta__btn"
+                        >
+                            <i className="bi bi-whatsapp" aria-hidden="true" />
+                            <span>{tt.ctaBtn}</span>
+                        </a>
+                        <a href="#contact" className="uc-contact-btn">
+                            <span>{tt.contactBtn}</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14m0 0l-6-6m6 6l6-6" />
+                            </svg>
+                        </a>
+                    </div>
+                </motion.div>
             </section>
 
-                  {/* ADD-ONS — צבעי הדף: לבן / כחול-אינדיגו */}
-                  <section className="tours-addons-section">
+            {/* ADD-ONS — צבעי הדף: לבן / כחול-אינדיגו */}
+            <section className="tours-addons-section">
                 <div className="tours-addons-header">
                     <span className="tours-addons-eyebrow">{t.addons.tag}</span>
                     <h2 className="tours-addons-title">{t.addons.title}</h2>
@@ -665,12 +745,13 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                                     <span className="tours-addon-card__note">{item.note}</span>
                                 </div>
                                 <a
-                                    href="https://wa.me/9720523948920"
+                                    href={waLink(t.wa.addon(item.title))}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="tours-addon-card__btn"
                                 >
-                                    {t.addons.cta}
+                                    <i className="bi bi-whatsapp" aria-hidden="true" />
+                                    <span>{t.addons.cta}</span>
                                 </a>
                             </div>
                         </motion.div>
@@ -741,7 +822,7 @@ export default function EnhancedToursPage({ language = 'he', languageSettings })
                 </motion.div>
             </section>
 
-      
+
 
             <FaqTours language={language} languageSettings={languageSettings} />
             <Contact id="contact" language={language} languageSettings={languageSettings} instaLink={instaLink} />

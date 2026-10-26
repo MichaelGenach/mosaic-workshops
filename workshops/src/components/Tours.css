@@ -951,66 +951,65 @@
   }
   
   
-  /* ADD-ONS */
-                  /* ADD-ONS */
-                  .ft-addons-section { background: #1e1810; padding: 5.5rem 2rem; }
-                  .ft-addons-subtitle { font-size: .95rem; color: #6a5a48; margin-top: .5rem; }
-                  .ft-addons-grid {
-                      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-                      gap: 1.6rem; max-width: 1100px; margin: 0 auto;
-                  }
-                  .ft-addon-card {
-                      background: #261e14;
-                      border: 1px solid rgba(212,132,42,.15);
-                      border-radius: 22px; padding: 1.9rem 1.6rem;
-                      position: relative; display: flex; flex-direction: column;
-                      transition: border-color .3s, box-shadow .3s;
-                  }
-                  .ft-addon-card::before {
-                      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-                      background: linear-gradient(90deg, #D4842A, #8B6914);
-                      border-radius: 22px 22px 0 0;
-                  }
-                  .ft-addon-card:hover {
-                      border-color: rgba(212,132,42,.4);
-                      box-shadow: 0 20px 50px rgba(0,0,0,.4);
-                  }
-                  .ft-addon-card__tag {
-                      position: absolute; top: 1.2rem; inset-inline-end: 1.2rem;
-                      background: rgba(212,132,42,.15); border: 1px solid rgba(212,132,42,.3);
-                      color: #D4842A; font-size: .68rem; font-weight: 700;
-                      letter-spacing: 1px; text-transform: uppercase;
-                      padding: .18rem .6rem; border-radius: 100px;
-                  }
-                  .ft-addon-card__icon { font-size: 2.6rem; margin-bottom: .9rem; }
-                  .ft-addon-card__title {
-                      font-family: 'Cormorant Garamond', serif;
-                      font-size: 1.45rem; font-weight: 700;
-                      color: #f0e6d3; margin-bottom: .55rem;
-                  }
-                  .ft-addon-card__desc {
-                      font-size: .88rem; line-height: 1.7;
-                      color: #8a7660; flex: 1; margin-bottom: 1.4rem;
-                  }
-                  .ft-addon-card__footer {
-                      display: flex; align-items: center; justify-content: space-between;
-                      gap: .8rem; border-top: 1px solid rgba(255,255,255,.06);
-                      padding-top: 1.1rem; flex-wrap: wrap;
-                  }
-                  .ft-addon-card__price {
-                      display: block;
-                      font-family: 'Cormorant Garamond', serif;
-                      font-size: 1.65rem; font-weight: 700; color: #D4842A; line-height: 1;
-                  }
-                  .ft-addon-card__note { display: block; font-size: .72rem; color: #6a5a48; margin-top: .1rem; }
-                  .ft-addon-card__btn {
-                      display: inline-block; white-space: nowrap;
-                      padding: .58rem 1.1rem; border-radius: 100px;
-                      background: linear-gradient(135deg, #25d366, #1aab55);
-                      color: #fff; font-size: .8rem; font-weight: 700;
-                      text-decoration: none; transition: all .25s;
-                  }
-                  .ft-addon-card__btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,211,102,.3); }
+  /* ADD-ONS (legacy ft-* classes, kept for compatibility) */
+  .ft-addons-section { background: #1e1810; padding: 5.5rem 2rem; }
+  .ft-addons-subtitle { font-size: .95rem; color: #6a5a48; margin-top: .5rem; }
+  .ft-addons-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.6rem; max-width: 1100px; margin: 0 auto;
+  }
+  .ft-addon-card {
+      background: #261e14;
+      border: 1px solid rgba(212,132,42,.15);
+      border-radius: 22px; padding: 1.9rem 1.6rem;
+      position: relative; display: flex; flex-direction: column;
+      transition: border-color .3s, box-shadow .3s;
+  }
+  .ft-addon-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #D4842A, #8B6914);
+      border-radius: 22px 22px 0 0;
+  }
+  .ft-addon-card:hover {
+      border-color: rgba(212,132,42,.4);
+      box-shadow: 0 20px 50px rgba(0,0,0,.4);
+  }
+  .ft-addon-card__tag {
+      position: absolute; top: 1.2rem; inset-inline-end: 1.2rem;
+      background: rgba(212,132,42,.15); border: 1px solid rgba(212,132,42,.3);
+      color: #D4842A; font-size: .68rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      padding: .18rem .6rem; border-radius: 100px;
+  }
+  .ft-addon-card__icon { font-size: 2.6rem; margin-bottom: .9rem; }
+  .ft-addon-card__title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem; font-weight: 700;
+      color: #f0e6d3; margin-bottom: .55rem;
+  }
+  .ft-addon-card__desc {
+      font-size: .88rem; line-height: 1.7;
+      color: #8a7660; flex: 1; margin-bottom: 1.4rem;
+  }
+  .ft-addon-card__footer {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: .8rem; border-top: 1px solid rgba(255,255,255,.06);
+      padding-top: 1.1rem; flex-wrap: wrap;
+  }
+  .ft-addon-card__price {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem; font-weight: 700; color: #D4842A; line-height: 1;
+  }
+  .ft-addon-card__note { display: block; font-size: .72rem; color: #6a5a48; margin-top: .1rem; }
+  .ft-addon-card__btn {
+      display: inline-block; white-space: nowrap;
+      padding: .58rem 1.1rem; border-radius: 100px;
+      background: linear-gradient(135deg, #25d366, #1aab55);
+      color: #fff; font-size: .8rem; font-weight: 700;
+      text-decoration: none; transition: all .25s;
+  }
+  .ft-addon-card__btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(37,211,102,.3); }
   
   
   
@@ -1391,7 +1390,7 @@
       font-size: 12px;
     }
   
-    /* ── Add-on ── */
+    /* ── Add-on (legacy) ── */
     .tour-addon-card {
       grid-template-columns: 1fr;
       text-align: center;
@@ -1575,7 +1574,7 @@
   
   /* CTA button */
   .tours-addon-card__btn {
-    display: inline-block; white-space: nowrap;
+    display: inline-flex; align-items: center; justify-content: center; gap: .45rem; white-space: nowrap;
     padding: .58rem 1.1rem; border-radius: 100px;
     background: linear-gradient(135deg, #25d366, #1aab55);
     color: #fff; font-size: .8rem; font-weight: 700;
@@ -1592,5 +1591,249 @@
     .tours-addons-title { font-size: 24px; }
     .tours-addons-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
     .tours-addon-card__footer { flex-direction: column; align-items: flex-start; }
-    .tours-addon-card__btn { width: 100%; text-align: center; }
+    .tours-addon-card__btn { width: 100%; text-align: center; padding: .7rem 1.1rem; }
+  }
+  
+  
+  /* ============================================================
+     CARD FOOTER — details pill + compact icon-only WhatsApp button
+     ============================================================ */
+  .uc-footer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .uc-footer-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .uc-card-wa {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-size: 21px;
+    line-height: 1;
+    text-decoration: none;
+    background: linear-gradient(135deg, #2fe074 0%, #25d366 45%, #128c7e 100%);
+ 
+    transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .uc-card-wa i {
+    display: block;
+    line-height: 1;
+    transition: transform 0.25s ease;
+  }
+  
+  .uc-card-wa:hover {
+    transform: translateY(-2px) scale(1.08);
+    filter: brightness(1.05);
+    box-shadow: 0 14px 24px -6px rgba(18, 140, 126, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  
+  .uc-card-wa:hover i {
+    transform: rotate(-8deg);
+  }
+  
+  .uc-card-wa:active {
+    transform: scale(0.94);
+  }
+  
+  .uc-card-wa:focus-visible {
+    outline: 3px solid rgba(37, 211, 102, 0.55);
+    outline-offset: 3px;
+  }
+  
+  .tours-addon-card__btn i {
+    font-size: 1rem;
+    line-height: 1;
+  }
+  
+  /* ============================================================
+     CLOSING BAND — text + WhatsApp + Contact (one place, two actions)
+     ============================================================ */
+  .uc-wa-cta {
+    position: relative;
+    overflow: hidden;
+    max-width: 1040px;
+    margin: 40px auto 0;
+    padding: 32px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    border-radius: 24px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #3f4fc0 0%, #4c5fd5 50%, #667eea 100%);
+
+  }
+  
+  .uc-wa-cta::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    inset-inline-end: -10%;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  
+  .uc-wa-cta__text {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  .uc-wa-cta__text h3 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    line-height: 1.25;
+    color: #ffffff;
+  }
+  
+  .uc-wa-cta__text p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.88);
+  }
+  
+  .uc-wa-cta__actions {
+    position: relative;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .uc-wa-cta__btn,
+  .uc-contact-btn {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-width: 140px;
+    padding: 15px 26px;
+    border-radius: 16px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .uc-wa-cta__btn {
+    background: linear-gradient(135deg, #2fe074 0%, #25d366 45%, #128c7e 100%);
+  }
+  
+  .uc-contact-btn {
+    background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+
+  }
+  
+  .uc-wa-cta__btn i {
+    font-size: 21px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+  }
+  
+  .uc-contact-btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .uc-wa-cta__btn:hover,
+  .uc-contact-btn:hover {
+    transform: translateY(-2px) scale(1.03);
+    filter: brightness(1.05) saturate(1.05);
+  }
+  
+  .uc-wa-cta__btn:hover {
+    box-shadow: 0 14px 28px -6px rgba(18, 140, 126, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  }
+  
+
+  
+  .uc-wa-cta__btn:hover i {
+    transform: rotate(-8deg) scale(1.12);
+  }
+  
+  .uc-contact-btn:hover svg {
+    transform: translateY(3px);
+  }
+  
+  .uc-wa-cta__btn:active,
+  .uc-contact-btn:active {
+    transform: scale(0.97);
+  }
+  
+  .uc-wa-cta__btn:focus-visible,
+  .uc-contact-btn:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 3px;
+  }
+  
+  @media (max-width: 900px) {
+    .uc-wa-cta {
+      padding: 28px 26px;
+      gap: 20px;
+    }
+    .uc-wa-cta__btn,
+    .uc-contact-btn {
+      min-width: 0;
+      padding: 14px 20px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .uc-wa-cta {
+      flex-direction: column;
+      text-align: center;
+      gap: 20px;
+      margin-top: 28px;
+      padding: 26px 18px;
+      border-radius: 20px;
+    }
+    .uc-wa-cta__text h3 { font-size: 20px; }
+    .uc-wa-cta__text p { font-size: 14px; }
+    .uc-wa-cta__actions {
+      width: 100%;
+    }
+    .uc-wa-cta__btn,
+    .uc-contact-btn {
+      flex: 1 1 0;
+      padding: 15px 12px;
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    .uc-wa-cta__actions {
+      flex-direction: column;
+    }
+    .uc-wa-cta__btn,
+    .uc-contact-btn {
+      width: 100%;
+    }
   }

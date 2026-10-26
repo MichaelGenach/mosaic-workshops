@@ -18,27 +18,25 @@ import photo58 from './images/photo58.jpg'
 import photo59 from './images/photo59.jpg'
 import photo63 from './images/photo63.jpg'
 import photo64 from './images/photo64.jpg'
-import photo65 from './images/photo65.jpg'
 import photo66 from './images/photo66.jpg'
-import photo67 from './images/photo67.jpg'
 import photo68 from './images/photo68.jpg'
 import photo69 from './images/photo69.jpg'
-import photo70 from './images/photo70.jpg'
-import photo71 from './images/photo71.jpg'
 import photo72 from './images/photo72.jpg'
-import photo73 from './images/photo73.jpg'
-import photo74 from './images/photo74.jpg'
 import photo98 from './images/photo98.jpg'
-import photo99 from './images/photo99.jpg'
 import photo100 from './images/photo100.jpg'
 import photo101 from './images/photo101.jpg'
 import photo107 from './images/photo107.jpg'
-import photo118 from './images/photo118.jpg'
 import photo121 from './images/photo121.jpg'
 import photo122 from './images/photo122.jpg'
 import photo126 from './images/photo126.jpg'
 import photo192 from './images/photo192.jpg'
 import photo193 from './images/photo193.jpg'
+import photo261 from './images/photo261.jpeg'
+import photo262 from './images/photo262.jpeg'
+import photo263 from './images/photo263.jpeg'
+import photo264 from './images/photo264.jpeg'
+import photo265 from './images/photo265.jpeg'
+import photo266 from './images/photo266.jpeg'
 
 // Import videos
 import video10 from './videos/video10.mp4'
@@ -46,13 +44,18 @@ import video14 from './videos/video14.mp4'
 
 // Import icons
 import { HiUserGroup } from "react-icons/hi";
-import { FaPaintBrush } from "react-icons/fa";
+import { FaPaintBrush, FaWhatsapp } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa6";
 import { GiCalendarHalfYear } from "react-icons/gi";
 import { PiFlowerLotusBold } from "react-icons/pi";
 import { FaHome } from "react-icons/fa";
 import { MdWork } from "react-icons/md";
 import { IoSparkles } from "react-icons/io5";
+
+// WhatsApp: one number, one helper. Every WhatsApp button on this page builds
+// its link with waLink(<message matching the button's context>).
+const whatsappNumber = '9720523948920';
+const waLink = (text) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
 
 const translations = {
   he: {
@@ -65,14 +68,16 @@ const translations = {
       'מגיעים גם אליכם'
     ],
     cta: 'צרו קשר עכשיו',
-    description: `🎨 הזמינו את הצוות שלכם לחוויה יוצאת דופן של יצירה משותפת!
-    
-בסדנאות הגיבוש המיוחדות שלנו, חבריכם לעבודה יחוו פעילות שמשלבת אומנות עתיקה, עבודת צוות ויצירתיות אישית. כל משתתף יקבל הדרכה אישית ממומחים בעלי שם עולמי בשימור מלאכות עתיקות.
+    ctaWa: 'תאמו  בוואצאפ',
+    waMessage: 'שלום, אשמח לפרטים על פעילות גיבוש לחברה (סדנת פסיפס/קדרות) ובקבלת הצעת מחיר',
+    description: `🎨 יוצרים יחד – פסיפס אחד, צוות אחד!
 
-✨ מה כולל יום הגיבוש:
-• סדנת קדרות או פסיפס עם ציוד מקצועי
-• הדרכה מקצועית ואישית
-• חוויה בלתי נשכחת מול הים`,
+    צרו יצירת אומנות משותפת! כל משתתף יוצר חלק אישי מפסיפס גדול, ובסיום כולם מתחברים יחד ליצירה מרהיבה אחת – עבודת צוות במיטבה.
+    
+    ✨ מה מחכה לכם?
+    - סדנת פסיפס חווייתית ומודרכת
+    - יצירה אישית שהופכת להצלחה משותפת
+    - חוויה מגבשת, יצירתית ובלתי נשכחת מול הים בנמל קיסריה`,
     gallery: 'גלריית פעילויות',
     section1Title: 'למה לבחור בנו?',
     section1Text: 'עם ניסיון של שנים בהובלת פעילויות גיבוש לחברות מובילות, אנו מתמחים ביצירת חוויות שמחברות בין אנשים דרך אומנות ויצירה.',
@@ -94,14 +99,16 @@ const translations = {
       'We Also Come to You'
     ],
     cta: 'Contact Us Now',
-    description: `🎨 Invite your team to an extraordinary shared creative experience!
-    
-In our special team-building workshops, your Colleagues will experience an activity that combines ancient art, teamwork, and personal creativity. Each participant receives personal guidance from world-renowned experts in ancient crafts preservation.
+    ctaWa: 'Plan your team event on WhatsApp',
+    waMessage: "Hi, I'm interested in a team-building activity for my company (mosaic/pottery workshop) and would like a quote",
+    description: `🎨 Create Together – One Mosaic, One Team!
 
-✨ What's included:
-• Pottery or mosaic workshop with professional equipment
-• Professional personal instruction
-• Unforgettable seaside experience`,
+    Create a shared work of art! Each participant designs an individual piece of a large mosaic, and at the end, everyone brings their pieces together to create one stunning masterpiece – teamwork at its best.
+    
+    ✨ What to Expect:
+    - An engaging, guided mosaic workshop
+    - Individual creativity transformed into a shared achievement
+    - An unforgettable team-building experience by the sea at Caesarea Harbor`,
     gallery: 'Activity Gallery',
     section1Title: 'Why Choose Us?',
     section1Text: 'With years of experience leading team-building activities for top companies, we specialize in creating experiences that connect people through art and creation.',
@@ -120,9 +127,10 @@ export default function Company({ language, languageSettings }) {
   const settings = languageSettings[language];
 
   const arrPhotoCarousel = [
-    photo64, photo45, photo192, photo63, photo193, photo118, photo121, photo122, photo73,
-    photo1, photo74, photo65, photo66, photo67, photo69, photo70, photo59, photo58,
-    photo72, photo98, photo100, photo101, photo107, photo71, photo126,
+    photo1, photo45, photo58, photo59, photo63, photo64, photo66,
+    photo69, photo72, photo98, photo100, photo101,
+    photo107, photo121, photo122, photo126, photo192, photo193,
+    photo261, photo262, photo263, photo264, photo265, photo266,
   ]
 
   return (
@@ -242,10 +250,16 @@ export default function Company({ language, languageSettings }) {
           </div>
         </section>
 
-        {/* CTA Button */}
+        {/* CTA Button — opens WhatsApp with a message matching this page */}
         <div className='cta-container'>
-          <a href="#contact" className='cta-button'>
-            {t.cta}
+          <a
+            href={waLink(t.waMessage)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className='cta-button cta-button--wa'
+          >
+            <FaWhatsapp className='cta-wa-icon' aria-hidden="true" />
+            <span className='cta-wa-text'>{t.ctaWa}</span>
           </a>
         </div>
 

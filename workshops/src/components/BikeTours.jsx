@@ -16,9 +16,23 @@ import thumbNailTours from './images/thumbNailTours.png';
 
 const instaLink = 'https://www.instagram.com/art_music_explore/';
 
+// WhatsApp: one number, one helper. Every WhatsApp button on this page builds
+// its link with waLink(<message matching the button's context>).
+const whatsappNumber = '9720523948920';
+const waLink = (text) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+
 const T = {
     he: {
         dir: 'rtl',
+        wa: {
+            tour: 'שלום, אשמח לפרטים ולהצעת מחיר לסיור אופניים בקיסריה',
+            addon: (title) => `שלום, אשמח להוסיף "${title}" לסיור האופניים בקיסריה`,
+        },
+        ctaBand: {
+            title: 'רוצים לצאת לסיור אופניים?',
+            text: 'כתבו לנו כמה אתם ומתי נוח לכם, ונתאים לכם מסלול מושלם לאורך חוף קיסריה.',
+            btn: 'תיאום סיור אופניים בוואטסאפ',
+        },
         hero: {
             eyebrow: 'קיסריה מריטימה',
             title: 'סיורי אופניים',
@@ -57,7 +71,7 @@ const T = {
             tag: 'מה כלול',
             title: 'הכל כלול במחיר',
             items: ['אופניים איכותיים ומתוחזקים', 'קסדת בטיחות מותאמת', 'מדריך מוסמך ומנוסה',
-            , 'כניסה לאתרים סודיים', 'סיפורים וחידות מרתקים', 'הפסקת קפה מול הים', 'תמונות זכרון ייחודיות'],
+                'כניסה לאתרים סודיים', 'סיפורים וחידות מרתקים', 'הפסקת קפה מול הים', 'תמונות זכרון ייחודיות'],
         },
         addons: {
             tag: 'העשירו את החוויה',
@@ -76,6 +90,15 @@ const T = {
     },
     en: {
         dir: 'ltr',
+        wa: {
+            tour: "Hi, I'm interested in details and booking for a bike tour in Caesarea",
+            addon: (title) => `Hi, I'd like to add "${title}" to my bike tour in Caesarea`,
+        },
+        ctaBand: {
+            title: 'Ready for a bike tour?',
+            text: "Tell us your group size and preferred date, and we'll tailor the perfect ride along the Caesarea coast.",
+            btn: 'Book a bike tour on WhatsApp',
+        },
         hero: {
             eyebrow: 'Caesarea Maritima',
             title: 'Bike Tours',
@@ -114,7 +137,7 @@ const T = {
             tag: "What's Included",
             title: 'Everything in the Price',
             items: ['Quality, maintained bicycles', 'Fitted safety helmet', 'Licensed guide',
-            , 'Access to secret sites', 'Fascinating stories & riddles', 'Coffee break by the sea', 'Memory photos'],
+                'Access to secret sites', 'Fascinating stories & riddles', 'Coffee break by the sea', 'Memory photos'],
         },
         addons: {
             tag: 'Enhance Your Experience',
@@ -220,6 +243,23 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 </div>
             </section>
 
+            {/* WHATSAPP CTA BAND — right after the reader has seen what the tour offers */}
+            <section className="bt-wa-band-section">
+                <motion.div className="bt-wa-band"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}>
+                    <div className="bt-wa-band__text">
+                        <h3>{t.ctaBand.title}</h3>
+                        <p>{t.ctaBand.text}</p>
+                    </div>
+                    <a href={waLink(t.wa.tour)} target="_blank" rel="noopener noreferrer" className="bt-wa-btn">
+                        <i className="bi bi-whatsapp" aria-hidden="true" />
+                        <span>{t.ctaBand.btn}</span>
+                    </a>
+                </motion.div>
+            </section>
 
             {/* GALLERY */}
             <section className="bt-section bt-gallery-section">
@@ -273,7 +313,7 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                                     <span className="bt-addon-card__price">{item.price}</span>
                                     <span className="bt-addon-card__note">{item.note}</span>
                                 </div>
-                                <a href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer"
+                                <a href={waLink(t.wa.addon(item.title))} target="_blank" rel="noopener noreferrer"
                                     className="bt-addon-card__btn">{t.addons.cta}</a>
                             </div>
                         </motion.div>
@@ -302,7 +342,7 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 <h2 className="bt-section-title bt-section-title--light">{t.book.title}</h2>
                 <p className="bt-book-subtitle">{t.book.subtitle}</p>
                 <div className="bt-book-actions">
-                    <motion.a href="https://wa.me/9720523948920" target="_blank" rel="noopener noreferrer"
+                    <motion.a href={waLink(t.wa.tour)} target="_blank" rel="noopener noreferrer"
                         className="bt-btn bt-btn--wa" whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}>
                         <i className="bi bi-whatsapp" /> {t.book.whatsapp}
                     </motion.a>
@@ -352,7 +392,7 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 }
                 .bt-hero__title {
                     font-family: 'Cormorant Garamond', serif;
-                    font-size: clamp(3.2rem, 9vw, 6.5rem);
+                    font-size: clamp(3rem, 8vw, 5rem);
                     font-weight: 900; line-height: .95; color: #f0fafb;
                     margin-bottom: 1.1rem;
                     text-shadow: 0 4px 30px rgba(0,0,0,.5);
@@ -437,6 +477,66 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 .bt-highlight__icon { font-size: 1.8rem; flex-shrink: 0; }
                 .bt-highlight strong { display: block; color: #cce8ee; font-size: .95rem; margin-bottom: .2rem; }
                 .bt-highlight p { font-size: .84rem; color: #5a8890; margin: 0; }
+
+                /* WHATSAPP CTA BAND */
+                .bt-wa-band-section {
+                    background: #0e2428;
+                    padding: 0 2rem 5rem;
+                }
+                .bt-wa-band {
+                    position: relative; overflow: hidden;
+                    max-width: 1000px; margin: 0 auto;
+                    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+                    padding: 2.2rem 2.4rem;
+                    background: linear-gradient(135deg, #0e2830, #0a1e24);
+                    border: 1px solid rgba(42,160,180,.28);
+                    border-radius: 24px;
+                    box-shadow: 0 20px 50px rgba(0,0,0,.35);
+                }
+                .bt-wa-band::before {
+                    content: ''; position: absolute; top: -70%; inset-inline-end: -8%;
+                    width: 320px; height: 320px; border-radius: 50%;
+                    background: radial-gradient(circle, rgba(42,160,180,.16) 0%, transparent 70%);
+                    pointer-events: none;
+                }
+                .bt-wa-band__text { position: relative; flex: 1; min-width: 0; }
+                .bt-wa-band__text h3 {
+                    font-family: 'Cormorant Garamond', serif;
+                    font-size: 1.9rem; font-weight: 700; color: #e8f6f8;
+                    margin: 0 0 .4rem; line-height: 1.2;
+                }
+                .bt-wa-band__text p { font-size: .98rem; color: #7a9ea5; line-height: 1.65; margin: 0; }
+                .bt-wa-btn {
+                    position: relative; isolation: isolate; flex-shrink: 0;
+                    display: inline-flex; align-items: center; justify-content: center; gap: .7rem;
+                    padding: 1rem 2rem; border-radius: 16px;
+                    color: #fff; font-family: 'Rubik', sans-serif;
+                    font-size: 1rem; font-weight: 700; white-space: nowrap; text-decoration: none;
+                    background: linear-gradient(135deg, #2fe074 0%, #25d366 45%, #128c7e 100%);
+                    box-shadow: 0 10px 24px -6px rgba(37,211,102,.5),
+                                inset 0 1px 0 rgba(255,255,255,.35),
+                                inset 0 -2px 0 rgba(0,0,0,.08);
+                    transition: transform .3s ease, box-shadow .3s ease, filter .3s ease;
+                    -webkit-tap-highlight-color: transparent;
+                }
+                .bt-wa-btn i { font-size: 1.35rem; line-height: 1; transition: transform .3s ease; }
+                .bt-wa-btn::after {
+                    content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit;
+                    animation: btWaPulse 2.6s ease-out infinite; pointer-events: none;
+                }
+                @keyframes btWaPulse {
+                    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.5); }
+                    70%  { box-shadow: 0 0 0 12px rgba(37,211,102,0); }
+                    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+                }
+                .bt-wa-btn:hover {
+                    transform: translateY(-2px) scale(1.03); filter: brightness(1.05);
+                    box-shadow: 0 16px 30px -8px rgba(18,140,126,.6),
+                                inset 0 1px 0 rgba(255,255,255,.4);
+                }
+                .bt-wa-btn:hover i { transform: rotate(-8deg) scale(1.12); }
+                .bt-wa-btn:active { transform: scale(.97); }
+                .bt-wa-btn:focus-visible { outline: 3px solid rgba(37,211,102,.6); outline-offset: 3px; }
 
                 /* INCLUDES */
                 .bt-includes-section { background: #0c1618; max-width: 100%; text-align: center; padding: 5.5rem 2rem; }
@@ -609,6 +709,10 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                 }
                 .bt-btn--call:hover { border-color: #2AA0B4; color: #2AA0B4; }
 
+                @media (prefers-reduced-motion: reduce) {
+                    .bt-wa-btn::after { animation: none; }
+                }
+
                 /* MOBILE */
                 @media (max-width: 900px) {
                     .bt-about__inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -617,6 +721,17 @@ export default function BikeTours({ language = 'he', languageSettings }) {
                     .bt-gallery-item--3,.bt-gallery-item--4 { grid-column: unset; height: 190px; }
                     .bt-offer-card { flex-direction: column; text-align: center; }
                     .bt-offer-card__badge { margin: 0 auto; }
+                    .bt-wa-band { padding: 2rem 1.8rem; gap: 1.4rem; }
+                }
+                @media (max-width: 700px) {
+                    .bt-wa-band-section { padding: 0 1rem 3.5rem; }
+                    .bt-wa-band {
+                        flex-direction: column; text-align: center;
+                        padding: 1.8rem 1.3rem; border-radius: 20px;
+                    }
+                    .bt-wa-band__text h3 { font-size: 1.55rem; }
+                    .bt-wa-band__text p { font-size: .92rem; }
+                    .bt-wa-btn { width: 100%; padding: 1.05rem 1.4rem; font-size: 1.02rem; white-space: normal; }
                 }
                 @media (max-width: 600px) {
                     .bt-hero__subtitle {

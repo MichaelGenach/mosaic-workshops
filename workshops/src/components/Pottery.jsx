@@ -130,46 +130,64 @@ const translations = {
 
     workshopsTag: 'הסדנאות שלנו',
     workshopsTitle: 'בחרו את סוג הסדנה',
-    workshopsSubtitle: 'משלוש חוויות קרמיקה שונות — מהיצירה הראשונית ועד לגימור המבריק, בחרו את מה שמתאים לכם',
-    workshopsCta: 'תאמו בוואטסאפ',
+    workshopsSubtitle: 'חמש אפשרויות – מיצירה על שולחן ועד תהליך קדרות מלא עם שריפה וגלזורה. בחרו לפי התקציב והזמן שלכם',
+    workshopsCta: 'תאמו בוואצאפ',
+    pricesTitle:'מחירון',
+    vatNote: 'כל המחירים כוללים מע"מ',
+    perPersonVat: 'למשתתף, כולל מע"מ',
     workshops: [
       {
-        icon: '🏺',
-        title: 'אובניים - יצירה אישית וייחודית',
-        subtitle: 'מפגש אחד',
-        desc: 'סדנה מושלמת למתחילים ולמתקדמים: יוצרים כלי חרס משלכם על גלגל האבניים בעבודת יד, מגוש חומר ועד לצורה מוגמרת. הכלי נשאר ברשותכם לייבוש עצמי בבית – ללא צורך בתנור וללא המתנה.',
-        color: '#d2691e',
-        tags: [' למתקדמים ולמתחילים', 'עד שעתיים', 'לוקחים איתכם'],
-        price: '250₪ לאדם',
-        img: photo256,
+        icon: '🖐️', tab: 'יצירה על שולחן', color: '#daa520',
+        title: 'יצירה על שולחן – רימון / חמסה',
+        subtitle: 'עבודת יד',
+        meta: 'כשעה · צובעים ולוקחים',
+        desc: 'סדנת עבודת יד על שולחן: יוצרים רימון או חמסה, צובעים ולוקחים הביתה באותו יום.',
+        tags: ['משך כשעה', 'צובעים ולוקחים באותו יום', 'מתאים לכולם'],
+        priceNum: '50', price: '50₪ למשתתף', img: photo257,
       },
       {
-        icon: '🔥',
-        title: 'קרמיקה יצירה מלאה עם תנור',
-        subtitle: 'יצירה ושריפה מקצועית',
-        desc: 'החוויה המלאה: יוצרים על האבניים ולאחר מכן שורפים את הכלי בתנור הקרמיקה המקצועי שלנו. השריפה הופכת את החומר לקרמיקה חזקה ועמידה, מוכנה לשימוש יומיומי בבית.',
-        color: '#8b4513',
-        tags: ['תוצר סופי ועמיד', 'תהליך שלם', 'מומלץ למתנות'],
-        price: 'לפי תיאום',
-        img: photo260,
+        icon: '🎨', tab: 'צביעה על כלי מוכן', color: '#c2410c',
+        title: 'צביעה וציור על כלי חרס מוכן',
+        subtitle: 'צביעה ושריפה',
+        meta: 'ספל / צלחת · שריפה ואיסוף',
+        desc: 'צובעים ומציירים על כלי חרס מוכן (ספל או צלחת). לאחר מכן הכלי נשרף ומחכה לאיסוף.',
+        tags: ['ספל או צלחת', 'שריפה כלולה', 'איסוף לאחר השריפה'],
+        priceNum: '100', price: '100₪ למשתתף', img: photo257,
       },
       {
-        icon: '🎨',
-        title: 'גלזורה וצביעה',
-        subtitle: 'צביעה וגימור סופי',
-        desc: 'מוסיפים צבע וברק לכלי קרמי שכבר עבר שריפה ראשונה (ביסקוויט). צובעים בגלזורה מקצועית, ולאחר מכן שורפים שוב לקבלת גימור מבריק, צבעוני ועמיד למים.',
-        color: '#daa520',
-        tags: ['גימור מבריק', 'שריפה שנייה', 'התאמה אישית'],
-        price: 'לפי תיאום',
-        img: photo257,
+        icon: '🏺', tab: 'אובניים – קצרה', color: '#d2691e',
+        title: 'סדנת אובניים קצרה',
+        subtitle: 'שעה וחצי',
+        meta: '1.5 שעות · לוקחים באותו יום',
+        desc: 'יצירה על האובניים בליווי צמוד: יוצרים כוס או קערה, צובעים ולוקחים הביתה באותו יום.',
+        tags: ['כוס או קערה', 'ליווי צמוד', 'לוקחים באותו יום'],
+        priceNum: '150', price: '150₪ למשתתף', img: photo256,
+      },
+      {
+        icon: '🏺', tab: 'אובניים – מורחבת', color: '#a0522d',
+        title: 'סדנת אובניים מורחבת',
+        subtitle: 'שעתיים',
+        meta: '2 שעות · כולל צביעה',
+        desc: 'פתיח, התנסות בגוש למידה, ולאחר מכן יצירה בגוש גדול נוסף כולל צביעה. לוקחים באותו יום.',
+        tags: ['גוש למידה + גוש גדול', 'כולל צביעה', 'לוקחים באותו יום'],
+        priceNum: '250', price: '250₪ למשתתף', img: photo256,
+      },
+      {
+        icon: '🔥', tab: 'אובניים – שריפה וגלזורה', color: '#8b4513',
+        title: 'אובניים – תהליך מלא עם שריפה וגלזורה',
+        subtitle: 'שני מפגשים',
+        meta: 'שני מפגשים · שריפה ואיסוף',
+        desc: 'פתיח, התנסות בגוש למידה ויצירה בגוש גדול נוסף. הכלים נשארים למנוחה ושריפה. במפגש השני מצפים בגלזורה, שורפים שוב ואוספים.',
+        tags: ['שני מפגשים', 'שריפה וגלזורה', 'תוצר סופי ועמיד'],
+        priceNum: '300', price: '300₪ למשתתף', img: photo260,
       },
     ],
 
     galleryText: 'פעילויות גיבוש',
     pricingTitle: 'מחירים ותיאום סדנאות',
     potteryWorkshop: 'סדנאות קדרות',
-    pricePerPerson: 'מחיר לסדנה: 250₪ לאדם',
-    pricingNote: 'המחירים כוללים חומרים, הדרכה מקצועית ואווירה מיוחדת מול הים',
+    pricePerPerson: 'מחיר לסדנה: מ-50₪ למשתתף',
+    pricingNote: 'כל המחירים כוללים מע"מ, חומרים והדרכה מקצועית',
     orderNow: 'הזמינו עכשיו בווטסאפ',
     ctaFinal: '?מוכנים ליצור משהו מיוחד',
     ctaFinalSub: 'הצטרפו לאלפי לקוחות מרוצים שחוו את קסם הקדרות',
@@ -208,38 +226,56 @@ No prior experience needed – perfect for team events, family gatherings, or an
 
     workshopsTag: 'Our Workshops',
     workshopsTitle: 'Choose Your Workshop',
-    workshopsSubtitle: 'From the first creation to the final glossy finish — pick the pottery experience that\'s right for you',
+    workshopsSubtitle: 'Five options – from hand-building at the table to the full pottery process with firing and glazing. Choose by budget and time',
     workshopsCta: 'Book on WhatsApp',
+    pricesTitle: 'Prices',
+    vatNote: 'All prices include VAT',
+    perPersonVat: 'per person, incl. VAT',
     workshops: [
       {
-        icon: '🏺',
-        title: 'Wheel Throwing – A Personal, One-of-a-Kind Creation',
-        subtitle: 'Single session',
-        desc: 'A perfect workshop for beginners and advanced participants alike: shape your own ceramic piece on the potter\'s wheel by hand, from a lump of clay to a finished form. The piece stays with you to air-dry at home – no kiln and no waiting required.',
-        color: '#d2691e',
-        tags: ['Beginners & advanced', 'Up to 2 hours', 'Take it with you'],
-        price: '₪250 per person',
-        img: photo256,
+        icon: '🖐️', tab: 'Table Hand-Building', color: '#daa520',
+        title: 'Table Hand-Building – Pomegranate / Hamsa',
+        subtitle: 'Hand-built',
+        meta: '~1 hour · paint & take home',
+        desc: 'A hand-building workshop at the table: create a pomegranate or hamsa, paint it, and take it home the same day.',
+        tags: ['About 1 hour', 'Paint & take home same day', 'Suitable for everyone'],
+        priceNum: '50', price: '₪50 per person', img: photo257,
       },
       {
-        icon: '🔥',
-        title: 'Full Ceramics with Kiln',
-        subtitle: 'Creation & professional firing',
-        desc: 'The complete experience: create on the wheel, then we fire your piece in our professional ceramics kiln. Firing transforms the clay into strong, durable ceramic, ready for everyday use at home.',
-        color: '#8b4513',
-        tags: ['Durable final piece', 'Full process', 'Great for gifts'],
-        price: 'By arrangement',
-        img: photo260,
+        icon: '🎨', tab: 'Paint Ready-Made', color: '#c2410c',
+        title: 'Painting on a Ready-Made Ceramic Piece',
+        subtitle: 'Painting & firing',
+        meta: 'Mug / plate · firing & pickup',
+        desc: 'Paint and draw on a ready-made ceramic piece (mug or plate). It is then fired and held for pickup.',
+        tags: ['Mug or plate', 'Firing included', 'Pickup after firing'],
+        priceNum: '100', price: '₪100 per person', img: photo257,
       },
       {
-        icon: '🎨',
-        title: 'Glazing & Painting',
-        subtitle: 'Color & final finish',
-        desc: 'Add color and shine to a piece that has already been through its first (bisque) firing. Paint it with a professional glaze, then it\'s fired once more for a glossy, colorful, water-resistant finish.',
-        color: '#daa520',
-        tags: ['Glossy finish', 'Second firing', 'Fully personalized'],
-        price: 'By arrangement',
-        img: photo257,
+        icon: '🏺', tab: 'Wheel – Short', color: '#d2691e',
+        title: 'Short Wheel Workshop',
+        subtitle: '1.5 hours',
+        meta: '1.5 hours · take home same day',
+        desc: 'Close guidance at the potter\'s wheel: create a cup or bowl, paint it, and take it home the same day.',
+        tags: ['Cup or bowl', 'Close guidance', 'Take home same day'],
+        priceNum: '150', price: '₪150 per person', img: photo256,
+      },
+      {
+        icon: '🏺', tab: 'Wheel – Extended', color: '#a0522d',
+        title: 'Extended Wheel Workshop',
+        subtitle: '2 hours',
+        meta: '2 hours · painting included',
+        desc: 'Introduction, a practice lump to learn on, then a second larger piece, painting included. Take it home the same day.',
+        tags: ['Practice + large piece', 'Painting included', 'Take home same day'],
+        priceNum: '250', price: '₪250 per person', img: photo256,
+      },
+      {
+        icon: '🔥', tab: 'Wheel – Firing & Glaze', color: '#8b4513',
+        title: 'Wheel – Full Process with Firing & Glazing',
+        subtitle: 'Two sessions',
+        meta: 'Two sessions · firing & pickup',
+        desc: 'Introduction, a practice lump, then a larger piece. The pieces rest and are fired. In the second session you apply glaze, we fire again, and you collect.',
+        tags: ['Two sessions', 'Firing & glazing', 'Durable final piece'],
+        priceNum: '300', price: '₪300 per person', img: photo260,
       },
     ],
 
@@ -253,8 +289,8 @@ No prior experience needed – perfect for team events, family gatherings, or an
     galleryText: 'Team Activities',
     pricingTitle: 'Prices & Booking',
     potteryWorkshop: 'Pottery Workshops',
-    pricePerPerson: 'Price: 250₪ per person',
-    pricingNote: 'Prices include materials, professional instruction, and unique seaside atmosphere',
+    pricePerPerson: 'Price: from ₪50 per person',
+    pricingNote: 'All prices include VAT, materials and professional instruction',
     orderNow: 'Book Now on WhatsApp',
     ctaFinal: 'Ready to Create Something Special?',
     ctaFinalSub: 'Join thousands of satisfied customers who experienced the magic of pottery',
@@ -350,7 +386,7 @@ export default function Pottery({ language, languageSettings }) {
           }}>{t.description}</p>
         </div>
 
-        {/* קטע חדש - בחירת סוג סדנה (אובניים / קרמיקה עם תנור / גלזורה) */}
+        {/* קטע חדש - בחירת סוג סדנה (5 אפשרויות) */}
         <section className='workshopTypesSection' dir={settings.direction}>
           <div className='workshopTypesHeader'>
             <span className='workshopTypesTag'>{t.workshopsTag}</span>
@@ -368,7 +404,7 @@ export default function Pottery({ language, languageSettings }) {
                 onClick={() => setActiveWorkshop(i)}
               >
                 <span className='workshopTab__icon'>{w.icon}</span>
-                <span className='workshopTab__title'>{w.title}</span>
+                <span className='workshopTab__title'>{w.tab}</span>
               </button>
             ))}
           </div>
@@ -413,6 +449,32 @@ export default function Pottery({ language, languageSettings }) {
               </div>
             </motion.div>
           </AnimatePresence>
+        </section>
+
+        {/* קטע חדש - גריד מחירים */}
+        <section className='potteryPrices' dir={settings.direction}>
+          <h2 className='sectionTitle'>{t.pricesTitle}</h2>
+          <p className='potteryPrices__note'>{t.vatNote}</p>
+          <div className='potteryPrices__grid'>
+            {t.workshops.map((w, i) => (
+              <button
+                type='button'
+                key={i}
+                className={`potteryPriceCard ${activeWorkshop === i ? 'is-active' : ''}`}
+                style={{ '--wc': w.color }}
+                onClick={() => {
+                  setActiveWorkshop(i);
+                  document.querySelector('.workshopTypesSection')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                <span className='potteryPriceCard__num'>{i + 1}</span>
+                <span className='potteryPriceCard__title'>{w.tab}</span>
+                <span className='potteryPriceCard__meta'>{w.meta}</span>
+                <span className='potteryPriceCard__price'><b>{w.priceNum}</b>₪</span>
+                <span className='potteryPriceCard__unit'>{t.perPersonVat}</span>
+              </button>
+            ))}
+          </div>
         </section>
 
         {/* קטע חדש - מה כולל */}
