@@ -12,9 +12,8 @@ const translations = {
         title: "סדנאות קדרות",
         questions: [
           { q: "מה יוצרים?", a: "כל משתתף יוצר כלי אישי באובניים" },
-          { q: "מתי מקבלים את היצירה?", a: "מיד בסוף הסדנה" },
           { q: "כמה יכולים להשתתף?", a: "ללא הגבלת משתתפים" },
-          { q: "לאילו גילאים זה מתאים?", a: "מתאים לכל הגילאים | מגיל 7 ומעלה" },
+          { q: "לאילו גילאים זה מתאים?", a: "מתאים לכל הגילאים ובחלק מהסדנאות מגיל 7 ומעלה" },
           { q: "האם צריך ניסיון קודם?", a: "ממש לא! הסדנה מתאימה גם למתחילים, ואנו מלווים אתכם שלב אחר שלב" },
           { q: "האם אפשר לצבוע את הכלי?", a: "בוודאי! ישנה אפשרות לצביעת הכלי במגוון צבעים" },
         ],
@@ -34,7 +33,7 @@ const translations = {
         questions: [
           { q: "איפה נטייל?", a: "נציג לכם מסלולים מדהימים לבחירתכם" },
           { q: "מתי ניתן לקבוע?", a: "בוקר, צהריים וסיור עששיות בערב" },
-          { q: "כמה יכולים להשתתף?", a: "1-50 משתתפים בסיור פרטי" },
+          { q: "כמה יכולים להשתתף?", a: "1-50  משתתפים בסיור פרטי,ניתן להזמין מדריכים נוספים לקבוצות גדולות יותר" },
           { q: "לאילו גילאים זה מתאים?", a: "מתאים לכל הגילאים" },
           { q: "האם הסיורים נגישים לעגלות/כיסאות גלגלים?", a: "רוב הסיורים נגישים – אנא ציינו זאת מראש" },
           { q: "האם אפשר להתאים את הסיור לקבוצה ספציפית?", a: "בהחלט! אנו מתאימים את הסיור לתחומי עניין, גיל, כושר פיזי וזמן פנוי" },
@@ -50,13 +49,13 @@ const translations = {
           { q: "מה יוצרים?", a: "פסיפס אחד גדול עבור משרדי החברה" },
           { q: "מתי מקבלים את היצירה?", a: "מעט לאחר הסדנה כדי שנוכל לאחד את חלקי הפסיפס שלכם" },
           { q: "כמה יכולים להשתתף?", a: "ללא הגבלת משתתפים" },
-          { q: "למי זה מתאים?", a: "מתאים לכלל עובדי החברה" },
+          { q: "למי זה מתאים?", a: " מתאים לכל עובדי החברה / העסק" },
         ],
       },
       {
         title: "שאלות כלליות",
         questions: [
-          { q: "איך מזמינים סדנה או סיור?", a: "אפשר להזמין דרך האתר או בוואצאפ: 0523948920. נשמח לעזור בהתאמה אישית" },
+          { q: "איך מזמינים סדנה או סיור?", a: "אפשר להזמין דרך האתר, להתקשר, או בוואצאפ: 052-394-8920. נשמח לעזור בהתאמה אישית" },
           { q: "אפשר לקיים סדנה בבית שלי או בעסק שלי?", a: "בהחלט! אנחנו מגיעים עם כל הציוד לבית פרטי, למשרד או לכל מיקום לבחירתכם ברחבי הארץ – לא רק לגלריה בנמל קיסריה" },
           { q: "מה קורה במקרה של גשם?", a: "הפעילויות מתבצעות במקום מקורה, או במידת הצורך נדחות בתיאום מראש" },
           { q: "האם אפשר לקבל חשבונית?", a: "בהחלט. אנחנו מנפיקים קבלה כחוק לכל תשלום" },
@@ -90,7 +89,7 @@ const translations = {
         questions: [
           { q: "What do we create?", a: "Each participant creates a personal mosaic" },
           { q: "When do you get the creation?", a: "Immediately at the end of the workshop" },
-          { q: "How many can participate?", a: "From a single participant up to 10 participants" },
+          { q: "How many can participate?", a: "From a single participant up to 20 participants" },
           { q: "What ages is it suitable for?", a: "Suitable for all ages | Ages 7 and up" },
           { q: "What do you do with the creation at the end?", a: "Each participant leaves with a finished piece – ready to hang or place on a table" },
         ],
@@ -106,8 +105,8 @@ const translations = {
           { q: "Can the tour be customized for a specific group?", a: "Absolutely! We tailor the tour to interests, age, physical ability, and available time" },
           { q: "Are the tours suitable for observant participants?", a: "Definitely. We adjust the content and schedule as needed, including breaks for prayer and kosher food" },
           { q: "Is there insurance for the tour?", a: "Yes, as certified guides we operate with approval from the Ministry of Tourism, with professional liability insurance" },
-          { q: "Are tours available in other languages?", a: "Yes. Tours can be arranged in Hebrew, English and Italian as well" },
-          { q: "Can a tour be combined with a workshop?", a: "Certainly! There are routes that include a fascinating discounted tour followed by a pottery or mosaic workshop at our gallery in Caesarea port" },
+          { q: "Are tours available in other languages?", a: "Yes. Tours can be arranged in English and Italian as well" },
+          { q: "Can a tour be combined with a workshop?", a: "Certainly! There are routes that include a fascinating tour at a discounted price, followed by a pottery or mosaic workshop at our gallery in Caesarea port" },
         ],
       },
       {
@@ -122,7 +121,7 @@ const translations = {
       {
         title: "General Questions",
         questions: [
-          { q: "How do I book a workshop or tour?", a: "You can book via the website or WhatsApp: 0523948920. We are happy to help with personalized arrangements" },
+          { q: "How do I book a workshop or tour?", a: "You can book through the website, by phone, or via WhatsApp: 052-394-8920. We are happy to help with personalized arrangements" },
           { q: "Can you hold a workshop at my home or business?", a: "Absolutely! We bring all the equipment to a private home, office, or any location of your choice across the country – not just to our gallery in Caesarea port" },
           { q: "What happens in case of rain?", a: "Activities take place indoors, or if needed, are postponed by prior arrangement" },
           { q: "Can I get an invoice?", a: "Absolutely. We issue a legal receipt for every payment" },
